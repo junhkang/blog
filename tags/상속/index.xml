@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>상속 on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%EC%83%81%EC%86%8D/</link>
+    <link>https://junhkang.com/tags/%EC%83%81%EC%86%8D/</link>
     <description>Recent content in 상속 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 30 Oct 2023 18:22:27 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%EC%83%81%EC%86%8D/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/%EC%83%81%EC%86%8D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 데이터베이스 상속(Inheritance)의 개념과 사용법 및 성능비교 (Inherits, Only)</title>
-      <link>http://localhost:1313/posts/39/</link>
+      <link>https://junhkang.com/posts/39/</link>
       <pubDate>Mon, 30 Oct 2023 18:22:27 +0000</pubDate>
-      <guid>http://localhost:1313/posts/39/</guid>
+      <guid>https://junhkang.com/posts/39/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/39/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/39/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;데이터베이스-상속inheritance이란&#34; ke-size=&#34;size26&#34;&gt;1. 데이터베이스 상속(Inheritance)이란?&lt;/h2&gt;
 &lt;p&gt;상속은 객체지향 데이터베이스의 개념 중 하나이다. PostgreSQL은 테이블 생성 시 하나 이상의 다른 테이블로부터의 상속 기능을 제공하며, 이를 잘 활용하면 데이터베이스 설계에 새로운 가능성들을 열어준다. 데이터뿐만 아니라 부모 테이블의 컬럼 속성 및 인덱스 등의 특징들도 자식 테이블로 상속되기에 상황에 따라 효율적인 설계가 가능하다.&lt;/p&gt;
 &lt;h2 id=&#34;데이터베이스-상속inherits-방법&#34; ke-size=&#34;size26&#34;&gt;2.데이터베이스 상속(Inherits) 방법&lt;/h2&gt;

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Transaction on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/transaction/</link>
+    <link>https://junhkang.com/tags/transaction/</link>
     <description>Recent content in Transaction on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 08 Mar 2024 15:27:32 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/transaction/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/transaction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 트랜잭션(Transaction)의 작동원리</title>
-      <link>http://localhost:1313/posts/67/</link>
+      <link>https://junhkang.com/posts/67/</link>
       <pubDate>Fri, 08 Mar 2024 15:27:32 +0000</pubDate>
-      <guid>http://localhost:1313/posts/67/</guid>
+      <guid>https://junhkang.com/posts/67/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/67/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/67/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;기본-트랜잭션의-개념-및-원리&#34; ke-size=&#34;size26&#34;&gt;1. 기본 트랜잭션의 개념 및 원리&lt;/h2&gt;
 &lt;p&gt;트랜잭션의 기본 개념과 사용 방법은 다음 포스트에서 확인이 가능하다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;[Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;&lt;/p&gt;
@@ -25,11 +25,11 @@
     </item>
     <item>
       <title>[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용</title>
-      <link>http://localhost:1313/posts/20/</link>
+      <link>https://junhkang.com/posts/20/</link>
       <pubDate>Tue, 10 Oct 2023 14:42:53 +0000</pubDate>
-      <guid>http://localhost:1313/posts/20/</guid>
+      <guid>https://junhkang.com/posts/20/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/20/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/20/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;트랜잭션transaction이란&#34; ke-size=&#34;size26&#34;&gt;1. 트랜잭션(Transaction)이란?&lt;/h2&gt;
 &lt;p&gt;트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순한 DML 작업의 롤백 용도뿐 아니라, 대용량 데이터 처리의 무결성, 에러발생 시, 여러 유저의 동시작업 등에서 사용된다.&lt;/p&gt;
 &lt;h2 id=&#34;트랜잭션-적용&#34; ke-size=&#34;size26&#34;&gt;2. 트랜잭션 적용&lt;/h2&gt;

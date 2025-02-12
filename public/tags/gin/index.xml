@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gin on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/gin/</link>
+    <link>http://localhost:50666/tags/gin/</link>
     <description>Recent content in Gin on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Sep 2023 19:45:36 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/gin/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/gin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] GIN인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/10/</link>
+      <link>http://localhost:50666/posts/10/</link>
       <pubDate>Wed, 13 Sep 2023 19:45:36 +0000</pubDate>
-      <guid>https://junhkang.com/posts/10/</guid>
+      <guid>http://localhost:50666/posts/10/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-gin-인덱스란&#34;&gt;1. GIN 인덱스란?&lt;/h2&gt;
 &lt;blockquote&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LLM on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/categories/llm/</link>
+    <link>http://localhost:50666/categories/llm/</link>
     <description>Recent content in LLM on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 17 Dec 2024 23:02:31 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/categories/llm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/categories/llm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[LLM] Quota discoveryengine.googleapis.com/documents exceeded.</title>
-      <link>https://junhkang.com/posts/122/</link>
+      <link>http://localhost:50666/posts/122/</link>
       <pubDate>Tue, 17 Dec 2024 23:02:31 +0000</pubDate>
-      <guid>https://junhkang.com/posts/122/</guid>
+      <guid>http://localhost:50666/posts/122/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-17%20%EC%98%A4%ED%9B%84%2010.49.42.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/122/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-17%20%EC%98%A4%ED%9B%84%2010.49.42.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;문제-발생&#34; ke-size=&#34;size23&#34;&gt;1. 문제 발생&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Quota discoveryengine.googleapis.com/documents exceeded.&lt;/p&gt;&lt;/blockquote&gt;
@@ -22,15 +22,15 @@
 &lt;p&gt;기본 리밋은 100만건이지만 더 많은 데이터를 저장하기 위해서는 할당량 수정 요청이 필요하다.&lt;/p&gt;
 &lt;h3 id=&#34;할당량-수정-요청&#34; ke-size=&#34;size23&#34;&gt;2. 할당량 수정 요청&lt;/h3&gt;
 &lt;h4 id=&#34;iam-관리자---할당량-및-시스템-한도&#34; ke-size=&#34;size20&#34;&gt;2-1. IAM &amp;amp; 관리자 -&amp;gt; 할당량 및 시스템 한도&lt;/h4&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/122/img.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;초과된-항목-선택&#34; ke-size=&#34;size20&#34;&gt;2-2. 초과된 항목 선택&lt;/h4&gt;
 &lt;p&gt;할당량 수정을 원하는 항목의 맨 오른쪽 메뉴 탭에서 할당량 변경을 선택할 수 있다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LLM] Google Cloud Discovery Engine 데이터 스토어 업로드 포맷</title>
-      <link>https://junhkang.com/posts/121/</link>
+      <link>http://localhost:50666/posts/121/</link>
       <pubDate>Mon, 16 Dec 2024 22:47:00 +0000</pubDate>
-      <guid>https://junhkang.com/posts/121/</guid>
+      <guid>http://localhost:50666/posts/121/</guid>
       <description>&lt;hr&gt;
 &lt;h3 id=&#34;google-cloud-discovery-engine이란&#34; ke-size=&#34;size23&#34;&gt;1. Google Cloud Discovery Engine이란?&lt;/h3&gt;
 &lt;p&gt;Google Cloud Discovery Engine은 구글 클라우드 플랫폼에서 제공하는 검색 및 추천 서비스로, 웹사이트나 앱 내에서 사용자가 원하는 정보를 쉽고 빠르게 찾을 수 있도록 도와주는 서비스로 다음과 같은 특징을 가진다.&lt;/p&gt;

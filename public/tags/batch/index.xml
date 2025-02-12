@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Batch on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/batch/</link>
+    <link>http://localhost:50666/tags/batch/</link>
     <description>Recent content in Batch on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 19 Oct 2023 18:20:45 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/batch/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/batch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)</title>
-      <link>https://junhkang.com/posts/32/</link>
+      <link>http://localhost:50666/posts/32/</link>
       <pubDate>Thu, 19 Oct 2023 18:20:45 +0000</pubDate>
-      <guid>https://junhkang.com/posts/32/</guid>
+      <guid>http://localhost:50666/posts/32/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/32/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;itemreader란&#34; ke-size=&#34;size26&#34;&gt;1. ItemReader란?&lt;/h2&gt;
 &lt;p&gt;스프링 배치의 ItemReader는 다음과 같은 과정을 거쳐 데이터를 처리한다.
  &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/32/img_1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;대부분의 데이터 형태는 이미 ItemReader로 제공하고 있기에 ItemReader, ItemStream 인터페이스 자체를 구현할 필요는 없다.&lt;/p&gt;
 &lt;p&gt;ItemReader는 Chunk 기반 트랜잭션을 다루며 Cursor, Paging 가 대표적인 2가지 방식이다.&lt;/p&gt;
 &lt;h2 id=&#34;cursor-paging-형식&#34; ke-size=&#34;size26&#34;&gt;2. Cursor, Paging 형식&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;cursor기반-itemreader&#34; ke-size=&#34;size23&#34;&gt;2-1. Cursor기반 ItemReader&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;JDBC ResultSet의 기본 기능이다.&lt;/li&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Foreign on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/foreign/</link>
+    <link>http://localhost:50666/tags/foreign/</link>
     <description>Recent content in Foreign on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 22 Feb 2024 18:28:23 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/foreign/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/foreign/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 외래키(Foreign Keys) 개념, 사용법, 장단점, 적용검토</title>
-      <link>https://junhkang.com/posts/64/</link>
+      <link>http://localhost:50666/posts/64/</link>
       <pubDate>Thu, 22 Feb 2024 18:28:23 +0000</pubDate>
-      <guid>https://junhkang.com/posts/64/</guid>
+      <guid>http://localhost:50666/posts/64/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/64/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/64/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;foreign-key-외래키란&#34; ke-size=&#34;size26&#34;&gt;1. Foreign Key 외래키란?&lt;/h2&gt;
 &lt;p&gt;Foreign key constraint 외래키 제약은 특정 칼럼 혹은 칼럼들의 값이 다른 테이블의 특정 row와 매칭되어야 하는 제약조건이다. 이를 두 관련 테이블 사이의 참조 무결성 (referential integrity)를 유지한다고 말한다. 그렇게 복잡한 개념은 아니니 바로 사용법을 확인해 보도록 하자&lt;/p&gt;
 &lt;h2 id=&#34;예제&#34; ke-size=&#34;size26&#34;&gt;2. 예제&lt;/h2&gt;
@@ -23,11 +23,11 @@
     </item>
     <item>
       <title>[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)</title>
-      <link>https://junhkang.com/posts/21/</link>
+      <link>http://localhost:50666/posts/21/</link>
       <pubDate>Tue, 10 Oct 2023 15:41:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/21/</guid>
+      <guid>http://localhost:50666/posts/21/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/21/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/21/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;postgresql-제약조건-constrant란&#34; ke-size=&#34;size26&#34;&gt;PostgreSQL 제약조건 (Constrant)란?&lt;/h2&gt;
 &lt;p&gt;데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.&lt;/p&gt;
 &lt;p&gt;제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.

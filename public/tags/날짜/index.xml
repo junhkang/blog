@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>날짜 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/%EB%82%A0%EC%A7%9C/</link>
+    <link>http://localhost:50666/tags/%EB%82%A0%EC%A7%9C/</link>
     <description>Recent content in 날짜 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 02 May 2024 17:53:29 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/%EB%82%A0%EC%A7%9C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/%EB%82%A0%EC%A7%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 문자열에서 날짜/시간 변환 및 처리 과정</title>
-      <link>https://junhkang.com/posts/88/</link>
+      <link>http://localhost:50666/posts/88/</link>
       <pubDate>Thu, 02 May 2024 17:53:29 +0000</pubDate>
-      <guid>https://junhkang.com/posts/88/</guid>
+      <guid>http://localhost:50666/posts/88/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문자열에서-날짜시간으로의-변환&#34; ke-size=&#34;size26&#34;&gt;1. 문자열에서 날짜/시간으로의 변환&lt;/h2&gt;
 &lt;p&gt;PostgreSQL의 날짜형태의 칼럼을 조회할 때, 종종 정확한 날짜 형태를 사용하는 것이 아닌, 문자열, 혹은 숫자 형태로 간편하게 조회하는 경우가 있다. 예를 들어 2024/05/02 이후의 값을 조회할 때 다음 두 가지 조회 방법을 사용할 수 있다.&lt;/p&gt;

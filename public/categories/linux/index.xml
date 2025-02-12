@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Linux on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/categories/linux/</link>
+    <link>http://localhost:50666/categories/linux/</link>
     <description>Recent content in Linux on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 03 Jan 2025 15:38:03 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[LINUX] SFTP 초기화 오류 : Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel</title>
-      <link>https://junhkang.com/posts/124/</link>
+      <link>http://localhost:50666/posts/124/</link>
       <pubDate>Fri, 03 Jan 2025 15:38:03 +0000</pubDate>
-      <guid>https://junhkang.com/posts/124/</guid>
+      <guid>http://localhost:50666/posts/124/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel. Message [4: Received message is too long: 458961709]]&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;문제상황&#34; ke-size=&#34;size23&#34;&gt;1. 문제상황&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;기존에 잘 작동하던 SFTP를 활용한 CI/CD가 갑자기 작동하지 않는다. 에러 메시지에 따르면 약 438mb의 메시지를 받은 상황인데, 파일을 실제로 업로드하는 시점이 아닌 SFTP연결 시도를 하는 순간(SSH연결을 설정하고 초기화하는 부분)에도 이렇게 큰 응답을 받는 상황이었다.&lt;/p&gt;
 &lt;h3 id=&#34;원인파악&#34; ke-size=&#34;size23&#34;&gt;2. 원인파악&lt;/h3&gt;
 &lt;p&gt;SSH 접속시, 서버 간 구분을 주기 위해 ~/. bashrc의 설정을 통해 웰컴메시지를 출력하는 부분이 문제였다. (다음 포스트에서 진행한 서버별 웰컴 메시지 등록 부분에서 작업과정 확인 가능)&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Linux] JDK 여러 버전 적용하기, 여러개의 패키지 관리하기 (update-alternatives)</title>
-      <link>https://junhkang.com/posts/60/</link>
+      <link>http://localhost:50666/posts/60/</link>
       <pubDate>Mon, 05 Feb 2024 18:08:28 +0000</pubDate>
-      <guid>https://junhkang.com/posts/60/</guid>
+      <guid>http://localhost:50666/posts/60/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21을 서버에 적용하면서, 기존 버전과 동시에 사용해야 하는 상황 발생&lt;/p&gt;
@@ -41,16 +41,16 @@
     </item>
     <item>
       <title>[Linux] 스왑 메모리(Swap Memory)의 개념과 적용방법</title>
-      <link>https://junhkang.com/posts/34/</link>
+      <link>http://localhost:50666/posts/34/</link>
       <pubDate>Mon, 23 Oct 2023 15:58:46 +0000</pubDate>
-      <guid>https://junhkang.com/posts/34/</guid>
+      <guid>http://localhost:50666/posts/34/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;리눅스-swap-메모리-설정-예제는-ec2-환경에서-진행&#34; ke-size=&#34;size26&#34;&gt;1. 리눅스 Swap 메모리 설정 (예제는 EC2 환경에서 진행)&lt;/h2&gt;
 &lt;h3 id=&#34;swap-메모리-확인&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size23&#34;&gt;1-1. Swap 메모리 확인&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;swapon -s 
 
 free -h
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/34/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-23%20%EC%98%A4%ED%9B%84%203.25.49.png&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/34/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-23%20%EC%98%A4%ED%9B%84%203.25.49.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;shared =&lt;/strong&gt; 하나의 프로세스에서 다른 프로세스의 데이터에 효율적으로 접근하기 위해 사용하는 메모리&lt;br&gt;
 &lt;strong&gt;buff/cache =&lt;/strong&gt; 버퍼와 캐시를 위해 사용하는 메모리, 커널이 성능향상을 위해 캐시 영역으로 사용되는 메모리&lt;br&gt;
@@ -59,9 +59,9 @@ free -h
     </item>
     <item>
       <title>[Linux] 심볼릭 링크 (Symbolic link) 설정하기</title>
-      <link>https://junhkang.com/posts/16/</link>
+      <link>http://localhost:50666/posts/16/</link>
       <pubDate>Mon, 09 Oct 2023 11:46:58 +0000</pubDate>
-      <guid>https://junhkang.com/posts/16/</guid>
+      <guid>http://localhost:50666/posts/16/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;심볼릭-링크-symbolic-link란&#34; ke-size=&#34;size26&#34;&gt;1. 심볼릭 링크 (Symbolic link)란?&lt;/h2&gt;
 &lt;p&gt;링크를 걸어 원본 파일을 직접 사용하는 것과 같은 효과를 낸다. 특정 폴더에 링크를 걸어 NAS, library 원본 파일을 사용하거나 톰캣 빌듯이 상위경로의 파일을 사용하고자 할 때 사용한다. 심볼릭 링크는 단순히 원본파일을 가리키도록 링크만 연결시켜둔 것으로 원본파일을 가리키기만 하고 있으므로 원본파일의 크기와 무관하며 원본파일이 삭제되어 존재하지 않을 경우에 빨간색으로 링크파일의 원본파일이 없다는 것을 알려준다.
@@ -80,7 +80,7 @@ free -h
 &lt;li&gt;t : 링크파일을 생성할 디렉토리를 지정한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;심볼릭-링크-생성directory&#34; ke-size=&#34;size23&#34;&gt;     2-2. 심볼릭 링크 생성(directory)&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/16/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%EC%A0%84%2011.35.53.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/16/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%EC%A0%84%2011.35.53.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

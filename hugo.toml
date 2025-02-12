@@ -32,7 +32,7 @@ minifyOutput = true
 
 
 [params.analytics.google]
-  SiteVerificationTag = "G-LE7D0WZLFJ"
+  SiteVerificationTag = "G-PV53RL6R3L"
 
 # 검색 기능 활성화
 [params.search]

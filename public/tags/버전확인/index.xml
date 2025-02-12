@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>버전확인 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/%EB%B2%84%EC%A0%84%ED%99%95%EC%9D%B8/</link>
+    <link>http://localhost:50666/tags/%EB%B2%84%EC%A0%84%ED%99%95%EC%9D%B8/</link>
     <description>Recent content in 버전확인 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 11 Apr 2024 13:31:50 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/%EB%B2%84%EC%A0%84%ED%99%95%EC%9D%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/%EB%B2%84%EC%A0%84%ED%99%95%EC%9D%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 버전 확인: 필요성과 4가지 방법</title>
-      <link>https://junhkang.com/posts/85/</link>
+      <link>http://localhost:50666/posts/85/</link>
       <pubDate>Thu, 11 Apr 2024 13:31:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/85/</guid>
+      <guid>http://localhost:50666/posts/85/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;버전-확인이-왜-필요한가&#34; ke-size=&#34;size26&#34;&gt;1. 버전 확인이 왜 필요한가&lt;/h2&gt;
 &lt;p&gt;PostgreSQL를 안정적으로 운영하기 위해서는 보안 패치와 업데이트를 최신 상태로 유지하는 것이 중요하다. 또한 특정 기능이나 호환성 요구 사항을 충족하기 위해서도 버전 정보를 알고 있어야 한다. 이를 위해 현재 버전 및 공식 문서의 버전 관리 내용을 주기적으로 확인해주어야 한다. &lt;/p&gt;

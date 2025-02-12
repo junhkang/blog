@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Eip on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/eip/</link>
+    <link>http://localhost:1313/tags/eip/</link>
     <description>Recent content in Eip on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 09 Oct 2023 14:41:55 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/eip/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/eip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[AWS] Elastic IP (탄력적 IP)의 개념 및 적용</title>
-      <link>https://junhkang.com/posts/18/</link>
+      <link>http://localhost:1313/posts/18/</link>
       <pubDate>Mon, 09 Oct 2023 14:41:55 +0000</pubDate>
-      <guid>https://junhkang.com/posts/18/</guid>
+      <guid>http://localhost:1313/posts/18/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/18/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/18/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;elastic-ip-탄력적-ip-란&#34; ke-size=&#34;size26&#34;&gt;1. Elastic IP (탄력적 IP) 란?&lt;/h2&gt;
 &lt;p&gt;EIP(Elastic Ip Address)란 인터넷으로 접속이 가능한 공인 IP를 할당하여, 인스턴스에 탈부착할 수 있는 서비스이다. 인스턴스 혹은 네트워크 인터페이스에 연결이 가능하며 삭제 전까지 해당 IP를 유지할 수 있다.
  &lt;/p&gt;
 &lt;p&gt;EC2 인스턴스 생성 시 공인 IP 사용 설정을 Enable로 변경 (default는 Disable)할 경우 인스턴스 자체에 공인 IP를 할당받을 수 있는데 왜 굳이 Elastic IP를 사용하는 것일까?&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/18/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%ED%9B%84%201.56.51.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/18/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%ED%9B%84%201.56.51.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;인스턴스가 stop 후 재시작될 경우 공인 IP가 변경되는 경우가 발생한다. 인스턴스 자체의 공인 IP가 변경될 경우 큰 문제로 이어질 수 있어&lt;/p&gt;</description>
     </item>
   </channel>

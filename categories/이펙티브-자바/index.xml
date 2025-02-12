@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>이펙티브 자바 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/</link>
+    <link>http://localhost:1313/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/</link>
     <description>Recent content in 이펙티브 자바 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Sat, 29 Jun 2024 18:13:10 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[이펙티브 자바] 10. equals는 일반 규약을 지켜 재정의하라</title>
-      <link>https://junhkang.com/posts/90/</link>
+      <link>http://localhost:1313/posts/90/</link>
       <pubDate>Sat, 29 Jun 2024 18:13:10 +0000</pubDate>
-      <guid>https://junhkang.com/posts/90/</guid>
+      <guid>http://localhost:1313/posts/90/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;equals를 단순히 재정의 하는 것은 쉽지만 함정이 많다. 이번 장에서는 equals를 재정의 할 때 고려해야 하는 점과, 재정의가 완료된 후 확인해야 하는 부분들에 대해 다루고 있다.&lt;/p&gt;
@@ -33,9 +33,9 @@
     </item>
     <item>
       <title>[이펙티브 자바] 9. try-finally 보다는 try-with-resources를 사용하라</title>
-      <link>https://junhkang.com/posts/81/</link>
+      <link>http://localhost:1313/posts/81/</link>
       <pubDate>Sat, 06 Apr 2024 19:32:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/81/</guid>
+      <guid>http://localhost:1313/posts/81/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;자바 라이브러리에는 close 메서드를 직접 호출해서 닫아줘야 하는 자원이 많다. 대표적으로 InputStream, ouputStream java.sql.connection 등이 있으며 해당 자원들은 클라이언트에서 놓치기 쉬워 예측할 수 없는 성능 문제로 이어지곤 한다. 이중 상당 수가 finalizer를 안정망으로 사용하여 문제에 대비하고 있긴 하지만, 완전히 안전하다고 할 수 없다. (해당 내용은 다음 포스트에서 확인 가능)&lt;/p&gt;
@@ -55,21 +55,21 @@
     </item>
     <item>
       <title>[이펙티브 자바] 8. finalizer 와 cleaner 사용을 피하라</title>
-      <link>https://junhkang.com/posts/80/</link>
+      <link>http://localhost:1313/posts/80/</link>
       <pubDate>Sun, 31 Mar 2024 17:15:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/80/</guid>
+      <guid>http://localhost:1313/posts/80/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;finalizer와-cleaner란&#34; ke-size=&#34;size26&#34;&gt;1. finalizer와 cleaner란?&lt;/h2&gt;
 &lt;p&gt;finalizer와 cleaner는 자바의 2가지 객체 소멸자이다. finalizer는 &lt;strong&gt;Object.finalize()&lt;/strong&gt; 메서드를 오버라이딩 함으로써 사용된다. 작동 여부 및 시점을 예측할 수 없고 상황에 따라 위험할 수 있어 일반적으로 불필요하며, 기능의 잘못된 동작, 낮은 성능, 이식성 문제의 원인이 되기도 한다. 기본적으로는 사용하면 안 되고, 자바 9에서는 finalizer를 deprecated API로 지정하고, &lt;strong&gt;java.lang.ref.Cleaner&lt;/strong&gt; 클래스를 사용하여 구현된 cleaner를 대안으로 제시하였으나, cleaner 또한 finalizer보다는 덜 위험 하지만 여전히 예측불가하고 성능이 좋지 않아 일반적으로 불필요하다. &lt;/p&gt;</description>
     </item>
     <item>
       <title>[이펙티브 자바] 7. 다 쓴 객체 참조를 해제하라</title>
-      <link>https://junhkang.com/posts/78/</link>
+      <link>http://localhost:1313/posts/78/</link>
       <pubDate>Wed, 27 Mar 2024 17:04:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/78/</guid>
+      <guid>http://localhost:1313/posts/78/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/78/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/78/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;메모리-관리&#34; ke-size=&#34;size26&#34;&gt;1. 메모리 관리&lt;/h2&gt;
 &lt;p&gt;자바에선 가비지 컬렉터가 다 쓴 객체를 알아서 회수해 가기에 편리하고 효율적으로 메모리를 관리할 수 있다. 하지만 메모리 관리에 신경 쓰지 않아도 된다는 말은 절대 아니다. 메모리를 적절하게 관리하지 못하면 메모리 누수가 발생하고 심하면 프로그램이 종료될 수 있다.
  &lt;/p&gt;
@@ -103,11 +103,11 @@
     </item>
     <item>
       <title>[이펙티브 자바] 6. 불필요한 객체 생성을 피하라</title>
-      <link>https://junhkang.com/posts/77/</link>
+      <link>http://localhost:1313/posts/77/</link>
       <pubDate>Tue, 26 Mar 2024 18:25:25 +0000</pubDate>
-      <guid>https://junhkang.com/posts/77/</guid>
+      <guid>http://localhost:1313/posts/77/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/77/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/77/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;객체의-재사용&#34; style=&#34;color: #000000;&#34; ke-size=&#34;size26&#34;&gt;1. 객체의 재사용&lt;/h2&gt;
 &lt;p&gt;똑같은 객체를 매번 새로 생성하는 것보다 하나를 생성 후 재사용하는 것이 훨씬 효율적이다. 특히 불변 객체는 언제든 재사용이 가능하다. 다음은 객체 생성 시 사용하면 안 되는 극단적인 예이다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;String s = new String(&amp;#34;bikini&amp;#34;);
@@ -115,11 +115,11 @@
     </item>
     <item>
       <title>[이펙티브 자바] 5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라</title>
-      <link>https://junhkang.com/posts/76/</link>
+      <link>http://localhost:1313/posts/76/</link>
       <pubDate>Mon, 25 Mar 2024 14:36:42 +0000</pubDate>
-      <guid>https://junhkang.com/posts/76/</guid>
+      <guid>http://localhost:1313/posts/76/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/76/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/76/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;한 클래스 내에서 여러 개의 자원에 의존하여 사용되는 경우에 의존 객체 주입을 통해 유연성과 테스트 용이성을 개선하는 내용이다. 스프링의 의존성 주입 개념을 생각해 본다면 이미 당연하게 사용하고 있는 경우가 많을 것이지만, 의존 객체 주입의 장점을 다시 한번 생각해 볼 수 있는 내용이다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/42&#34;&gt;IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&lt;/a&gt;&lt;/p&gt;
@@ -127,11 +127,11 @@
     </item>
     <item>
       <title>[이펙티브 자바] 4. 인스턴스화를 막으려거든 private 생성자를 사용하라</title>
-      <link>https://junhkang.com/posts/62/</link>
+      <link>http://localhost:1313/posts/62/</link>
       <pubDate>Sun, 18 Feb 2024 15:44:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/62/</guid>
+      <guid>http://localhost:1313/posts/62/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/62/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/62/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;단순히 정적 메서드와 정적 필드만을 담은 클래스를 생성하는 경우가 있다. 객체 지향적 사고하지 않는 이들이 종종 남용하지만 쓰임새는 분명히 존재한다.
  &lt;/p&gt;
@@ -146,22 +146,22 @@
     </item>
     <item>
       <title>[이펙티브 자바] 3. private 생성자나 열거 타입으로 싱글턴임을 보장하라</title>
-      <link>https://junhkang.com/posts/55/</link>
+      <link>http://localhost:1313/posts/55/</link>
       <pubDate>Wed, 24 Jan 2024 13:04:41 +0000</pubDate>
-      <guid>https://junhkang.com/posts/55/</guid>
+      <guid>http://localhost:1313/posts/55/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/55/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/55/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;싱글턴이란 인스턴스를 하나만 생성할 수 있는 클래스로, 함수와 같은 무상태 (stateless) 객체나 설계상 유일해야 하는 시스템 컴포넌트, 혹은 익숙한 스프링 빈이 대표적인 싱글턴의 예로 들 수 있다. 클래스를 싱글턴으로 만들 경우, (타입을 인터페이스로 정의한 후 인터페이스를 구현해서 만든 싱글턴이 아니라면) 싱글턴 인스턴스를 Mock으로 대체할 수 없기에 테스트가 어려울 수 있다.
  &lt;/p&gt;
 &lt;p&gt;싱글턴을 만드는 보편적인 두가지 방식이 있는데, 두 방식 모두생성자는 private으로 감춰두고 유일한 인스턴스에 접근할 수 있는 수단으로 public static 멤버를 하나 마련해 둔다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[이펙티브 자바] 2. 생성자에 매개변수가 많다면 빌더를 고려하라</title>
-      <link>https://junhkang.com/posts/54/</link>
+      <link>http://localhost:1313/posts/54/</link>
       <pubDate>Tue, 23 Jan 2024 15:38:26 +0000</pubDate>
-      <guid>https://junhkang.com/posts/54/</guid>
+      <guid>http://localhost:1313/posts/54/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/54/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/54/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;정적팩토리와 생성자에는 매개변수가 많을 경우 대응이 힘들다는 동일한 제약이 있다. 특히 매개변수가 굉장히 많은데 대부분이 고정값인 경우 일반적인 방법으로는 깔끔한 대응이 힘들다. 유연한 대응을 위해 보통 점층적 생성자패턴, 자바 빈즈 패턴, 빌더 패턴을 사용하는데, 이번 챕터에서는 빌더 패턴의 장점을 강조하고 있다. 각 패턴의 장단점을 자세히 살펴보고 빌더 패턴의 장점을 알아보자&lt;/p&gt;
 &lt;h2 id=&#34;점층적-생성자-패턴&#34; ke-size=&#34;size26&#34;&gt;1. 점층적 생성자 패턴&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -173,15 +173,15 @@
     </item>
     <item>
       <title>[이펙티브 자바] 1. 생성자 대신 정적 팩터리 메서드를 고려하라</title>
-      <link>https://junhkang.com/posts/53/</link>
+      <link>http://localhost:1313/posts/53/</link>
       <pubDate>Thu, 18 Jan 2024 15:51:04 +0000</pubDate>
-      <guid>https://junhkang.com/posts/53/</guid>
+      <guid>http://localhost:1313/posts/53/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;생성자-대신-정적-팩토리-메서드를-고려하라&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;생성자 대신 정적 팩토리 메서드를 고려하라&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;클라이언트가 클래스 인스턴스를 얻는 방법에는 전통적인 방법 중 하나는  public이다. 하지만 &lt;strong&gt;정적 팩터리 메서드&lt;/strong&gt;(&lt;strong&gt;static factory method&lt;/strong&gt;)도 꼭 알아두어야한다.&lt;/p&gt;
 &lt;h2 id=&#34;정적-팩터리-메서드란&#34; ke-size=&#34;size26&#34;&gt;1. 정적 팩터리 메서드란?&lt;/h2&gt;
 &lt;p&gt;그렇다면 정적 팩터리 메서드는 무엇일까? 간단히 말해 객체 생성의 역할을 하는 클래스 메서드로, static 메서드를 통해 인스턴스를 생성하는 것이다. 다음은 java의 기본 Boolean 클래스 내 정적 팩토리 메서드의 간단한 예시이다. &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/53/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-01-17%20%EC%98%A4%ED%9B%84%205.02.29.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/53/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-01-17%20%EC%98%A4%ED%9B%84%205.02.29.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;이팩티브 자바에서는 정적 팩토리 메서드를 사용할 시의 5가지 장점과 2가지 단점에 대해 서술하고 있어 자세한 비교를 통해 하나하나 알아보려 한다.&lt;/p&gt;</description>
     </item>
   </channel>

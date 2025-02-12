@@ -2,20 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SP-GIST on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/sp-gist/</link>
+    <link>https://junhkang.com/tags/sp-gist/</link>
     <description>Recent content in SP-GIST on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Sep 2023 18:11:46 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/sp-gist/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/sp-gist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] SP-GiST인덱스의 원리 및 특징</title>
-      <link>http://localhost:1313/posts/9/</link>
+      <link>https://junhkang.com/posts/9/</link>
       <pubDate>Wed, 13 Sep 2023 18:11:46 +0000</pubDate>
-      <guid>http://localhost:1313/posts/9/</guid>
+      <guid>https://junhkang.com/posts/9/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;sp-gist-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. SP-GiST 인덱스란?&lt;/h2&gt;
-&lt;p&gt;Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=&amp;ldquo;color: #333333; font-family: -apple-system, BlinkMacSystemFont, &amp;lsquo;Helvetica Neue&amp;rsquo;, &amp;lsquo;Apple SD Gothic Neo&amp;rsquo;, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;&amp;rdquo;}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=&amp;ldquo;background-color: #fdfdfd; color: #000000; text-align: start;&amp;quot;}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.&lt;/p&gt;</description>
+&lt;p&gt;Space-Partitioned Generalized Search Tree의 약자이다. GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. 기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.&lt;/p&gt;
+&lt;h3 id=&#34;sp-gist-인덱스-생성&#34; style=&#34;color: #000000; text-align: start;&#34; ke-size=&#34;size23&#34;&gt;1-1. SP-GiST 인덱스 생성&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE INDEX idx_spgist_example ON example_table USING spgist (column1);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;장점&#34; ke-size=&#34;size23&#34;&gt;1-2. 장점&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;다양한 종류의 데이터 타입에 사용 가능&lt;/strong&gt; : 기하학, IP, 다른 복잡한 데이터 타입&lt;br&gt;
+&lt;strong&gt;복잡한 쿼리에 사용 가능&lt;/strong&gt; : 복잡한 데이터구조, 쿼리에 사용 적합하도록 설계
+&lt;strong&gt;빠른 검색 효율&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

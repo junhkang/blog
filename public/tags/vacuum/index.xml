@@ -2,41 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vacuum on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/vacuum/</link>
+    <link>https://junhkang.com/tags/vacuum/</link>
     <description>Recent content in Vacuum on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 09 Oct 2023 13:33:14 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/vacuum/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/vacuum/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] Vacuum 개념 및 적절한 사용</title>
-      <link>http://localhost:1313/posts/17/</link>
+      <link>https://junhkang.com/posts/17/</link>
       <pubDate>Mon, 09 Oct 2023 13:33:14 +0000</pubDate>
-      <guid>http://localhost:1313/posts/17/</guid>
+      <guid>https://junhkang.com/posts/17/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/17/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/17/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;vacuum-이란&#34; ke-size=&#34;size26&#34;&gt;1. Vacuum 이란?&lt;/h2&gt;
 &lt;p&gt;Vacuum은 postgresql에서 dead tuple이 차지하는 저장공간을 회수한다. 일반적으로 Postgresql에서 update, delete tuple 은 물리적으로 삭제되지 않으며 vacuum이 완료될 때까지 계속 존재한다. &lt;/p&gt;
 &lt;p&gt;(update, delete 시 tuple의 순환은 MVCC 개념에서 확인할 수 있다.)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/152023.10.06&#34;&gt;https://junhkang.tistory.com/152023.10.06&lt;/a&gt; - [Postgresql] - [PostgreSQL] MVCC (Multi-Version Concurrency Control)&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/15&#34;&gt;https://junhkang.tistory.com/15&lt;/a&gt;
- &lt;/p&gt;
-&lt;p&gt;[PostgreSQL] MVCC (Multi-Version Concurrency Control)&lt;/p&gt;
-&lt;p&gt;1. MVCC란? 동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/15&#34;&gt;[PostgreSQL] MVCC (Multi-Version Concurrency Control)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;그렇기 때문에 특히 자주 업데이트되는 테이블의 경우 주기적인 Vacuum 수행이 필요하다. Vacuum은 특정 테이블에 한해서도 실행이 가능하고, 테이블을 지정하지 않는다면 전체 테이블 (권한을 보유한)에 대해서 실행된다.&lt;/p&gt;
+&lt;h2 id=&#34;vacuum-명령어&#34; style=&#34;color: #000000; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. Vacuum 명령어&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- DB 전체 full vacuum
+vacuum full analyze;
+
+-- DB 전체 간단하게 실행
+vacuum verbose analyze;
+
+-- 해당 테이블만 간단하게 실행
+vacuum analyze [테이블 명];
+
+-- 특정 테이블만 full vacuum
+vacuum full [테이블 명];
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;vacuum-상세-옵션&#34; ke-size=&#34;size26&#34;&gt;3. Vacuum 상세 옵션&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VACUUM [ ( option [, ...] ) ] [ table_and_columns [, ...] ]
+VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] [ ANALYZE ] [ table_and_columns [, ...] ]
+
+where option can be one of:
+
+    FULL [ boolean ]
+    FREEZE [ boolean ]
+    VERBOSE [ boolean ]
+    ANALYZE [ boolean ]
+    DISABLE_PAGE_SKIPPING [ boolean ]
+    SKIP_LOCKED [ boolean ]
+    INDEX_CLEANUP { AUTO | ON | OFF }
+    PROCESS_MAIN [ boolean ]
+    PROCESS_TOAST [ boolean ]
+    TRUNCATE [ boolean ]
+    PARALLEL integer
+    SKIP_DATABASE_STATS [ boolean ]
+    ONLY_DATABASE_STATS [ boolean ]
+    BUFFER_USAGE_LIMIT [ size ]
+
+and table_and_columns is:
+
+    table_name [ ( column_name [, ...] ) ]
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;vacuum-analyze&#34; ke-size=&#34;size26&#34;&gt;4. Vacuum analyze&lt;/h2&gt;
+&lt;p&gt;Vacuum analyze 는 vacuum 후 테이블 별로 analyze를 수행(통계정보 수집)하기에 유지보수에 원활하다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] MVCC (Multi-Version Concurrency Control)</title>
-      <link>http://localhost:1313/posts/15/</link>
+      <link>https://junhkang.com/posts/15/</link>
       <pubDate>Fri, 06 Oct 2023 18:53:47 +0000</pubDate>
-      <guid>http://localhost:1313/posts/15/</guid>
+      <guid>https://junhkang.com/posts/15/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/15/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/15/img.png&#34;&gt;
  &lt;/p&gt;
-&lt;p&gt; &lt;/p&gt;
 &lt;h2 id=&#34;1-mvcc란&#34;&gt;1.  MVCC란?&lt;/h2&gt;
-&lt;p&gt;[동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터베이스를 쿼리 하는 동안 데이터의 현재 상태에 관계없이 얼마 전의 데이터 스냅샷을 볼 수 있음을 의미한다. ]{style=&amp;ldquo;background-color: #fdfdfd; color: #000000; text-align: start;&amp;quot;}데이터를 쿼리 하기 위해 트랜잭션을 만들었다면 해당 Transaction은 데이터의 스냅샷을 보고 있는 것이다.
- &lt;/p&gt;
-&lt;p&gt;동일한 행에 서로 다른 트랜잭션이 동시에 업데이트를 시도할 때, 일관성 없는 데이터가 조회되지 않도록 트랜잭션을 보호하여 각 데이터베이스 세션에 대한 트랜잭션 격리를 제공한다. [Multiversion과 Lock model의 주요 차이점은 MVCC에서 데이터 read를 위해 획득한 lock과 데이터 쓰기를 위해 획득한 lock이 충돌하지 않는다는 것이다. (따라서 read와 write는 서로 block 하지 않는다.) ]{style=&amp;ldquo;background-color: #fdfdfd; color: #000000; text-align: start;&amp;rdquo;}[이러한 방식을 통해서 Reading 하는 작업에 대해서 Lock을 걸지 않기에 높은 성능을 얻을 수 있게 된다.]{style=&amp;ldquo;background-color: #ffffff; color: #212529; text-align: start;&amp;rdquo;}[]{style=&amp;ldquo;background-color: #ffffff; color: #212529; text-align: start;&amp;rdquo;}&lt;/p&gt;</description>
+&lt;p&gt;동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터베이스를 쿼리 하는 동안 데이터의 현재 상태에 관계없이 얼마 전의 데이터 스냅샷을 볼 수 있음을 의미한다. 데이터를 쿼리 하기 위해 트랜잭션을 만들었다면 해당 Transaction은 데이터의 스냅샷을 보고 있는 것이다.&lt;/p&gt;
+&lt;p&gt;동일한 행에 서로 다른 트랜잭션이 동시에 업데이트를 시도할 때, 일관성 없는 데이터가 조회되지 않도록 트랜잭션을 보호하여 각 데이터베이스 세션에 대한 트랜잭션 격리를 제공한다. Multiversion과 Lock model의 주요 차이점은 MVCC에서 데이터 read를 위해 획득한 lock과 데이터 쓰기를 위해 획득한 lock이 충돌하지 않는다는 것이다. (따라서 read와 write는 서로 block 하지 않는다.) 이러한 방식을 통해서 Reading 하는 작업에 대해서 Lock을 걸지 않기에 높은 성능을 얻을 수 있게 된다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

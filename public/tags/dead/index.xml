@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dead on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/dead/</link>
+    <link>https://junhkang.com/tags/dead/</link>
     <description>Recent content in Dead on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 11 Sep 2023 18:02:56 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/dead/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/dead/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Postgresql Lock이란? (조회 및 kill, Dead lock)</title>
-      <link>http://localhost:1313/posts/4/</link>
+      <link>https://junhkang.com/posts/4/</link>
       <pubDate>Mon, 11 Sep 2023 18:02:56 +0000</pubDate>
-      <guid>http://localhost:1313/posts/4/</guid>
+      <guid>https://junhkang.com/posts/4/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/4/img.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;lock-확인방법&#34; ke-size=&#34;size26&#34;&gt;[1. Lock 확인방법]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Sans Demilight&amp;rsquo;, &amp;lsquo;Noto Sans KR&amp;rsquo;;&amp;rdquo;}&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/4/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1-lock-확인방법&#34;&gt;1. Lock 확인방법&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT PSAT.RELNAME,
        PL.LOCKTYPE,
        PL.PID,
@@ -24,14 +24,24 @@
 FROM PG_LOCKS PL,
      PG_STAT_ALL_TABLES PSAT
 WHERE PL.RELATION = PSAT.RELID
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;lock-kill-방법&#34; ke-size=&#34;size26&#34;&gt;[2. Lock Kill 방법]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Sans Demilight&amp;rsquo;, &amp;lsquo;Noto Sans KR&amp;rsquo;;&amp;rdquo;}&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;2-lock-kill-방법&#34;&gt;2. Lock Kill 방법&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT PG_CANCEL_BACKEND([PID])
 
 SELECT PG_TERMINATE_BACKEND([PID])
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;[Lock 리스트에서 조회된 PID를 넣고 cancel, 혹은 terminate 시켜주면 된다. cancel은 해당 프로세스만을, terminate는 상위 프로세스들까지 종료시킨다.]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Sans Demilight&amp;rsquo;, &amp;lsquo;Noto Sans KR&amp;rsquo;;&amp;rdquo;}&lt;/p&gt;
-&lt;h2 id=&#34;lock-이란-postgresql&#34; ke-size=&#34;size26&#34;&gt;[3. Lock 이란? (Postgresql)]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Sans Demilight&amp;rsquo;, &amp;lsquo;Noto Sans KR&amp;rsquo;;&amp;rdquo;}&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Lock 리스트에서 조회된 PID를 넣고 cancel, 혹은 terminate 시켜주면 된다. cancel은 해당 프로세스만을, terminate는 상위 프로세스들까지 종료시킨다.&lt;/p&gt;
+&lt;h2 id=&#34;3-lock-이란-postgresql&#34;&gt;3. Lock 이란? (Postgresql)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;[Postgresql은 다양한 종류의 lock 기능을 제공한다. 애플리케이션 단에서 제어도 가능하지만, 대부분 기본적인 SQL 실행 시 적절한 락을 자동실행시켜 관련 테이블의 무결성 유지한다.]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Sans Demilight&amp;rsquo;, &amp;lsquo;Noto Sans KR&amp;rsquo;;&amp;rdquo;}&lt;/p&gt;</description>
+&lt;p&gt;Postgresql은 다양한 종류의 lock 기능을 제공한다. 애플리케이션 단에서 제어도 가능하지만, 대부분 기본적인 SQL 실행 시 적절한 락을 자동실행시켜 관련 테이블의 무결성 유지한다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;테이블-단위-lock&#34; ke-size=&#34;size23&#34;&gt;&lt;strong&gt;3-1.  테이블 단위 Lock&lt;/strong&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;다음 락 들은 모두 테이블 단위의 락이며, 명칭과 상관없이 테이블 단위로 적용된다.&lt;/li&gt;
+&lt;li&gt;서로 다른 락이 충돌했을때의 상관관계에 의해 대기 상태로 돌입한다. (테이블 단위 락은 유형에 따라 서로 충돌여부가 다름)&lt;/li&gt;
+&lt;li&gt;한 테이블에는 2개의 트랜잭션이 동시에 락 적용 될 수 없다. (서로 충돌되지 않는 락은 여러 트랜잭션에 동시에 적용될 수 있다.)&lt;/li&gt;
+&lt;li&gt;특정 락은 self-conflicting 될 수 있다.
+(ex. access exclusive 락은 중첩불가 access share 락은 여러 트랜잭션에서 다중으로 적용될 수 있다.)&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/4/img_1.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

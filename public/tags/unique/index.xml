@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Unique on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/unique/</link>
+    <link>https://junhkang.com/tags/unique/</link>
     <description>Recent content in Unique on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 10 Oct 2023 15:41:50 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/unique/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/unique/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)</title>
-      <link>http://localhost:1313/posts/21/</link>
+      <link>https://junhkang.com/posts/21/</link>
       <pubDate>Tue, 10 Oct 2023 15:41:50 +0000</pubDate>
-      <guid>http://localhost:1313/posts/21/</guid>
+      <guid>https://junhkang.com/posts/21/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/21/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/21/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;postgresql-제약조건-constrant란&#34; ke-size=&#34;size26&#34;&gt;PostgreSQL 제약조건 (Constrant)란?&lt;/h2&gt;
 &lt;p&gt;데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.&lt;/p&gt;
 &lt;p&gt;제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.
  &lt;/p&gt;
-&lt;p&gt;1. #scrollPkPrimary Keys(PK)&lt;/p&gt;
-&lt;p&gt;2. #scrollFkForeign Keys(FK)&lt;/p&gt;
-&lt;p&gt;3. #scrollCheckCheck&lt;/p&gt;
-&lt;p&gt;4. #scrollNotNullNot-null&lt;/p&gt;
-&lt;p&gt;5. #scrollUniqueUnique&lt;/p&gt;
+&lt;p&gt;1. Primary Keys(PK)&lt;/p&gt;
+&lt;p&gt;2. Foreign Keys(FK)&lt;/p&gt;
+&lt;p&gt;3. Check&lt;/p&gt;
+&lt;p&gt;4. Not-null&lt;/p&gt;
+&lt;p&gt;5. Unique&lt;/p&gt;
 &lt;h2 id=&#34;primary-keys-pk&#34; ke-size=&#34;size26&#34;&gt;1. Primary Keys (PK)&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.&lt;/li&gt;
-&lt;li&gt;Not- null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.&lt;/li&gt;
+&lt;li&gt;Not null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.&lt;/li&gt;
 &lt;li&gt;PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.&lt;/li&gt;
 &lt;li&gt;B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;2023.09.12 - [Postgresql] - [PostgreSQL] B-tree 인덱스의 원리 및 특징&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/6&#34;&gt;[PostgreSQL] B-tree 인덱스의 원리 및 특징&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

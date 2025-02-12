@@ -2,9 +2,11 @@ baseURL = "https://junhkang.com/"
 languageCode = "ko"
 title = "Jun Kang's Blog"
 theme = "hugo-PaperMod"
+googleAnalytics = "G-LE7D0WZLFJ"
 
 # 페이지당 포스트 수 설정
-paginate = 5
+[pagination]
+  pagerSize = 5
 
 # 기존의 다른 설정들...
 enableRobotsTXT = true
@@ -21,37 +23,41 @@ minifyOutput = true
   description = ""
   github = "https://github.com/junhkang"
   linkedin = "https://www.linkedin.com/in/junh-kang"
-  
-  # 검색 기능 활성화
-  [params.search]
-    enable = true
-    placeholder = "검색어를 입력하세요..."
-  ShowSearchButton = true
-  
-  # 프로필 모드 비활성화하고 regular 모드 사용
-  [params.profileMode]
-    enabled = false
-    
-  # 홈페이지 설정 추가
-  [params.homeInfoParams]
-    Title = "Jun Kang 👋"
-    Content = """
-    - 개발 관련 포스트와 경험을 공유하는 블로그입니다
-    - 주요 관심사: Backend Development, Cloud Computing, DevOps, Database, AI
-    """
+  env = "production"  # GA 작동을 위한 환경 설정
 
-  # 소셜 아이콘 추가
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/junhkang"
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/in/junh-kang"
+[params.analytics.google]
+  SiteVerificationTag = "G-LE7D0WZLFJ"
 
-  # 태그 및 아카이브 관련 설정
-  ShowAllPagesInArchive = true
-  ShowPageNums = true
-  ShowTags = true
+# 검색 기능 활성화
+[params.search]
+  enable = true
+  placeholder = "검색어를 입력하세요..."
+ShowSearchButton = true
+
+# 프로필 모드 비활성화하고 regular 모드 사용
+[params.profileMode]
+  enabled = false
+
+# 홈페이지 설정 추가
+[params.homeInfoParams]
+  Title = "Jun Kang 👋"
+  Content = """
+  - 개발 관련 포스트와 경험을 공유하는 블로그입니다
+  - 주요 관심사: Backend Development, Cloud Computing, DevOps, Database, AI
+  """
+
+# 소셜 아이콘 추가
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/junhkang"
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/junh-kang"
+
+# 태그 및 아카이브 관련 설정
+ShowAllPagesInArchive = true
+ShowPageNums = true
+ShowTags = true
 
 # 메인 메뉴 설정
 [[menu.main]]
@@ -124,7 +130,7 @@ ShowLastMod = true
   showPagination = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]  # JSON 출력 추가
+  home = ["HTML", "RSS", "JSON"]
 
 # 카테고리/태그 표시 설정
 ShowBreadCrumbs = true

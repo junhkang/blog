@@ -21,7 +21,7 @@ PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 �
 ▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지
 2. B-tree 인덱스의 원리
 ▪ B-tree 인덱스의 자료구조 형태
-"><meta property="og:image" content="http://localhost:1313/images/posts/6/img.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:1313/posts/6/"><meta property="twitter:title" content="[PostgreSQL] B-tree 인덱스의 원리 및 특징 | Jun Kang's Blog"><meta property="twitter:description" content="
+"><meta property="og:image" content="http://localhost:1313/images/og_img.jpg"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:1313/posts/6/"><meta property="twitter:title" content="[PostgreSQL] B-tree 인덱스의 원리 및 특징 | Jun Kang's Blog"><meta property="twitter:description" content="
 PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.
 그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에 대해 알아보자.
 1. B-tree 인덱스란?
@@ -32,7 +32,7 @@ PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 �
 ▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지
 2. B-tree 인덱스의 원리
 ▪ B-tree 인덱스의 자료구조 형태
-"><meta property="twitter:image" content="http://localhost:1313/images/posts/6/img.png"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/6/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] B-tree 인덱스의 원리 및 특징"><meta property="og:description" content=" PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.
+"><meta property="twitter:image" content="http://localhost:1313/images/og_img.jpg"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/6/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] B-tree 인덱스의 원리 및 특징"><meta property="og:description" content=" PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.
 그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에 대해 알아보자.
 1. B-tree 인덱스란? ▪ 트리의 노드를 밸런스 있게 재정렬한 트리형태의 자료구조
 ▪ B-tree는 Binary 가 아닌 Balanced의 약자

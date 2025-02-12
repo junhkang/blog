@@ -20,7 +20,7 @@ minifyOutput = true
 
 [params]
   author = "Jun Kang"
-  description = "AI와 빅데이터로 건설업계의 디지털 혁신을 이끄는 산업의 역군 Jun Kang입니다. 대규모 데이터 처리, DB 최적화, 확장 가능한 시스템 구축에 관심이 많으며, 건강한 개발 문화를 만들어가고 있습니다."
+  description = "AI와 빅데이터로 건설업계의 디지털 혁신을 이끄는 (주)산군의 Jun Kang입니다. 대규모 데이터 처리, DB 최적화, 확장 가능한 시스템 구축에 관심이 많으며, 개발팀의 건강하고 지속 가능한 성장 문화를 문화를 만들어가고 있습니다."
   github = "https://github.com/junhkang"
   linkedin = "https://www.linkedin.com/in/junh-kang"
   env = "production"  # GA 작동을 위한 환경 설정

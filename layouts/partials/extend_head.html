@@ -76,36 +76,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-<meta property="og:description" content="{{- with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{- .Site.Params.description -}}{{ end }}{{ end -}}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+
+<!-- OG Image -->
+{{ $ogImage := .Site.Params.defaultImage }}
 {{ with .Params.cover }}
-    {{ with .image }}
-        <meta property="og:image" content="{{ . | absURL }}">
-    {{ end }}
-{{ else }}
-    {{ $images := findRE "!\\[.*?\\]\\((.*?)\\)" .RawContent 1 }}
-    {{ if ge (len $images) 1 }}
-        {{ $image := index $images 0 | replaceRE "!\\[.*?\\]\\((.*?)\\)" "$1" | replaceRE "\n" "" | string }}
-        <meta property="og:image" content="{{ $image | absURL }}">
-    {{ else }}
-        <meta property="og:image" content="{{ .Site.Params.defaultImage | absURL }}">
+    {{ if .image }}
+        {{ $ogImage = .image }}
     {{ end }}
 {{ end }}
+{{ with .Params.image }}
+    {{ $ogImage = . }}
+{{ end }}
+<meta property="og:image" content="{{ $ogImage | absURL }}">
 
-<!-- Twitter -->
+<!-- Twitter Card -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ .Permalink }}">
 <meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-<meta property="twitter:description" content="{{- with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{- .Site.Params.description -}}{{ end }}{{ end -}}">
-{{ with .Params.cover }}
-    {{ with .image }}
-        <meta property="twitter:image" content="{{ . | absURL }}">
-    {{ end }}
-{{ else }}
-    {{ $images := findRE "!\\[.*?\\]\\((.*?)\\)" .RawContent 1 }}
-    {{ if ge (len $images) 1 }}
-        {{ $image := index $images 0 | replaceRE "!\\[.*?\\]\\((.*?)\\)" "$1" | replaceRE "\n" "" | string }}
-        <meta property="twitter:image" content="{{ $image | absURL }}">
-    {{ else }}
-        <meta property="twitter:image" content="{{ .Site.Params.defaultImage | absURL }}">
-    {{ end }}
-{{ end }} 
+<meta property="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+<meta property="twitter:image" content="{{ $ogImage | absURL }}"> 

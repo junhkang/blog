@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>333333  - 383a42  - DDL-CONSTRAINTS-FK  - Foreign  - PostgreSQL  - F8f8f8  - Fk on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/333333----383a42----ddl-constraints-fk----foreign----postgresql----f8f8f8----fk/</link>
+    <description>Recent content in 333333  - 383a42  - DDL-CONSTRAINTS-FK  - Foreign  - PostgreSQL  - F8f8f8  - Fk on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/333333----383a42----ddl-constraints-fk----foreign----postgresql----f8f8f8----fk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 외래키(Foreign Keys) 개념, 사용법, 장단점, 적용검토</title>
+      <link>http://localhost:1313/posts/64/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/64/</guid>
+      <description>&lt;p&gt;Foreign key constraint 외래키 제약은 특정 칼럼 혹은 칼럼들의 값이 다른 테이블의 특정 row와 매칭되어야 하는 제약조건이다. 이를 두 관련 테이블 사이의 참조 무결성 (referential integrity)를 유지한다고 말한다. 그렇게 복잡한 개념은 아니니 바로 사용법을 확인해 보도록 하자&lt;/p&gt;
+&lt;h2 id=&#34;2-예제&#34;&gt;2. 예제&lt;/h2&gt;
+&lt;h3 id=&#34;2-1-기본-외래키foreign-keys-생성&#34;&gt;2-1. 기본 외래키(Foreign Keys) 생성&lt;/h3&gt;
+&lt;p&gt;products 테이블은 물품의 이름, 가격 정보 테이블이고, orders 테이블은 존재하는 물품 각각에 대한 순서 정보가 들어있는 테이블이다. orders, products 테이블의 product_no에 외래키 제약을 적용하는 예제이다.
+&lt;code&gt;CREATE TABLE products ( product_no integer PRIMARY KEY, name text, price numeric ); CREATE TABLE orders ( order_id integer PRIMARY KEY, product_no integer REFERENCES products (product_no), quantity integer );&lt;/code&gt;
+orders 테이블의 제약조건을 위와 같이 주었을 때 products 테이블에 없는 product_no로는 데이터 생성이 불가능하다. 이 경우 다음과 같이 명칭 한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

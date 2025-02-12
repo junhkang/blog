@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MVCC on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/mvcc/</link>
+    <description>Recent content in MVCC on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 06 Oct 2023 18:53:47 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/mvcc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] MVCC (Multi-Version Concurrency Control)</title>
+      <link>https://junhkang.com/posts/15/</link>
+      <pubDate>Fri, 06 Oct 2023 18:53:47 +0000</pubDate>
+      <guid>https://junhkang.com/posts/15/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/15/img.png&#34;&gt;
+ &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;h2 id=&#34;1-mvcc란&#34;&gt;1.  MVCC란?&lt;/h2&gt;
+&lt;p&gt;[동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터베이스를 쿼리 하는 동안 데이터의 현재 상태에 관계없이 얼마 전의 데이터 스냅샷을 볼 수 있음을 의미한다. ]{style=&amp;ldquo;background-color: #fdfdfd; color: #000000; text-align: start;&amp;quot;}데이터를 쿼리 하기 위해 트랜잭션을 만들었다면 해당 Transaction은 데이터의 스냅샷을 보고 있는 것이다.
+ &lt;/p&gt;
+&lt;p&gt;동일한 행에 서로 다른 트랜잭션이 동시에 업데이트를 시도할 때, 일관성 없는 데이터가 조회되지 않도록 트랜잭션을 보호하여 각 데이터베이스 세션에 대한 트랜잭션 격리를 제공한다. [Multiversion과 Lock model의 주요 차이점은 MVCC에서 데이터 read를 위해 획득한 lock과 데이터 쓰기를 위해 획득한 lock이 충돌하지 않는다는 것이다. (따라서 read와 write는 서로 block 하지 않는다.) ]{style=&amp;ldquo;background-color: #fdfdfd; color: #000000; text-align: start;&amp;rdquo;}[이러한 방식을 통해서 Reading 하는 작업에 대해서 Lock을 걸지 않기에 높은 성능을 얻을 수 있게 된다.]{style=&amp;ldquo;background-color: #ffffff; color: #212529; text-align: start;&amp;rdquo;}[]{style=&amp;ldquo;background-color: #ffffff; color: #212529; text-align: start;&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

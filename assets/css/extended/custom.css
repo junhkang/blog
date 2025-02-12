@@ -1,0 +1,41 @@
+/* 마크다운 컨텐츠 내의 모든 이미지에 대한 스타일 */
+.post-content img,
+.entry-content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 추가적인 여백 설정 (선택사항) */
+.content img + img {
+    margin-top: 1rem;
+}
+
+/* 테이블 가운데 정렬 및 스타일링 */
+.post-content table,
+.entry-content table {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* 테이블 셀 스타일링 */
+.post-content table th,
+.post-content table td,
+.entry-content table th,
+.entry-content table td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+}
+
+/* 테이블 헤더 스타일링 */
+.post-content table th,
+.entry-content table th {
+    background-color: #f5f5f5;
+}

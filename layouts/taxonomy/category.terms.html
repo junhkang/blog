@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="category-cards">
+    {{ range .Site.Taxonomies.categories.ByCount }}
+    <div class="category-card">
+        <a href="{{ .Page.Permalink }}">
+            <h2 class="category-title">{{ .Page.Title }}</h2>
+            <div class="category-meta">
+                <span class="post-count">{{ .Count }} 포스트</span>
+            </div>
+            {{ $pages := first 3 .Pages }}
+            <div class="recent-posts">
+                <h3>최근 글</h3>
+                <ul>
+                {{ range $pages }}
+                    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+                {{ end }}
+                </ul>
+            </div>
+        </a>
+    </div>
+    {{ end }}
+</div>
+{{ end }} 

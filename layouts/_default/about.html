@@ -1,0 +1,91 @@
+{{ define "main" }}
+<article class="about-page">
+    <header class="profile-header">
+        <h1>{{ .Title }}</h1>
+        <div class="profile-intro">
+            {{ .Params.intro | markdownify }}
+        </div>
+    </header>
+
+    <div class="profile-sections">
+        <!-- 학력 섹션 -->
+        <section class="profile-section">
+            <h2>🎓 학력</h2>
+            {{ range .Params.education }}
+            <div class="education-item">
+                <h3>{{ .school }}</h3>
+                <p>{{ .major }}</p>
+            </div>
+            {{ end }}
+        </section>
+
+        <!-- 경력 섹션 -->
+        <section class="profile-section">
+            <h2>💼 경력</h2>
+            {{ range .Params.experience }}
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>{{ .company }}</h3>
+                    <span class="period">{{ .period }}</span>
+                </div>
+                <p class="location">{{ .location }}</p>
+                <ul class="experience-details">
+                    {{ range .details }}
+                    <li>{{ . }}</li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </section>
+
+        <!-- 전문 분야 섹션 -->
+        <section class="profile-section">
+            <h2>🛠 전문 분야</h2>
+            <div class="skills-grid">
+                {{ range .Params.skills }}
+                <div class="skill-category">
+                    <span class="skill-tag">{{ .category }}</span>
+                    {{ if .details }}
+                    <span class="skill-detail">{{ .details }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </section>
+
+        <!-- 주요 관심사 섹션 -->
+        <section class="profile-section">
+            <h2>🎯 주요 관심사</h2>
+            <ul class="interests-list">
+                {{ range .Params.interests }}
+                <li>{{ . }}</li>
+                {{ end }}
+            </ul>
+        </section>
+
+        <!-- 강의 및 지식 공유 섹션 -->
+        <section class="profile-section">
+            <h2>📚 강의 및 지식 공유</h2>
+            {{ range .Params.teaching }}
+            <div class="teaching-item">
+                <h3>{{ .title }}</h3>
+                <p>{{ .details }}</p>
+            </div>
+            {{ end }}
+        </section>
+
+        <!-- Contact 섹션 -->
+        <section class="profile-section contact-section">
+            <h2>📫 Contact</h2>
+            <div class="contact-links">
+                <a href="https://github.com/{{ .Params.contact.github }}" target="_blank" class="contact-link">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/{{ .Params.contact.linkedin }}" target="_blank" class="contact-link">
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </div>
+</article>
+{{ end }} 

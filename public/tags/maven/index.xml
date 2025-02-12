@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Maven on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/maven/</link>
+    <description>Recent content in Maven on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 31 Jan 2024 16:40:43 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] 스프링부트 3 jstl 적용(maven), (절대 URI인 [http://java.sun.com/jsp/jstl/core]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.)</title>
+      <link>https://junhkang.com/posts/58/</link>
+      <pubDate>Wed, 31 Jan 2024 16:40:43 +0000</pubDate>
+      <guid>https://junhkang.com/posts/58/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
+&lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
+&lt;p&gt;타 라이브러리와 동일하게 javax -&amp;gt; jakarta 기반 jstl maven dependency를 추가해주면 된다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;jakarta.servlet.jsp.jstl&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;jakarta.servlet.jsp.jstl-api&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+        &amp;lt;!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api --&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;jakarta.servlet&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;jakarta.servlet-api&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;6.0.0&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;jakarta.servlet.jsp&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;jakarta.servlet.jsp-api&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt;
+            &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;jakarta.el&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;jakarta.el-api&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;5.0.0&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+        &amp;lt;dependency&amp;gt;
+            &amp;lt;groupId&amp;gt;org.glassfish.web&amp;lt;/groupId&amp;gt;
+            &amp;lt;artifactId&amp;gt;jakarta.servlet.jsp.jstl&amp;lt;/artifactId&amp;gt;
+            &amp;lt;version&amp;gt;3.0.1&amp;lt;/version&amp;gt;
+        &amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

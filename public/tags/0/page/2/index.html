@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>0 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/tags/0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/0/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    0
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] Vacuum 개념 및 적절한 사용
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Vacuum은 postgresql에서 dead tuple이 차지하는 저장공간을 회수한다. 일반적으로 Postgresql에서 update, delete tuple 은 물리적으로 삭제되지 않으며 vacuum이 완료될 때까지 계속 존재한다.(update, delete 시 tuple의 순환은 MVCC 개념에서 확인할 수 있다.)2023.10.06 - [Postgresql] - [PostgreSQL] MVCC (Multi-Version Concurrency Control)[PostgreSQL] MVCC (Multi-Version Concurrency Control)1. MVCC란? 동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터junhkang.tistory.com그렇기 때문에 특히 자주 업데이트되는 테이블의 경우 주기적인 Vacuum 수행이 필요하다. Vacuum은 특정 테이블에 한해서도 실행이 가능하고, 테이블을 지정하지 않는다면 전체 테이블 (권한을 보유한)에 대해서 실행된다.## 2. Vacuum 명령어-- DB 전체 full vacuumvacuum full analyze;-- DB 전체 간단하게 실행vacuum verbose analyze;-- 해당 테이블만 간단하게 실행vacuum analyze [테이블 명];-- 특정 테이블만 full vacuumvacuum full [테이블 명];## 3. Vacuum 상세 옵션VACUUM [ ( option [, ...] ) ] [ table_and_columns [, ...] ]VACUUM [ FULL ] [ FREEZE ] [ VERBOSE ] [ ANALYZE ] [ table_and_columns [, ...] ]where option can be one of:FULL [ boolean ]FREEZE [ boolean ]VERBOSE [ boolean ]ANALYZE [ boolean ]DISABLE_PAGE_SKIPPING [ boolean ]SKIP_LOCKED [ boolean ]INDEX_CLEANUP { AUTO | ON | OFF }PROCESS_MAIN [ boolean ]PROCESS_TOAST [ boolean ]TRUNCATE [ boolean ]PARALLEL integerSKIP_DATABASE_STATS [ boolean ]ONLY_DATABASE_STATS [ boolean ]BUFFER_USAGE_LIMIT [ size ]and table_and_columns is:table_name [ ( column_name [, ...] ) ]## 4. Vacuum analyzeVacuum analyze 는 vacuum 후 테이블 별로 analyze를 수행(통계정보 수집)하기에 유지보수에 원활하다.Postgresql 버전업을 수행한 후, 인덱스 및 테이블 튜닝이 완료된 쿼리 (평균 소요시간 0.8초 이내)가 5분 이상 소모되어 서비스에 문제를 일으키는 상황이 발생하였다. Vacuum analyze를 사용해 통계 정보를 조정 후 플랜이 정상적으로 작동하는 것을 확인하였다.## 5. Vacuum without FullFull 옵션 없이 vacuum 은 단순히 tuple을 삭제후 공간을 확보하여 재사용 가능하게 한다. 이 작업은 일반적은 read/write와 동시에 실행될 수 있으며 배타적 lock이 발생하지 않는다. 그러나 일반적으로 추가 공간이 OS로 반환되지 않고, 동일 테이블에 재사용가능 상태로 반환된다. 인덱스를 처리하기위해 여러 개의 CPU를 사용할 수 있으며, 이를 parallel Vacuum이라고 한다.## 6. Vacuum Fullvacuum full은 테이블 전체 내용을 추가 공간 없이 새로운 디스크파일에 다시 작성한다. 미사용 space는 OS로 반환된다. 일반적인 vacuum 보다 훨씬 시간이 오래 걸리며, 해당 테이블에 lock 이 발생하기에 운영 중인 테이블에 실행 시 주의하여야 한다. Vacuum은 transaction 블럭 내에서는 사용이 불가능하다. Gin 인덱스의 경우 대기중인 인덱스 생성까지 완료된다.(Gin 인덱스에 대한 개념은 다음 포스트에서 확인 가능하다.)2023.09.13 - [Postgresql] - [PostgreSQL] GIN인덱스의 원리 및 특징[PostgreSQL] GIN인덱스의 원리 및 특징1. GIN 인덱스란? Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다. 저장된 요소 자제에 대한 검색junhkang.tistory.com## 7. Vacuum의 적절한 사용Vacuum의 수동 실행이아니더라도 postgresql 에는 autovacuum launcher가 상시 수행되고 있어 dead tuple이 임계치에 도달하거나 table, tuple의 age가 누적되어 임계치에 도달하였을 때 auto vacuum이 실행된다. Postgresql에서는 Autovacuum 활성화를 권장하고 있다.Vacuum Full의 경우 테이블 자체의 락이 발생하기에 사용에 주의하여야 하며, 보통 사용자가 없는 시간대나 시스템 영향도가 낮은 시간대에 실행하나, 해당 지표만으로 Vacuum 주기를 설정하는 것이 정답은 아니다. Vacuum이 너무 잦은 것도 Vacuum 부하로 쿼리성능을 저하시키기에 좋지 않고, 영향도가 너무 낮은 시간을 찾기 위해 너무 드물게 수행하면 삭제할 tuple 및 작업이 많아져 오히려 큰 부하를 유발할 수 있다. 그러므로 상세 파라미터 튜닝을 통해 현재 운영 중인 시스템에 맞는 Vacuum주기를 찾는 것이 중요하다.참고https://www.postgresql.org/docs/current/sql-vacuum.htmlhttps://techblog.woowahan.com/9478/#Vacuum #PostgreSQL
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] Vacuum 개념 및 적절한 사용" href="http://localhost:1313/posts/17/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] Visibility Map(가시성 맵)의 개념, 원리, 생명주기 및 정보 확인 방법
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Visibility Map은 트랜잭션에서 데이터에 접근할 때 어떤 데이터가 가시적인지(모든 트랜잭션에서 읽을 수 있는지), 안정적인지 (동결된 튜플인지) 판별하는데 도움을 준다. 데이터 접근 시 불필요한 I/O작업을 줄여주고, 데이터베이스가 어떤 페이지를 직접 접근할 수 있는지를 빠르게 판단함으로써 시스템의 효율적을 올려주는 역할을 한다.## 2. Visibility Map(가시성 맵)의 데이터 관리Visibility Map은 데이터를 주요 데이터와는 별도의 파일(fork)에 _vm 접미사를 붙여 관리한다. 예를 들어 예를 들어 employees 테이블이 있다고 하면 테이블의 Visibility Map은 별도의 포크에 저장된다. 이 포크의 이름은 파일 노드 번호에 _vm 접미사를 붙여 구성되며, 예를 들어 파일 노드번호가 12345인 경우 VM 파일은 12345_vm으로 저장된다. 데이터에는 해당 테이블의 page가 모든 트랜잭션에 보이는지, 동결된 튜플만을 포함하는지 등의 정보를 저장한다. 데이터베이스가 employees 테이블을 조회할 때, 가시성 맵을 먼저 확인한다. 만약 쿼리가 접근하려는 pages가 모든 트랜잭션에게 보이는 상태라고 확인되면, 시스템은 데이터에 더 빠르게 접근한다. 불필요한 버전검사나 락을 안 해도 되기에 성능이 향상된다.## 3. Visibility Map(가시성 맵)의 원리Visiblity Map은 힙 pages당 2개의 비트를 별도로 저장한다. 첫 번째 비트가 설정되어 있으면, 해당 페이지가 모두 visible(가시적) 한 상태이고, 이는 vacuum이 필요한 튜플을 포함하지 않는다는 뜻이다. 이는 인덱스 영역의 tuple만을 사용하여 index-only-scan으로 쿼리를 조회할 때도 사용된다. index-only-scan은 해당 포스트에서 확인 가능하다.2024.03.13 - [Postgresql] - [PostgreSQL] Index-Only 스캔과 Covering 인덱스, Index-only스캔의 효율적인 사용[PostgreSQL] Index-Only 스캔과 Covering 인덱스, Index-only스캔의 효율적인 사용1. Index-Only Scans PostgreSQL의 모든 인덱스는 “보조(Secondary)” 인덱스이다. 각 인덱스는 테이블의 메인 데이터 영역(테이블의 heap 영역)과 분리되어서 저장된다. 그렇기 때문에 일반적인 인덱스 스캔에junhkang.tistory.com두 번째 bit가 설정되어 있다면 모든 pages의 튜플이 frozen(동결된) 상태라는 뜻이다. 이 상태에선 일반적인 vacuum은 물론 anti-wraparound vacuum도 동작시킬 필요가 없다.anti-wraparound-vacuum - 전체 데이터베이스를 검사하여 트랜잭션 ID가 안전한 범위 내에 있는지 확인하여, 필요에 따라 조정하며 트랜잭션 ID의 오버플로우를 방지한다. 트랜잭션 ID에 대한 상세 내용은 해당 포스트에서 확인 가능하다.2024.03.08 - [Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 작동원리[PostgreSQL] 트랜잭션(Transaction)의 작동원리1. 기본 트랜잭션의 개념 및 원리 트랜잭션의 기본 개념과 사용 방법은 다음 포스트에서 확인이 가능하다. 2023.10.10 - [Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용 [PostgreSQL] 트랜잭션(Tjunhkang.tistory.comVisiblity Map의 2가지 비트는 최대한 보수적으로 해석된다. 1, 2 번째 비트가 설정되어 있을 경우에는 무조건 참이지만, 비트가 설정되지 않을 경우에는 참 일수도 거짓일 수도 있다.## 4. Visibility Map(가시성 맵)의 생명주기Visiblity Map의 비트는 vacuum에 의해서만 설정된다. 데이터베이스 내의 pages에 vacuum 작업이 수행되면 관련 Visiblity Map의 비트가 설정이 되고, 해당 pages가 모든 트랜잭션에서 완전히 가시적임을 표시하며, 더 이상 vacuum 안 해도 됨을 나타낸다. 그 후에 pages의 데이터가 하나라도 수정(update, insert, delete 등) 될 경우, VM의 비트는 초기화된다. 데이터의 상태가 변경되었기에 vacuum 작업 대상에 포함시켜야 함을 나타낸다.## 5. Visibility Map(가시성 맵) 정보 확인pg_visibility 함수를 사용해서 vm에 저장된 정보를 확인할 수 있다.- pg_visibility_map(relation regclass, blkno bigint, all_visible OUT boolean, all_frozen OUT boolean) returns record- 해당 테이블, 해당 블록의 모든 VM의 visible, frozen 비트 조회- pg_visibility(relation regclass, blkno bigint, all_visible OUT boolean, all_frozen OUT boolean, pd_all_visible OUT boolean) returns record - 해당 테이블, 해당 블록의 모든 VM의 visible, frozen 비트 조회 &#43; PD_ALL_VISIBLE 비트- pg_visibility_map(relation regclass, blkno OUT bigint, all_visible OUT boolean, all_frozen OUT boolean) returns setof record - 해당 테이블의 모든 블록의 VM의 visible, frozen 비트 조회- pg_visibility(relation regclass, blkno OUT bigint, all_visible OUT boolean, all_frozen OUT boolean, pd_all_visible OUT boolean) returns setof record - 해당 테이블의 모든 블록의 VM의 visible, frozen 비트 조회 &#43; PD_ALL_VISIBLE 비트- pg_visibility_map_summary(relation regclass, all_visible OUT bigint, all_frozen OUT bigint) returns record - VM에 연관 있는 테이블의 visible 페이지 수량, frozen 페이지 수량 확인- pg_check_frozen(relation regclass, t_ctid OUT tid) returns setof tid - VM에 frozen으로 마킹되어 있는 pages 중 non-frozen 튜플의 TID, 존재해서는 안 되는 경우로, 뭔가 조회가 된다면 VM에 문제가 있는 것- pg_check_visible(relation regclass, t_ctid OUT tid) returns setof tid - VM에 visible으로 마킹되어 있는 pages 중 non-visible 튜플의 TID, 존재해서는 안 되는 경우로, 뭔가 조회가 된다면 VM에 문제가 있는 것- pg_truncate_visibility_map(relation regclass) returns void - 해당 테이블의 VM을 truncate 한다. VM에 문제가 있는 경우 강제로 재설정이 필요할 때 사용. 해당 테이블의 첫 번째 vacuum이 실행될 때 재생성되며, 그전까지는 모든 VM이 모두 0 값으로 유지참고https://www.postgresql.org/docs/16/storage-vm.htmlhttps://www.postgresql.org/docs/16/pgvisibility.html#PostgreSQL #Visibility Map #가시성 맵
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] Visibility Map(가시성 맵)의 개념, 원리, 생명주기 및 정보 확인 방법" href="http://localhost:1313/posts/79/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] 명시적 JOIN 절로 플래너(Planner) 제어, 성능 향상
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>PostgreSQL은 쿼리 Planner가 가장 효율적인 쿼리 플랜을 세워 쿼리를 실행시킨다. 이번 포스트는 쿼리 Planner가 플랜을 검색하는 과정을 의도적으로 제한하여 플랜 검색 시간을 단축시키는 방법에 대한 내용이다. 쿼리 선택지를 제한함으로써 시간을 줄이지만, 그만큼 모든 경우를 비교하는 것이기 아니라서 최고의 플랜을 찾을 수 없기에, 테이블 scan 방식 및 인덱스 등 쿼리의 작동방식을 명확히 이해한 후 설정이 필요하며, 설정전 성능비교, 설정 후의 데이터 증감에 따른 지속적인 모니터링이 필요하다.## 2. 플래너의 작동### 2-1. JOINPlanner의 작동방식을 보기 위해 간단한 조인 쿼리를 확인해 보자SELECT * FROM a, b, c WHERE a.id = b.id AND b.ref = c.id;PostgreSQL 플래너는 조인 순서를 자유롭게 정할 수 있다.- a.id = b.id 조건으로 A, B테이블을 먼저 조인 후에 C테이블을 조인- b.ref = c.id 조건으로 B, C테이블을 먼저 조인 후에 A테이블을 조인- A, C를 조인 후에 B테이블 조인 (A, C의 조인을 최적화하는 조건이 없기에 비효율적)중요한 점은, 모든 방식이 동일한 결과를 가져오지만, 실행 cost에는 엄청난 차이가 난다는 것이다. 그래서 planner는 가장 효율적인 쿼리 플랜을 찾는다. 사실 쿼리가 23개의 테이블만 참조한다면, 고려할 조인방식이 그리 많지 않다. 그러나 테이블 수가 증가할수록 조인 순서의 선택지는 확연히 증가한다. 10개 정도의 테이블이 조인될 경우 모든 경우의 수를 철저히 검색하는 것은 실용적이지 않고, 테이블 수가 67개만 되어도 plan을 선택하는데 굉장히 오랜 시간이 걸릴 수 있다.너무 많은 테이블이 참조될 때, PostgreSQL planner는 검색하는 플랜의 경우의 수를 제한하는 genetic 확률적 검색으로 전환한다.이 경우, 검색하는 플랜의 수가 줄어들기에 검색시간은 줄어들지만, 최고의 플랜을 찾지 못할 수도 있다.### 2-2. OUTER-JOIN다음과 같은 outer 조인에서 planner의 조인 순서 선택지는 확연히 줄어든다.SELECT * FROM a LEFT JOIN (b JOIN c ON (b.ref = c.id)) ON (a.id = b.id);이전 일반 join과 조건은 똑같이 적용되었지만, 작동방식은 현저히 다르다. 기존 일반 조인은 B와 C를 조인한 결과와 일치하지 않는 A의 각 로우들은 생략되어야 하고 outer join은 A의 각 로우들이 생략되지 않는다.그래서 planner의 선택지는 다음으로 줄어든다.- a.id = b.id 조건으로 A, B테이블을 먼저 조인 후에 C테이블을 조인- b.ref = c.id 조건으로 B, C테이블을 먼저 조인 후에 A테이블을 조인- A, C를 조인 후에 B테이블 조인 (A, C의 조인을 최적화하는 조건이 없기에 비효율적)Planner는 해당 쿼리의 유효한 플랜이 1개로 인식하고, 선택지가 1개이기에 plan을 세우는데 적은 시간이 든다.반면에 다음과 같은 경우에 planner는 2개 이상의 plan이 유효하다고 판단할 수도 있다.SELECT * FROM a LEFT JOIN b ON (a.bid = b.id) LEFT JOIN c ON (a.cid = c.id);- a.id = b.id 조건으로 A, B테이블을 먼저 조인 후에 C테이블을 조인- b.ref = c.id 조건으로 B, C테이블을 먼저 조인 후에 A테이블을 조인- a.cid = c.id 조건으로 A, C테이블을 먼저 조인 후에 B테이블을 조인현재는 FULL JOIN만이 테이블 간의 조인 순서 제한하지만, 대부분의 LEFT JOIN, RIGHT JOIN은 조인 순서가 재배열될 수 있다.명시적인 INNER JOIN (INNER JOIN, CROSS JOIN 등)은 구조적으로 FROM 절에 테이블 입력 순서와 의미적으로 동일하게 실행되므로 조인순서를 제약하지 않는다. (영향을 받지 않는다.)대부분의 JOIN이 순서를 완전히 제약하지 않지만, PostgreSQL 플래너가 모든 JOIN절을 조인 순서를 제약하도록 별도 지시할 수 있다. 예를 들어 다음 세 쿼리는 논리적으로 동일하다.SELECT * FROM a, b, c WHERE a.id = b.id AND b.ref = c.id;SELECT * FROM a CROSS JOIN b CROSS JOIN c WHERE a.id = b.id AND b.ref = c.id;SELECT * FROM a JOIN (b JOIN c ON (b.ref = c.id)) ON (a.id = b.id);그러나 planner에게 조인 순서를 정하도록 하면, 2,3번 쿼리가 첫 번째 쿼리보다 plan을 세우는데 더 적은 시간이 걸리며 실제 플랜도 다르게 나온다. 이 차이는 테이블이 3개 있을 때는 그리 크지 않지만, 많은 테이블을 대상으로 할 때는 굉장히 효율적이다.planner가 명시적 join에 제시된 테이블 조인 순서를 따르게 하려면 join_collapse_limit 매개변수를 1로 설정하면 된다.아니면 일반 FROM절 리스트에서 JOIN 구문을 추가해도 되기 때문에, plan 검색시간을 줄이기 위해 파라미터를 조정하여 조인 순서를 완벽하게 제한시킬 필요는 없다.예를 들어SELECT * FROM a CROSS JOIN b, c, d, e WHERE ...;join_collapse_limit=1 옵션을 주면, 해당 쿼리는 다른 선택지에 대한 고려 없이 A와 B를 우선적으로 조인하도록 강제한다. 그렇기 때문에이 예제에서는 가능한 조인 순서가 5배로 줄어들게 된다. (5! -&gt; 4!)이런 방식으로 planner의 계획 검색을 제한하는 것은 planning 시간을 줄여주고 planner를 좋은 쿼리플랜으로 유도하는데 도움이 된다.만약 planner가 안 좋은 조인 순서를 기본으로 선택하였다면, JOIN 문법을 통해 더 좋은 join 순서로 유도할 수 있다. 다만 작성 후 성능비교 및 플랜확인은 필수이다.### 2-3. Subqueryplanning시간이 영향을 주는 유사한 예로는, 서브쿼리를 상위 쿼리에 포함시키는 경우이다. 다음 간단한 서브쿼리를 확인해 보자.SELECT *FROM x, y,(SELECT * FROM a, b, c WHERE something) AS ssWHERE somethingelse;일반적으로 Planner는 서브쿼리를 부모쿼리에 포함시키기에 다음과 같다.SELECT * FROM x, y, a, b, c WHERE something AND somethingelse;이러한 쿼리가 보통 서브쿼리를 따로 planning 하는 것보다 효율적이다. (예를 들어, 부모쿼리의 where 절은 x를 A에 먼저 조인시켜 A의 많은 row를 제거함으로써 서브쿼리의 결과와 전체 조회를 실행하는 것을 피할 수 있다.) 그러나 동시에, planning 시간이 증가한다.&gt; 2가지의 3개의 테이블을 조인하는 경우의 수[2 x (3!)] -&gt; 5개의 테이블을 조인하는 경우의 수 [5!]더 많은 테이블을 참조할 경우, 가능한 조인 방식의 수가 기하급수적으로 늘어남으로써 큰 차이가 된다. planner는 subquery를 상위 쿼리에 포함시킴으로써 조인 방식의 경우의 수가 너무 커지는 문제를 방지하기 위해 from_collapse_limit의 파라미터 값보다 최종 조인될 테이블의 수가 많을 경우 서브쿼리를 상위쿼리에 합치지 않는다. 이 그렇기에 run-time 파라미터를 수정함으로써 planning 시간과 plan의 퀄리티를 조절하여 사용할 수 있다.## 3. from_collapse_limit, join_collapse_limit 설정from_collapse_limit와 join_collapse_limit 은 비슷한 역할을 하기에 네이밍이 비슷하게 되어있다. from_collapse_limit는 서브쿼리 사용 시 하위 쿼리를 상위쿼리에 포함시키는 조건을 제어하고, join_collapse_limit는 조인 테이블의 수에 따른 테이블 축소 관계의 최대 수를 제어한다. 일반적으로 두 파라미터의 값은 똑같이 설정하거나(명시적 조인과 서브쿼리가 비슷하게 행동하게 하기 위해) 아니면 join_collapse_limit을 1로 세팅한다.(명시적 조인의 순서를 컨트롤하고 싶을 때) 그러나 planning 시간과 run time 시간을 적절하게 조정하기 위해 다른 값을 부여할 수 있다.### 3-1. from_collapse_limit (integer)- planner는 FROM 절 테이블 개수가 파라미터 값보다 작을 경우 서브쿼리를 부모쿼리로 재배열한다.- 적은 값들은 planning 시간을 줄여주지만 최적의 쿼리 plan을 찾을 수 없을 수도 있다.- 기본 값은 8이다.### 3-2. join_collapse_limit (integer)- planner는 FROM 절 테이블 개수가 파라미터 값보다 작을 경우 명시적인 JOIN절을 다시 구성한다.- 작은 값일수록 planning 시간을 줄여주지만, 최적의 쿼리 플랜을 찾을 수 없을 수도 있다.- 기본값은 from_collapse_limit과 동일한 값이며 대부분의 경우에 적절한 값이다.- 해당값을 1로 설정하는 것은 명시적 Join절의 순서 변환 없이 그대로 사용하게 한다.- 쿼리가 항상 이상적인 쿼리 플랜을 선택하는 것이 아니기 때문에, 쿼리를 통해 변수를 일시적으로 1로 설정한 후 원하는 조인순서를 명시적으로 지정할 수 있다.## 4. 적용테스트 결과 FROM절의 순서를 변경함으로써 PostgreSQL Planner의 계획대상을 변경하는 방법은 두 가지가 있다.### 4-1. join_collapse_limit 파라미터의 값을 1로 설정이 경우 from절의 순서에 맞게 플랜이 변경됨을 확인할 수 있다.### 4-2. 서브쿼리에 OFFSET을 추가하여 서브 쿼리 축소를 방지한다.다음 두쿼리는 결과는 같지만, 명시적 JOIN 절을 사용하여 Planner의 조인 순서를 변경한 케이스이다.select a.*from a, b, cwhere a.id = b.idand b.id = c.id;![](/images/posts/44/스크린샷 2023-11-08 오후 4.47.46.png)-&gt; a와 b 테이블을 먼저 조인한 후 c 테이블 조인select *from bcross join lateral(select a.*from a, cwhere a.id = c.id offset 0) as foo;![](/images/posts/44/스크린샷 2023-11-08 오후 4.48.10.png)-&gt; a와 c 테이블을 먼저 조인한 후 b 테이블 조인## 5. 결론from_collapse_limit, join_collapse_limit 파라미터를 통해 조인 및 서브쿼리 사용 시 쿼리 planner의 플랜 선택지를 조정하여 plan 선택시간을 줄일 수 있다. 다만 제한한 조건 내에 최상의 쿼리 플랜이 없을 경우 최적의 쿼리를 찾을 수 없기에, scan, index, 테이블의 크기 등에 따른 상관관계를 명확이 이해하고 추가해야 하며, 설정 전의 충분한 플랜 분석, 설정 후의 데이터 증감에 따른 지속적인 모니터링 및 튜닝이 필요하다.참고https://www.postgresdba.com/bbs/board.php?bo_table=C05&amp;wr_id=201https://www.postgresql.org/docs/current/explicit-joins.html#planner #성능향상 #PostgreSQL
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] 명시적 JOIN 절로 플래너(Planner) 제어, 성능 향상" href="http://localhost:1313/posts/44/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] 윈도우 함수(Window Functions)의 개념, 성능 및 사용법 (over, sum/rank/ntitle/cume_dist 등...)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>윈도우 함수는 행과 행 간의 관계를 쉽게 정의하기 위해 만든 함수이다. 이 기능은 일반 집계함수의 연산과 유사하지만, 일반 집계함수가 행 각각을 단일 그룹화해서 출력하는 반면에, 윈도우 함수는 각각의 행들이 그룹화되지 않으며 별도의 ID를 가진다. 그렇기에 윈도우 함수는 현재 row의 정보보다 더 많은 정보에 접근이 가능하다. 예를 들면 다음과 같다.&gt; 일반집계함수 : COUNT() &#43; GROUP BY-&gt; 그룹별 1개의 행 출력 (그룹 개수만큼 출력, 자르기 &#43; 집약)윈도우집계함수 : COUNT() OVER (PARTITION BY) -&gt; ID개수만큼 행 출력 (행의 개수가 줄어들지 않는다, 자르기)다음의 공식문서 예제를 보며 윈도우 함수가 어떻게 작동하는지 알아보자. 임직원의 월급, 부서, 직원번호가 포함된 empsalary 테이블이 있다.SELECT depname, empno, salary, avg(salary) OVER (PARTITION BY depname) FROM empsalary;depname | empno | salary | avg-----------&#43;-------&#43;--------&#43;-----------------------develop | 11 | 5200 | 5020.0000000000000000develop | 7 | 4200 | 5020.0000000000000000develop | 9 | 4500 | 5020.0000000000000000develop | 8 | 6000 | 5020.0000000000000000develop | 10 | 5200 | 5020.0000000000000000personnel | 5 | 3500 | 3700.0000000000000000personnel | 2 | 3900 | 3700.0000000000000000sales | 3 | 4800 | 4866.6666666666666667sales | 1 | 5000 | 4866.6666666666666667sales | 4 | 4800 | 4866.6666666666666667(10 rows)첫 3개의 컬럼은 테이블의 데이터를 바로 사용하는 것이고, row 당 1개의 값을 가지고 있다. 4번째 컬럼은 같은 부서명의 ROW 끼리의 평균 월급을 나타낸다. (비윈도우 함수의 avg 함수와 동일하지만, over 구문을 사용할 경우 윈도우 함수로 취급받고, window frame 상에서 연산될 수 있게 해 준다.)윈도우 함수는 함수명, 혹은 변수 뒤에 항상 over를 바로 뒤에 붙여 사용한다. over 구문은 쿼리의 row들이 윈도우 함수에 의해 정확히 어떻게 분할되어 작동하는지에 대한 결정을 내린다. over 내의 partition by 구분은 동일한 값을 공유하는 groups 혹은 partitions으로 행을 분할한다. 이렇게 분할된 파티션 상에서 각 행과 동일한 파티션에 속하는 행끼리 연산하게 된다. over 내에 order by를 통해 윈도우 함수에 통과시킬 row의 순서를 정할 수 있다.SELECT depname, empno, salary,rank() OVER (PARTITION BY depname ORDER BY salary DESC)FROM empsalary;depname | empno | salary | rank-----------&#43;-------&#43;--------&#43;------develop | 8 | 6000 | 1develop | 10 | 5200 | 2develop | 11 | 5200 | 2develop | 9 | 4500 | 4develop | 7 | 4200 | 5personnel | 2 | 3900 | 1personnel | 5 | 3500 | 2sales | 1 | 5000 | 1sales | 4 | 4800 | 2sales | 3 | 4800 | 2(10 rows)rank 함수는 해당 파티션 당 order by 값에 맞는 숫자 형태의 순위를 나타낸다. rank는 over 절에 의해서만 결정되기에 명시적인 매개 변수가 추가로 필요하지 않다.윈도우 함수는 from 절의 테이블에서 where, group by 그리고 having 절로 필터링된 “가상 테이블&#34;의 행을 대상으로 작동하기에 조건에 부합하지 않아 제거된 row는 윈도우 함수 내에서 사용되지 않는다. 쿼리에 다양한 over 절을 사용하여 데이터를 분할할 수 있지만, 이 가상 테이블에 정의된 row를 대상으로 동일하게 작동한다. 행의 순서가 중요하지 않은 경우, order by를 생략해도 되는 것처럼, 단일 파티션이 전체 row를 포함하는 경우 partition by를 생략할 수도 있다.### 1-1. Window frame윈도우 함수에 관한 중요한 개념 중 하나는 window frame이다. window frame이라고 불리는 row의 집합이 파티션 내에 존재한다. 몇몇 윈도우 함수는 전체 파티션이 아닌, window frame의 row에 대해서만 동작한다. 기본적으로 ORDER BY를 사용하면 frame은 시작 행부터 현재 행까지의 정보로만 구성되며, order by 가 생략되면, 기본 frame은 파티션 내의 전체 row로 이루어진다. 다음 sum의 예제를 보면SELECT salary, sum(salary) OVER () FROM empsalary;salary | sum--------&#43;-------5200 | 471005000 | 471003500 | 471004800 | 471003900 | 471004200 | 471004500 | 471004800 | 471006000 | 471005200 | 47100(10 rows)over 절에 order by가 없기에, window frame은 파티션 전체와 같고, 각 sum은 전체 테이블을 조회하여 일반 집계 함수와 동일한 결과를 가진다. 하지만 order by 가 들어갈 경우 결과가 달라진다. 아래 쿼리는 월급의 최저값 ROW부터 현재 ROW까지 (파티션의)의 합계이다.SELECT salary, sum(salary) OVER (ORDER BY salary) FROM empsalary;salary | sum--------&#43;-------3500 | 35003900 | 74004200 | 116004500 | 161004800 | 257004800 | 257005000 | 307005200 | 411005200 | 411006000 | 47100(10 rows)### 1-2. 제약조건위도우 함수는 SELECT와 ORDER BY 절에서만 허용된다. group by, having, where 절 같은 곳에서는 사용이 불가능하다.논리적으로 해당 조건들을 모두 조회한 후에 작동하기 때문이다.그리고 윈도우 함수는 비윈도우집계함수 이후에 실행된다. 즉 윈도우 함수의 인수에 일반 집합 함수 호출을 포함하는 것은 가능하지만, 그 반대의 경우는 불가능하다. 만약 윈도우 함수의 연산 후에 filter 혹은 group by를 할 경우, 서브쿼리를 사용해야 한다. 아래와 같이 사용하면 내부 쿼리의 순위가 3 이하인 row 들만 보여준다.SELECT depname, empno, salary, enroll_dateFROM(SELECT depname, empno, salary, enroll_date,rank() OVER (PARTITION BY depname ORDER BY salary DESC, empno) AS posFROM empsalary) AS ssWHERE pos### 1-3. WINDOW AS쿼리가 만약에 다수의 윈도우 함수를 포함한다면, 각각이 OVER문으로 작성하는 것이 가능하지만, 여러 함수에 대해 동일한 윈도우 설정 동작을 하는 경우 중복되고 에러가 발생하기 쉽다. 이럴 경우 WINDOW에 해당하는 레퍼런스를 설정하고 해당 값을 over에서 사용 이 가능하다.SELECT sum(salary) OVER w, avg(salary) OVER wFROM empsalaryWINDOW w AS (PARTITION BY depname ORDER BY salary DESC);### 1-4. 성능윈도우 함수를 사용할 경우 집계, 순위 등의 쿼리를 편하게 사용할 수 있고, 테이블의 스캔 횟수도 훨씬 줄어든다. 다만 파티션 내 다른 행과 현재행의 관계정보로 다루어지기에, 윈도우 함수를 사용할 시 기본적으로 정렬하는 과정에서 자원이 소모된다. 테이블 및 데이터 정보에 따라 달라지겠지만, 분포율이 5~7%정도 되는 1200만 건의 데이터를 기준으로 윈도우 함수와 group by 정렬을 비교해 보았다.![](/images/posts/40/img_1.png)![](/images/posts/40/스크린샷 2023-10-31 오후 1.51.46.png)실제로 윈도우 함수를 포함한 경우 sort 과정에 자원이 많이 소모되어 데이터가 많을 경우 오히려 비윈도우 함수보다 효율이 좋지 않았다. 따라서 기능의 편의성 외에도 데이터의 양이나 테이블 구조에 맞춰 윈도우 함수를 사용하고, 서브쿼리나 조건절 튜닝을 통해 스캔해야할 행의 갯수를 줄인 후 사용하는 방법을 고려해야 한다.## 2. 윈도우 함수의 종류 및 사용법### 2-1. 일반집계함수- SUM - 파티션별 윈도우의 합계SELECT MGR, ENAME, SAL, SUM(SAL) OVER (PARTITION BY MGR ORDER BY SAL RANGE UNBOUNDED PRECEDING) as MGR_SUMFROM EMP;- MAX - 파티션별 윈도우의 최댓값SELECT MGR, ENAME, SAL, MAX(SAL) OVER (PARTITION BY MGR) as MGR_MAXFROM EMP;- MIN - 파티션별 윈도우의 최솟값 SELECT MGR, ENAME, HIREDATE, SAL, MIN(SAL) OVER(PARTITION BY MGR ORDER BY HIREDATE) as MGR_MINFROM EMP;- AVG - 파티션별 윈도우의 평균값SELECT MGR, ENAME, HIREDATE, SAL, ROUND (AVG(SAL) OVER (PARTITION BY MGR ORDER BY HIREDATE ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING)) as MGR_AVGFROM EMP;- COUNT - 파티션별 윈도우의 카운트SELECT ENAME, SAL, COUNT(*) OVER (ORDER BY SAL RANGE BETWEEN 50 PRECEDING AND 150 FOLLOWING) as SIM_CNTFROM EMP;### 2-2. 그룹 내 행 순서 함수- FIRST_VALUE - 파티션별 윈도우에 가장 먼저 나오는 값SELECT DEPTNO, ENAME, SAL, FIRST_VALUE(ENAME) OVER (PARTITION BY DEPTNO ORDER BY SAL DESC ROWS UNBOUNDED PRECEDING) as DEPT_RICHFROM EMP;- LAST_VALUE - 파티션별 윈도우에 가장 나중에 나오는 값SELECT DEPTNO, ENAME, SAL, LAST_VALUE(ENAME) OVER ( PARTITION BY DEPTNO ORDER BY SAL DESC ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) as DEPT_POORFROM EMP;- LAG - 파티션별 윈도우의 이전 몇 번째 행의 값SELECT ENAME, HIREDATE, SAL, LAG(SAL) OVER (ORDER BY HIREDATE) as PREV_SALFROM EMPWHERE JOB = ‘SALESMAN’;- LEAD - 파티션별 윈도우의 이후 몇번째 행의 값SELECT ENAME, HIREDATE, LEAD(HIREDATE, 1) OVER (ORDER BY HIREDATE) as “NEXTHIRED&#34;FROM EMP;### 2-3. 그룹 내 순위함수- RANK - 파티션 내 전체 윈도우에 대한 순위, 동일 값에 대해서는 동일한 순위, 그 다음 값은 순위는 동일한 순위 만큼 증가된 채로 부여 (ex. 1,1,1,4,5,6,7...)SELECT JOB, ENAME, SAL,RANK( ) OVER (ORDER BY SAL DESC) ALL_RANK,RANK( ) OVER (PARTITION BY JOB ORDER BY SAL DESC) JOB_RANKFROM EMP;- DENSE_RANK - 파티션 내 전체 윈도우에 대한 순위, 동일 값에 대해서는 동일한 순위, 그 다음 값은 순위는 동일한 순위에 상관없이 다음값 부여 (ex. 1,1,1,2,3,4,5...)SELECT JOB, ENAME, SAL, RANK( ) OVER (ORDER BY SAL DESC) RANK, DENSE_RANK( ) OVER (ORDER BY SAL DESC) DENSE_RANKFROM EMP; - ROW_NUMBER - 파티션 내 전체 윈도우에 대한 순번, 동일한 값이어도 고유한 순위 부여SELECT JOB, ENAME, SAL, RANK( ) OVER (ORDER BY SAL DESC) RANK, ROW_NUMBER() OVER (ORDER BY SAL DESC) ROW_NUMBERFROM EMP; ### 2-4. 그룹 내 비율 함수- RATIO_TO_REPORT - 파티션 내 전체 SUM에 대한 컬럼별 백분율 소수점 값SELECT ENAME, SAL, ROUND(RATIO_TO_REPORT(SAL) OVER (), 2) as R_RFROM EMPWHERE JOB = ‘SALESMAN’; - PERCENT_RANK - 파티션별 윈도우에서 가장 먼저 나오는 것은 0, 제일 마지막에 나오는 것은 1로 나타낸 후 값에 상관없이 행의 순서만으로의 백분율 값SELECT DEPTNO, ENAME, SAL, PERCENT_RANK() OVER (PARTITION BY DEPTNO ORDER BY SAL DESC) as P_RFROM EMP; - CUME_DIST - 파티션별 윈도우의 전체 건수에서 현재 행보다 작거나 같은 건에 대한 누적 백분률 값SELECT DEPTNO, ENAME, SAL, CUME_DIST() OVER (PARTITION BY DEPTNO ORDER BY SAL DESC) as CUME_DISTFROM EMP; - NTITLE - 파티션별 전체 건수를 Argument로 N등분한 값SELECT ENAME, SAL, NTILE(4) OVER (ORDER BY SAL DESC) as QUAR_TILEFROM EMP ;`참고윈도우 함수별 기능 및 예제 - http://www.gurubee.net/lecture/2382윈도우 함수(WINDOW FUNCTION)제6절 윈도우 함수(WINDOW FUNCTION)WINDOW FUNCTION 종류그룹 내 순위함수.3.1 RANK 함수3.2 DENSE_RANK 함수3.3 ROW_NUMBER 함수일반 집계 함수3.4 ..www.gurubee.net윈도우 함수 공식 문서 - https://www.postgresql.org/docs/current/tutorial-window.html#PostgreSQL #Window functions
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] 윈도우 함수(Window Functions)의 개념, 성능 및 사용법 (over, sum/rank/ntitle/cume_dist 등...)" href="http://localhost:1313/posts/40/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.1. Primary Keys(PK)2. Foreign Keys(FK)3. Check4. Not-null5. Unique## 1. Primary Keys (PK)- Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.- Not- null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.- PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.- B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)2023.09.12 - [Postgresql] - [PostgreSQL] B-tree 인덱스의 원리 및 특징[PostgreSQL] B-tree 인덱스의 원리 및 특징PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다. 그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에junhkang.tistory.com### 1-1. 테이블 생성 시 PK 부여-- 단일 설정CREATE TABLE po_headers (po_no INTEGER PRIMARY KEY,vendor_no INTEGER,description TEXT,shipping_address TEXT);-- 복합설정CREATE TABLE TABLE (column_1 data_type,column_2 data_type,&amp;hellip;PRIMARY KEY (column_1, column_2));### 1-2. 기존 테이블에 PK 속성 부여ALTER TABLE table_name ADD PRIMARY KEY (column_1, column_2);-- 자동 증가하는 PK 설정ALTER TABLE vendors ADD COLUMN ID SERIAL PRIMARY KEY;### 1-3. PK 삭제ALTER TABLE table_name DROP CONSTRAINT primary_key_constraint;## 2. Foreign Keys&gt; 외래키(Foreign Keys)는 다른 테이블의 Primary Key에 참조된 컬럼 혹은 컬럼의 조합이다.다른 테이블과의 관계에 따라 다양한 FK를 가질 수 있다. 외래키 설정 후 parent 컬럼의 상태에 따라 다음 액션을 지정할 수 있다.a. SET NULLb. SET DEFAULTc. RESTRICTd. NO ACTIONe. CASCADEPostgresql에서는 다음 5가지 parent데이터 변경에 대한 옵션을 제공한다. 다음 FK 설정 예제는 parent데이터가 삭제될 경우 종속된 데이터를 null로 업데이트한다. Cascade의 경우 parent 데이터가 삭제될 경우 종속된 데이터들도 같이 전체 삭제된다.### 2-1. FK 생성CREATE TABLE customers(customer_id INT GENERATED ALWAYS AS IDENTITY,customer_name VARCHAR(255) NOT NULL,PRIMARY KEY(customer_id));CREATE TABLE contacts(contact_id INT GENERATED ALWAYS AS IDENTITY,customer_id INT,contact_name VARCHAR(255) NOT NULL,phone VARCHAR(15),email VARCHAR(100),PRIMARY KEY(contact_id),CONSTRAINT fk_customerFOREIGN KEY(customer_id)REFERENCES customers(customer_id)-- 다음 설정은 parent 데이터가 삭제될시 참조데이터를 null로 업데이트한다.ON DELETE SET NULL);## 3. CheckBoolean 타입으로 컬럼에 제약을 줘서 insert 혹은 update 전에 테이블에 유효한 데이터인지를 검증한다.(맞지 않는다면 Constraint violation error를 발생시킨다.)### 3-1. Check Constraint 부여한 채로 테이블 생성CREATE TABLE employees (id SERIAL PRIMARY KEY,first_name VARCHAR (50),last_name VARCHAR (50),birth_date DATE CHECK (birth_date &gt; &#39;1900-01-01&#39;),joined_date DATE CHECK (joined_date &gt; birth_date),salary numeric CHECK(salary &gt; 0));다음 테이블에는 2가지 Constraint이 걸려있다. birth_date는 1900-01-01 이후 날짜여야 하며, joined_date는 birth_date 이후 날짜여야만 한다.### 3-2. 기존에 테이블에 Check Constraint 추가ALTER TABLE prices_listADD CONSTRAINT price_discount_checkCHECK (price &gt; 0AND discount &gt;= 0AND price &gt; discount);## 4. Not null특정 컬럼에 Null 제약을 줘서 insert 혹은 update시 해당 값이 null이 아닌지를 검증한다.### 4-1. Not null Constraint 부여CREATE TABLE table_name(...column_name data_type NOT NULL,...);check와 Not null을 동시에 적용 가능하다.CREATE TABLE invoices(id SERIAL PRIMARY KEY,product_id INT NOT NULL,qty numeric NOT NULL CHECK(qty &gt; 0),net_price numeric CHECK(net_price &gt; 0));### 4-2. 기존 테이블에 not null 속성을 추가해당 컬럼에 null 값이 없어야 적용 가능하다.ALTER TABLE table_nameALTER COLUMN column_name SET NOT NULL;-- 여러개ALTER TABLE table_nameALTER COLUMN column_name_1 SET NOT NULL,ALTER COLUMN column_name_2 SET NOT NULL,...;종종 두 컬럼 중 적어도 1개는 null이 아니게 설정해야 할 경우가 있다.CREATE TABLE users (id serial PRIMARY KEY,username VARCHAR (50),password VARCHAR (50),email VARCHAR (50),CONSTRAINT username_email_notnull CHECK (NOT (( username IS NULL OR username = &#39;&#39; )AND( email IS NULL OR email = &#39;&#39; ))));## 5. Uniqueinsert 혹은 update 시 해당 컬럼에 유니크한 값이 들어있는지를 확인한다. 단일 컬럼 혹은 컬럼의 조합으로 설정이 가능하며 Unique index가 자동으로 부여된다.### 5-1. Unique Constraint 적용한 테이블 생성CREATE TABLE person (id SERIAL PRIMARY KEY,first_name VARCHAR (50),last_name VARCHAR (50),email VARCHAR (50) UNIQUE);컬럼의 조합에 설정하고 싶을 때는CREATE TABLE table (c1 data_type,c2 data_type,c3 data_type,UNIQUE (c2, c3));### 5-2. 기존 테이블에 Unique Constraint 추가CREATE UNIQUE INDEX CONCURRENTLY equipment_equip_idON equipment (equip_id);ALTER TABLE equipmentADD CONSTRAINT unique_equip_idUNIQUE USING INDEX equipment_equip_id;참고https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-unique-constraint/https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-check-constraint/#CHECK #constraint #PostgreSQL #unique #not null #Primary Keys #Foreign Keys
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)" href="http://localhost:1313/posts/21/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Spring] Spring Security6 filterchain 사용시 jsp 뷰 렌더링 설정
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>스프링부트 3.. 버전 업을 하며 Spring Security6으로 업데이트 중이다.더 이상 지원하지 않는 WebSecurityConfigurerAdapter를 SecurityFilterChain으로 변경 시 포워딩되는 jsp 파일 경로가 필터에 걸려 노출되지 않는 현상이 발생하였다.### 1-1. 기존 샘플 소스@Configurationpublic class SecurityConfig {@Beanpublic SecurityFilterChain config(HttpSecurity http) throws Exception {http.authorizeHttpRequests((auth) -&gt; auth.requestMatchers(&#34;/&#34;).permitAll().anyRequest().authenticated());}기존과 같이 “/” 경로에 대한 권한을 부여하였지만, jsp 경로에 대한 권한부족으로 페이지 접근에 실패하였다.## 2. 원인&gt; Spring Security 5.8 and earlier only perform authorization once per request. This means that dispatcher types like FORWARD and INCLUDE that run after REQUEST are not secured by default.Spring Security6 에서 페이지 전환 시 forwards, includes의 타입의 요청이 security filter에 기본적으로 포함되게 변경되었다.## 3. 해결### 3-1. forwards/includes 타입 요청을 허용하도록 수정 (스프링 공식문서 참고)@Configurationpublic class SecurityConfig {@Beanpublic SecurityFilterChain config(HttpSecurity http) throws Exception {http.authorizeHttpRequests((auth) -&gt; auth.requestMatchers(&#34;/&#34;).permitAll().dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll().dispatcherTypeMatchers(DispatcherType.INCLUDE).permitAll().anyRequest().authenticated());}### 3-2. jsp 파일 경로 (ex. /WEB-INF/view/*)를 허용하도록 수정 @Beanpublic SecurityFilterChain config(HttpSecurity http) throws Exception {http.authorizeHttpRequests((auth) -&gt; auth.requestMatchers(&#34;/&#34;, &#34;/WEB-INF/view/**&#34;).permitAll().anyRequest().authenticated());return http.build();}참고https://docs.spring.io/spring-security/reference/5.8/migration/servlet/authorization.html#_permit_forward_when_using_spring_mvc
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [Spring] Spring Security6 filterchain 사용시 jsp 뷰 렌더링 설정" href="http://localhost:1313/posts/51/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Spring] 단위 테스트, JUnit의 개념 및 단위 테스트 코드 작성 방법
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>하나의 모듈을 기준으로 독립적으로 진행되는 가장 작은 단위의 테스트이다. 통합 테스트의 경우 시스템을 구성하는 컴포넌트들이 커질수록 테스트 시간이 길어지지만, 단위 테스트의 경우 해당 부분만 독립적으로 테스트하기에 코드의 변경이 있어도 빠르게 문제 여부를 확인할 수 있다. CleanCode 책에 의하면 깨끗한 테스트 코드는 다음 5가지 규칙을 따라야 한다.&gt; Fast - 빠르게 동작하여 자주 돌릴 수 있어야 한다.Independent - 테스트는 독립적이며 서로 의존해서는 안된다.Repeatable - 어느 환경에서도 반복이 가능해야 한다.Self-validating - 테스트는 성공 또는 실패로 결과를 내어 자체 검증되어야 한다.Timely - 테스트는 적시에, 테스트하려는 실제코드를 구현하기 직전에 구현해야 한다.## 2. JunitJunit은 단위 테스트를 지원하는 오픈소스 프레임워크로 다음과 같은 특징을 가진다.- 문자 혹은 GUI 기반으로 실행- @Test 메서드를 호출할 때마다 새 인스턴스 생성- 예상결과를 검증하는 assertion 제공- 자동실행, 자체결과 확인 및 즉각적인 피드백 제공- 테스트 방식을 구분할 수 있는 어노테이션을 제공하며, 어노테이션만으로 간결하게 실행이 가능### ▶ 2-1. 어노테이션 종류&gt; @DisplayName - 테스트 이름 명시@Test - 테스트를 수행할 메서드, Junit은 각 테스트끼리 영향을 주지 않도록 테스트 실행 객체를 매 테스트마다 만들고 종료 시 삭제@BeforeAll - 전체 테스트를 시작하기 전에 1회 실행 (ex. 데이터베이스 연결, 테스트환경 초기화, 전체 테스트 실행주기에 한 번만 호출)@BeforeEach - 테스트 케이스를 시작하기 전마다 실행 (테스트 메서드에 사용하는 객체 초기화, 테스트에 필요한 데이터 삽입 등)@AfterAll - 전체 테스트를 마치고 종료하기 전에 1회 실행 (데이터베이스 연결 종료, 공통으로 사용하는 자원 해제 등)@AfterEach - 테스트 케이스를 종료하기 전마다 실행 (테스트 이후 특정데이터를 삭제 등)### ▶ 2-2. AssertJJunit과 사용해 가독성을 높여주는 라이브러리로 다양한 문법을 지원한다. 기존 Junit은 기댓값과 실제 비교대상이 확실히 보이지 않아 잘 구분이 안되지만 isEqualTo 등 명확한 의미의 매머드로 대체가 가능하다.### ▶ 2-3. given-when-then 패턴요즘 단위테스트의 가장 보편적인 형태로 1개의 단위테스트를 3단계로 나눠서 처리하는 패턴이다.- given = 테스트 실행을 준비하는 단계 (어떤 상황, 데이터가 주어졌을 때)- when = 테스트를 진행하는 단계 (어떤 함수를 실행시키면 )- then = 테스트 결과를 검증하는 단계 (어떤 결과가 기대된다.)## 3. 단위 테스트 예제점수의 평균을 계산해주는 클래스에 대한 단위 테스트를 해보자. 해당 예제는 객체 간의 메시지 교환이 없는 단순한 값 비교, 예외 확인을 위한 테스트 케이스이다.(일반적으로 스프링 애플리케이션은 다양한 객체에서 메시지를 전달받아 의존성이 생기는데, 이럴 경우 Mock(가짜) 객체를 사용하여 테스트가 가능하다.)### ▶ 3-0. 테스트 대상인 평균점수 조회다음과 같이 0점 이상의 점수들에 대한 평균을 구하는 클래스가 있을 때public class AverageScoreCalculator {private static Integer sum = 0;private static Integer count = 0;public void addScore(Integer score) {if (!validateScores(score))	{throw new IllegalStateException(&#34;Invalid score&#34;);}sum &#43;= score;count&#43;&#43;;}private boolean validateScores(Integer score) {return score &gt; 0;}public Double getAverageScore() {return (double) (sum / count);}}### ▶ 3-1. 점수의 평균이 일치하는지 테스트실제 평균의 값과, 클래스 연산 결과가 일치하는지 테스트한다.@DisplayName(&#34;점수의 평균 테스트&#34;)@Testvoid averageScoreTest() {//givenAverageScoreCalculator averageScoreCalculator = new AverageScoreCalculator();int[] scores = {10,20,30,40,50};//whenfor (int i = 0; i&lt;scores.length; i&#43;&#43;)	{averageScoreCalculator.addScore(scores[i]);}Double averageScore = averageScoreCalculator.getAverageScore();//thenassertThat(averageScore).isEqualTo(Arrays.stream(scores).average().getAsDouble());}### ▶ 3-2. 평균점수의 범위 테스트점수의 평균이 1~100점 이내에 존재하는지 확인한다.@DisplayName(&#34;평균 점수 범위 테스트&#34;)@Testvoid averageScoreRangeTest()	{//givenAverageScoreCalculator averageScoreCalculator = new AverageScoreCalculator();int[] scores = {10,20,30,40,50};//whenfor (int i = 0; i&lt;scores.length; i&#43;&#43;)	{averageScoreCalculator.addScore(scores[i]);}Double averageScore = averageScoreCalculator.getAverageScore();//thenassertThat(averageScore &gt;= 0 &amp;&amp; averageScore &lt;= 100).isTrue();}### ▶ 3-3. 개별점수 유효성 테스트유효하지 않은 점수가 인풋 될 경우 IllegalStateException이 기대되기에, assertThrow로 Exception을 테스트한다.@DisplayName(&#34;개별 잘못된 점수 테스트&#34;)@Testpublic void averageScoreInvalidScoreTest(){//givenAverageScoreCalculator averageScoreCalculator = new AverageScoreCalculator();int[] scores = {10,20,30,40,-1};//whenfinal IllegalStateException exception = assertThrows(IllegalStateException.class, () -&gt; {for (int i = 0; i&lt;scores.length; i&#43;&#43;)	{averageScoreCalculator.addScore(scores[i]);}});//thenassertThat(exception.getMessage()).isEqualTo(&#34;Invalid score&#34;);}## 4. 주요 Assert 메서드### ▶ 4-1. 주요 비교 검증 테스트 메서드메서드 이름설명isEqualTo(A)A 값과 같은지 검증isNotEqualTo(A)A 값과 다른지 검증contains(A)A 값을 포함하는지 검증doesNotContain(A)A 값을 포함하지 않는지 검증startWith(A)접두사가 A인지 검증endsWith(A)접미사가 A인지 검증isEmpty()비어 있는 값인지 검증isNotEmpty()비어 있지 않은 값인지 검증isPositive()양수인지 검증isNegative()음수인지 검증isGreaterThan(a)a보다 큰 값인지 검증isLessThan(a)a보다 작은 값인지 검증### ▶ 4-2. HTTP 주요 응답코드 테스트 메서드코드매핑 메서드설명200 OKisOk()HTTP 응답코드가 200 OK인지 검증201 CreatedisCreated()HTTP 응답코드가 201 Created 검증400 Bad RequestisBadRequest()HTTP 응답코드가 400 BadRequest검증403 ForbiddenisForbidden()HTTP 응답코드가 403 Forbidden검증404 Not FoundisNotFound()HTTP 응답코드가 404 Not Found 검증4is4xxClientError()HTTP 응답코드가 4 검증500 Internal Server ErrorisInternalServerError()HTTP 응답코드가 500 InternalServerError 검증5is5xxClientError()HTTP 응답코드가 5 검증참고도서 : 스프링 부트 3 백엔드 개발자 되기 - 자바 편https://mangkyu.tistory.com/143#spring #TDD #JUnit #단위테스트 #assertj
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [Spring] 단위 테스트, JUnit의 개념 및 단위 테스트 코드 작성 방법" href="http://localhost:1313/posts/45/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>순환참조는 맞물린 의존성 주입 (DI) 상태에서 어떤 빈을 먼저 생성할지 결정하지 못해서 생기에 발생한다. BeanA에서 BeanB를 참조(BeanA-&gt;BeanB) 일 경우 스프링은 BeanB를 먼저 생성 후 BeanA를 생성하기에, BeanB에서 다시 BeanA를 참조할 경우 (BeanA-&gt;BeanB-&gt;BeanA) 순환 참조가 발생하게된다.## 2. 의존성 주입의존성 주입의 3가지 상황 (생성자 주입방식, 필드 주입방식, Setter주입)에서 순환참조가 발생할수 있다. 다음 포스트 각각의 상세 내용을 확인할 수 있고, 이번 포스트에서는 각각의 경우에 순환참조가 발생하면 어떤 차이점이 있는지 확인해 보자.2023.11.06 - [Spring] - [Spring] IoC(제어의 역전) &amp; DI(의존성 주입)의 개념[Spring] IoC(제어의 역전) &amp; DI(의존성 주입)의 개념1. IoC (Inversion of Control) 제어의 역전 IoC란 메인 프로그램에서 컨테이너나 프레임워크로 객체와 객체의 의존성에 대한 제어를 넘기는 것을 말한다. 프레임워크 없이 개발할 때는 각 객체에 대한junhkang.tistory.com### ▶ 2-1. 생성자 주입@Componentpublic class BeanA {private BeanB beanB;public void BeanA(BeanB beanB){this.beanB = beanB;}}@Componentpublic class BeanB {private BeanA beanA;public void BeanB(BeanA beanA){this.beanA = beanA;}}생성자 주입의 경우, 애플리케이션 구동 시 스프링 컨테이너(IOC)는 BeanA 빈을 생성하기 위해 BeanB를 찾고 BeanB를 찾기 위해 Bean A를 찾기 때문에 순환참조가 발생하게 된다.### ▶ 2-2. 필드 주입, Setter 방식필드 주입, Setter 방식은 애플리케이션의 실행 시점에서는 에러가 발생되지 않는다. 어플리케이션의 실행 시점이 아닌, 실제로 사용되는 시점에 실행되는 메서드가 순환 호출되기 때문이다. 필요 없는 시점에는 null 상태로 유지 후 사용될 때 의존성이 주입되며 참조되기 시작한다.## 3. 해결책### ▶ 3-1. @Lazy 어노테이션@Componentpublic class BeanA {private BeanB beanB;public void BeanA(BeanB beanB){this.beanB = beanB;}}@Componentpublic class BeanB {private BeanA beanA;public void BeanB(@Lazy BeanA beanA){this.beanA = beanA;}}다음과 같이 @Lazy 어노테이션을 통해 시점을 지연시킬 수 있으나 스프링에서는 이 방식을 추천하지 않는다. 애플리케이션 로딩시점이 아닌 Bean이 필요한 시점에 주입받기 때문에 특정 HTTP 요청을 받을 때 Heap 메모리가 증가할 수 있으며 메모리가 충분하지 않은 경우 장애로 이어질 수 있다. 또한 잘못된 빈의 생성시점을 늦추기에 문제상황에 대한 인식이 늦어질 수 있다.### ▶ 3-2. 설계 변경근본적으로 순환참조가 일어나지 않는 설계를 해야 한다.단순하게는 BeanA -&gt; BeanB-&gt; BeanA의 관계를 BeanA -&gt; BeanB -&gt; BeanC 형태로 참조가 순환되지 않도록 분리해야 한다.#spring #의존성주입 #순환참조
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle" href="http://localhost:1313/posts/47/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[WEB] SSR(Server Side Rendering) 과 CSR(Client Side Rendering)의 개념 및 차이
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>서버에서 렌더링 준비를 마친 상태로 클라이언트에 자원을 전달한다.### 1-1. SSR 작동 방식- 유저가 웹사이트 자원을 요청- 서버에서 “렌더링 가능한” HTML 파일 생성 (리소스 체크, 컴파일 후 완성된 HTML 콘텐츠 생성)- 브라우저는 즉시 HTML 렌더링, 사이트 조작 불가 상태- 클라이언트가 자바스크립트를 다운받는다.- 다운로드하여지고 있는 사이 콘텐츠는 볼 수 있지만 조작은 불가, 이 기간 동안 유저의 액션을 기억- 브라우저가 자바스크립트 프레임워크를 실행- 자바스크립트가 컴파일된 후 기억하고 있던 유저 액션을 실행시킨다.- 서버에서 렌더링 가능한 상태로 이미 전달되기에 자바스크립트를 받는 동안 특정 자원을 볼 수 있다.### 1-2. SSR 장점- 초기 페이지의 로딩속도가 빠르다.- 서버에서 컴파일되어 클라이언트로 넘어오기에 클롤러 대응에 용이하여 SEO 친화적이다.- 클라이언트 하드웨어 및 소프트웨어 성능에 영향을 덜 받는다.### 1-3. SSR 선택 기준- 네트워크가 느릴 때 (페이지마다 나눠서 불러오기 때문)- 검색엔진 최적화가 필요할 때- 최초 로딩이 빨라야 할 때- 메인 스크립트가 크고 로딩이 느릴 때- 웹사이트 상호작용이 별로 없을 때## 2. CSR (Client Side Rendering)렌더링이 클라이언트에서 일어난다. 서버에선 HTML과 JS를 보내고, 클라이언트에서 렌더링을 시작한다. 모든 로직, 데이터, 템플릿, 라우팅은 클라이언트에서 실행된다. 자바스크립트 번들 크기의 영향을 많이 받기에 코드 분할을 고려해야 하며, 적시 적소에 필요한 기능만을 제공해야 한다.### 2-1. CSR 작동방식- 유저가 웹사이트 자원을 요청- CDN이 자바스크립트 링크가 포함된 HTML 파일을 바로 보낸다.- 브라우저는 HTML을 다운로드하고 자바스크립트를 다운로드한다. 그동안 사이트는 유저에게 보이지 않는다.- 자바스크립트가 실행된다. API로부터 받은 데이터를 위치에 넣어준다. 이제 페이지는 상호작용이 가능하다.- 서버에서 처리 없이 클라이언트로 보내주기 때문에 자바스크립트, HTML이 모두 다운되고 실행되기 전에 유저가 볼 수 있는 내용은 없다.### 2-2. CSR 장점- 이미 모든 스크립트가 사전에 로딩되었기에, 후속 페이지 로드 시간이 빠르다.- 서버를 호출할 때마다 전체 UI를 다시 로딩할 필요 없다.- 클라이언트 자원을 사용하기에 서버 부하가 적다.### 2-3. CSR 선택기준- 네트워크가 빠르고, 서버 성능이 좋지 않을 때- 사용자에게 보여줄 데이터가 많을 때- 메인 스크립트가 가벼울 때- 웹 애플리케이션에 사용자와 상호작용할 것들이 많을 때참고https://ajdkfl6445.gitbook.io/study/web/csr-vs-ssr-vs-ssghttps://off-dngw.github.io/posts/SSR-CSR/#csr #SSR
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [WEB] SSR(Server Side Rendering) 과 CSR(Client Side Rendering)의 개념 및 차이" href="http://localhost:1313/posts/49/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[디자인패턴] 추상 팩터리(Abstract Factory) 패턴의 개념, 예제, 장단점, 활용
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> 추상 - 구체적으로 어떻게 구현되는지 생각하지 않고 인터페이스(API)에만 주목하는 상태공장 - 부품을 조립하여 제품 완성추상 &#43; 공장 패턴 : 추상적인 공장에서 추상적인 부품을 조합하여 추상적인 제품을 만든다. 부품의 구체적인 구현에 집중하지 않고 인터페이스에 주목, 인터페이스만 사용하여 부품을 조립하고 제품으로 완성한다.다음 표를 보면 추상 팩토리가 어떤 구조로 이루어졌는지 확인할 수 있다.- Abstract Factory : 최상위 공장, 메서드들을 추상화한다. AbstractProduct의 인스턴스를 만들기 위한 인터페이스를 결정한다.- Concrete Factory : 서브 공장 클래스, 유형에 맞는 객체를 반환하도록 메서드들을 재정의한다. AbstractFactory의 인터페이스를 구현한다.- Abstract Product : 타입의 제품을 추상화한 인터페이스이다. AbstractFactory에 의해 만들어지는 추상적인 부품이나 제품의 인터페이스(API)를 결정한다.- ConcreteProduct : 각 유형의 구현체, 팩토리 객체로부터 생성한다. AbstractProduct의 인터페이스를 구현한다.## 2. 예제사용할 예제는 계층 구조로 된 링크 페이지를 HTML파일로 바꾸는 코드이다. (“JAVA 언어로 배우는 디자인 패턴 입문 3편&#34;의 예제 활용) HTML 계층 구조를 추상 팩토리 패턴을 통해 구현한 것으로 2개의 패키지로 분리된 클래스군으로 구성되어 있다.- factory : 추상적인 공장, 부품, 제품을 포함하는 패키지- listFactory : 구체적인 공장, 부품, 제품을 포함하는 패키지factory 하위의 추상 공장/부품과 listFactory 하위의 구체적인 부품/공장을 통해 html list를 구현한다.### 2-1. 추상적인 부품 - Item, Link, TrayHTML 요소들을 다룰 추상적인 부품들을 정의한다. Link와 Tray를 통일적으로 다루기 위한 Item 클래스를 생성한다. HTML 문자열을 반환하는 makeHTML()은 추상메서드로 선언하여 하위 클래스에서 상황에 맞게 구현할 수 있게 한다.#### 2-1-1. Itempublic abstract class Item {protected String caption;public Item(String caption) {this.caption = caption;}public abstract String makeHTML();}#### 2-1-2. Linkpublic abstract class Link extends Item {protected String url;public Link(String caption, String url) {super(caption);this.url = url;}}#### 2-1-3. Traypublic abstract class Tray extends Item {protected List tray = new ArrayList&lt;&gt;();public Tray(String caption) {super(caption);}public void add(Item item) {tray.add(item);}}### 2-2. 추상적인 공장 - Factoryclass명을 통해 구체적인 공장의 인스턴스를 생성한다. getFactory를 통해 구체적인 공장 인스턴스를 생성하지만, 리턴값은 추상적인 공장(Factory) 임을 주의하자. 추상 부품들을 반환하는 createLink, createTray, createPage 같은 추상 메서드들은 메서드 이름과 시그니처만 여기서 확실히 정의하고, 제품의 구제적인 생성 및 부품 선정은 하위 클래스에게 일임한다.public abstract class Factory {public static Factory getFactory(String classname) {Factory factory = null;try {factory = (Factory)Class.forName(classname).getDeclaredConstructor().newInstance();} catch (ClassNotFoundException e) {System.out.println(classname &#43; &#34; 클래스가 발견되지 않았습니다.&#34;);} catch (Exception e) {e.printStackTrace();}return factory;}public abstract Link createLink(String caption, String url);public abstract Tray createTray(String caption);public abstract Page createPage(String title, String author);}### 2-3. 구체적인 공장 - ListFactoryFactory 클래스의 createLink, createTray, createPage 추상 메스드들을 구체적으로 정의한다.public class ListFactory extends Factory {@Overridepublic Link createLink(String caption, String url) {return new ListLink(caption, url);}@Overridepublic Tray createTray(String caption) {return new ListTray(caption);}@Overridepublic Page createPage(String title, String author) {return new ListPage(title, author);}}### 2-4. 구체적인 부품 - ListLink, ListTray상위 클래스의 makeHTML 추상 메서드를 구현한다. 각 클래스의 요청에 맞는 HTML을 파싱 하여 String 형태로 리턴한다.#### 2-4-1. ListLinkpublic class ListLink extends Link {public ListLink(String caption, String url) {super(caption, url);}@Overridepublic String makeHTML() {return &#34; &#34; &#43; caption &#43; &#34;\n&#34;;}}#### 2-4-2. ListTray####public class ListTray extends Tray {public ListTray(String caption) {super(caption);}@Overridepublic String makeHTML() {StringBuilder sb = new StringBuilder();sb.append(&#34;\n&#34;);sb.append(caption);sb.append(&#34;\n\n&#34;);for (Item item: tray) {sb.append(item.makeHTML());}sb.append(&#34;\n&#34;);sb.append(&#34;\n&#34;);return sb.toString();}}## 3. Abstract Factory 패턴의 장단점Abstract Factory 패턴에 Concrete Factory(구체적인 공장)을 추가하는 것은 간단하다. 어떤 클래스를 만들고 어떤 메서드를 구현해야 하는지가 명확하기 때문이다. 예제에서 ListFactory 외에 다른 Factory를 생성하려 한다면, Factory, Link, Tra 하위 클래스를 생성하고 각각 추상 메서드를 다시 구현하면 된다. 이 과정에서 Abstract Factory(추상 공장)에는 어떠한 수정도 가해지지 않는다. 여기서 오는 장점으로는- 객체 생성코드의 확장성 보장- 객체 간의 결합도 낮춤- 구현체 클래스에 대한 의존성 감소하지만 공장을 추가하는 게 아닌 부품을 추가해야 한다면 어떨까? Factory 추상 팩토리에 Picture라는 부품을 추가해야 한다면, 이미 구현된 Concrete Factory 전체를 Picture에 대응하도록 수정해야 한다. 현재 예제에서는 createPicture라는 메서드를 모든 구체적인 공장에 추가해 주어야 한다. 이미 만들어진 공장이 많을수록 더 큰 작업이 될 것이다. 여기서 오는 단점으로는- 복잡한 구조- 유연성이 저하- 추가적인 클래스 생성 필요## 4. 결론 / 활용같은 유형의 다양한 제품, 부품을 생성할 때 굉장히 효율적인 패턴이다. 수정에는 닫혀있고 확장에는 열려있는 패턴으로 객체 간의 결합도를 낮춰주지만 추가적인 클래스 생성으로 유연성이 떨어지고 복잡한 구조가 될 우려가 있다. 확장 방향성에 대한 충분한 검토가 끝난 후 적용해야 효율을 볼 수 있다.- 참고 : JAVA 언어로 배우는 디자인 패턴 입문 3편- 상세 예제소스는 깃허브에서 확인가능https://github.com/junhkang/java-design-pattern/tree/master/src/main/java/com/example/javadesignpattern/abstractFactory#디자인 패턴 #Abstract Factory #추상 팩토리
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [디자인패턴] 추상 팩터리(Abstract Factory) 패턴의 개념, 예제, 장단점, 활용" href="http://localhost:1313/posts/61/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/tags/0/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/tags/0/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

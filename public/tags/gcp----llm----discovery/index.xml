@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>GCP  - LLM  - Discovery on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/gcp----llm----discovery/</link>
+    <description>Recent content in GCP  - LLM  - Discovery on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 16 Dec 2024 22:47:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gcp----llm----discovery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[LLM\\] Google Cloud Discovery Engine 데이터 스토어 업로드 포맷
+</title>
+      <link>http://localhost:1313/posts/121/</link>
+      <pubDate>Mon, 16 Dec 2024 22:47:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/121/</guid>
+      <description>&lt;h2 id=&#34;llm-google-cloud-discovery-engine-데이터-스토어-업로드-포맷&#34;&gt;[LLM] Google Cloud Discovery Engine 데이터 스토어 업로드 포맷&lt;/h2&gt;
+&lt;h3 id=&#34;1-google-cloud-discovery-engine이란&#34;&gt;1. Google Cloud Discovery Engine이란?&lt;/h3&gt;
+&lt;p&gt;Google Cloud Discovery Engine은 구글 클라우드 플랫폼에서 제공하는 검색 및 추천 서비스로, 웹사이트나 앱 내에서 사용자가 원하는 정보를 쉽고 빠르게 찾을 수 있도록 도와주는 서비스로 다음과 같은 특징을 가진다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;고급 검색 기능&lt;/strong&gt; : 단순 키워드 검색이 아닌, 사용자의 의도에 맞춰 의미를 파악하고 관련 콘텐츠를 제안하는 자연어 처리(NLP) 기반 검색을 지원&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;개인화된 추천&lt;/strong&gt; : 머신러닝 기반 추천엔진을 활용, 취향과 행동 패턴에 맞춘 추천 콘텐츠 제공&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;확장 가능성&lt;/strong&gt; : 다양한 규모와 범위의 콘텐츠에 대해 빠른 검색 및 추천 성능유지&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-문제상황&#34;&gt;2. 문제상황&lt;/h3&gt;
+&lt;p&gt;Google cloud discovery engine을 활용해 rag를 고도화 시도하던 중, 기존 데이터베이스의 단순 question, answer 필드구조를 csv형태로 업로드하던 방식을 벗어나 metadata, description 필드를 구성하고자 하였다. content필드를 만족하는 데이터 구조를 구성하기 위해 기존 데이터셋을 discovery engine이 요구하는 특정 struct_value, string_value 타입의 jsonl 포맷으로 변환하는 과정에서 여러 에러를 만나게 되었다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

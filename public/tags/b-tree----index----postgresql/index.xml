@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>B-Tree  - Index  - PostgreSQL on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/b-tree----index----postgresql/</link>
+    <description>Recent content in B-Tree  - Index  - PostgreSQL on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/b-tree----index----postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] B-tree 인덱스의 원리 및 특징</title>
+      <link>http://localhost:1313/posts/6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/6/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;▪ 트리의 노드를 밸런스 있게 재정렬한 트리형태의 자료구조▪ B-tree는 Binary 가 아닌 Balanced의 약자▪ 컬럼의 기존 데이터를 변형하지 않음▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;2-b-tree-인덱스의-원리&#34;&gt;2. B-tree 인덱스의 원리&lt;/h2&gt;
+&lt;h3 id=&#34;-2-1-b-tree-인덱스의-자료구조-형태&#34;&gt;▪ 2-1. B-tree 인덱스의 자료구조 형태&lt;/h3&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/6/img.png&#34;&gt;
+최상위 Root를 Meta page, 최하위 노드를 Leaf page라고 한다.) Root page에서 leaf page들 간의 내부 page 수가 항상 같기에, 어떤 value를 검색하여도 동일한 시간이 걸린다. 데이터는 non-decreasing order로 정렬되어 있고, 동일 레벨의 page들끼리는 양방향으로 연결되어 있기에 (ex. 그림의 25 32) 순차적 데이터를 root를 확인할 필요 없이 한 번에 찾을 수 있다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

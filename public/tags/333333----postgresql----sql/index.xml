@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>333333  - PostgreSQL  - SQL on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/333333----postgresql----sql/</link>
+    <description>Recent content in 333333  - PostgreSQL  - SQL on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/333333----postgresql----sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 문자열내 중복 공백, 단어 제거</title>
+      <link>http://localhost:1313/posts/12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/12/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;특정 문자열에 대해서 중복 공백 제거를 하고 싶다면 postgresql 정규식을 사용해서 가능하다.(공백 외에 단일 문자에 대한 중복제거도 동일한 방법으로 가능하다.)
+&lt;code&gt;select regexp_replace(name, &#39; +&#39;, &#39; &#39;, &#39;g&#39;) from TABLE; -- &#39;g&#39; 옵션을 제거할 경우 최초 건에 대에서만 변경&lt;/code&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;2-중복-단어-제거&#34;&gt;2. 중복 단어 제거&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;컬럼 단위 중복제거는 distinct, group by를 통해 쉽게 가능하지만, 컬럼 내 문자열의 중복 단어 제거의 경우 다음과 같다.(쉼표 기준으로 컬럼을 분리, 중복을 제거한 후 다시 연결)
+&lt;code&gt;select id, array_to_string(array_agg(distinct token), &#39; &#39;) from ( SELECT unnest(string_to_array(COLUMN, &#39; &#39;)) as token, id FROM TABLE) as tmp group by id&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

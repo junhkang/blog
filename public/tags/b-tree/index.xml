@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>B-Tree on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/b-tree/</link>
+    <description>Recent content in B-Tree on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 12 Sep 2023 19:12:12 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/b-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] B-tree 인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/6/</link>
+      <pubDate>Tue, 12 Sep 2023 19:12:12 +0000</pubDate>
+      <guid>https://junhkang.com/posts/6/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;[PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;[그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에 대해 알아보자.]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/p&gt;
+&lt;h2 id=&#34;b-tree-인덱스란&#34; ke-size=&#34;size26&#34;&gt;[1. B-tree 인덱스란?]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[▪ 트리의 노드를 밸런스 있게 재정렬한 트리형태의 자료구조]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;br&gt;
+[▪ B-tree는 Binary 가 아닌 Balanced의 약자]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}
+[▪ 컬럼의 기존 데이터를 변형하지 않음]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}
+[▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

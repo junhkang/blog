@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Rest on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/rest/</link>
+    <description>Recent content in Rest on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 21 Nov 2023 17:36:52 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/rest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[네트워크] REST, RESTful API의 개념 및 설계 가이드</title>
+      <link>https://junhkang.com/posts/48/</link>
+      <pubDate>Tue, 21 Nov 2023 17:36:52 +0000</pubDate>
+      <guid>https://junhkang.com/posts/48/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/48/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;출처 : &lt;a href=&#34;https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html&#34;&gt;https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html&lt;/a&gt;
+ &lt;/p&gt;
+&lt;h2 id=&#34;1-rest란&#34;&gt;1. REST란?&lt;/h2&gt;
+&lt;p&gt;[REST란 Representational State Transfer의 약자로 자원을 이름으로 구분하여 자원의 상태를 주고받는 것을 의미한다. ]{style=&amp;ldquo;color: #333333; text-align: start;&amp;quot;}HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 행위를 적용한다.&lt;/p&gt;
+&lt;h3 id=&#34;rest-구성요소&#34; ke-size=&#34;size23&#34;&gt;1-1. REST 구성요소&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;자원(Resource) :&lt;/strong&gt; HTTP URI - 서버는 고유한 리소스 식별자로 각 리소스를 식별&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;행위(Verb) :&lt;/strong&gt; HTTP Method (GET, POST, PUT, DELETE)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;내용(Representations) :&lt;/strong&gt; HTTP Message Pay Load - 하나의 자원은 JSON,XML, TEST, RSS 등 여러 형태의 Representaion으로 나타내어질 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;rest의-특징&#34; ke-size=&#34;size23&#34;&gt;1-2. REST의 특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stateless (무상태성) -&lt;/strong&gt; 서버가 이전의 모든 요청과 독립적으로 클라이언트 요청을 완료함을 의미&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cacheable(캐쉬 가능성)&lt;/strong&gt; - 일부 응답을 저장하는 프로세스인 캐싱을 지원함을 의미&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Layered System (계층화)&lt;/strong&gt; - 클라이언트는 REST API Server만 호출하지만, 클라이언트 요청을 이행하기 위해 함께 작동하는 비즈니스 로직(보안, 암호화 등)을 여러 계층으로 실행될 수 있도록 유연하게 설계 가능함을 의미&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Uniform Interface (균일한 인터페이스)&lt;/strong&gt; - 서버가 표준 형식으로 정보를 전송함을 의미&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;장점&#34; ke-size=&#34;size23&#34;&gt;1-3. 장점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP 프로토콜을 그대로 사용하기에 별도 인프라를 구축할 필요가 없음&lt;/li&gt;
+&lt;li&gt;HTTP 프로토콜을 따르는 모든 플랫폼에서 사용 가능&lt;/li&gt;
+&lt;li&gt;API의 의도를 쉽고 명확하게 파악 가능&lt;/li&gt;
+&lt;li&gt;클라이언트, 서버를 완전히 분리하기에 각 부분이 독립적으로 발전 가능&lt;/li&gt;
+&lt;li&gt;사용되는 기술과 독립적이기에 API 설계에 영향을 주지 않고 다양한 프로그래밍 언어로 작성이 가능&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;단점&#34; ke-size=&#34;size23&#34;&gt;1-4. 단점&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;표준이 존재하지 않아 정의가 필요함&lt;/li&gt;
+&lt;li&gt;HTTP Method 형태가 제한적&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;restful-api란&#34; ke-size=&#34;size26&#34;&gt;2. RESTful API란?&lt;/h2&gt;
+&lt;p&gt;REST 아키텍쳐를 따르는 API를 RESTful API (Representaional state transfer API)라고 하며 REST 아키텍처를 구현하는 웹서비스를 RESTful 웹 서비스라고 한다. REST는 복잡한 네트워크에서 통신을 관리하기 위한 지침으로 만들어 졌으며, 대규모의 고성능 통신을 안정적으로 지원할 수 있고 쉽게 구현 및 수정할 수 있어 파악에 용이하고 여러 시스템에서 사용이 가능하다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

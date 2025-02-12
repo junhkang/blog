@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>000000  - PostgreSQL  - Procedure  - Trigger  - Function on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/000000----postgresql----procedure----trigger----function/</link>
+    <description>Recent content in 000000  - PostgreSQL  - Procedure  - Trigger  - Function on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/000000----postgresql----procedure----trigger----function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] Trigger, Procedure, Function (history 관리하기)</title>
+      <link>http://localhost:1313/posts/3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/3/</guid>
+      <description>&lt;p&gt;특정 테이블에 insert, update가 수행될 경우 무조건 내역에 “insert”를 하는 간단한 트리거 생성 예제이다.&lt;/p&gt;
+&lt;h4 id=&#34;1-1-함수를-실행할-트리거-생성&#34;&gt;1-1. 함수를 실행할 트리거 생성&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;create trigger trigger_save_history after insert or update on A for each row execute procedure trigger_insert();&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;1-2-실제-insert문이-실행되는-함수&#34;&gt;1-2. 실제 insert문이 실행되는 함수&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;CREATE OR REPLACE FUNCTION trigger_insert() returns trigger AS $$ DECLARE BEGIN insert into B (id, values, date) values (new.id, new.values, current_timestamp()); return NULL; END; $$ LANGUAGE &#39;plpgsql&#39;;&lt;/code&gt;
+하지만 특정 table에 insert, delete, update에 따라 서로 다른 테이블에 이력을 보관하거나, 기존 이력을 업데이트하는 등
+서로 다른 행위에 대한 트리거가 필요한 경우가 있다.
+그럴경우 다음 예제처럼 TG_OP을 통해 데이터베이스에 UPDATE, INSERT, DELETE를 분기하는 것이 가능하다. 또한 old, new를 통해 delete의 삭제 전 값, update의 업데이트 전, 후 값을 각각 사용할 수 있다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Abstract on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/abstract/</link>
+    <description>Recent content in Abstract on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 16 Feb 2024 17:20:34 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/abstract/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[디자인패턴] 추상 팩터리(Abstract Factory) 패턴의 개념, 예제, 장단점, 활용</title>
+      <link>https://junhkang.com/posts/61/</link>
+      <pubDate>Fri, 16 Feb 2024 17:20:34 +0000</pubDate>
+      <guid>https://junhkang.com/posts/61/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;추상-팩토리abstract-factory-패턴-이란&#34; ke-size=&#34;size26&#34;&gt;1. 추상 팩토리(Abstract Factory) 패턴 이란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;추상 - 구체적으로 어떻게 구현되는지 생각하지 않고 인터페이스(API)에만 주목하는 상태&lt;br&gt;
+공장 - 부품을 조립하여 제품 완성
+ &lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;추상 + 공장 패턴 :&lt;/strong&gt; 추상적인 공장에서 추상적인 부품을 조합하여 추상적인 제품을 만든다. 부품의 구체적인 구현에 집중하지 않고 인터페이스에 주목, 인터페이스만 사용하여 부품을 조립하고 제품으로 완성한다.
+ &lt;/p&gt;
+&lt;p&gt;다음 표를 보면 추상 팩토리가 어떤 구조로 이루어졌는지 확인할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/61/img.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abstract Factory :&lt;/strong&gt; 최상위 공장, 메서드들을 추상화한다. AbstractProduct의 인스턴스를 만들기 위한 인터페이스를 결정한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Concrete Factory :&lt;/strong&gt; 서브 공장 클래스, 유형에 맞는 객체를 반환하도록 메서드들을 재정의한다. AbstractFactory의 인터페이스를 구현한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abstract Product :&lt;/strong&gt; 타입의 제품을 추상화한 인터페이스이다. AbstractFactory에 의해 만들어지는 추상적인 부품이나 제품의 인터페이스(API)를 결정한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ConcreteProduct :&lt;/strong&gt; 각 유형의 구현체, 팩토리 객체로부터 생성한다. AbstractProduct의 인터페이스를 구현한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;예제&#34; ke-size=&#34;size26&#34;&gt;2. 예제&lt;/h2&gt;
+&lt;p&gt;사용할 예제는 계층 구조로 된 링크 페이지를 HTML파일로 바꾸는 코드이다. (&amp;quot;JAVA 언어로 배우는 디자인 패턴 입문 3편&amp;quot;의 예제 활용) HTML 계층 구조를 추상 팩토리 패턴을 통해 구현한 것으로 2개의 패키지로 분리된 클래스군으로 구성되어 있다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

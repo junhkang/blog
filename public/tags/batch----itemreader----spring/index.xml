@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Batch  - ItemReader  - Spring on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/batch----itemreader----spring/</link>
+    <description>Recent content in Batch  - ItemReader  - Spring on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 19 Oct 2023 18:20:45 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/batch----itemreader----spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[Spring\\] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)
+</title>
+      <link>http://localhost:1313/posts/32/</link>
+      <pubDate>Thu, 19 Oct 2023 18:20:45 +0000</pubDate>
+      <guid>http://localhost:1313/posts/32/</guid>
+      <description>&lt;h2 id=&#34;spring-스프링-배치-itemreader의-개념-mybatiscursoritemreader-mybatispagingitemreader-구현&#34;&gt;[Spring] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)&lt;/h2&gt;
+&lt;p&gt;Spring&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/32/img.png&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## 1. ItemReader란?
+스프링 배치의 ItemReader는 다음과 같은 과정을 거쳐 데이터를 처리한다.
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/32/img_1.png&#34; /&gt; &lt;/span&gt;
+&lt;figcaption&gt;출처:https://jojoldu.tistory.com/336&lt;/figcaption&gt;
+&lt;/figure&gt;
+대부분의 데이터 형태는 이미 ItemReader로 제공하고 있기에 ItemReader, ItemStream 인터페이스 자체를 구현할 필요는 없다.
+ItemReader는 Chunk 기반 트랜잭션을 다루며 Cursor, Paging 가 대표적인 2가지 방식이다.
+## 2. Cursor, Paging 형식
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/32/img_2.png&#34; /&gt; &lt;/span&gt;
+&lt;figcaption&gt;출처:https://ojt90902.tistory.com/780&lt;/figcaption&gt;
+&lt;/figure&gt;
+### 2-1. Cursor기반 ItemReader
+- JDBC ResultSet의 기본 기능이다.
+- ResultSet이 Open 될 때마다 데이터베이스의 데이터가 반환된다.
+- 데이터베이스와 연결 맺은 후 데이터를 Streaming 방식으로 I/O이다.
+- 현재 행에서Cursor를 유지하며 다음 데이터를 호출하면 Cursor를 한 칸씩 옮기면서 데이터를 가져온다.
+- 하나의 Connection으로 배치가 끝날때까지 사용되기에 Batch가 끝나기 전에 데이터베이스와 애플리케이션의 연결이 먼저 끊어질 수 있어 데이터베이스와 SocketTimeout을 충분한 값으로 설정하여야 한다.
+- 모든 결과를 메모리에 할당 하기 때문에 메모리 사용량이 많아진다.
+- Chunk 사이즈 만큼의 트랜잭션 단위로 데이터를 처리한다.
+**Cursor 기반 ItemReader 구현체**
+&gt; \- JdbcCursorItemReader  
+&gt; - HibernateCursorItemReader  
+&gt; - StoredProcedureItemReader  
+&gt; - MybatisCursorItemReader
+### 2-2. Paging기반 ItemReader
+- Chunk로 데이터베이스에서 데이터를 검색
+- Page Size 만큼만 한 번에 메모리로 가져오기에 메모리 사용량이 적어진다.
+- 페이지 단위로 컨넥션을 맺고 끊기를 반복하기에 대량 데이터를 처리하기 좋다.
+- 쿼리자체에 반환하고자하는 데이터 범위를 지정하여 사용한다. (offset, limit)
+- 컨넥션 유지시간이 길지 않고 메모리를 효율적으로 사용해야 하는 데이터에 적합하다.
+**Paging 기반 ItemReader 구현체**
+&gt; \- JdbcPagingItemReader  
+&gt; - HibernatePagingItemReader  
+&gt; - JpaPagingItemReader  
+&gt; - MybatisPagingItemReader
+## 3. MybatisItemReader 구현
+### 3-1. MybatisCursorItemReader
+MybatisCursorItemReader로 구현시 간단하다. 한 번에 조회해온 결과를 chunk만큼 트랜잭션을 분할하여 대용량 처리를 한다.
+**BatchConfig.java**
+``` java
+@Bean
+public T jobStep(StepBuilderFactory steps) throws Exception {
+    return stepBuilderFactory.get(&#34;JOB&#34;).&lt;T, T&gt; chunk(1000) -- Chunk 사이즈 조절
+            .reader(itemReader.reader(sqlSessionFactory))
+            .processor(new itemProcessor())
+            .writer(new itemWriter())
+            .build();
+}
+```
+**ItemReader.Java**
+``` java
+MyBatisCursorItemReader&lt;T&gt; databaseReader = new MyBatisCursorItemReader&lt;&gt;();
+databaseReader.setSqlSessionFactory(sqlSessionFactory);
+databaseReader.setQueryId(QueryId);
+databaseReader.setParameterValues(map);
+databaseReader.setSaveState(true);
+return databaseReader;
+```
+데이터베이스에서 모든 결과를 메모리에 할당한 후, Chunk 사이즈만큼의 트랜잭션 단위로 데이터를 처리한다.
+### &lt;span style=&#34;color: #333333; text-align: start;&#34;&gt;3-2. MyBatisPagingItemReader 구현&lt;/span&gt;
+다음과 같이 조회 쿼리 자체에 OFFSET, LIMIT을 설정하여, 한 페이지당 조회할 데이터 위치를 파악한다.
+**MyBatisPagingItemReader에서는** 다음 파라미터로 페이징 관련 값들에 바로 접근이 가능하다.
+&gt; **\_page :** 읽을 page 수량 (0부터 시작)  
+&gt; **\_pagesize :** 한번에 읽을 페이지 수량 (리턴 받을 데이터의 수량)  
+&gt; **\_skiprows :** \_page \* \_pagesize (다음 페이지 시작 포인트, offset)
+해당 값들을 쿼리에서 바로 사용 가능하며 다음과 같이 적용할 수 있다.
+``` sql
+&lt;select id=&#34;getEmployee&#34; resultMap=&#34;employeeBatchResult&#34;&gt;
+  SELECT id, name, job FROM employees ORDER BY id ASC 
+  OFFSET #{_skiprows} LIMIT #{_pagesize}
+&lt;/select&gt;
+```
+한번에 가져올 페이지 사이즈 (\_pagesize)는 **ItemReader.Java**에서 **setPageSize()**를 통해 설정가능하다. (쿼리의 LIMIT에 해당하는 값)
+``` java
+MyBatisPagingItemReader&lt;T&gt; databaseReader = new MyBatisPagingItemReader&lt;&gt;();
+databaseReader.setSqlSessionFactory(sqlSessionFactory);
+databaseReader.setQueryId(QueryId);
+databaseReader.setParameterValues(map);
+databaseReader.setPageSize(1000); -- Paging에서는 한번에 읽을 Page수량을 추가해야한다. default = 10
+databaseReader.setSaveState(true);
+return databaseReader;
+```
+### **주의사항**
+매 페이지를 신규 조회할때 데이터의 변경되어 전체 페이징 기준이 달라진다면 누락되거나 중복처리되는 데이터가 있을 수 있다.
+같은 이유로, order by를 적절하게 하지 않을 경우 미처리, 혹은 중복처리 되는 데이터가 발견될 수 있다. 매 Paging마다 그 시점의 페이징 데이터를 조회하기 때문이다.
+특히 처리완료 데이터를 마킹하면서 처리하고, 미처리 데이터를 조회조건에 넣는다면, 데이터가 처리될 때마다 특정 페이지의 값들이 달라질 것이다. 이 경우 Cursor를 사용하면 쉽게 해결되지만, 메모리 및 컨넥션 타임 문제로 Paging을 꼭 사용하여야 하는 경우에는 쿼리에서 offset을 제거하거나 \_page변수를 항상 0으로 지정해 주면 된다. 
+**MybatisPagingItemReader.java**의 내부 구조를 확인해보면
+``` reasonml
+@Override
+  protected void doReadPage() {
+    if (sqlSessionTemplate == null) {
+      sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
+    }
+    Map&lt;String, Object&gt; parameters = new HashMap&lt;&gt;();
+    if (parameterValues != null) {
+      parameters.putAll(parameterValues);
+    }
+    parameters.put(&#34;_page&#34;, getPage());
+    parameters.put(&#34;_pagesize&#34;, getPageSize());
+    parameters.put(&#34;_skiprows&#34;, getPage() * getPageSize());
+    if (results == null) {
+      results = new CopyOnWriteArrayList&lt;&gt;();
+    } else {
+      results.clear();
+    }
+    results.addAll(sqlSessionTemplate.selectList(queryId, parameters));
+  }
+```
+\_page는 getPage() 값을 사용하기 때문에
+``` aspectj
+MyBatisPagingItemReader&lt;T&gt; reader = new MyBatisPagingItemReader&lt;T&gt;(){
+    @Override
+    public int getPage()    {
+        return 0;
+    }
+};
+```
+다음과 같이 매 Paging 조회마다 페이지 값을 0으로 리셋해주면 매 page를 조회할 때마다 offset = 0인 채로 조회가 가능하다.
+&lt;span style=&#34;font-family: -apple-system, BlinkMacSystemFont, &#39;Helvetica Neue&#39;, &#39;Apple SD Gothic Neo&#39;, Arial, sans-serif; letter-spacing: 0px;&#34;&gt;doReadPage()를 override 하여 페이지 읽는 로직 자체를 커스터마이징 하는 것도 가능하다.&lt;/span&gt;
+참고
+&lt;https://mybatis.org/spring/batch.html&gt;
+&lt;a href=&#34;https://ojt90902.tistory.com/780&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://ojt90902.tistory.com/780&lt;/a&gt;
+&lt;a href=&#34;https://junuuu.tistory.com/611&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://junuuu.tistory.com/611&lt;/a&gt;
+&lt;a href=&#34;https://jojoldu.tistory.com/336&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://jojoldu.tistory.com/336&lt;/a&gt;
+\#spring \#Batch \#ItemReader</description>
+    </item>
+  </channel>
+</rss>

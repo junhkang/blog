@@ -3,12 +3,57 @@ languageCode = "ko"
 title = "Jun Kang's Blog"
 theme = "hugo-PaperMod"
 
+# 페이지당 포스트 수 설정
+paginate = 5
+
+# 기존의 다른 설정들...
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+disableXML = true
+minifyOutput = true
+
 [params]
   author = "Jun Kang"
   description = ""
   github = "https://github.com/junhkang"
   linkedin = "https://www.linkedin.com/in/junh-kang"
+  
+  # 검색 기능 활성화
+  [params.search]
+    enable = true
+    placeholder = "검색어를 입력하세요..."
+  ShowSearchButton = true
+  
+  # 프로필 모드 비활성화하고 regular 모드 사용
+  [params.profileMode]
+    enabled = false
+    
+  # 홈페이지 설정 추가
+  [params.homeInfoParams]
+    Title = "Jun Kang 👋"
+    Content = """
+    - 개발 관련 포스트와 경험을 공유하는 블로그입니다
+    - 주요 관심사: Backend Development, Cloud Computing, DevOps, Database, AI
+    """
 
+  # 소셜 아이콘 추가
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/junhkang"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/junh-kang"
+
+  # 태그 및 아카이브 관련 설정
+  ShowAllPagesInArchive = true
+  ShowPageNums = true
+  ShowTags = true
+
+# 메인 메뉴 설정
 [[menu.main]]
   identifier = "about"
   name = "About"
@@ -16,8 +61,78 @@ theme = "hugo-PaperMod"
   weight = 1
 
 [[menu.main]]
+  identifier = "sankun"
+  name = "Sankun"
+  url = "/sankun/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
+  weight = 2
+
+[[menu.main]]
   identifier = "posts"
   name = "Posts"
   url = "/posts/"
-  weight = 2
+  weight = 4
 
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 3
+
+[[menu.main]]
+  identifier = "archives"
+  name = "Archives"
+  url = "/archives/"
+  weight = 5
+
+[[menu.main]]
+  identifier = "search"
+  name = "Search"
+  url = "/search/"
+  weight = 6
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      attribute = true
+      footnote = true
+
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# 페이지 표시 설정
+ShowBreadCrumbs = true
+ShowPostNavLinks = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowReadingTime = true
+ShowShareButtons = true
+ShowRssButtonInSectionTermList = true
+ShowToc = true
+ShowPageNums = true
+ShowLastMod = true
+
+# 리스트 페이지 레이아웃 설정
+[params.list]
+  showPagination = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]  # JSON 출력 추가
+
+# 카테고리/태그 표시 설정
+ShowBreadCrumbs = true
+ShowPostNavLinks = true
+ShowTaxonomies = true
+ShowCategories = true
+
+# 카테고리 페이지 설정
+[params.categoryPage]
+enableRecentPosts = true
+recentPostCount = 3

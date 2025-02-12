@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lombok on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/lombok/</link>
+    <description>Recent content in Lombok on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 31 Jan 2024 10:35:34 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/lombok/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] Java 21 롬복(lombok) 버전 설정 (java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;)</title>
+      <link>https://junhkang.com/posts/57/</link>
+      <pubDate>Wed, 31 Jan 2024 10:35:34 +0000</pubDate>
+      <guid>https://junhkang.com/posts/57/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
+&lt;p&gt;JDK21 버전 업 중 &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;라는 에러와 함께 빌드 실패&lt;/p&gt;
+&lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
+&lt;p&gt;JDK21과 호환되지 않는 롬복(lombok) 버전 문제로 확인, (JDK21과 호환되는 최소 롬복(lombok) 버전은 &lt;strong&gt;1.18.30이다.)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;!-- https://mvnrepository.com/artifact/org.projectlombok/lombok --&amp;gt;
+&amp;lt;dependency&amp;gt;
+     &amp;lt;groupId&amp;gt;org.projectlombok&amp;lt;/groupId&amp;gt;
+          &amp;lt;artifactId&amp;gt;lombok&amp;lt;/artifactId&amp;gt;
+          &amp;lt;version&amp;gt;1.18.30&amp;lt;/version&amp;gt;
+          &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;기존 사용 중인 구버전 롬복(lombok)을 작성일 기준 최신버전이자 JDK21 호환 최소 버전인 1.18.30으로 변경해 주면 정상적으로 빌드가 된다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>IP on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/ip/</link>
+    <description>Recent content in IP on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 18 Oct 2023 17:46:05 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/ip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[네트워크] TCP/IP의 개념</title>
+      <link>https://junhkang.com/posts/31/</link>
+      <pubDate>Wed, 18 Oct 2023 17:46:05 +0000</pubDate>
+      <guid>https://junhkang.com/posts/31/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;tcpip-란&#34; ke-size=&#34;size26&#34;&gt;1. TCP/IP 란?&lt;/h2&gt;
+&lt;p&gt;패킷 전송방식의 인터넷 프로토콜인 IP와 전송 조절 프로토콜인 TCP로 이루어져 있다. IP는 패킷 전달 여부를 보증하지 않고, 패킷을 보낸 순서대로 받는 것을 보장하지 않지만, TCP는 IP 위에서 동작하는 프로토콜로 데이터의 전달을 보증하고 보낸 순서대로 받게 해 준다. IP가 패킷 간의 관계를 이해하지 못하고 목적지를 찾아가는 데만 집중한다면 TCP는 Endpoint 간 통신할 준비가 되어있는지, 데이터 전송이 제대로 되었는지, 데이터가 변질되지 않은지, 데이터 유실은 없는지 등을 점검한다.
+ &lt;/p&gt;
+&lt;p&gt;즉 IP주소 체계를 따르고 IP Routing을 통해 목적지에 도달하여 TCP의 특성을 활용하여 송신자와 수신자의 논리적 연결을 생성, 신뢰성 유지한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

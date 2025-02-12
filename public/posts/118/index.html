@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Autoregressive Models: LLM의 핵심 동력 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+Autoregressive Models: LLM의 핵심 동력
+::: box-info
+LLM
+2024-11-25 09:35:27
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+LLM(Large Language Model)의 놀라운 성능 뒤에는 Autoregressive
+Models(자가회귀 모델)이라는 강력한 기술이 자리하고 있다. Autoregressive
+Models는 현재까지의 입력 데이터를 기반으로 다음 토큰(단어, 문자 등)을
+순차적으로 예측하는 방식으로 작동한다. GPT 시리즈와 같은 대규모 언어
+모델은 이러한 원리를 활용하여 텍스트 생성, 번역, 질문 응답 등 다양한
+작업에서 뛰어난 성능을 발휘한다.
+
+Autoregressive Models의 작동 원리
+
+Autoregressive Models는 조건부 확률을 활용해 텍스트를 생성한다. 텍스트
+생성 과정은 다음과 같다:\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/118/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/118/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Autoregressive Models: LLM의 핵심 동력
+    </h1>
+    <div class="post-meta"><span title='2024-11-25 09:35:27 +0000 UTC'>November 25, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="autoregressive-models-llm의-핵심-동력" class="title-article">Autoregressive Models: LLM의 핵심 동력<a hidden class="anchor" aria-hidden="true" href="#autoregressive-models-llm의-핵심-동력">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-25 09:35:27
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+LLM(Large Language Model)의 놀라운 성능 뒤에는 Autoregressive
+Models(자가회귀 모델)이라는 강력한 기술이 자리하고 있다. Autoregressive
+Models는 현재까지의 입력 데이터를 기반으로 다음 토큰(단어, 문자 등)을
+순차적으로 예측하는 방식으로 작동한다. GPT 시리즈와 같은 대규모 언어
+모델은 이러한 원리를 활용하여 텍스트 생성, 번역, 질문 응답 등 다양한
+작업에서 뛰어난 성능을 발휘한다.<br>
+<br>
+Autoregressive Models의 작동 원리<br>
+<br>
+Autoregressive Models는 조건부 확률을 활용해 텍스트를 생성한다. 텍스트
+생성 과정은 다음과 같다:\</p>
+<ol>
+<li>조건부 확률 계산<br>
+주어진 텍스트가 ￼일 때, 다음 토큰 ￼의 확률을 계산한다. 즉, 모델은 ￼를
+학습한다.\</li>
+<li>순차적 생성<br>
+첫 번째 토큰부터 순차적으로 예측을 수행하여 전체 문장을 생성한다. 이
+과정은 반복적이며, 이전에 생성된 토큰이 다음 예측에 영향을 미친다.\</li>
+<li>샘플링 및 선택<br>
+계산된 확률 분포에서 토큰을 샘플링하여 출력으로 선택한다. 샘플링
+전략으로는 Greedy Search, Beam Search, 또는 Temperature Sampling 등이
+사용된다.<br>
+<br>
+Autoregressive Models의 특징<br>
+\</li>
+<li>순차적 데이터 처리<br>
+데이터가 시간이나 순서에 따라 진행되므로, 입력의 순서가 결과에 직접적인
+영향을 미친다.\</li>
+<li>언어 모델의 기본 구조<br>
+텍스트 생성, 번역, 질문 응답 등 대부분의 LLM은 Autoregressive 방식을
+기반으로 작동한다.\</li>
+<li>Transformer 구조 활용<br>
+현대적인 Autoregressive Models는 Transformer 아키텍처를 사용하여 병렬
+연산이 가능하도록 설계되었으며, 이전 RNN 기반 모델의 한계를 극복했다.<br>
+<br>
+대표적인 Autoregressive Models<br>
+\</li>
+<li>GPT (Generative Pre-trained Transformer)<br>
+OpenAI의 GPT 시리즈는 Autoregressive 방식을 기반으로 하며, 사전 학습된
+언어 모델로 다양한 텍스트 생성 작업에서 활용된다.\</li>
+<li>Transformer XL<br>
+긴 문맥을 처리하기 위해 설계된 Autoregressive Model로, 긴 입력
+데이터에서도 효과적인 성능을 보인다.\</li>
+<li>XLNet<br>
+Autoregressive와 Autoencoding 방식을 결합하여 더 높은 성능과 범용성을
+제공한다.<br>
+<br>
+Autoregressive Models의 장점<br>
+\</li>
+<li>유연한 텍스트 생성<br>
+Autoregressive Models는 새로운 텍스트를 유연하게 생성할 수 있어, 창작,
+번역, 요약 등 다양한 작업에 적합하다.\</li>
+<li>순차적 학습 가능<br>
+데이터의 순서를 반영하여 시계열 데이터나 자연어 처리 작업에서
+효과적이다.\</li>
+<li>대규모 확장성<br>
+Transformer 구조를 통해 병렬 연산이 가능하며, 대규모 데이터와 모델
+학습이 효율적으로 이루어진다.<br>
+<br>
+Autoregressive Models의 한계<br>
+\</li>
+<li>순차적 생성의 속도 문제<br>
+토큰을 하나씩 생성하는 방식이므로, 긴 문장을 생성하는 데 시간이 많이
+소요된다.\</li>
+<li>오류 축적<br>
+이전 단계의 잘못된 예측이 다음 단계로 전파되어 결과물의 품질이 저하될 수
+있다.\</li>
+<li>긴 문맥 처리의 어려움<br>
+문맥이 길어질수록 모델이 모든 정보를 유지하기 어려워, 긴 텍스트 생성에서
+성능 저하가 발생할 수 있다.<br>
+<br>
+Autoregressive Models의 응용 사례<br>
+\</li>
+<li>텍스트 생성<br>
+소설, 기사, 광고 문구 등 다양한 텍스트 콘텐츠를 생성하는 데 활용된다.\</li>
+<li>질문 응답 시스템<br>
+사용자 질문에 대한 답변을 생성하거나, 주어진 문맥에 기반한 응답을
+생성한다.\</li>
+<li>번역<br>
+주어진 문장을 다른 언어로 번역하는 데 사용되며, Autoregressive 방식을
+통해 순차적으로 번역을 수행한다.\</li>
+<li>대화형 AI<br>
+챗봇과 같은 대화형 시스템에서 자연스러운 대화를 생성하기 위해 활용된다.<br>
+<br>
+Autoregressive Models의 미래<br>
+<br>
+Autoregressive Models는 현재도 언어 모델의 핵심 기술로 자리 잡고 있지만,
+앞으로는 더 긴 문맥을 처리하고, 더 빠르고 효율적인 텍스트 생성을
+지원하기 위한 기술 개발이 진행될 것으로 보인다.<br>
+<br>
+예를 들어, Non-Autoregressive Models와의 하이브리드 접근법이 연구되고
+있으며, 이로 인해 속도와 정확성을 모두 개선할 수 있는 가능성이 열리고
+있다. 또한, 멀티모달 데이터(텍스트, 이미지, 음성 등)를 통합하여 더
+복합적인 작업을 수행할 수 있는 모델로 발전할 전망이다.<br>
+<br>
+Autoregressive Models는 텍스트 생성 작업의 근본적인 방식으로서, 미래의
+AI 기술 발전에서도 핵심적인 역할을 계속해서 담당할 것이다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

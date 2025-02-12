@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>909090 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/tags/909090/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/909090/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/909090/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    909090
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.1. Primary Keys(PK)2. Foreign Keys(FK)3. Check4. Not-null5. Unique## 1. Primary Keys (PK)- Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.- Not- null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.- PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.- B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)2023.09.12 - [Postgresql] - [PostgreSQL] B-tree 인덱스의 원리 및 특징[PostgreSQL] B-tree 인덱스의 원리 및 특징PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다. 그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에junhkang.tistory.com### 1-1. 테이블 생성 시 PK 부여-- 단일 설정CREATE TABLE po_headers (po_no INTEGER PRIMARY KEY,vendor_no INTEGER,description TEXT,shipping_address TEXT);-- 복합설정CREATE TABLE TABLE (column_1 data_type,column_2 data_type,&amp;hellip;PRIMARY KEY (column_1, column_2));### 1-2. 기존 테이블에 PK 속성 부여ALTER TABLE table_name ADD PRIMARY KEY (column_1, column_2);-- 자동 증가하는 PK 설정ALTER TABLE vendors ADD COLUMN ID SERIAL PRIMARY KEY;### 1-3. PK 삭제ALTER TABLE table_name DROP CONSTRAINT primary_key_constraint;## 2. Foreign Keys&gt; 외래키(Foreign Keys)는 다른 테이블의 Primary Key에 참조된 컬럼 혹은 컬럼의 조합이다.다른 테이블과의 관계에 따라 다양한 FK를 가질 수 있다. 외래키 설정 후 parent 컬럼의 상태에 따라 다음 액션을 지정할 수 있다.a. SET NULLb. SET DEFAULTc. RESTRICTd. NO ACTIONe. CASCADEPostgresql에서는 다음 5가지 parent데이터 변경에 대한 옵션을 제공한다. 다음 FK 설정 예제는 parent데이터가 삭제될 경우 종속된 데이터를 null로 업데이트한다. Cascade의 경우 parent 데이터가 삭제될 경우 종속된 데이터들도 같이 전체 삭제된다.### 2-1. FK 생성CREATE TABLE customers(customer_id INT GENERATED ALWAYS AS IDENTITY,customer_name VARCHAR(255) NOT NULL,PRIMARY KEY(customer_id));CREATE TABLE contacts(contact_id INT GENERATED ALWAYS AS IDENTITY,customer_id INT,contact_name VARCHAR(255) NOT NULL,phone VARCHAR(15),email VARCHAR(100),PRIMARY KEY(contact_id),CONSTRAINT fk_customerFOREIGN KEY(customer_id)REFERENCES customers(customer_id)-- 다음 설정은 parent 데이터가 삭제될시 참조데이터를 null로 업데이트한다.ON DELETE SET NULL);## 3. CheckBoolean 타입으로 컬럼에 제약을 줘서 insert 혹은 update 전에 테이블에 유효한 데이터인지를 검증한다.(맞지 않는다면 Constraint violation error를 발생시킨다.)### 3-1. Check Constraint 부여한 채로 테이블 생성CREATE TABLE employees (id SERIAL PRIMARY KEY,first_name VARCHAR (50),last_name VARCHAR (50),birth_date DATE CHECK (birth_date &gt; &#39;1900-01-01&#39;),joined_date DATE CHECK (joined_date &gt; birth_date),salary numeric CHECK(salary &gt; 0));다음 테이블에는 2가지 Constraint이 걸려있다. birth_date는 1900-01-01 이후 날짜여야 하며, joined_date는 birth_date 이후 날짜여야만 한다.### 3-2. 기존에 테이블에 Check Constraint 추가ALTER TABLE prices_listADD CONSTRAINT price_discount_checkCHECK (price &gt; 0AND discount &gt;= 0AND price &gt; discount);## 4. Not null특정 컬럼에 Null 제약을 줘서 insert 혹은 update시 해당 값이 null이 아닌지를 검증한다.### 4-1. Not null Constraint 부여CREATE TABLE table_name(...column_name data_type NOT NULL,...);check와 Not null을 동시에 적용 가능하다.CREATE TABLE invoices(id SERIAL PRIMARY KEY,product_id INT NOT NULL,qty numeric NOT NULL CHECK(qty &gt; 0),net_price numeric CHECK(net_price &gt; 0));### 4-2. 기존 테이블에 not null 속성을 추가해당 컬럼에 null 값이 없어야 적용 가능하다.ALTER TABLE table_nameALTER COLUMN column_name SET NOT NULL;-- 여러개ALTER TABLE table_nameALTER COLUMN column_name_1 SET NOT NULL,ALTER COLUMN column_name_2 SET NOT NULL,...;종종 두 컬럼 중 적어도 1개는 null이 아니게 설정해야 할 경우가 있다.CREATE TABLE users (id serial PRIMARY KEY,username VARCHAR (50),password VARCHAR (50),email VARCHAR (50),CONSTRAINT username_email_notnull CHECK (NOT (( username IS NULL OR username = &#39;&#39; )AND( email IS NULL OR email = &#39;&#39; ))));## 5. Uniqueinsert 혹은 update 시 해당 컬럼에 유니크한 값이 들어있는지를 확인한다. 단일 컬럼 혹은 컬럼의 조합으로 설정이 가능하며 Unique index가 자동으로 부여된다.### 5-1. Unique Constraint 적용한 테이블 생성CREATE TABLE person (id SERIAL PRIMARY KEY,first_name VARCHAR (50),last_name VARCHAR (50),email VARCHAR (50) UNIQUE);컬럼의 조합에 설정하고 싶을 때는CREATE TABLE table (c1 data_type,c2 data_type,c3 data_type,UNIQUE (c2, c3));### 5-2. 기존 테이블에 Unique Constraint 추가CREATE UNIQUE INDEX CONCURRENTLY equipment_equip_idON equipment (equip_id);ALTER TABLE equipmentADD CONSTRAINT unique_equip_idUNIQUE USING INDEX equipment_equip_id;참고https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-unique-constraint/https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-check-constraint/#CHECK #constraint #PostgreSQL #unique #not null #Primary Keys #Foreign Keys
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)" href="http://localhost:1313/posts/21/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>순환참조는 맞물린 의존성 주입 (DI) 상태에서 어떤 빈을 먼저 생성할지 결정하지 못해서 생기에 발생한다. BeanA에서 BeanB를 참조(BeanA-&gt;BeanB) 일 경우 스프링은 BeanB를 먼저 생성 후 BeanA를 생성하기에, BeanB에서 다시 BeanA를 참조할 경우 (BeanA-&gt;BeanB-&gt;BeanA) 순환 참조가 발생하게된다.## 2. 의존성 주입의존성 주입의 3가지 상황 (생성자 주입방식, 필드 주입방식, Setter주입)에서 순환참조가 발생할수 있다. 다음 포스트 각각의 상세 내용을 확인할 수 있고, 이번 포스트에서는 각각의 경우에 순환참조가 발생하면 어떤 차이점이 있는지 확인해 보자.2023.11.06 - [Spring] - [Spring] IoC(제어의 역전) &amp; DI(의존성 주입)의 개념[Spring] IoC(제어의 역전) &amp; DI(의존성 주입)의 개념1. IoC (Inversion of Control) 제어의 역전 IoC란 메인 프로그램에서 컨테이너나 프레임워크로 객체와 객체의 의존성에 대한 제어를 넘기는 것을 말한다. 프레임워크 없이 개발할 때는 각 객체에 대한junhkang.tistory.com### ▶ 2-1. 생성자 주입@Componentpublic class BeanA {private BeanB beanB;public void BeanA(BeanB beanB){this.beanB = beanB;}}@Componentpublic class BeanB {private BeanA beanA;public void BeanB(BeanA beanA){this.beanA = beanA;}}생성자 주입의 경우, 애플리케이션 구동 시 스프링 컨테이너(IOC)는 BeanA 빈을 생성하기 위해 BeanB를 찾고 BeanB를 찾기 위해 Bean A를 찾기 때문에 순환참조가 발생하게 된다.### ▶ 2-2. 필드 주입, Setter 방식필드 주입, Setter 방식은 애플리케이션의 실행 시점에서는 에러가 발생되지 않는다. 어플리케이션의 실행 시점이 아닌, 실제로 사용되는 시점에 실행되는 메서드가 순환 호출되기 때문이다. 필요 없는 시점에는 null 상태로 유지 후 사용될 때 의존성이 주입되며 참조되기 시작한다.## 3. 해결책### ▶ 3-1. @Lazy 어노테이션@Componentpublic class BeanA {private BeanB beanB;public void BeanA(BeanB beanB){this.beanB = beanB;}}@Componentpublic class BeanB {private BeanA beanA;public void BeanB(@Lazy BeanA beanA){this.beanA = beanA;}}다음과 같이 @Lazy 어노테이션을 통해 시점을 지연시킬 수 있으나 스프링에서는 이 방식을 추천하지 않는다. 애플리케이션 로딩시점이 아닌 Bean이 필요한 시점에 주입받기 때문에 특정 HTTP 요청을 받을 때 Heap 메모리가 증가할 수 있으며 메모리가 충분하지 않은 경우 장애로 이어질 수 있다. 또한 잘못된 빈의 생성시점을 늦추기에 문제상황에 대한 인식이 늦어질 수 있다.### ▶ 3-2. 설계 변경근본적으로 순환참조가 일어나지 않는 설계를 해야 한다.단순하게는 BeanA -&gt; BeanB-&gt; BeanA의 관계를 BeanA -&gt; BeanB -&gt; BeanC 형태로 참조가 순환되지 않도록 분리해야 한다.#spring #의존성주입 #순환참조
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle" href="http://localhost:1313/posts/47/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

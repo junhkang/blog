@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>User on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/user/</link>
+    <description>Recent content in User on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 11 Oct 2023 10:32:22 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/user/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 역할 및 권한 (ROLE, USER, GROUP) 개념 및 설정</title>
+      <link>https://junhkang.com/posts/22/</link>
+      <pubDate>Wed, 11 Oct 2023 10:32:22 +0000</pubDate>
+      <guid>https://junhkang.com/posts/22/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/22/img.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;출처: https://blog.ex-em.com/1655&lt;/p&gt;
+&lt;h2 id=&#34;role&#34; ke-size=&#34;size26&#34;&gt;1. ROLE&lt;/h2&gt;
+&lt;h3 id=&#34;role-생성&#34; ke-size=&#34;size23&#34;&gt;        1-1. ROLE 생성&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 기본
+CREATE ROLE jonathan LOGIN;
+-- 비밀번호 포함
+CREATE USER davide WITH PASSWORD &amp;#39;jw8s0F4&amp;#39;;
+-- 권한 포함
+CREATE ROLE admin WITH CREATEDB CREATEROLE;
+-- 사용 기한 포함
+CREATE ROLE miriam WITH LOGIN PASSWORD &amp;#39;jw8s0F4&amp;#39; VALID UNTIL &amp;#39;2005-01-01&amp;#39;;
+-- 삭제
+DELETE ROLE miriam;
+
+-- Synopsis
+
+CREATE ROLE name [ [ WITH ] option [ ... ] ]
+
+where option can be:
+
+      SUPERUSER | NOSUPERUSER
+    | CREATEDB | NOCREATEDB
+    | CREATEROLE | NOCREATEROLE
+    | INHERIT | NOINHERIT
+    | LOGIN | NOLOGIN
+    | REPLICATION | NOREPLICATION
+    | BYPASSRLS | NOBYPASSRLS
+    | CONNECTION LIMIT connlimit
+    | [ ENCRYPTED ] PASSWORD &amp;#39;password&amp;#39; | PASSWORD NULL
+    | VALID UNTIL &amp;#39;timestamp&amp;#39;
+    | IN ROLE role_name [, ...]
+    | IN GROUP role_name [, ...]
+    | ROLE role_name [, ...]
+    | ADMIN role_name [, ...]
+    | USER role_name [, ...]
+    | SYSID uid
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;role-이란&#34; ke-size=&#34;size23&#34;&gt;        1-2. ROLE 이란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CREATE ROLE은 PostgreSQL database cluster에 새로운 ROLE을 추가한다. &lt;/li&gt;
+&lt;li&gt;ROLE은 데이터베이스 object, 권한을 가질 수 있는 엔티티이다.&lt;/li&gt;
+&lt;li&gt;ROLE은 사용방법에 따라 USER, GROUP 혹은 둘다로 간주될 수 있다.&lt;/li&gt;
+&lt;li&gt;CREATEROLE 권한이 있어야지만 사용 가능하다.&lt;/li&gt;
+&lt;li&gt;ALTER ROLE, DELETE ROLE을 통해 권한을 수정, 삭제 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;role-권한별-특징&#34; ke-size=&#34;size23&#34;&gt;        1-3. ROLE 권한별 특징&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;SUPERUSER - 로그인을 제외한 모든 권한 포함 (ex. Role 생성 및 권한 부여)&lt;/li&gt;
+&lt;li&gt;LOGIN - 데이터베이스에 로그인하기 위한 권한&lt;/li&gt;
+&lt;li&gt;PASSWORD - 로그인 비밀번호 설정&lt;/li&gt;
+&lt;li&gt;CREATEDB - 데이터베이스 생성&lt;/li&gt;
+&lt;li&gt;CREATEROLE - ROLE 생성/삭제/수정&lt;/li&gt;
+&lt;li&gt;REPLICATION - REPLICATION 권한&lt;/li&gt;
+&lt;li&gt;CONNECTIONLIMIT - 데이터베이스 접속 카운트&lt;/li&gt;
+&lt;li&gt;INHERIT - ROLE 권한들 상속&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;user&#34; ke-size=&#34;size26&#34;&gt;2. USER&lt;/h2&gt;
+&lt;h3 id=&#34;user-생성&#34; ke-size=&#34;size23&#34;&gt;        2-1. USER 생성&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 기본
+CREATE USER jonathan;
+-- 비밀번호 추가
+CREATE USER davide WITH PASSWORD &amp;#39;jw8s0F4&amp;#39;;
+-- 만료기한 추가
+CREATE USER miriam WITH PASSWORD &amp;#39;jw8s0F4&amp;#39; VALID UNTIL &amp;#39;2005-01-01&amp;#39;;
+-- 권한 추가
+CREATE USER manuel WITH PASSWORD &amp;#39;jw8s0F4&amp;#39; CREATEDB;
+
+--Synopsis
+CREATE USER name [ [ WITH ] option [ ... ] ]
+
+where option can be:
+    
+      SYSID uid 
+    | CREATEDB | NOCREATEDB
+    | CREATEUSER | NOCREATEUSER
+    | IN GROUP groupname [, ...]
+    | [ ENCRYPTED | UNENCRYPTED ] PASSWORD &amp;#39;password&amp;#39;
+    | VALID UNTIL &amp;#39;abstime&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;user란&#34; ke-size=&#34;size23&#34;&gt;        2-2. USER란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CREATE ROLE은 PostgreSQL database cluster에 새로운 User을 추가한다.&lt;/li&gt;
+&lt;li&gt;CREATEUSER 권한이 있어야지만 사용 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;group&#34; ke-size=&#34;size26&#34;&gt;3. GROUP&lt;/h2&gt;
+&lt;h3 id=&#34;group-생성&#34; ke-size=&#34;size23&#34;&gt;        3-1. GROUP 생성&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--기본
+CREATE GROUP staff;
+--유저 추가
+CREATE GROUP marketing WITH USER jonathan, david;
+--그룹 삭제
+DROP GROUP staff;
+
+-- Synopsis
+CREATE GROUP name [ [ WITH ] option [ ... ] ]
+
+where option can be:
+
+     SYSID gid
+   | USER  username [, ...]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;group이란&#34; ke-size=&#34;size23&#34;&gt;        3-2. GROUP이란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;CREATE GROUP은 USER 그룹을 생성한다. &lt;/li&gt;
+&lt;li&gt;SUPERUSER 권한이 있어야지만 생성가능하다.&lt;/li&gt;
+&lt;li&gt;데이터베이스의 cluster 레벨에 접근 가능하기 위해 GROUP, USER, ROLE은 모두 cluster단에서 정의되어 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;role-user-group-차이&#34; ke-size=&#34;size26&#34;&gt;4. ROLE, USER, GROUP 차이&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ROLE은 Postgresql Database 관련 권한들을 모아 놓은 것으로, 8.1버전부터 USER와 GROUP의 개념이 ROLE로 통합되었다.&lt;/li&gt;
+&lt;li&gt;현재 버전에서는 USER와 ROLE의 기능은 동일하며, USER는 login 권한이 default, ROLE은 login 권한을 별도로 부여해야 하는 차이점만 있다. &lt;/li&gt;
+&lt;li&gt;CREATE GROUP의 경우 PostgreSQL의 SQL 표준에는 존재하지 않으며, ROLE과 비슷한 개념을 가지고 있다.
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;참고&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

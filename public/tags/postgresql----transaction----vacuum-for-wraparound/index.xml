@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PostgreSQL  - Transaction  - VACUUM-for-WRAPAROUND on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/postgresql----transaction----vacuum-for-wraparound/</link>
+    <description>Recent content in PostgreSQL  - Transaction  - VACUUM-for-WRAPAROUND on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 08 Mar 2024 15:27:32 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/postgresql----transaction----vacuum-for-wraparound/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[PostgreSQL\\] 트랜잭션(Transaction)의 작동원리
+</title>
+      <link>http://localhost:1313/posts/67/</link>
+      <pubDate>Fri, 08 Mar 2024 15:27:32 +0000</pubDate>
+      <guid>http://localhost:1313/posts/67/</guid>
+      <description>&lt;h2 id=&#34;postgresql-트랜잭션transaction의-작동원리&#34;&gt;[PostgreSQL] 트랜잭션(Transaction)의 작동원리&lt;/h2&gt;
+&lt;p&gt;Postgresql&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34; width=&#34;263&#34; height=&#34;271&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/67/img.png&#34; width=&#34;263&#34; height=&#34;271&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## 1. 기본 트랜잭션의 개념 및 원리
+트랜잭션의 기본 개념과 사용 방법은 다음 포스트에서 확인이 가능하다.
+&lt;a href=&#34;https://junhkang.tistory.com/20&#34; style=&#34;background-color: #e6f5ff; color: #0070d1; text-align: start;&#34;&gt;2023.10.10 - [Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;
+&lt;figure id=&#34;og_1709861643655&#34; contenteditable=&#34;false&#34; data-ke-type=&#34;opengraph&#34; data-ke-align=&#34;alignCenter&#34; data-og-type=&#34;article&#34; data-og-title=&#34;[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&#34; data-og-description=&#34;1. 트랜잭션(Transaction)이란? 트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-source-url=&#34;https://junhkang.tistory.com/20&#34; data-og-url=&#34;https://junhkang.tistory.com/20&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/dTYsPE/hyVxrthLSE/dpDCUKH5B0miRGAf823uBk/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/bahel0/hyVxpoFa2c/jc2priHBMZtSscHZF7P0gk/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/bcg9VG/hyVxDUMxgU/ZjSWv4M1WmZSIX1OtYEk91/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-source-url=&#34;https://junhkang.tistory.com/20&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

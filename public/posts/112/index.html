@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Knowledge Distillation: LLM의 크기를 줄이면서 성능을 유지하는 기술 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+Knowledge Distillation: LLM의 크기를 줄이면서 성능을 유지하는 기술
+::: box-info
+LLM
+2024-11-19 07:53:04
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+LLM(Large Language Model)은 뛰어난 성능을 자랑하지만, 대규모 매개변수로
+인해 높은 계산 비용과 메모리 요구사항이 발생한다. 이러한 문제를 해결하기
+위해 등장한 기술이 Knowledge Distillation(지식 증류)이다. 이 기술은 대형
+모델(Teacher Model)의 지식을 더 작은 모델(Student Model)에 전달하여,
+경량화된 모델이 유사한 성능을 낼 수 있도록 학습시키는 방법이다.
+
+Knowledge Distillation의 작동 원리
+
+Knowledge Distillation은 다음과 같은 세 가지 주요 요소를 기반으로
+작동한다:\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/112/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/112/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Knowledge Distillation: LLM의 크기를 줄이면서 성능을 유지하는 기술
+    </h1>
+    <div class="post-meta"><span title='2024-11-19 07:53:04 +0000 UTC'>November 19, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="knowledge-distillation-llm의-크기를-줄이면서-성능을-유지하는-기술" class="title-article">Knowledge Distillation: LLM의 크기를 줄이면서 성능을 유지하는 기술<a hidden class="anchor" aria-hidden="true" href="#knowledge-distillation-llm의-크기를-줄이면서-성능을-유지하는-기술">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-19 07:53:04
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+LLM(Large Language Model)은 뛰어난 성능을 자랑하지만, 대규모 매개변수로
+인해 높은 계산 비용과 메모리 요구사항이 발생한다. 이러한 문제를 해결하기
+위해 등장한 기술이 Knowledge Distillation(지식 증류)이다. 이 기술은 대형
+모델(Teacher Model)의 지식을 더 작은 모델(Student Model)에 전달하여,
+경량화된 모델이 유사한 성능을 낼 수 있도록 학습시키는 방법이다.<br>
+<br>
+Knowledge Distillation의 작동 원리<br>
+<br>
+Knowledge Distillation은 다음과 같은 세 가지 주요 요소를 기반으로
+작동한다:\</p>
+<ol>
+<li>Teacher Model<br>
+대규모 사전 학습을 거친 고성능 모델로, Student Model의 학습에 필요한
+지식을 제공한다.\</li>
+<li>Student Model<br>
+Teacher Model에서 제공하는 지식을 학습하여 더 작은 크기로 비슷한 성능을
+낼 수 있도록 설계된 모델이다.\</li>
+<li>Soft Target<br>
+Teacher Model이 생성하는 출력 확률 분포(logits)를 Soft Target으로
+활용한다. 이러한 Soft Target은 단순한 정답 레이블(1 또는 0)보다 더
+풍부한 정보를 제공하여 Student Model이 더 효과적으로 학습할 수 있도록
+돕는다.<br>
+<br>
+Knowledge Distillation의 과정<br>
+\</li>
+<li>Teacher Model 학습<br>
+먼저 Teacher Model을 대규모 데이터셋으로 학습시켜 고성능 모델을
+준비한다.\</li>
+<li>Student Model 초기화<br>
+Student Model은 Teacher Model보다 적은 매개변수를 가지고 있으며, 크기를
+줄이는 데 초점을 맞춘 구조로 설계된다.\</li>
+<li>Distillation Loss 계산<br>
+Student Model은 Teacher Model이 생성한 Soft Target과 실제 정답
+레이블(하드 레이블)을 동시에 학습한다. Distillation Loss는 Teacher
+Model의 출력과 Student Model의 출력 간의 차이를 최소화하는 방향으로
+계산된다.\</li>
+<li>Student Model 최적화<br>
+Distillation Loss를 기반으로 Student Model의 매개변수를 업데이트하여
+Teacher Model의 지식을 효과적으로 학습하도록 한다.<br>
+<br>
+Knowledge Distillation의 장점<br>
+\</li>
+<li>모델 경량화<br>
+대규모 LLM을 더 작은 모델로 압축하여 계산 자원을 크게 절약할 수 있다.\</li>
+<li>성능 유지<br>
+Teacher Model의 성능을 최대한 유지하면서도 모델 크기를 줄이는 것이
+가능하다.\</li>
+<li>배포 용이성<br>
+경량화된 모델은 클라우드와 엣지 디바이스에서 더 쉽게 배포되고 실행될 수
+있다.\</li>
+<li>학습 효율성 향상<br>
+Student Model은 Teacher Model의 지식을 활용해 학습 속도를 높일 수 있다.<br>
+<br>
+Knowledge Distillation의 응용 사례<br>
+\</li>
+<li>모바일 AI<br>
+모바일 디바이스에서 대규모 언어 모델을 직접 사용할 수 있도록 경량화된
+Student Model을 배포한다.\</li>
+<li>챗봇 및 가상 비서<br>
+경량화된 모델을 사용해 실시간 응답 속도를 개선하고 클라우드 비용을
+절감한다.\</li>
+<li>IoT 디바이스<br>
+제한된 계산 자원을 가진 IoT 디바이스에서도 고성능 AI 기능을 제공하기
+위해 Knowledge Distillation이 활용된다.\</li>
+<li>추천 시스템<br>
+대규모 추천 시스템 모델을 소형화하여 응답 속도와 자원 활용 효율을
+높인다.<br>
+<br>
+Knowledge Distillation의 한계와 도전 과제<br>
+\</li>
+<li>정보 손실<br>
+Teacher Model의 모든 지식을 완벽히 전달하지 못하는 경우 성능 저하가
+발생할 수 있다.\</li>
+<li>학생 모델 설계<br>
+Student Model의 구조를 적절히 설계하는 것이 중요하며, 이는 문제의 특성과
+Teacher Model에 따라 달라질 수 있다.\</li>
+<li>복잡한 Distillation Loss<br>
+적절한 손실 함수를 설계하고 최적화하는 과정이 까다로울 수 있다.<br>
+<br>
+Knowledge Distillation의 미래<br>
+<br>
+Knowledge Distillation은 LLM의 대규모 계산 자원 문제를 해결할 수 있는
+핵심 기술로, 앞으로도 발전 가능성이 크다. 특히, 멀티모달 학습(텍스트,
+이미지, 음성의 통합 학습)과 결합하여 더 많은 데이터를 효과적으로
+압축하고 활용하는 방향으로 연구가 진행될 것이다. Knowledge
+Distillation은 경량화된 AI 모델이 다양한 환경에서 활용될 수 있는 기반을
+마련하며, AI 기술의 접근성과 효율성을 높이는 데 기여할 것이다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Spring on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/categories/spring/</link>
+    <link>http://localhost:1313/categories/spring/</link>
     <description>Recent content in Spring on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/categories/spring/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/spring/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] 스프링부트와 HikariCP를 활용한 Connection Pool 설정 및 최적화</title>
-      <link>https://junhkang.com/posts/125/</link>
+      <link>http://localhost:1313/posts/125/</link>
       <pubDate>Thu, 30 Jan 2025 16:50:24 +0000</pubDate>
-      <guid>https://junhkang.com/posts/125/</guid>
+      <guid>http://localhost:1313/posts/125/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;몇 년 전 운영 프로젝트 설정 시 자세하게 봤던 내용이지만, 트래픽이 대폭 증가하고, DBMS에 연결된 프로젝트와 모듈이 늘어남에 따라 재설정을 위해 개념을 다시 정리하게 되었다.&lt;/p&gt;
 &lt;h3 id=&#34;기본적인-데이터베이스-연결과정&#34; ke-size=&#34;size23&#34;&gt;1. 기본적인 데이터베이스 연결과정&lt;/h3&gt;
@@ -27,9 +27,9 @@
     </item>
     <item>
       <title>[Spring] 테스트 4 - 얼마나 깊게 테스트 코드를 작성해야 하는가?</title>
-      <link>https://junhkang.com/posts/99/</link>
+      <link>http://localhost:1313/posts/99/</link>
       <pubDate>Sun, 22 Sep 2024 17:59:07 +0000</pubDate>
-      <guid>https://junhkang.com/posts/99/</guid>
+      <guid>http://localhost:1313/posts/99/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;how-deep---얼마나-깊게-테스트-코드를-작성해야-하는가&#34; ke-size=&#34;size26&#34;&gt;4. HOW DEEP - 얼마나 깊게 테스트 코드를 작성해야 하는가?&lt;/h2&gt;
 &lt;h3 id=&#34;테스트-깊이를-결정하는-기준&#34; ke-size=&#34;size23&#34;&gt;4.1 테스트 깊이를 결정하는 기준&lt;/h3&gt;
@@ -46,13 +46,13 @@
 &lt;li&gt;&lt;strong&gt;유스 케이스 기반 테스트&lt;/strong&gt;: 핵심 사용자 흐름과 엣지 케이스를 기반으로 테스트를 작성합니다. 실제로 사용자가 자주 사용하는 기능이나 예외적인 상황에서의 동작을 검증하는 것이 중요합니다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;현실적인 제약과 팀 역량 고려&lt;/strong&gt;: 모든 부분을 깊이 테스트하는 것은 시간과 리소스 측면에서 비효율적일 수 있습니다. 팀의 역량과 프로젝트 일정 등을 고려하여 테스트 깊이를 조정하는 것이 필요합니다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/99/img.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/99/img.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] 테스트 3 - 언제 테스트 코드를 적용해야 하는가?</title>
-      <link>https://junhkang.com/posts/98/</link>
+      <link>http://localhost:1313/posts/98/</link>
       <pubDate>Sun, 22 Sep 2024 17:57:13 +0000</pubDate>
-      <guid>https://junhkang.com/posts/98/</guid>
+      <guid>http://localhost:1313/posts/98/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;3-when---언제-테스트-코드를-적용해야-하는가&#34;&gt;3. WHEN - 언제 테스트 코드를 적용해야 하는가?&lt;/h1&gt;
 &lt;h2 id=&#34;tdd와-bdd의-개념-및-적용-시점&#34; ke-size=&#34;size26&#34;&gt;3.1 TDD와 BDD의 개념 및 적용 시점&lt;/h2&gt;
@@ -64,14 +64,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/98/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/98/img.png&#34;&gt;
 이미지출처: &lt;a href=&#34;https://medium.com/pilar-2020/applying-test-driven-development-6d6d3af186cbApplying&#34;&gt;https://medium.com/pilar-2020/applying-test-driven-development-6d6d3af186cbApplying&lt;/a&gt;\ Test-Driven\ Development&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] 테스트 2 - 테스트 코드를 어떻게 작성해야 하는가?</title>
-      <link>https://junhkang.com/posts/97/</link>
+      <link>http://localhost:1313/posts/97/</link>
       <pubDate>Sun, 22 Sep 2024 17:55:00 +0000</pubDate>
-      <guid>https://junhkang.com/posts/97/</guid>
+      <guid>http://localhost:1313/posts/97/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;2-how---테스트-코드를-어떻게-작성해야-하는가&#34;&gt;2. HOW - 테스트 코드를 어떻게 작성해야 하는가?&lt;/h1&gt;
 &lt;h2 id=&#34;테스트-케이스-선택-방법&#34; ke-size=&#34;size26&#34;&gt;2.1 테스트 케이스 선택 방법&lt;/h2&gt;
@@ -84,11 +84,11 @@
     </item>
     <item>
       <title>[Spring] 테스트 1 - 왜 테스트 코드를 작성해야 하는가?</title>
-      <link>https://junhkang.com/posts/96/</link>
+      <link>http://localhost:1313/posts/96/</link>
       <pubDate>Sun, 22 Sep 2024 17:50:22 +0000</pubDate>
-      <guid>https://junhkang.com/posts/96/</guid>
+      <guid>http://localhost:1313/posts/96/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/96/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/96/img.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;1-why---왜-테스트를-작성해야-하는가&#34;&gt;1. WHY - 왜 테스트를 작성해야 하는가?&lt;/h1&gt;
 &lt;h2 id=&#34;테스트-코드의-중요성&#34; ke-size=&#34;size26&#34;&gt;1.1 테스트 코드의 중요성&lt;/h2&gt;
 &lt;p&gt;테스트 코드는 소프트웨어 개발에서 매우 중요한 역할을 합니다. 기능을 수정하거나 새로운 기능을 추가할 때 코드가 안정적으로 작동하는지 확인할 수 있는 수단이 바로 테스트 코드입니다. 이를 통해 예상하지 못한 버그를 방지하고, 코드 품질을 높일 수 있습니다.&lt;/p&gt;
@@ -98,11 +98,11 @@
     </item>
     <item>
       <title>[Spring] Caused by: java.lang.IllegalArgumentException: 이름이 {fragment}인, 둘 이상의 fragment들이 발견되었습니다.</title>
-      <link>https://junhkang.com/posts/95/</link>
+      <link>http://localhost:1313/posts/95/</link>
       <pubDate>Tue, 20 Aug 2024 10:41:57 +0000</pubDate>
-      <guid>https://junhkang.com/posts/95/</guid>
+      <guid>http://localhost:1313/posts/95/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/95/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/95/img.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[Caused by: java.lang.IllegalArgumentException: 이름이 {fragment}인, 둘 이상의 fragment들이 발견되었습니다. 이는 상대적 순서배열에서 불허됩니다. 상세 정보는 서블릿 스펙 8.2.2 2c 장을 참조하십시오. 절대적 순서배열을 사용하는 것을 고려해 보십시오.]
  &lt;/p&gt;&lt;/blockquote&gt;
@@ -115,11 +115,11 @@
     </item>
     <item>
       <title>[Spring] Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection, 데이터베이스 접속 에러</title>
-      <link>https://junhkang.com/posts/92/</link>
+      <link>http://localhost:1313/posts/92/</link>
       <pubDate>Thu, 25 Jul 2024 13:29:54 +0000</pubDate>
-      <guid>https://junhkang.com/posts/92/</guid>
+      <guid>http://localhost:1313/posts/92/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/92/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/92/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;p&gt;Amazon RDS and Amazon Aurora SSL/TLS 인증서를 업데이트 후 별다른 설정 변경을 하지 않았지만, 오랜만에 빌드하는 스프링부트 프로젝트의 데이터베이스 연결이 되지 않는 현상 발생하였다.
  &lt;/p&gt;
@@ -130,9 +130,9 @@
     </item>
     <item>
       <title>[Spring] 스프링부트 3, 스프링 시큐리티 6, 로그인 세션 유지, 로그인 풀림</title>
-      <link>https://junhkang.com/posts/59/</link>
+      <link>http://localhost:1313/posts/59/</link>
       <pubDate>Fri, 02 Feb 2024 12:33:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/59/</guid>
+      <guid>http://localhost:1313/posts/59/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링 부트 3, 스프링 시큐리티 6 업데이트가 되며 기존에 사용 중인 WebSecurityConfigurerAdapter를 더 이상 지원하지 않기에&lt;/p&gt;
@@ -147,9 +147,9 @@
     </item>
     <item>
       <title>[Spring] 스프링부트 3 jstl 적용(maven), (절대 URI인 [http://java.sun.com/jsp/jstl/core]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.)</title>
-      <link>https://junhkang.com/posts/58/</link>
+      <link>http://localhost:1313/posts/58/</link>
       <pubDate>Wed, 31 Jan 2024 16:40:43 +0000</pubDate>
-      <guid>https://junhkang.com/posts/58/</guid>
+      <guid>http://localhost:1313/posts/58/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;
@@ -188,9 +188,9 @@
     </item>
     <item>
       <title>[Spring] Java 21 롬복(lombok) 버전 설정 (java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;)</title>
-      <link>https://junhkang.com/posts/57/</link>
+      <link>http://localhost:1313/posts/57/</link>
       <pubDate>Wed, 31 Jan 2024 10:35:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/57/</guid>
+      <guid>http://localhost:1313/posts/57/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21 버전 업 중 &lt;/p&gt;
@@ -211,22 +211,22 @@
     </item>
     <item>
       <title>[Spring] Java 21 외장 톰캣 버전 설정</title>
-      <link>https://junhkang.com/posts/52/</link>
+      <link>http://localhost:1313/posts/52/</link>
       <pubDate>Mon, 18 Dec 2023 14:13:48 +0000</pubDate>
-      <guid>https://junhkang.com/posts/52/</guid>
+      <guid>http://localhost:1313/posts/52/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;Java21 버전 업 중, 인텔리제이 내장 톰캣으로는 정상적으로 실행되지만, 커스텀 옵션을 사용 중인 외장톰캣을 그대로 사용 시 정상적으로 구동되지 않는 현상이 발견되었다.&lt;/p&gt;
 &lt;h2 id=&#34;해결&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;먼저, 빌드 및 path 등 기존 설정들은 문제가 없는 것을 확인하였고, 로컬 톰캣에서 정상적으로 구동됨을 확인하였기에 다른 부분을 추가로 확인해 보았다. 버전업 영향도 파악기간 중 기존에 톰캣 8.5 버전과 호환되는 것을 확인하였으나, 공식 홈페이지에서 재확인해보았다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/52/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/52/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;톰캣 8.5 버전의 자바 지원버전을 보면 &amp;quot;7 and later&amp;quot;로 되어있어 7 이후 버전을 다 사용 가능한 것으로 이해했었으나, 다른 버전을 시도.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] Spring Security6 filterchain 사용시 jsp 뷰 렌더링 설정</title>
-      <link>https://junhkang.com/posts/51/</link>
+      <link>http://localhost:1313/posts/51/</link>
       <pubDate>Mon, 18 Dec 2023 13:09:08 +0000</pubDate>
-      <guid>https://junhkang.com/posts/51/</guid>
+      <guid>http://localhost:1313/posts/51/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;현상&#34; ke-size=&#34;size26&#34;&gt;1. 현상&lt;/h2&gt;
 &lt;p&gt;스프링부트 3.*.* 버전 업을 하며 Spring Security6으로 업데이트 중이다.&lt;/p&gt;
@@ -250,11 +250,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle</title>
-      <link>https://junhkang.com/posts/47/</link>
+      <link>http://localhost:1313/posts/47/</link>
       <pubDate>Fri, 17 Nov 2023 14:36:15 +0000</pubDate>
-      <guid>https://junhkang.com/posts/47/</guid>
+      <guid>http://localhost:1313/posts/47/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/47/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/47/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;순환참조란&#34; ke-size=&#34;size26&#34;&gt;1. 순환참조란?&lt;/h2&gt;
 &lt;p&gt;순환참조는 맞물린 의존성 주입 (DI) 상태에서 어떤 빈을 먼저 생성할지 결정하지 못해서 생기에 발생한다. BeanA에서 BeanB를 참조(BeanA-&amp;gt;BeanB) 일 경우 스프링은 BeanB를 먼저 생성 후 BeanA를 생성하기에, BeanB에서 다시 BeanA를 참조할 경우 (BeanA-&amp;gt;BeanB-&amp;gt;BeanA) 순환 참조가 발생하게된다. &lt;/p&gt;
 &lt;h2 id=&#34;의존성-주입&#34; ke-size=&#34;size26&#34;&gt;2. 의존성 주입 &lt;/h2&gt;
@@ -262,11 +262,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 단위 테스트, JUnit의 개념 및 단위 테스트 코드 작성 방법</title>
-      <link>https://junhkang.com/posts/45/</link>
+      <link>http://localhost:1313/posts/45/</link>
       <pubDate>Tue, 14 Nov 2023 15:36:35 +0000</pubDate>
-      <guid>https://junhkang.com/posts/45/</guid>
+      <guid>http://localhost:1313/posts/45/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/45/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/45/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;단위-테스트&#34; style=&#34;color: #000000; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 단위 테스트&lt;/h2&gt;
 &lt;p&gt;하나의 모듈을 기준으로 독립적으로 진행되는 가장 작은 단위의 테스트이다. 통합 테스트의 경우 시스템을 구성하는 컴포넌트들이 커질수록 테스트 시간이 길어지지만, 단위 테스트의 경우 해당 부분만 독립적으로 테스트하기에 코드의 변경이 있어도 빠르게 문제 여부를 확인할 수 있다. CleanCode 책에 의하면 깨끗한 테스트 코드는 다음 5가지 규칙을 따라야 한다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -278,9 +278,9 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 스프링 컨테이너(Spring container)의 개념</title>
-      <link>https://junhkang.com/posts/43/</link>
+      <link>http://localhost:1313/posts/43/</link>
       <pubDate>Tue, 07 Nov 2023 16:45:10 +0000</pubDate>
-      <guid>https://junhkang.com/posts/43/</guid>
+      <guid>http://localhost:1313/posts/43/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;스프링-컨테이너spring-container란&#34; ke-size=&#34;size26&#34;&gt;1. 스프링 컨테이너(Spring container)란?&lt;/h2&gt;
 &lt;p&gt;스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.&lt;/p&gt;
@@ -299,12 +299,12 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] IoC(제어의 역전) &amp; DI(의존성 주입)의 개념</title>
-      <link>https://junhkang.com/posts/42/</link>
+      <link>http://localhost:1313/posts/42/</link>
       <pubDate>Mon, 06 Nov 2023 14:20:06 +0000</pubDate>
-      <guid>https://junhkang.com/posts/42/</guid>
+      <guid>http://localhost:1313/posts/42/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;ioc-inversion-of-control-제어의-역전&#34; ke-size=&#34;size26&#34;&gt;1. IoC (Inversion of Control) 제어의 역전&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/42/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/42/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;IoC란 메인 프로그램에서 컨테이너나 프레임워크로 객체와 객체의 의존성에 대한 제어를 넘기는 것을 말한다. 프레임워크 없이 개발할 때는 각 객체에 대한 라이프사이클 (생성, 설정, 초기화, 호출 등)을 개발자가 직접 관리한다. 하지만 프레임워크를 사용하면 객체의 생명주기를 프레임워크에 위임하여, 프레임워크가 개발자의 코드를 호출하고 흐름을 제어하게 할 수 있다.
  &lt;/p&gt;
 &lt;p&gt;이처럼, 제어의 역전은 객체를 직접 생성하거나 제어하는 것이아니라 외부에서 관리하는 객체를 가져와서 사용하는 것으로, 클레스 간의 결합을 느슨하게 하여 테스트와 유지관리를 더 쉽게 설계하는 원칙이다.
@@ -312,11 +312,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 스프링부트 &#43; Mybatis 데이터소스 여러개 연결 (스프링 다중 데이터베이스 연결)</title>
-      <link>https://junhkang.com/posts/33/</link>
+      <link>http://localhost:1313/posts/33/</link>
       <pubDate>Fri, 20 Oct 2023 17:57:36 +0000</pubDate>
-      <guid>https://junhkang.com/posts/33/</guid>
+      <guid>http://localhost:1313/posts/33/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;다음은 스프링부트 + 마이바티스 프로젝트에 2개 이상의 데이터소스를 연결하는 예제이다. &lt;/p&gt;
 &lt;p&gt;기존 스프링 데이터베이스 연동이 되어있다고 가정 후 진행되며, 신규 데이터베이스는 구별이 쉽도록 new 데이터베이스로 명칭 한다.&lt;/p&gt;
 &lt;h2 id=&#34;신규-데이터베이스-접속정보-추가&#34; ke-size=&#34;size26&#34;&gt;1. 신규 데이터베이스 접속정보 추가&lt;/h2&gt;
@@ -340,19 +340,19 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[Spring] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)</title>
-      <link>https://junhkang.com/posts/32/</link>
+      <link>http://localhost:1313/posts/32/</link>
       <pubDate>Thu, 19 Oct 2023 18:20:45 +0000</pubDate>
-      <guid>https://junhkang.com/posts/32/</guid>
+      <guid>http://localhost:1313/posts/32/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;itemreader란&#34; ke-size=&#34;size26&#34;&gt;1. ItemReader란?&lt;/h2&gt;
 &lt;p&gt;스프링 배치의 ItemReader는 다음과 같은 과정을 거쳐 데이터를 처리한다.
  &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img_1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;대부분의 데이터 형태는 이미 ItemReader로 제공하고 있기에 ItemReader, ItemStream 인터페이스 자체를 구현할 필요는 없다.&lt;/p&gt;
 &lt;p&gt;ItemReader는 Chunk 기반 트랜잭션을 다루며 Cursor, Paging 가 대표적인 2가지 방식이다.&lt;/p&gt;
 &lt;h2 id=&#34;cursor-paging-형식&#34; ke-size=&#34;size26&#34;&gt;2. Cursor, Paging 형식&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;cursor기반-itemreader&#34; ke-size=&#34;size23&#34;&gt;2-1. Cursor기반 ItemReader&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;JDBC ResultSet의 기본 기능이다.&lt;/li&gt;
@@ -367,11 +367,11 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[Spring] 스프링 트랜잭션의 개념 및 적용 (@Transactional 사용법)</title>
-      <link>https://junhkang.com/posts/29/</link>
+      <link>http://localhost:1313/posts/29/</link>
       <pubDate>Tue, 17 Oct 2023 18:37:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/29/</guid>
+      <guid>http://localhost:1313/posts/29/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/29/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/29/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;트랜잭션이란&#34; ke-size=&#34;size26&#34;&gt;트랜잭션이란?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;[Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;스프링에서-제공하는-트랜잭션&#34; ke-size=&#34;size26&#34;&gt;스프링에서 제공하는 트랜잭션&lt;/h2&gt;

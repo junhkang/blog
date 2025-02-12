@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>운영체제 on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/</link>
+    <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/</link>
     <description>Recent content in 운영체제 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 17 Oct 2023 14:01:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[운영체제(OS)] 스레드 (Thread), 멀티스레드(Multithreaded Programming)란?</title>
-      <link>http://localhost:50666/posts/28/</link>
+      <link>https://junhkang.com/posts/28/</link>
       <pubDate>Tue, 17 Oct 2023 14:01:18 +0000</pubDate>
-      <guid>http://localhost:50666/posts/28/</guid>
+      <guid>https://junhkang.com/posts/28/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/28/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/28/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;두 개의 실행 스레드를 가진 프로세스가 하나의 프로세서 위에서 실행 중인 모습&lt;/p&gt;
 &lt;h2 id=&#34;thread란&#34; ke-size=&#34;size26&#34;&gt;1. Thread란?&lt;/h2&gt;
 &lt;p&gt;CPU 수행의 기본단위이며 특히 프로세스 안의 흐름의 단위이다. 스레드가 수행되는 환경을 Task라고 하며 Thread ID, Program counter, register set, Stack space로 구성된다. 각각의 스레드는 레지스터 상태와 스택을 갖는다. Code, Data 섹션이나 운영체제 자원들은 스레드끼리 공유한다. &lt;/p&gt;

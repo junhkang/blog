@@ -2,101 +2,101 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/categories/</link>
+    <link>https://junhkang.com/categories/</link>
     <description>Recent content in Categories on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring</title>
-      <link>http://localhost:50666/categories/spring/</link>
+      <link>https://junhkang.com/categories/spring/</link>
       <pubDate>Thu, 30 Jan 2025 16:50:24 +0000</pubDate>
-      <guid>http://localhost:50666/categories/spring/</guid>
+      <guid>https://junhkang.com/categories/spring/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:50666/categories/linux/</link>
+      <link>https://junhkang.com/categories/linux/</link>
       <pubDate>Fri, 03 Jan 2025 15:38:03 +0000</pubDate>
-      <guid>http://localhost:50666/categories/linux/</guid>
+      <guid>https://junhkang.com/categories/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>AWS</title>
-      <link>http://localhost:50666/categories/aws/</link>
+      <link>https://junhkang.com/categories/aws/</link>
       <pubDate>Tue, 31 Dec 2024 12:30:05 +0000</pubDate>
-      <guid>http://localhost:50666/categories/aws/</guid>
+      <guid>https://junhkang.com/categories/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>LLM</title>
-      <link>http://localhost:50666/categories/llm/</link>
+      <link>https://junhkang.com/categories/llm/</link>
       <pubDate>Tue, 17 Dec 2024 23:02:31 +0000</pubDate>
-      <guid>http://localhost:50666/categories/llm/</guid>
+      <guid>https://junhkang.com/categories/llm/</guid>
       <description></description>
     </item>
     <item>
       <title>Postgresql</title>
-      <link>http://localhost:50666/categories/postgresql/</link>
+      <link>https://junhkang.com/categories/postgresql/</link>
       <pubDate>Wed, 14 Aug 2024 17:49:46 +0000</pubDate>
-      <guid>http://localhost:50666/categories/postgresql/</guid>
+      <guid>https://junhkang.com/categories/postgresql/</guid>
       <description></description>
     </item>
     <item>
       <title>디자인패턴</title>
-      <link>http://localhost:50666/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
+      <link>https://junhkang.com/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
       <pubDate>Mon, 29 Jul 2024 14:45:35 +0000</pubDate>
-      <guid>http://localhost:50666/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
+      <guid>https://junhkang.com/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</guid>
       <description></description>
     </item>
     <item>
       <title>이펙티브 자바</title>
-      <link>http://localhost:50666/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/</link>
+      <link>https://junhkang.com/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/</link>
       <pubDate>Sat, 29 Jun 2024 18:13:10 +0000</pubDate>
-      <guid>http://localhost:50666/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/</guid>
+      <guid>https://junhkang.com/categories/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94/</guid>
       <description></description>
     </item>
     <item>
       <title>GitHub</title>
-      <link>http://localhost:50666/categories/github/</link>
+      <link>https://junhkang.com/categories/github/</link>
       <pubDate>Wed, 19 Jun 2024 10:48:11 +0000</pubDate>
-      <guid>http://localhost:50666/categories/github/</guid>
+      <guid>https://junhkang.com/categories/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Java</title>
-      <link>http://localhost:50666/categories/java/</link>
+      <link>https://junhkang.com/categories/java/</link>
       <pubDate>Tue, 30 Jan 2024 21:41:20 +0000</pubDate>
-      <guid>http://localhost:50666/categories/java/</guid>
+      <guid>https://junhkang.com/categories/java/</guid>
       <description></description>
     </item>
     <item>
       <title>Elastic Search</title>
-      <link>http://localhost:50666/categories/elastic-search/</link>
+      <link>https://junhkang.com/categories/elastic-search/</link>
       <pubDate>Fri, 08 Dec 2023 14:57:54 +0000</pubDate>
-      <guid>http://localhost:50666/categories/elastic-search/</guid>
+      <guid>https://junhkang.com/categories/elastic-search/</guid>
       <description></description>
     </item>
     <item>
       <title>WEB</title>
-      <link>http://localhost:50666/categories/web/</link>
+      <link>https://junhkang.com/categories/web/</link>
       <pubDate>Tue, 28 Nov 2023 12:33:47 +0000</pubDate>
-      <guid>http://localhost:50666/categories/web/</guid>
+      <guid>https://junhkang.com/categories/web/</guid>
       <description></description>
     </item>
     <item>
       <title>네트워크</title>
-      <link>http://localhost:50666/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
+      <link>https://junhkang.com/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
       <pubDate>Tue, 21 Nov 2023 17:36:52 +0000</pubDate>
-      <guid>http://localhost:50666/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</guid>
+      <guid>https://junhkang.com/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</guid>
       <description></description>
     </item>
     <item>
       <title>운영체제(OS)</title>
-      <link>http://localhost:50666/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</link>
+      <link>https://junhkang.com/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</link>
       <pubDate>Tue, 17 Oct 2023 14:01:18 +0000</pubDate>
-      <guid>http://localhost:50666/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</guid>
+      <guid>https://junhkang.com/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</guid>
       <description></description>
     </item>
   </channel>

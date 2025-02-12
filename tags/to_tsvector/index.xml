@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>To_tsvector on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/to_tsvector/</link>
+    <link>https://junhkang.com/tags/to_tsvector/</link>
     <description>Recent content in To_tsvector on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 05 Oct 2023 13:53:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/to_tsvector/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/to_tsvector/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ERROR: text search configuration name \&#34;english\&#34; must be schema-qualified</title>
-      <link>http://localhost:50666/posts/13/</link>
+      <link>https://junhkang.com/posts/13/</link>
       <pubDate>Thu, 05 Oct 2023 13:53:18 +0000</pubDate>
-      <guid>http://localhost:50666/posts/13/</guid>
+      <guid>https://junhkang.com/posts/13/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/13/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/13/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;발생&#34; ke-size=&#34;size26&#34;&gt;1. 발생&lt;/h2&gt;
 &lt;p&gt;해당 에러는 Postgresql에서 Full Text Search를 위해 tsvector 컬럼을 업데이트할 때 발생한다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 특정 컬럼을 ts_vector로 변경하여 업데이트

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Gist on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/gist/</link>
+    <link>https://junhkang.com/tags/gist/</link>
     <description>Recent content in Gist on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Sep 2023 16:27:51 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/gist/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/gist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] GiST인덱스의 원리 및 특징</title>
-      <link>http://localhost:50666/posts/8/</link>
+      <link>https://junhkang.com/posts/8/</link>
       <pubDate>Wed, 13 Sep 2023 16:27:51 +0000</pubDate>
-      <guid>http://localhost:50666/posts/8/</guid>
+      <guid>https://junhkang.com/posts/8/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;gist-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. GiST 인덱스란?&lt;/h2&gt;
 &lt;p&gt;Generalized Search Tree의 약자이며 B-tree와 같은 balanced search tree의 형태이다. B-tree인덱스는 정렬된 채로 비교&amp;amp;일치의 연산에 최적화된 채로 연결되어있다. 하지만 현대의 다양한 데이터 종류 (기하학적, 텍스트문서, 이미지 등)를 연산하는 데는 적합하지 않다.&lt;/p&gt;

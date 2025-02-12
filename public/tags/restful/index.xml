@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Restful on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/restful/</link>
+    <link>https://junhkang.com/tags/restful/</link>
     <description>Recent content in Restful on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 21 Nov 2023 17:36:52 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/restful/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/restful/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[네트워크] REST, RESTful API의 개념 및 설계 가이드</title>
-      <link>http://localhost:1313/posts/48/</link>
+      <link>https://junhkang.com/posts/48/</link>
       <pubDate>Tue, 21 Nov 2023 17:36:52 +0000</pubDate>
-      <guid>http://localhost:1313/posts/48/</guid>
+      <guid>https://junhkang.com/posts/48/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/48/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/48/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;h2 id=&#34;1-rest란&#34;&gt;1. REST란?&lt;/h2&gt;
 &lt;p&gt;REST란 Representational State Transfer의 약자로 자원을 이름으로 구분하여 자원의 상태를 주고받는 것을 의미한다. HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 행위를 적용한다.&lt;/p&gt;

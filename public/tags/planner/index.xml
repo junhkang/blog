@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Planner on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/planner/</link>
+    <link>http://localhost:1313/tags/planner/</link>
     <description>Recent content in Planner on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 14 Mar 2024 18:51:34 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/planner/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/planner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] Planner, Optimizer (플래너, 옵티마이저)란? Planner, Optimizer (플래너, 옵티마이저)의 개념과 작동방식</title>
-      <link>https://junhkang.com/posts/71/</link>
+      <link>http://localhost:1313/posts/71/</link>
       <pubDate>Thu, 14 Mar 2024 18:51:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/71/</guid>
+      <guid>http://localhost:1313/posts/71/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/71/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/71/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;planner-optimizer-플래너-옵티마이저-란&#34; ke-size=&#34;size26&#34;&gt;1. Planner / Optimizer (플래너 / 옵티마이저) 란?&lt;/h2&gt;
 &lt;p&gt;Planner / Optimizer는 쿼리의 최적화된 실행 계획을 만들어낸다. 한 개의 SQL 쿼리도 결과는 같지만, 다양한 방법과 순서로 실행될 수 있다. Planner / Optimizer (이후는 Planner로 명칭)는 실행 가능한 각각의 플랜을 검사하여 궁극적으로 가장 빠르게 실행 &amp;quot;기대&amp;quot;되는 플랜을 선택한다. &lt;/p&gt;
 &lt;h3 id=&#34;genetic-query-optimize&#34; ke-size=&#34;size23&#34;&gt;1-1. Genetic Query Optimize&lt;/h3&gt;
@@ -23,11 +23,11 @@
     </item>
     <item>
       <title>[PostgreSQL] 명시적 JOIN 절로 플래너(Planner) 제어, 성능 향상</title>
-      <link>https://junhkang.com/posts/44/</link>
+      <link>http://localhost:1313/posts/44/</link>
       <pubDate>Wed, 08 Nov 2023 16:53:24 +0000</pubDate>
-      <guid>https://junhkang.com/posts/44/</guid>
+      <guid>http://localhost:1313/posts/44/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/44/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/44/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;개요&#34; ke-size=&#34;size26&#34;&gt;1. 개요&lt;/h2&gt;
 &lt;p&gt;PostgreSQL은 쿼리 Planner가 가장 효율적인 쿼리 플랜을 세워 쿼리를 실행시킨다. 이번 포스트는 쿼리 Planner가 플랜을 검색하는 과정을 의도적으로 제한하여 플랜 검색 시간을 단축시키는 방법에 대한 내용이다. 쿼리 선택지를 제한함으로써 시간을 줄이지만, 그만큼 모든 경우를 비교하는 것이기 아니라서 최고의 플랜을 찾을 수 없기에, 테이블 scan 방식 및 인덱스 등 쿼리의 작동방식을 명확히 이해한 후 설정이 필요하며, 설정전 성능비교, 설정 후의 데이터 증감에 따른 지속적인 모니터링이 필요하다.&lt;/p&gt;
 &lt;h2 id=&#34;플래너의-작동&#34; ke-size=&#34;size26&#34;&gt;2. 플래너의 작동&lt;/h2&gt;

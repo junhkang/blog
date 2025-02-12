@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Wal on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/wal/</link>
+    <link>http://localhost:1313/tags/wal/</link>
     <description>Recent content in Wal on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 26 Feb 2024 18:04:32 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/wal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/wal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)의 개념 및 장단점</title>
-      <link>https://junhkang.com/posts/66/</link>
+      <link>http://localhost:1313/posts/66/</link>
       <pubDate>Mon, 26 Feb 2024 18:04:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/66/</guid>
+      <guid>http://localhost:1313/posts/66/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/66/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/66/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;wal-write-ahead-logging-아카이브-모드-백업archive-mode-backup이란&#34; ke-size=&#34;size26&#34;&gt;1. WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)이란?&lt;/h2&gt;
 &lt;p&gt;아카이브 모드 백업을 이해하기 위해 WAL에 대한 개념을 먼저 살펴보자. WAL은 PostgreSQL에서 데이터의 무결성을 보장하는 표준 방법으로, 기본 콘셉트는 모든 데이터의 변경을 로깅 완료 후에 실행하는 것이다. WAL 기록을 영구적인 저장소에 먼저 기록한 후에 데이터의 변경 내용을 실행하는 것으로, 이 과정을 거치면 충돌 혹은 데이터에 문제가 있을 때 WAL 로깅 내용을 바탕으로 특정 시점으로 복구가 가능하여 데이터 무결성을 보장할 수 있다.
  &lt;/p&gt;</description>

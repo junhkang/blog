@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>의존성주입 on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85/</link>
+    <link>https://junhkang.com/tags/%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85/</link>
     <description>Recent content in 의존성주입 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 17 Nov 2023 14:36:15 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle</title>
-      <link>http://localhost:50666/posts/47/</link>
+      <link>https://junhkang.com/posts/47/</link>
       <pubDate>Fri, 17 Nov 2023 14:36:15 +0000</pubDate>
-      <guid>http://localhost:50666/posts/47/</guid>
+      <guid>https://junhkang.com/posts/47/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/47/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/47/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;순환참조란&#34; ke-size=&#34;size26&#34;&gt;1. 순환참조란?&lt;/h2&gt;
 &lt;p&gt;순환참조는 맞물린 의존성 주입 (DI) 상태에서 어떤 빈을 먼저 생성할지 결정하지 못해서 생기에 발생한다. BeanA에서 BeanB를 참조(BeanA-&amp;gt;BeanB) 일 경우 스프링은 BeanB를 먼저 생성 후 BeanA를 생성하기에, BeanB에서 다시 BeanA를 참조할 경우 (BeanA-&amp;gt;BeanB-&amp;gt;BeanA) 순환 참조가 발생하게된다. &lt;/p&gt;
 &lt;h2 id=&#34;의존성-주입&#34; ke-size=&#34;size26&#34;&gt;2. 의존성 주입 &lt;/h2&gt;

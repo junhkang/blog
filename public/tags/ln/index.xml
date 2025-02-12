@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ln on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/ln/</link>
+    <link>https://junhkang.com/tags/ln/</link>
     <description>Recent content in Ln on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 09 Oct 2023 11:46:58 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/ln/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/ln/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Linux] 심볼릭 링크 (Symbolic link) 설정하기</title>
-      <link>http://localhost:50666/posts/16/</link>
+      <link>https://junhkang.com/posts/16/</link>
       <pubDate>Mon, 09 Oct 2023 11:46:58 +0000</pubDate>
-      <guid>http://localhost:50666/posts/16/</guid>
+      <guid>https://junhkang.com/posts/16/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;심볼릭-링크-symbolic-link란&#34; ke-size=&#34;size26&#34;&gt;1. 심볼릭 링크 (Symbolic link)란?&lt;/h2&gt;
 &lt;p&gt;링크를 걸어 원본 파일을 직접 사용하는 것과 같은 효과를 낸다. 특정 폴더에 링크를 걸어 NAS, library 원본 파일을 사용하거나 톰캣 빌듯이 상위경로의 파일을 사용하고자 할 때 사용한다. 심볼릭 링크는 단순히 원본파일을 가리키도록 링크만 연결시켜둔 것으로 원본파일을 가리키기만 하고 있으므로 원본파일의 크기와 무관하며 원본파일이 삭제되어 존재하지 않을 경우에 빨간색으로 링크파일의 원본파일이 없다는 것을 알려준다.
@@ -31,7 +31,7 @@
 &lt;li&gt;t : 링크파일을 생성할 디렉토리를 지정한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;심볼릭-링크-생성directory&#34; ke-size=&#34;size23&#34;&gt;     2-2. 심볼릭 링크 생성(directory)&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/16/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%EC%A0%84%2011.35.53.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/16/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%EC%A0%84%2011.35.53.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

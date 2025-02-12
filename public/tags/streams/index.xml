@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Streams on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/streams/</link>
+    <link>https://junhkang.com/tags/streams/</link>
     <description>Recent content in Streams on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 30 Jan 2024 21:41:20 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/streams/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/streams/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Java] 자바 스트림(Streams)의 개념과 사용 방법</title>
-      <link>http://localhost:50666/posts/56/</link>
+      <link>https://junhkang.com/posts/56/</link>
       <pubDate>Tue, 30 Jan 2024 21:41:20 +0000</pubDate>
-      <guid>http://localhost:50666/posts/56/</guid>
+      <guid>https://junhkang.com/posts/56/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;자바-스트림streams이란&#34; ke-size=&#34;size26&#34;&gt;1. 자바 스트림(Streams)이란?&lt;/h2&gt;
 &lt;p&gt;기존의 배열 또는 컬렉션 인스턴스는 for, foreach 같은 반복문을 통해 하나씩 핸들링하는 방식이었기에 로직이 복잡할수록 코드양도 많아지고 루프를 여러 번 도는 경우도 발생하였다. 그에 비해 자바 8에서 추가된 스트림(Streams)은 람다를 사용할 수 있는 기술 중 하나로 다음과 같은 특징을 가지고 있다.&lt;/p&gt;
 &lt;ul&gt;

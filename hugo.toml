@@ -2,7 +2,7 @@ baseURL = "https://junhkang.com/"
 languageCode = "ko"
 title = "Jun Kang's Blog"
 theme = "hugo-PaperMod"
-googleAnalytics = "G-LE7D0WZLFJ"
+googleAnalytics = "G-PV53RL6R3L"
 
 # 페이지당 포스트 수 설정
 [pagination]

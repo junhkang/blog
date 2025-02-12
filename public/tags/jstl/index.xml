@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>JSTL on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/jstl/</link>
+    <link>https://junhkang.com/tags/jstl/</link>
     <description>Recent content in JSTL on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 31 Jan 2024 16:40:43 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/jstl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/jstl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] 스프링부트 3 jstl 적용(maven), (절대 URI인 [http://java.sun.com/jsp/jstl/core]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.)</title>
-      <link>http://localhost:50666/posts/58/</link>
+      <link>https://junhkang.com/posts/58/</link>
       <pubDate>Wed, 31 Jan 2024 16:40:43 +0000</pubDate>
-      <guid>http://localhost:50666/posts/58/</guid>
+      <guid>https://junhkang.com/posts/58/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;

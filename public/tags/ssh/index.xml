@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ssh on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/ssh/</link>
+    <link>https://junhkang.com/tags/ssh/</link>
     <description>Recent content in Ssh on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 03 Jan 2025 15:38:03 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[LINUX] SFTP 초기화 오류 : Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel</title>
-      <link>http://localhost:50666/posts/124/</link>
+      <link>https://junhkang.com/posts/124/</link>
       <pubDate>Fri, 03 Jan 2025 15:38:03 +0000</pubDate>
-      <guid>http://localhost:50666/posts/124/</guid>
+      <guid>https://junhkang.com/posts/124/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel. Message [4: Received message is too long: 458961709]]&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;문제상황&#34; ke-size=&#34;size23&#34;&gt;1. 문제상황&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;기존에 잘 작동하던 SFTP를 활용한 CI/CD가 갑자기 작동하지 않는다. 에러 메시지에 따르면 약 438mb의 메시지를 받은 상황인데, 파일을 실제로 업로드하는 시점이 아닌 SFTP연결 시도를 하는 순간(SSH연결을 설정하고 초기화하는 부분)에도 이렇게 큰 응답을 받는 상황이었다.&lt;/p&gt;
 &lt;h3 id=&#34;원인파악&#34; ke-size=&#34;size23&#34;&gt;2. 원인파악&lt;/h3&gt;
 &lt;p&gt;SSH 접속시, 서버 간 구분을 주기 위해 ~/. bashrc의 설정을 통해 웰컴메시지를 출력하는 부분이 문제였다. (다음 포스트에서 진행한 서버별 웰컴 메시지 등록 부분에서 작업과정 확인 가능)&lt;/p&gt;</description>

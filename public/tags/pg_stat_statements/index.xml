@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PG_STAT_STATEMENTS on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/pg_stat_statements/</link>
+    <link>https://junhkang.com/tags/pg_stat_statements/</link>
     <description>Recent content in PG_STAT_STATEMENTS on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 14 Aug 2024 17:49:46 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/pg_stat_statements/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/pg_stat_statements/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] RDS 쿼리 성능 분석 방법 : pg_stat_statements 설치, 고려사항 및 주요 지표</title>
-      <link>http://localhost:50666/posts/94/</link>
+      <link>https://junhkang.com/posts/94/</link>
       <pubDate>Wed, 14 Aug 2024 17:49:46 +0000</pubDate>
-      <guid>http://localhost:50666/posts/94/</guid>
+      <guid>https://junhkang.com/posts/94/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;rds에서의-쿼리-성능-분석-pg_stat_statements란&#34; ke-size=&#34;size26&#34;&gt;1. RDS에서의 쿼리 성능 분석, pg_stat_statements란?&lt;/h2&gt;
 &lt;p&gt;RDS에서는 외부 익스텐션 사용이 제한된다. 쿼리 통계 및 성능에 대한 지표를 알 수 있는 여러 가지 익스텐션이 있지만, 그중 pg_stat_statements가 허용된다. pg_stat_statements의 원리, 사용법, 주요 지표에 대해 알아보자.

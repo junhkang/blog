@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>HikariCP on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/hikaricp/</link>
+    <link>https://junhkang.com/tags/hikaricp/</link>
     <description>Recent content in HikariCP on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/hikaricp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/hikaricp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] 스프링부트와 HikariCP를 활용한 Connection Pool 설정 및 최적화</title>
-      <link>http://localhost:50666/posts/125/</link>
+      <link>https://junhkang.com/posts/125/</link>
       <pubDate>Thu, 30 Jan 2025 16:50:24 +0000</pubDate>
-      <guid>http://localhost:50666/posts/125/</guid>
+      <guid>https://junhkang.com/posts/125/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;몇 년 전 운영 프로젝트 설정 시 자세하게 봤던 내용이지만, 트래픽이 대폭 증가하고, DBMS에 연결된 프로젝트와 모듈이 늘어남에 따라 재설정을 위해 개념을 다시 정리하게 되었다.&lt;/p&gt;
 &lt;h3 id=&#34;기본적인-데이터베이스-연결과정&#34; ke-size=&#34;size23&#34;&gt;1. 기본적인 데이터베이스 연결과정&lt;/h3&gt;

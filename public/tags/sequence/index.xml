@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Sequence on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:50666/tags/sequence/</link>
+    <link>https://junhkang.com/tags/sequence/</link>
     <description>Recent content in Sequence on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 11 Oct 2023 14:12:44 +0000</lastBuildDate>
-    <atom:link href="http://localhost:50666/tags/sequence/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/sequence/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 시퀀스(Sequence)의 개념과 사용법(생성, 삭제, 조회 등)</title>
-      <link>http://localhost:50666/posts/23/</link>
+      <link>https://junhkang.com/posts/23/</link>
       <pubDate>Wed, 11 Oct 2023 14:12:44 +0000</pubDate>
-      <guid>http://localhost:50666/posts/23/</guid>
+      <guid>https://junhkang.com/posts/23/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/23/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/23/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;시퀀스sequence의-사용&#34; ke-size=&#34;size26&#34;&gt;1. 시퀀스(Sequence)의 사용&lt;/h2&gt;
 &lt;h3 id=&#34;생성-삭제-조회&#34; ke-size=&#34;size23&#34;&gt;          1-1. 생성, 삭제, 조회&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 101부터 시작하는 기본 시퀀스 생성

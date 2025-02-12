@@ -2,23 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>네트워크 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
+    <link>http://localhost:1313/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/</link>
     <description>Recent content in 네트워크 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 21 Nov 2023 17:36:52 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[네트워크] REST, RESTful API의 개념 및 설계 가이드</title>
-      <link>https://junhkang.com/posts/48/</link>
+      <link>http://localhost:1313/posts/48/</link>
       <pubDate>Tue, 21 Nov 2023 17:36:52 +0000</pubDate>
-      <guid>https://junhkang.com/posts/48/</guid>
+      <guid>http://localhost:1313/posts/48/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/48/img.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;출처 : &lt;a href=&#34;https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html&#34;&gt;https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html&lt;/a&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/48/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;h2 id=&#34;1-rest란&#34;&gt;1. REST란?&lt;/h2&gt;
-&lt;p&gt;[REST란 Representational State Transfer의 약자로 자원을 이름으로 구분하여 자원의 상태를 주고받는 것을 의미한다. ]{style=&amp;ldquo;color: #333333; text-align: start;&amp;quot;}HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 행위를 적용한다.&lt;/p&gt;
+&lt;p&gt;REST란 Representational State Transfer의 약자로 자원을 이름으로 구분하여 자원의 상태를 주고받는 것을 의미한다. HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 행위를 적용한다.&lt;/p&gt;
 &lt;h3 id=&#34;rest-구성요소&#34; ke-size=&#34;size23&#34;&gt;1-1. REST 구성요소&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;자원(Resource) :&lt;/strong&gt; HTTP URI - 서버는 고유한 리소스 식별자로 각 리소스를 식별&lt;/li&gt;
@@ -50,9 +49,9 @@
     </item>
     <item>
       <title>[네트워크] TCP/IP의 개념</title>
-      <link>https://junhkang.com/posts/31/</link>
+      <link>http://localhost:1313/posts/31/</link>
       <pubDate>Wed, 18 Oct 2023 17:46:05 +0000</pubDate>
-      <guid>https://junhkang.com/posts/31/</guid>
+      <guid>http://localhost:1313/posts/31/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;tcpip-란&#34; ke-size=&#34;size26&#34;&gt;1. TCP/IP 란?&lt;/h2&gt;
 &lt;p&gt;패킷 전송방식의 인터넷 프로토콜인 IP와 전송 조절 프로토콜인 TCP로 이루어져 있다. IP는 패킷 전달 여부를 보증하지 않고, 패킷을 보낸 순서대로 받는 것을 보장하지 않지만, TCP는 IP 위에서 동작하는 프로토콜로 데이터의 전달을 보증하고 보낸 순서대로 받게 해 준다. IP가 패킷 간의 관계를 이해하지 못하고 목적지를 찾아가는 데만 집중한다면 TCP는 Endpoint 간 통신할 준비가 되어있는지, 데이터 전송이 제대로 되었는지, 데이터가 변질되지 않은지, 데이터 유실은 없는지 등을 점검한다.
@@ -61,14 +60,14 @@
     </item>
     <item>
       <title>[네트워크] 소켓(SOCEKT) 통신, 3-way handshake의 개념</title>
-      <link>https://junhkang.com/posts/30/</link>
+      <link>http://localhost:1313/posts/30/</link>
       <pubDate>Wed, 18 Oct 2023 15:32:25 +0000</pubDate>
-      <guid>https://junhkang.com/posts/30/</guid>
+      <guid>http://localhost:1313/posts/30/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;소켓socket이란&#34; ke-size=&#34;size26&#34;&gt;1. 소켓(Socket)이란&lt;/h2&gt;
 &lt;p&gt;소켓은 떨어져 있는 두 호스트를 연결해 주는 도구로써 인터페이스 역할을 한다. TCP/IP 기반 네트워크 통신에서 데이터 송수신의 앤드포인트이며 앤드포인트는 IP, Port조합으로 이루어진 목적지를 나타낸다. 서버-클라이언트 간 데이터를 주고받는 양방향 연결 지향성 통신으로 지속적으로 연결을 유지하면서 실시간 데이터를 주고받는 데 사용된다.&lt;/p&gt;
 &lt;p&gt;소켓은 서버 소켓과 클라이언트 소켓으로 이루어지며, 다음은 소켓 간 통신이 이루어지는 과정이다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/30/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/30/img.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;서버-소켓&#34; ke-size=&#34;size23&#34;&gt;&lt;strong&gt;1-1. 서버 소켓&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;클라이언트에서 연결요청이 오기를 기다렸다가 연결 요청이 들어오면 클라이언트와 연결을 맺고 새로운 소켓을 만든다.&lt;/p&gt;</description>
     </item>

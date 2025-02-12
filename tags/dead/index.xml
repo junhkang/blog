@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Dead on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/dead/</link>
+    <link>http://localhost:1313/tags/dead/</link>
     <description>Recent content in Dead on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 11 Sep 2023 18:02:56 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/dead/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dead/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Postgresql Lock이란? (조회 및 kill, Dead lock)</title>
-      <link>https://junhkang.com/posts/4/</link>
+      <link>http://localhost:1313/posts/4/</link>
       <pubDate>Mon, 11 Sep 2023 18:02:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/4/</guid>
+      <guid>http://localhost:1313/posts/4/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/4/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/4/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;lock-확인방법&#34; ke-size=&#34;size26&#34;&gt;[1. Lock 확인방법]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Sans Demilight&amp;rsquo;, &amp;lsquo;Noto Sans KR&amp;rsquo;;&amp;rdquo;}&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT PSAT.RELNAME,
        PL.LOCKTYPE,

@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>디자인패턴 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
+    <link>http://localhost:1313/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/</link>
     <description>Recent content in 디자인패턴 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 29 Jul 2024 14:45:35 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/93/</link>
+      <link>http://localhost:1313/posts/93/</link>
       <pubDate>Mon, 29 Jul 2024 14:45:35 +0000</pubDate>
-      <guid>https://junhkang.com/posts/93/</guid>
+      <guid>http://localhost:1313/posts/93/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;빌더builder-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 빌더(Builder) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다&lt;/p&gt;
 &lt;p&gt;예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. &lt;/p&gt;
 &lt;h2 id=&#34;빌더-패턴의-구조&#34; ke-size=&#34;size26&#34;&gt;2. 빌더 패턴의 구조&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/93/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-07-29%20%EC%98%A4%ED%9B%84%202.34.00.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/93/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-07-29%20%EC%98%A4%ED%9B%84%202.34.00.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;빌더패턴 예제 클래스 다이어그램&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Builder 역&lt;/strong&gt; - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음&lt;/li&gt;
@@ -30,9 +30,9 @@
     </item>
     <item>
       <title>[디자인패턴] 전략(Strategy) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/87/</link>
+      <link>http://localhost:1313/posts/87/</link>
       <pubDate>Fri, 12 Apr 2024 15:42:02 +0000</pubDate>
-      <guid>https://junhkang.com/posts/87/</guid>
+      <guid>http://localhost:1313/posts/87/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;전략strategy-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 전략(Strategy) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;Strategy는 전략이라는 뜻으로 적을 해치우는 작전, 게임을 이기는 전략, 문제를 풀어나가는 방법 등의 의미가 있고, 특히 프로그래밍에서는 문제를 해결하는 방식인 &amp;quot;알고리즘&amp;quot;을 의미한다.
@@ -43,9 +43,9 @@
     </item>
     <item>
       <title>[디자인패턴] 데코레이터(Decorator) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/73/</link>
+      <link>http://localhost:1313/posts/73/</link>
       <pubDate>Mon, 18 Mar 2024 17:23:46 +0000</pubDate>
-      <guid>https://junhkang.com/posts/73/</guid>
+      <guid>http://localhost:1313/posts/73/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;데코레이터decorator-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 데코레이터(Decorator) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;중심이 되는 객체가 있고, 장식이 되는 기능을 하나씩 추가하여 목적에 더 맞는 객체로 만들어가는 디자인 패턴을 Decorator 패턴이라고 한다. decorator 란 &amp;quot;장식하는 사람&amp;quot;이라는 뜻이다. 예제를 통해 상세 개념을 확인해 보자. (Java언어로 배우는 디자인 패턴 입문, 3편의 예제를 그대로 사용하였다.) 적용할 예제는, 문자열 주위에 &amp;quot;장식틀&amp;quot;을 붙여 표현하는 것이다. 예를 들어 Hello World라는 기본 문구에 장식틀을 붙여 중첩 장식을 한 후 출력하는 예제이다.&lt;/p&gt;
@@ -56,9 +56,9 @@
     </item>
     <item>
       <title>[디자인패턴] 컴포지트(Composite) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/63/</link>
+      <link>http://localhost:1313/posts/63/</link>
       <pubDate>Tue, 20 Feb 2024 18:08:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/63/</guid>
+      <guid>http://localhost:1313/posts/63/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;컴포지트composite-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 컴포지트(Composite) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;Composite는 혼합물, 복합물이란 뜻으로 중첩된 구조, 재귀적인 구조를 만드는 패턴이다. 대표적인 예로 윈도우 디렉터리와 파일을 들 수 있다. 디렉터리, 파일은 엄연히 다른 속성이지만 둘 다 디렉터리 안에 넣을 수 있다는 공통점이 있다. 디렉터리 내에는 또 다른 디렉터리가 있을 수 있기에 중첩, 재귀적인 구조를 만들어낸다.
@@ -68,9 +68,9 @@
     </item>
     <item>
       <title>[디자인패턴] 추상 팩터리(Abstract Factory) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/61/</link>
+      <link>http://localhost:1313/posts/61/</link>
       <pubDate>Fri, 16 Feb 2024 17:20:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/61/</guid>
+      <guid>http://localhost:1313/posts/61/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;추상-팩토리abstract-factory-패턴-이란&#34; ke-size=&#34;size26&#34;&gt;1. 추상 팩토리(Abstract Factory) 패턴 이란?&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -80,7 +80,7 @@
 &lt;p&gt;&lt;strong&gt;추상 + 공장 패턴 :&lt;/strong&gt; 추상적인 공장에서 추상적인 부품을 조합하여 추상적인 제품을 만든다. 부품의 구체적인 구현에 집중하지 않고 인터페이스에 주목, 인터페이스만 사용하여 부품을 조립하고 제품으로 완성한다.
  &lt;/p&gt;
 &lt;p&gt;다음 표를 보면 추상 팩토리가 어떤 구조로 이루어졌는지 확인할 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/61/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/61/img.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Abstract Factory :&lt;/strong&gt; 최상위 공장, 메서드들을 추상화한다. AbstractProduct의 인스턴스를 만들기 위한 인터페이스를 결정한다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Concrete Factory :&lt;/strong&gt; 서브 공장 클래스, 유형에 맞는 객체를 반환하도록 메서드들을 재정의한다. AbstractFactory의 인터페이스를 구현한다.&lt;/li&gt;

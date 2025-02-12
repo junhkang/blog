@@ -30,6 +30,22 @@ minifyOutput = true
   defaultImage = "/images/og_img.jpg"  # 기본 OG 이미지 경로
   keywords = ["개발", "백엔드", "클라우드", "DevOps", "데이터베이스", "산군"]  # 배열 형태로 변경
 
+  [params.comments]
+    enabled = true
+    provider = "giscus"
+
+  [params.giscus]
+    repo = "junhkang/blog"
+    repoId = "R_kgDON3GHLw"
+    category = "General"
+    categoryId = "DIC_kwDON3GHL84Cm5Fc"
+    mapping = "pathname"
+    strict = "0"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "bottom"
+    theme = "preferred_color_scheme"
+    lang = "ko"
 
 [params.analytics.google]
   SiteVerificationTag = "G-PV53RL6R3L"

@@ -1,29 +1,37 @@
-{{ if .IsHome }}
+<!-- 공통 스타일 -->
 <style>
 .social-icons {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: 15px;  /* 좁은 세로 간격 유지 */
+    margin-top: 15px;
 }
 
 .profile-visitor-count {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-left: auto;  /* 다시 auto로 변경하여 오른쪽 끝으로 정렬 */
-    transform: scale(1.2);  /* 전체적인 크기를 20% 키움 */
-    transform-origin: right center;  /* 오른쪽 정렬 유지하면서 크기 조정 */
+    margin-left: auto;
+    padding: 6px 10px;
+    background-color: var(--entry);
+    border-radius: 6px;
+    font-size: 0.9em;
+    color: var(--secondary);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    gap: 6px;
+    text-decoration: none;
 }
 
-.profile-visitor-count img {
-    height: 18px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
+.profile-visitor-count:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
 }
 
-.profile-visitor-count img:hover {
-    opacity: 1;
+.visitor-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 @media screen and (max-width: 768px) {
@@ -35,31 +43,41 @@
     .profile-visitor-count {
         margin-left: 0;
         margin-top: 10px;
-        transform-origin: center;  /* 모바일에서는 중앙 정렬 */
     }
 }
 </style>
 
+<!-- 방문자 카운터 스크립트 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const socialIcons = document.querySelector('.social-icons');
-    if (!socialIcons) return;
-
-    const counterDiv = document.createElement('div');
-    counterDiv.className = 'profile-visitor-count';
-    counterDiv.innerHTML = `
-        <a href="https://hits.sh/junhkang.com/">
-            <img alt="오늘 방문자" src="https://hits.sh/junhkang.com.svg?view=today&style=flat-square&label=오늘&color=555555&labelColor=gray"/>
-        </a>
-        <a href="https://hits.sh/junhkang.com/">
-            <img alt="전체 방문자" src="https://hits.sh/junhkang.com.svg?style=flat-square&label=전체&color=555555&labelColor=gray"/>
-        </a>
-    `;
+    const currentPath = window.location.pathname;
     
-    socialIcons.appendChild(counterDiv);
+    // 모든 페이지에서 전체 방문자 수만 카운트
+    if (currentPath === '/') {
+        // 홈페이지인 경우 방문자 카운터 UI 표시
+        const socialIcons = document.querySelector('.social-icons');
+        if (socialIcons) {
+            const counterDiv = document.createElement('a');
+            counterDiv.href = "https://hits.sh/junhkang.com/";
+            counterDiv.target = "_blank";
+            counterDiv.className = 'profile-visitor-count';
+            counterDiv.innerHTML = `
+                <span class="visitor-label">👥 총 방문자</span>
+                <img alt="방문자" src="https://hits.sh/junhkang.com.svg?view=today-total&style=flat-square&label=&color=000000&labelColor=ffffff&background=ffffff"/>
+            `;
+            socialIcons.appendChild(counterDiv);
+        }
+    } else {
+        // 홈페이지가 아닌 경우 숨겨진 전체 카운터만 추가
+        const totalCounterImg = document.createElement('img');
+        totalCounterImg.style.opacity = '0';
+        totalCounterImg.style.position = 'absolute';
+        totalCounterImg.style.pointerEvents = 'none';
+        totalCounterImg.src = 'https://hits.sh/junhkang.com.svg?view=today-total&style=flat-square';
+        document.body.appendChild(totalCounterImg);
+    }
 });
 </script>
-{{ end }}
 
 <!-- Google Analytics -->
 {{ with .Site.Params.googleAnalytics }}

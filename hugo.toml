@@ -76,7 +76,7 @@ ShowTags = true
   identifier = "categories"
   name = "Categories"
   url = "/categories/"
-  weight = 2
+  weight = 10
 
 [[menu.main]]
   identifier = "posts"
@@ -142,3 +142,8 @@ ShowCategories = true
 [params.categoryPage]
 enableRecentPosts = true
 recentPostCount = 3
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"

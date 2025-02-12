@@ -1,28 +1,37 @@
-name: Deploy Hugo site to GitHub Pages
+name: GitHub Pages
 
 on:
   push:
     branches:
-      - main  # main 브랜치에 푸시할 때마다 실행
+      - main  # 또는 master
+  pull_request:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          submodules: true  # 테마가 submodule로 설치되어 있다면 필요
+          fetch-depth: 0    # 전체 git history 가져오기
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
+          extended: true    # extended 버전 사용
 
-      - name: Build Site
-        run: hugo --minify --baseURL "https://junhkang.com/"
+      - name: Build
+        run: |
+          hugo --minify --baseURL "https://junhkang.com/"
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'  # 또는 master
         with:
-          github_token: ${{ secrets.MY_GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages  # 배포될 브랜치
 

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>인덱스 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/%EC%9D%B8%EB%8D%B1%EC%8A%A4/</link>
+    <link>http://localhost:1313/tags/%EC%9D%B8%EB%8D%B1%EC%8A%A4/</link>
     <description>Recent content in 인덱스 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 06 Oct 2023 16:52:50 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/%EC%9D%B8%EB%8D%B1%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%EC%9D%B8%EB%8D%B1%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 미사용 인덱스(INDEX) 찾기 및 삭제, 성능향상</title>
-      <link>https://junhkang.com/posts/14/</link>
+      <link>http://localhost:1313/posts/14/</link>
       <pubDate>Fri, 06 Oct 2023 16:52:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/14/</guid>
+      <guid>http://localhost:1313/posts/14/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;img src=&#34;0&#34; /&gt;
@@ -29,11 +29,11 @@
     </item>
     <item>
       <title>[PostgreSQL]  인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법</title>
-      <link>https://junhkang.com/posts/5/</link>
+      <link>http://localhost:1313/posts/5/</link>
       <pubDate>Tue, 12 Sep 2023 17:50:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/5/</guid>
+      <guid>http://localhost:1313/posts/5/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/5/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/5/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;인덱스-컨트롤&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스 컨트롤&lt;/h2&gt;
 &lt;h3 id=&#34;인덱스-조회&#34; ke-size=&#34;size23&#34;&gt;1-1. 인덱스 조회 &lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM pg_indexes WHERE tablename = &amp;#39;{테이블명}&amp;#39;; -- 테이블명에 &amp;#39;&amp;#39; 필요

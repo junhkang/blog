@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>성능개선 on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/</link>
+    <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/</link>
     <description>Recent content in 성능개선 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 12 Mar 2024 18:59:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 인덱스(INDEX)와 오더바이(ORDER BY), ORDER BY 성능개선, 효율적인 인덱스 적용</title>
-      <link>http://localhost:1313/posts/69/</link>
+      <link>https://junhkang.com/posts/69/</link>
       <pubDate>Tue, 12 Mar 2024 18:59:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/69/</guid>
+      <guid>https://junhkang.com/posts/69/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;인덱스index와-오더바이order-by&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스(INDEX)와 오더바이(ORDER BY)&lt;/h2&gt;
 &lt;p&gt;인덱스는 쿼리의 결과로 특정 row를 찾는 것뿐만 아니라, 특정 순서로 데이터를 정렬하는데도 효율적일 수 있다. ORDER BY와 인덱스를 효율적으로 사용하면 별도의 정렬 과정 없이 ORDER BY를 수행할 수 있다. PostgreSQL에서 현재 지원하는 인덱스 타입 중에서는 B-tree 인덱스만이 정렬 결과로 인덱스를 생성할 수 있다. 다른 인덱스 유형은 특정되지 않은 순서로, 실행 때마다 다른 순서로 열을 반환한다.&lt;/p&gt;

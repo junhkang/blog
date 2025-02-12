@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Swap on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/swap/</link>
+    <link>https://junhkang.com/tags/swap/</link>
     <description>Recent content in Swap on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 23 Oct 2023 15:58:46 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/swap/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/swap/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Linux] 스왑 메모리(Swap Memory)의 개념과 적용방법</title>
-      <link>http://localhost:1313/posts/34/</link>
+      <link>https://junhkang.com/posts/34/</link>
       <pubDate>Mon, 23 Oct 2023 15:58:46 +0000</pubDate>
-      <guid>http://localhost:1313/posts/34/</guid>
+      <guid>https://junhkang.com/posts/34/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;리눅스-swap-메모리-설정-예제는-ec2-환경에서-진행&#34; ke-size=&#34;size26&#34;&gt;1. 리눅스 Swap 메모리 설정 (예제는 EC2 환경에서 진행)&lt;/h2&gt;
 &lt;h3 id=&#34;swap-메모리-확인&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size23&#34;&gt;1-1. Swap 메모리 확인&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;swapon -s 
 
 free -h
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/34/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-23%20%EC%98%A4%ED%9B%84%203.25.49.png&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/34/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-23%20%EC%98%A4%ED%9B%84%203.25.49.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;shared =&lt;/strong&gt; 하나의 프로세스에서 다른 프로세스의 데이터에 효율적으로 접근하기 위해 사용하는 메모리&lt;br&gt;
 &lt;strong&gt;buff/cache =&lt;/strong&gt; 버퍼와 캐시를 위해 사용하는 메모리, 커널이 성능향상을 위해 캐시 영역으로 사용되는 메모리&lt;br&gt;

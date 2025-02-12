@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SSR on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/ssr/</link>
+    <link>https://junhkang.com/tags/ssr/</link>
     <description>Recent content in SSR on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 28 Nov 2023 12:33:47 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ssr/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/ssr/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[WEB] SSR(Server Side Rendering) 과 CSR(Client Side Rendering)의 개념 및 차이</title>
-      <link>http://localhost:1313/posts/49/</link>
+      <link>https://junhkang.com/posts/49/</link>
       <pubDate>Tue, 28 Nov 2023 12:33:47 +0000</pubDate>
-      <guid>http://localhost:1313/posts/49/</guid>
+      <guid>https://junhkang.com/posts/49/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;ssr-server-side-rendering&#34; ke-size=&#34;size26&#34;&gt;1. SSR (Server Side Rendering)&lt;/h2&gt;
 &lt;p&gt;서버에서 렌더링 준비를 마친 상태로 클라이언트에 자원을 전달한다.&lt;/p&gt;
 &lt;h3 id=&#34;ssr-작동-방식&#34; style=&#34;color: #000000; text-align: start;&#34; ke-size=&#34;size23&#34;&gt;1-1. SSR 작동 방식&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/49/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/49/img.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;유저가 웹사이트 자원을 요청&lt;/li&gt;
 &lt;li&gt;서버에서 &amp;ldquo;렌더링 가능한&amp;rdquo; HTML 파일 생성 (리소스 체크, 컴파일 후 완성된 HTML 콘텐츠 생성)&lt;/li&gt;

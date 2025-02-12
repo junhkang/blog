@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>가상 on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%EA%B0%80%EC%83%81/</link>
+    <link>https://junhkang.com/tags/%EA%B0%80%EC%83%81/</link>
     <description>Recent content in 가상 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 25 Oct 2023 16:37:30 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%EA%B0%80%EC%83%81/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/%EA%B0%80%EC%83%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Java] 가상 스레드 (Virtual Threads)란? 자바 21의 가상스레드 (Virtual Thread) 도입</title>
-      <link>http://localhost:1313/posts/37/</link>
+      <link>https://junhkang.com/posts/37/</link>
       <pubDate>Wed, 25 Oct 2023 16:37:30 +0000</pubDate>
-      <guid>http://localhost:1313/posts/37/</guid>
+      <guid>https://junhkang.com/posts/37/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;가상-스레드-virtual-threads란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 가상 스레드 (Virtual Threads)&lt;strong&gt;란?&lt;/strong&gt;&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;2023.09.20 릴리즈 된 자바 21에 추가된 가상 스레드(Virtual Threads)라는 기능을 살펴보자.&lt;/p&gt;

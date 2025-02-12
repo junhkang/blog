@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Java on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/categories/java/</link>
+    <link>https://junhkang.com/categories/java/</link>
     <description>Recent content in Java on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 30 Jan 2024 21:41:20 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Java] 자바 스트림(Streams)의 개념과 사용 방법</title>
-      <link>http://localhost:1313/posts/56/</link>
+      <link>https://junhkang.com/posts/56/</link>
       <pubDate>Tue, 30 Jan 2024 21:41:20 +0000</pubDate>
-      <guid>http://localhost:1313/posts/56/</guid>
+      <guid>https://junhkang.com/posts/56/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;자바-스트림streams이란&#34; ke-size=&#34;size26&#34;&gt;1. 자바 스트림(Streams)이란?&lt;/h2&gt;
 &lt;p&gt;기존의 배열 또는 컬렉션 인스턴스는 for, foreach 같은 반복문을 통해 하나씩 핸들링하는 방식이었기에 로직이 복잡할수록 코드양도 많아지고 루프를 여러 번 도는 경우도 발생하였다. 그에 비해 자바 8에서 추가된 스트림(Streams)은 람다를 사용할 수 있는 기술 중 하나로 다음과 같은 특징을 가지고 있다.&lt;/p&gt;
 &lt;ul&gt;
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>[Java] 가상 스레드 (Virtual Threads)란? 자바 21의 가상스레드 (Virtual Thread) 도입</title>
-      <link>http://localhost:1313/posts/37/</link>
+      <link>https://junhkang.com/posts/37/</link>
       <pubDate>Wed, 25 Oct 2023 16:37:30 +0000</pubDate>
-      <guid>http://localhost:1313/posts/37/</guid>
+      <guid>https://junhkang.com/posts/37/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;가상-스레드-virtual-threads란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 가상 스레드 (Virtual Threads)&lt;strong&gt;란?&lt;/strong&gt;&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;2023.09.20 릴리즈 된 자바 21에 추가된 가상 스레드(Virtual Threads)라는 기능을 살펴보자.&lt;/p&gt;
@@ -40,30 +40,31 @@
     </item>
     <item>
       <title>[Java] Switch와 else-if의 효율성 비교 (Switch와 else-if 중에 어떤 걸 사용해야 할까?)</title>
-      <link>http://localhost:1313/posts/36/</link>
+      <link>https://junhkang.com/posts/36/</link>
       <pubDate>Tue, 24 Oct 2023 18:55:32 +0000</pubDate>
-      <guid>http://localhost:1313/posts/36/</guid>
+      <guid>https://junhkang.com/posts/36/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/36/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/36/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;switch와-if-else&#34; ke-size=&#34;size26&#34;&gt;1. Switch와 if-else&lt;/h2&gt;
 &lt;p&gt;조건에 따라 실행을 분기해야 할 때 우리는 조건문을 사용한다. Java에서는 switch / if-else 두 조건문을 선택적으로 사용 가능하다. 보통 가독성을 기준으로 선택을 많이 하나, 효율성 기준에서 어떤 것을 선택하는 것이 좋을지 비교해보려 한다.
  &lt;/p&gt;
 &lt;p&gt;일단 switch 구분에서 Strings를 사용하는 것에 관한 공식문서를 보면,
  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;[[[The ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;switch&lt;/strong&gt;[ statement compares the ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;String&lt;/strong&gt;[ object in its expression with the expressions associated with each ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;case&lt;/strong&gt;[ label as if it were using the ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;String.equals&lt;/strong&gt;[ method; consequently, the comparison of ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;String&lt;/strong&gt;[ objects in ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;switch&lt;/strong&gt;[ statements is case sensitive. The Java compiler generates generally more efficient bytecode from ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;switch&lt;/strong&gt;[ statements that use ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;String&lt;/strong&gt;[ objects than from chained ]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}&lt;strong&gt;if-then-else&lt;/strong&gt;[ statements.
-]{style=&amp;ldquo;color: #000000; text-align: start;&amp;rdquo;}]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Serif KR&amp;rsquo;;&amp;rdquo;}]{style=&amp;ldquo;font-family: &amp;lsquo;Noto Serif KR&amp;rsquo;;&amp;rdquo;}&lt;/p&gt;</description>
+&lt;p&gt;The &lt;strong&gt;switch&lt;/strong&gt; statement compares the &lt;strong&gt;String&lt;/strong&gt; object in its expression with the expressions associated with each &lt;strong&gt;case&lt;/strong&gt; label as if it were using the &lt;strong&gt;String.equals&lt;/strong&gt; method; consequently, the comparison of &lt;strong&gt;String&lt;/strong&gt; objects in &lt;strong&gt;switch&lt;/strong&gt; statements is case sensitive. The Java compiler generates generally more efficient bytecode from &lt;strong&gt;switch&lt;/strong&gt; statements that use &lt;strong&gt;String&lt;/strong&gt; objects than from chained &lt;strong&gt;if-then-else&lt;/strong&gt; statements.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Java] 클래스 로딩 과정(Java Class Loading Process)이란?</title>
-      <link>http://localhost:1313/posts/35/</link>
+      <link>https://junhkang.com/posts/35/</link>
       <pubDate>Mon, 23 Oct 2023 17:30:32 +0000</pubDate>
-      <guid>http://localhost:1313/posts/35/</guid>
+      <guid>https://junhkang.com/posts/35/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;클래스-로딩-과정-java-class-loading-process-이란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 클래스 로딩 과정 (Java Class Loading Process) 이란?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;자바 클래스 로딩 과정 (Java Class Loading Process)은 클래스 로더가 클래스 파일을 찾아 동적으로 JVM의 메모리 영역인 Runtime Data Areas에 올려놓는 과정을 말한다.
  &lt;/p&gt;
-&lt;p&gt;자바에서 객체가 어떻게 형성/관리 되는지 이해하려면. java 파일의 소스코드가 어떻게 JVM 위에 로딩되는지 아는 것이 중요하고, 클래스 로딩할 때 발생하는 [문제 ([&#39;[java.lang.ClassNotFoundException&#39;과 같은 에러)를 쉽게]{style=&amp;ldquo;color: #000000;&amp;rdquo;}]{style=&amp;ldquo;background-color: #ffffff; color: #666666; text-align: start;&amp;rdquo;} 해결하고, 코드상 동적으로 클래스 로]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;quot;}딩하는 구문 이해하는데 필요하다.&lt;/p&gt;</description>
+&lt;p&gt;자바에서 객체가 어떻게 형성/관리 되는지 이해하려면. java 파일의 소스코드가 어떻게 JVM 위에 로딩되는지 아는 것이 중요하고, 클래스 로딩할 때 발생하는 문제 (&amp;lsquo;java.lang.ClassNotFoundException&#39;과 같은 에러)를 쉽게 해결하고, 코드상 동적으로 클래스 로딩하는 구문 이해하는데 필요하다.&lt;/p&gt;
+&lt;h2 id=&#34;클래스-로더-3단계-과정&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;2. 클래스 로더 3단계 과정&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;클래스 로더는 다음 3단계 과정을 거쳐 클래스 파일을 로딩한다.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

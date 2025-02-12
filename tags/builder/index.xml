@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Builder on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/builder/</link>
+    <description>Recent content in Builder on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 23 Jan 2024 15:38:26 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/builder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[이펙티브 자바] 2. 생성자에 매개변수가 많다면 빌더를 고려하라</title>
+      <link>https://junhkang.com/posts/54/</link>
+      <pubDate>Tue, 23 Jan 2024 15:38:26 +0000</pubDate>
+      <guid>https://junhkang.com/posts/54/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/54/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;정적팩토리와 생성자에는 매개변수가 많을 경우 대응이 힘들다는 동일한 제약이 있다. 특히 매개변수가 굉장히 많은데 대부분이 고정값인 경우 일반적인 방법으로는 깔끔한 대응이 힘들다. 유연한 대응을 위해 보통 점층적 생성자패턴, 자바 빈즈 패턴, 빌더 패턴을 사용하는데, 이번 챕터에서는 빌더 패턴의 장점을 강조하고 있다. 각 패턴의 장단점을 자세히 살펴보고 빌더 패턴의 장점을 알아보자&lt;/p&gt;
+&lt;h2 id=&#34;점층적-생성자-패턴&#34; ke-size=&#34;size26&#34;&gt;1. 점층적 생성자 패턴&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;필수 매개변수만 받는 생성자&lt;br&gt;
+필수 매개변수와 선택 매개변수 1개를 받는 생성자,
+필수 매개변수와 선택 매개변수 2개를 받는 생성자,
+필수 매개변수와 선택 매개변수 3개를 받는 생성자,
+...&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

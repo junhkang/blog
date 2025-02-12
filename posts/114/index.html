@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>In-Context Learning: LLM이 실시간으로 배우는 방법 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+In-Context Learning: LLM이 실시간으로 배우는 방법
+::: box-info
+LLM
+2024-11-21 09:01:18
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+LLM(Large Language Model)은 사전 학습된 방대한 데이터를 바탕으로 다양한
+작업에서 뛰어난 성능을 발휘하지만, 모든 작업에 대해 추가적인
+Fine-Tuning을 거치는 것은 비효율적이다. 이를 해결하기 위한 혁신적인 접근
+방식이 바로 In-Context Learning(문맥 기반 학습)이다. In-Context
+Learning은 모델이 실시간으로 주어진 입력(문맥)만을 바탕으로 새로운
+작업을 수행할 수 있도록 한다.
+
+In-Context Learning의 기본 개념
+
+In-Context Learning은 모델이 사전 학습 단계에서 얻은 지식을 활용해,
+새로운 데이터를 실시간으로 학습하지 않고도 이해하고 작업을 수행할 수
+있게 한다. 이 과정에서 모델은 &ldquo;학습된 가중치&quot;를 변경하지 않고도, 입력된
+프롬프트를 바탕으로 적응한다.
+
+예를 들어, 사용자가 모델에게 문법 교정을 요청할 때, 단순히 몇 가지
+예제를 제공하면 모델은 이를 바탕으로 유사한 문법 교정 작업을 수행할 수
+있다.
+
+In-Context Learning의 작동 방식
+
+In-Context Learning은 모델에 제공되는 프롬프트(prompt)를 통해 수행된다.
+프롬프트는 다음과 같은 방식으로 구성된다:\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/114/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/114/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      In-Context Learning: LLM이 실시간으로 배우는 방법
+    </h1>
+    <div class="post-meta"><span title='2024-11-21 09:01:18 +0000 UTC'>November 21, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="in-context-learning-llm이-실시간으로-배우는-방법" class="title-article">In-Context Learning: LLM이 실시간으로 배우는 방법<a hidden class="anchor" aria-hidden="true" href="#in-context-learning-llm이-실시간으로-배우는-방법">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-21 09:01:18
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+LLM(Large Language Model)은 사전 학습된 방대한 데이터를 바탕으로 다양한
+작업에서 뛰어난 성능을 발휘하지만, 모든 작업에 대해 추가적인
+Fine-Tuning을 거치는 것은 비효율적이다. 이를 해결하기 위한 혁신적인 접근
+방식이 바로 In-Context Learning(문맥 기반 학습)이다. In-Context
+Learning은 모델이 실시간으로 주어진 입력(문맥)만을 바탕으로 새로운
+작업을 수행할 수 있도록 한다.<br>
+<br>
+In-Context Learning의 기본 개념<br>
+<br>
+In-Context Learning은 모델이 사전 학습 단계에서 얻은 지식을 활용해,
+새로운 데이터를 실시간으로 학습하지 않고도 이해하고 작업을 수행할 수
+있게 한다. 이 과정에서 모델은 &ldquo;학습된 가중치&quot;를 변경하지 않고도, 입력된
+프롬프트를 바탕으로 적응한다.<br>
+<br>
+예를 들어, 사용자가 모델에게 문법 교정을 요청할 때, 단순히 몇 가지
+예제를 제공하면 모델은 이를 바탕으로 유사한 문법 교정 작업을 수행할 수
+있다.<br>
+<br>
+In-Context Learning의 작동 방식<br>
+<br>
+In-Context Learning은 모델에 제공되는 프롬프트(prompt)를 통해 수행된다.
+프롬프트는 다음과 같은 방식으로 구성된다:\</p>
+<ol>
+<li>예제 제공<br>
+사용자는 모델이 수행할 작업의 예제를 포함한 입력 데이터를 제공한다. 예를
+들어, &ldquo;문장을 현재 시제로 변환&quot;이라는 작업을 수행하기 위해, 과거 시제
+문장과 변환된 현재 시제 문장을 몇 개 제공한다.\</li>
+<li>작업 요청<br>
+예제를 기반으로 모델에게 새로운 입력 데이터에 대해 동일한 작업을
+수행하도록 요청한다.\</li>
+<li>출력 생성<br>
+모델은 제공된 예제와 문맥을 바탕으로 새로운 데이터에 대한 적절한 출력을
+생성한다.<br>
+<br>
+In-Context Learning의 장점<br>
+\</li>
+<li>추가 학습 없이 즉시 적응<br>
+모델의 가중치를 변경하지 않고도 새로운 작업에 바로 적응할 수 있다.\</li>
+<li>작업 설정의 유연성<br>
+다양한 작업에 대해 별도의 Fine-Tuning 없이 프롬프트만으로 모델을 활용할
+수 있다.\</li>
+<li>데이터 라벨링 비용 절감<br>
+정교한 레이블이 필요하지 않고, 단순한 예제만으로도 작업을 설정할 수
+있다.\</li>
+<li>실시간 학습<br>
+모델이 작업을 수행하는 동안 입력된 문맥에 따라 실시간으로 작업을 조정할
+수 있다.<br>
+<br>
+In-Context Learning의 주요 응용 사례<br>
+\</li>
+<li>텍스트 변환<br>
+문법 교정, 번역, 문체 변환 등에서 사용된다. 예를 들어, 문체를 &ldquo;격식 있는
+문장&quot;으로 변환하는 작업을 프롬프트로 제공하면, 모델이 이를 바탕으로
+유사한 변환 작업을 수행할 수 있다.\</li>
+<li>질의응답 시스템<br>
+사용자가 프롬프트에 필요한 정보를 명시하면, 모델은 해당 문맥을 바탕으로
+질문에 대한 답변을 생성한다.\</li>
+<li>데이터 요약<br>
+프롬프트를 통해 텍스트 요약 작업의 예제를 제공하면, 모델은 유사한
+방식으로 새로운 텍스트를 요약한다.\</li>
+<li>코드 생성<br>
+코드 예제를 포함한 프롬프트를 입력하면, 모델이 유사한 작업을 수행하는
+코드를 생성할 수 있다.<br>
+<br>
+In-Context Learning의 한계와 도전 과제<br>
+\</li>
+<li>프롬프트 의존성<br>
+모델의 성능은 제공된 프롬프트의 품질에 크게 의존한다. 부적절한
+프롬프트는 모델의 출력 품질을 저하시킬 수 있다.\</li>
+<li>긴 컨텍스트 제한<br>
+현재의 LLM은 입력 길이에 제한이 있기 때문에, 매우 긴 문맥을 포함하는
+작업에서는 성능이 저하될 수 있다.\</li>
+<li>작업 일반화의 한계<br>
+모델이 복잡하거나 고도로 특화된 작업에서는 적절히 일반화하지 못할 수
+있다.\</li>
+<li>효율성 문제<br>
+모든 작업에 대해 새로운 프롬프트를 설정해야 하므로, 반복적인 작업에서는
+비효율적일 수 있다.<br>
+<br>
+In-Context Learning의 미래<br>
+<br>
+In-Context Learning은 LLM이 사전 학습을 넘어 다양한 작업에 유연하게
+적용될 수 있는 잠재력을 제공한다. 특히, 더 긴 문맥을 처리할 수 있는
+모델이 개발되고, 프롬프트 설계 자동화 기술이 발전함에 따라, In-Context
+Learning은 더욱 강력한 도구가 될 것이다.<br>
+<br>
+또한, 멀티모달 데이터(텍스트, 이미지, 음성 등)를 활용한 In-Context
+Learning 연구가 진행되면서, 모델이 다양한 형태의 데이터를 통합적으로
+이해하고 활용할 수 있는 가능성도 열리고 있다.<br>
+<br>
+In-Context Learning은 LLM이 정적인 학습을 넘어 실시간 적응과 유연성을
+제공하는 중요한 기술로, AI의 실용성을 한층 높이는 데 기여할 것이다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>VACUUM-for-WRAPAROUND on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/vacuum-for-wraparound/</link>
+    <description>Recent content in VACUUM-for-WRAPAROUND on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/vacuum-for-wraparound/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 트랜잭션(Transaction)의 작동원리</title>
+      <link>http://localhost:1313/posts/67/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/67/</guid>
+      <description>&lt;p&gt;트랜잭션의 기본 개념과 사용 방법은 다음 포스트에서 확인이 가능하다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;2023.10.10 - [Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;트랜잭션(Transaction)이란? 트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;junhkang.tistory.com
+기본적으로 트랜잭션이 어떤 것인지, COMMIT, ROLLBACK도 익숙하게 사용하고 있다면, PostgreSQL 내부의 트랜잭션이 어떤 구조로 작동하며 세부 단계를 어떻게 확인 가능한지 자세히 알아보자.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;트랜잭션과 식별자 (Transactions and Identifiers)
+기본 개념에서 확인했듯이 트랜잭션은 명시적으로 실행(BEGIN, START TRANSACTION), 종료 (COMMIT, ROLLBACK) 할 수 있다. 명시적 트랜잭션 외의 SQL 구문들은 단일 트랜잭션이 자동으로 적용된다. 그렇다면 각각의 트랜잭션이 어떻게 구분되는지 먼저 살펴보자.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;![](/images/posts/67/스크린샷 2024-03-08 오후 1.43.08.png)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

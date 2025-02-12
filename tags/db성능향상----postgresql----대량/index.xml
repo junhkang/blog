@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DB성능향상  - PostgreSQL  - 대량 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/db%EC%84%B1%EB%8A%A5%ED%96%A5%EC%83%81----postgresql----%EB%8C%80%EB%9F%89/</link>
+    <description>Recent content in DB성능향상  - PostgreSQL  - 대량 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 26 Feb 2024 14:31:50 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/db%EC%84%B1%EB%8A%A5%ED%96%A5%EC%83%81----postgresql----%EB%8C%80%EB%9F%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[PostgreSQL\\] 대량 데이터 인서트 시 성능 개선 및 주의 사항
+</title>
+      <link>http://localhost:1313/posts/65/</link>
+      <pubDate>Mon, 26 Feb 2024 14:31:50 +0000</pubDate>
+      <guid>http://localhost:1313/posts/65/</guid>
+      <description>&lt;h2 id=&#34;postgresql-대량-데이터-인서트-시-성능-개선-및-주의-사항&#34;&gt;[PostgreSQL] 대량 데이터 인서트 시 성능 개선 및 주의 사항&lt;/h2&gt;
+&lt;p&gt;Postgresql&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34; width=&#34;397&#34; height=&#34;409&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/65/img.png&#34; width=&#34;397&#34; height=&#34;409&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## 대량 데이터 인서트 시 성능 개선
+최초 서비스 배포나 데이터 마이그레이션을 할 때 대량의 데이터를 한 번에 인서트 하는 경우가 있다. PostgreSQL 공식문서에서는 대량 인서트 시에 효율적으로 진행할 수 있는 방법을 제시해 준다. (대량 데이터를 인서트 할 때 효율적인 설정이지 데이터베이스 조회나 업데이트 등실제 운영 시에 사용할 방법은 아니다.)
+## 1. Autocommit 옵션 해제
+대량의 인서트 실행 시, Autocommit 옵션을 해제하고 한 트랜잭션에서 작업 후에 커밋을 진행해야 한다(일반적으로 SQL를 실행 시에 자동으로 시작 시 BEGIN, 끝날 때 COMMIT으로 트랜잭션 처리가 되지만, 확실히 되고 있는지 확인필요하다.). 대량 데이터 인서트의 각각을 별도로 commit 한다면, PostgreSQL은 인서트 되는 각 열에 대해 너무 많은 작업을 수행하게 된다. 또한 모든 인서트를 한 트랜잭션에 처리할 경우에는 한 INSERT가 실패할 경우 그 시점까지 인서트 된 모든 작업이 취소되기에 실패 작업에 대한 부분 보완 및 무결성을 고려하지 않아도 된다.
+## 2. COPY, PREPARE 사용
+INSERT를 여러 번 실행시키기보다 COPY 커맨드 한 번으로 해결하라. COPY 명령어는 많은 ROW를 로드하는데 최적화되어 있다. INSERT 구문보다 덜 유연하지만, 대량 데이터를 로딩하는데 훨씬 적은 오버헤드를 발생시킨다. (COPY는 단일 명령어이기에 실행 시 Autocommit을 따로 비활성화시킬 필요 없다.) COPY를 사용할 수 없는 상황이라면 PREPAPRE 구문을 통해 준비된 INSERT 구문을  EXECUTE를 통해 필요한 만큼 실행시키는 방법도 있다. 이 방법은 INSERT 구분을 반복적으로 사용할 때 드는 파싱과 실행계획의 오버헤드를 줄여준다. 
+COPY를 사용한 대량 데이터 로딩은 INSERT보다 거의 모든 경우에 더 빠르다. (PREPARE 구문을 사용하고 단일 트랜잭션에서 배치를 통해 INSERT를 한다고 해도 COPY를 사용하는 것이 더 빠르기 때문에 가능하다면 COPY를 사용하는 것이 유리하다.) COPY는 해당 테이블의 CREATE TABLE 혹은 TRUNCATE 명령어와 같이 쓸 때 더 빠르다. 이 경우에 에러가 날 경우에 최신으로 로드된 데이터를 포함하고 있는 파일은 무조건 삭제되기 때문에 WAL write가 필요 없다. (WAL의 개념은 다음 포스트를 참고)
+&lt;a href=&#34;https://junhkang.tistory.com/66&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;https://junhkang.tistory.com/66&lt;/a&gt;
+&lt;figure id=&#34;og_1708938312866&#34; contenteditable=&#34;false&#34; data-ke-type=&#34;opengraph&#34; data-ke-align=&#34;alignCenter&#34; data-og-type=&#34;article&#34; data-og-title=&#34;[PostgreSQL] WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)의 개념 및 장단점&#34; data-og-description=&#34;1. WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)이란? 아카이브 모드 백업을 이해하기 위해 WAL에 대한 개념을 먼저 살펴보자. WAL은 PostgreSQL에서 데이터의 무결성을 보장하는 표준 방&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-source-url=&#34;https://junhkang.tistory.com/66&#34; data-og-url=&#34;https://junhkang.tistory.com/66&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/CwY80/hyVqhkv4Th/FGFIqw4nJvH1TEgznbsQuK/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/CiTXr/hyVqiRe0eL/ZiMMgunZCrTEJh1aYKCgM0/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/LeoKW/hyVqhdJh0R/3XUOmCEBedl7hIR8Cphk71/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/66&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-source-url=&#34;https://junhkang.tistory.com/66&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[PostgreSQL] WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)의 개념 및 장단점&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

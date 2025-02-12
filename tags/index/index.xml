@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Index on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/index/</link>
+    <description>Recent content in Index on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 12 Mar 2024 18:59:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 인덱스(INDEX)와 오더바이(ORDER BY), ORDER BY 성능개선, 효율적인 인덱스 적용</title>
+      <link>https://junhkang.com/posts/69/</link>
+      <pubDate>Tue, 12 Mar 2024 18:59:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/69/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;인덱스index와-오더바이order-by&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스(INDEX)와 오더바이(ORDER BY)&lt;/h2&gt;
+&lt;p&gt;인덱스는 쿼리의 결과로 특정 row를 찾는 것뿐만 아니라, 특정 순서로 데이터를 정렬하는데도 효율적일 수 있다. ORDER BY와 인덱스를 효율적으로 사용하면 별도의 정렬 과정 없이 ORDER BY를 수행할 수 있다. PostgreSQL에서 현재 지원하는 인덱스 타입 중에서는 B-tree 인덱스만이 정렬 결과로 인덱스를 생성할 수 있다. 다른 인덱스 유형은 특정되지 않은 순서로, 실행 때마다 다른 순서로 열을 반환한다.&lt;/p&gt;
+&lt;p&gt;* 상세한 B-tree 인덱스의 개념은 다음 글을 참고 - &lt;a href=&#34;https://junhkang.tistory.com/6&#34;&gt;[Postgresql] - [PostgreSQL] B-tree 인덱스의 원리 및 특징&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 미사용 인덱스(INDEX) 찾기 및 삭제, 성능향상</title>
+      <link>https://junhkang.com/posts/14/</link>
+      <pubDate>Fri, 06 Oct 2023 16:52:50 +0000</pubDate>
+      <guid>https://junhkang.com/posts/14/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;img src=&#34;0&#34; /&gt;
+&lt;h2 id=&#34;인덱스index-상세-개념&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스(INDEX) 상세 개념&lt;/h2&gt;
+&lt;p&gt;2023.09.12 - [Postgresql] - [PostgreSQL] 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/5&#34;&gt;https://junhkang.tistory.com/5&lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;[PostgreSQL] 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/p&gt;
+&lt;p&gt;1. 인덱스 컨트롤 1-1. 인덱스 조회 SELECT * FROM pg_indexes WHERE tablename = &#39;{테이블명}&#39;; -- 테이블명에 &#39;&#39; 필요 1-2. 인덱스 생성 -- 단일 인덱스 CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명}); -- 결&lt;/p&gt;
+&lt;p&gt;junhkang.tistory.com&lt;/p&gt;
+&lt;h2 id=&#34;미사용-인덱스&#34; ke-size=&#34;size26&#34;&gt;2. 미사용 인덱스&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;간단히 말해, 인덱스는 지정 컬럼에 매핑된 정보를 별도로 저장하고 있다. 보통 플랜 확인을 통해 효율적으로 인덱스를 추가하여 쿼리 최적화를 진행하게 된다. 오래되고 변경이 잦은 어플리케이션일수록 미사용 인덱스는 늘어나고, 인덱스가 사용되지 않는 경우를 매번 모니터링하여 삭제하는 것은 힘든 일이다. 하지만 불필요 인덱스는 디비 성능저하 및 vacuum 코스트를 증가시키기에, 최적화된 인덱스 생성만큼 최적화된 인덱스 삭제도 중요하다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] BRIN 인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/11/</link>
+      <pubDate>Mon, 18 Sep 2023 19:03:08 +0000</pubDate>
+      <guid>https://junhkang.com/posts/11/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;img src=&#34;0&#34; /&gt;
+&lt;h2 id=&#34;brin-인덱스란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. BRIN 인덱스란?&lt;/strong&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[▪]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&amp;rdquo;}[ ]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&amp;quot;}Block range index의 약자&lt;br&gt;
+[▪]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&amp;rdquo;}[ ]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&amp;quot;}Page 검색에 도움 되는 메타 데이터를 뽑아서 인덱스를 구성 (ex, 특정컬럼의 최대/최솟값)
+[▪]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&amp;rdquo;}[ ]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&amp;quot;}특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] GIN인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/10/</link>
+      <pubDate>Wed, 13 Sep 2023 19:45:36 +0000</pubDate>
+      <guid>https://junhkang.com/posts/10/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;gin-인덱스란&#34; ke-size=&#34;size26&#34;&gt;[1. GIN 인덱스란?]{style=&amp;ldquo;color: #333333;&amp;rdquo;}&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;full-text-search에서의-적용&#34; ke-size=&#34;size26&#34;&gt;[2. full text search에서의 적용]{style=&amp;ldquo;color: #333333;&amp;rdquo;}&lt;/h2&gt;
+&lt;h3 id=&#34;샘플-테이블-및-데이터-생성&#34; ke-size=&#34;size23&#34;&gt;[2-1. 샘플 테이블 및 데이터 생성]{style=&amp;ldquo;color: #333333;&amp;rdquo;}&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;create table ts(doc text, doc_tsv tsvector);
+
+insert into ts(doc) values
+  (&amp;#39;Can a sheet slitter slit sheets?&amp;#39;), 
+  (&amp;#39;How many sheets could a sheet slitter slit?&amp;#39;),
+  (&amp;#39;I slit a sheet, a sheet I slit.&amp;#39;),
+  (&amp;#39;Upon a slitted sheet I sit.&amp;#39;), 
+  (&amp;#39;Whoever slit the sheets is a good sheet slitter.&amp;#39;), 
+  (&amp;#39;I am a sheet slitter.&amp;#39;),
+  (&amp;#39;I slit sheets.&amp;#39;),
+  (&amp;#39;I am the sleekest sheet slitter that ever slit sheets.&amp;#39;),
+  (&amp;#39;She slits the sheet she sits on.&amp;#39;);
+
+update ts set doc_tsv = to_tsvector(doc);
+create index on ts using gin(doc_tsv);
+
+select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&amp;#39;);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;조회-결과-및-플랜-확인&#34; ke-size=&#34;size23&#34;&gt;2-2. 조회 결과 및 플랜 확인&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;                             QUERY PLAN                              
+---------------------------------------------------------------------
+ Bitmap Heap Scan on ts
+   Recheck Cond: (doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&amp;#39;::text))
+   -&amp;gt;  Bitmap Index Scan on ts_doc_tsv_idx
+         Index Cond: (doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&amp;#39;::text))
+(4 rows)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] SP-GiST인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/9/</link>
+      <pubDate>Wed, 13 Sep 2023 18:11:46 +0000</pubDate>
+      <guid>https://junhkang.com/posts/9/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;sp-gist-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. SP-GiST 인덱스란?&lt;/h2&gt;
+&lt;p&gt;Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=&amp;ldquo;color: #333333; font-family: -apple-system, BlinkMacSystemFont, &amp;lsquo;Helvetica Neue&amp;rsquo;, &amp;lsquo;Apple SD Gothic Neo&amp;rsquo;, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;&amp;rdquo;}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=&amp;ldquo;background-color: #fdfdfd; color: #000000; text-align: start;&amp;quot;}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] GiST인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/8/</link>
+      <pubDate>Wed, 13 Sep 2023 16:27:51 +0000</pubDate>
+      <guid>https://junhkang.com/posts/8/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;gist-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. GiST 인덱스란?&lt;/h2&gt;
+&lt;p&gt;Generalized Search Tree의 약자이며 B-tree와 같은 balanced search tree의 형태이다. B-tree인덱스는 정렬된 채로 비교&amp;amp;일치의 연산에 최적화된 채로 연결되어있다. 하지만 현대의 다양한 데이터 종류 (기하학적, 텍스트문서, 이미지 등)를 연산하는 데는 적합하지 않다.&lt;/p&gt;
+&lt;p&gt;GiST 인덱스는 이러한 데이터 타입의 인덱싱을 위해 설계되었다. GiST 인덱스는 각 유형의 데이터를 Balanced tree 형태로 구성하게하고, tree에 접근하는 연산자를 정의해 준다. 각각 leaf node는 table row(TID)와 boolean 형태의 predicate를 가지고 있고 인덱스 데이터(key)는 이 predicate와 부합한다. 그 후는 일반적인 tree search처럼, 루트노드에서 시작하여, 어떤 child node로 진입할지를 결정한다. 그러다가 leaf node를 발견하면, 그 결과들을 반환한다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] Hash 인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/7/</link>
+      <pubDate>Wed, 13 Sep 2023 14:28:16 +0000</pubDate>
+      <guid>https://junhkang.com/posts/7/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;img src=&#34;0&#34; /&gt;
+&lt;h2 id=&#34;hash-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. Hash 인덱스란?&lt;/h2&gt;
+&lt;p&gt;해쉬 인덱스의 기본 아이디어는, hash function을 통해 작은 숫자를 데이터와 조합하여 integer 형태의 해쉬값 (최대 2^32 = 4B)을 생성하고 해쉬값을 테이블 행 정보(TID)가 저장될 배열의 인덱스 값으로 사용하는 것이다. 이 배열의 각 요소를 해시 테이블 버킷(hash table bucket)이라고 한다. 데이터 조회 시, hash function을 통해 생성된 key가 포함된 bucket을 찾고, 그 bucket만 확인하면 실제 데이터의 위치를 바로 확인할 수 있다. 데이터의 크기에 상관없이 인덱스의 크기가 작고 검색이 빠르다. 1개의 데이터를 조회하는 시간은 O(1)로 빠르지만 해쉬 테이블 내의 값들은 정렬이 되어있지 않기 때문에 범위 비교나 부정형 비교가 포함된 조건에서는 인덱스를 사용할 수 없다. Hash function이 버킷 단위로 소스 값을 더 균일하게 분배할수록 효율이 좋다. &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] B-tree 인덱스의 원리 및 특징</title>
+      <link>https://junhkang.com/posts/6/</link>
+      <pubDate>Tue, 12 Sep 2023 19:12:12 +0000</pubDate>
+      <guid>https://junhkang.com/posts/6/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;[PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/p&gt;
+&lt;p&gt;[그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에 대해 알아보자.]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/p&gt;
+&lt;h2 id=&#34;b-tree-인덱스란&#34; ke-size=&#34;size26&#34;&gt;[1. B-tree 인덱스란?]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[▪ 트리의 노드를 밸런스 있게 재정렬한 트리형태의 자료구조]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;br&gt;
+[▪ B-tree는 Binary 가 아닌 Balanced의 약자]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}
+[▪ 컬럼의 기존 데이터를 변형하지 않음]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}
+[▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지]{style=&amp;ldquo;font-family: AppleSDGothicNeo-Regular, &amp;lsquo;Malgun Gothic&amp;rsquo;, &amp;lsquo;맑은 고딕&amp;rsquo;, dotum, 돋움, sans-serif;&amp;rdquo;}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL]  인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법</title>
+      <link>https://junhkang.com/posts/5/</link>
+      <pubDate>Tue, 12 Sep 2023 17:50:18 +0000</pubDate>
+      <guid>https://junhkang.com/posts/5/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/5/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;인덱스-컨트롤&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스 컨트롤&lt;/h2&gt;
+&lt;h3 id=&#34;인덱스-조회&#34; ke-size=&#34;size23&#34;&gt;1-1. 인덱스 조회 &lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM pg_indexes WHERE tablename = &amp;#39;{테이블명}&amp;#39;; -- 테이블명에 &amp;#39;&amp;#39; 필요
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-생성&#34; ke-size=&#34;size23&#34;&gt;1-2. 인덱스 생성 &lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 단일 인덱스
+CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명});
+
+-- 결합 인덱스
+CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명1}, {컬럼명2});
+
+-- 유니크 인덱스
+CREATE UNIQUE INDEX {인덱스명} ON table_name ({컬럼명});
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-삭제&#34; ke-size=&#34;size23&#34;&gt;1-3. 인덱스 삭제&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;DROP INDEX {인덱스명};
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-사용-빈도-확인&#34; ke-size=&#34;size23&#34;&gt;1-4. 인덱스 사용 빈도 확인&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT schemaname, relname, indexrelname, idx_scan as idx_scan_cnt FROM pg_stat_user_indexes ORDER BY idx_scan;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-손상-시-재인덱싱&#34; ke-size=&#34;size23&#34;&gt;1-5. 인덱스 손상 시 재인덱싱&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;REINDEX INDEX {인덱스명}
+
+REINDEX TABLE {테이블명}
+
+REINDEX DATABASE {데이터베이스명}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

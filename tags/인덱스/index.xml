@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>인덱스 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%EC%9D%B8%EB%8D%B1%EC%8A%A4/</link>
+    <description>Recent content in 인덱스 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 06 Oct 2023 16:52:50 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%EC%9D%B8%EB%8D%B1%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 미사용 인덱스(INDEX) 찾기 및 삭제, 성능향상</title>
+      <link>https://junhkang.com/posts/14/</link>
+      <pubDate>Fri, 06 Oct 2023 16:52:50 +0000</pubDate>
+      <guid>https://junhkang.com/posts/14/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;img src=&#34;0&#34; /&gt;
+&lt;h2 id=&#34;인덱스index-상세-개념&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스(INDEX) 상세 개념&lt;/h2&gt;
+&lt;p&gt;2023.09.12 - [Postgresql] - [PostgreSQL] 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/5&#34;&gt;https://junhkang.tistory.com/5&lt;/a&gt;
+ &lt;/p&gt;
+&lt;p&gt;[PostgreSQL] 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/p&gt;
+&lt;p&gt;1. 인덱스 컨트롤 1-1. 인덱스 조회 SELECT * FROM pg_indexes WHERE tablename = &#39;{테이블명}&#39;; -- 테이블명에 &#39;&#39; 필요 1-2. 인덱스 생성 -- 단일 인덱스 CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명}); -- 결&lt;/p&gt;
+&lt;p&gt;junhkang.tistory.com&lt;/p&gt;
+&lt;h2 id=&#34;미사용-인덱스&#34; ke-size=&#34;size26&#34;&gt;2. 미사용 인덱스&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;간단히 말해, 인덱스는 지정 컬럼에 매핑된 정보를 별도로 저장하고 있다. 보통 플랜 확인을 통해 효율적으로 인덱스를 추가하여 쿼리 최적화를 진행하게 된다. 오래되고 변경이 잦은 어플리케이션일수록 미사용 인덱스는 늘어나고, 인덱스가 사용되지 않는 경우를 매번 모니터링하여 삭제하는 것은 힘든 일이다. 하지만 불필요 인덱스는 디비 성능저하 및 vacuum 코스트를 증가시키기에, 최적화된 인덱스 생성만큼 최적화된 인덱스 삭제도 중요하다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL]  인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법</title>
+      <link>https://junhkang.com/posts/5/</link>
+      <pubDate>Tue, 12 Sep 2023 17:50:18 +0000</pubDate>
+      <guid>https://junhkang.com/posts/5/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/5/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;인덱스-컨트롤&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스 컨트롤&lt;/h2&gt;
+&lt;h3 id=&#34;인덱스-조회&#34; ke-size=&#34;size23&#34;&gt;1-1. 인덱스 조회 &lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM pg_indexes WHERE tablename = &amp;#39;{테이블명}&amp;#39;; -- 테이블명에 &amp;#39;&amp;#39; 필요
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-생성&#34; ke-size=&#34;size23&#34;&gt;1-2. 인덱스 생성 &lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 단일 인덱스
+CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명});
+
+-- 결합 인덱스
+CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명1}, {컬럼명2});
+
+-- 유니크 인덱스
+CREATE UNIQUE INDEX {인덱스명} ON table_name ({컬럼명});
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-삭제&#34; ke-size=&#34;size23&#34;&gt;1-3. 인덱스 삭제&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;DROP INDEX {인덱스명};
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-사용-빈도-확인&#34; ke-size=&#34;size23&#34;&gt;1-4. 인덱스 사용 빈도 확인&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT schemaname, relname, indexrelname, idx_scan as idx_scan_cnt FROM pg_stat_user_indexes ORDER BY idx_scan;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;인덱스-손상-시-재인덱싱&#34; ke-size=&#34;size23&#34;&gt;1-5. 인덱스 손상 시 재인덱싱&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;REINDEX INDEX {인덱스명}
+
+REINDEX TABLE {테이블명}
+
+REINDEX DATABASE {데이터베이스명}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

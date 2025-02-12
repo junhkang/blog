@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>다중 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%EB%8B%A4%EC%A4%91/</link>
+    <description>Recent content in 다중 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 20 Oct 2023 17:57:36 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%EB%8B%A4%EC%A4%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] 스프링부트 &#43; Mybatis 데이터소스 여러개 연결 (스프링 다중 데이터베이스 연결)</title>
+      <link>https://junhkang.com/posts/33/</link>
+      <pubDate>Fri, 20 Oct 2023 17:57:36 +0000</pubDate>
+      <guid>https://junhkang.com/posts/33/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;다음은 스프링부트 + 마이바티스 프로젝트에 2개 이상의 데이터소스를 연결하는 예제이다. &lt;/p&gt;
+&lt;p&gt;기존 스프링 데이터베이스 연동이 되어있다고 가정 후 진행되며, 신규 데이터베이스는 구별이 쉽도록 new 데이터베이스로 명칭 한다.&lt;/p&gt;
+&lt;h2 id=&#34;신규-데이터베이스-접속정보-추가&#34; ke-size=&#34;size26&#34;&gt;1. 신규 데이터베이스 접속정보 추가&lt;/h2&gt;
+&lt;p&gt;추가될 데이터베이스의  속성을 &lt;strong&gt;application.properties&lt;/strong&gt;에 추가&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#기존 DB Setting
+spring.datasource.url={url}
+spring.datasource.driverClassName={driverClassName}
+spring.datasource.username={username}
+spring.datasource.password={password}
+spring.datasource.schema={schema}
+
+#추가될 DB Setting
+new.datasource.url={url}
+new.datasource.driverClassName={driverClassName}
+new.datasource.username={username}
+new.datasource.password={password}
+new.datasource.schema={schema}
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;데이터베이스-연결-빈-속성-추가&#34; ke-size=&#34;size26&#34;&gt;2. 데이터베이스 연결 빈 속성 추가&lt;/h2&gt;
+&lt;p&gt;기존 데이터베이스 연결 설정을 하는 &lt;strong&gt;DatabaseConfig.java&lt;/strong&gt; 외에 &lt;strong&gt;NewDatabaseConfig.java&lt;/strong&gt;신규로 추가한다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;기존 DatabaseConfig.java&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

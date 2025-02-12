@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>383a42  - Except  - PostgreSQL  - Union  - F8f8f8  - Intersect on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/383a42----except----postgresql----union----f8f8f8----intersect/</link>
+    <description>Recent content in 383a42  - Except  - PostgreSQL  - Union  - F8f8f8  - Intersect on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/383a42----except----postgresql----union----f8f8f8----intersect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] UNION, INTERSECT, EXCEPT, SQL 쿼리 결합의 개념, 사용법 및 주의사항</title>
+      <link>http://localhost:1313/posts/83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/83/</guid>
+      <description>&lt;p&gt;UNION(결합), INTERSECT(교차), EXCEPT(차이) 구문을 통해 두 쿼리의 결과를 결합할 수 있다.
+&lt;code&gt;query1 UNION [ALL] query2 query1 INTERSECT [ALL] query2 query1 EXCEPT [ALL] query2&lt;/code&gt;
+해당 구문들을 실행시키기 위해서는 query1, query2가 동일한 개수, 동일한 type의 칼럼을 리턴해야 한다.&lt;/p&gt;
+&lt;h2 id=&#34;2-union&#34;&gt;2. UNION&lt;/h2&gt;
+&lt;p&gt;query2의 결과를 query1에 이어 붙인다. 그냥 사용할 경우 중복을 제거하여 distinct와 같은 효과를 볼 수 있으며, UNION ALL을 사용하면 중복을 포함하여 쿼리를 합친다.&lt;/p&gt;
+&lt;h3 id=&#34;2-1-union-단일-사용&#34;&gt;2-1. UNION 단일 사용&lt;/h3&gt;
+&lt;p&gt;1&lt;del&gt;5 번째 ROWS, 4&lt;/del&gt;8번째 ROWS를 합친 후 중복 제거한 결과를 보면 다음과 같다.
+&lt;code&gt;(SELECT * FROM TEST_EXPLAIN ORDER BY ID LIMIT 5) UNION (SELECT * FROM TEST_EXPLAIN ORDER BY ID LIMIT 5 OFFSET 3) ORDER BY ID;&lt;/code&gt;
+![](/images/posts/83/스크린샷 2024-04-08 오후 3.32.47.png)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

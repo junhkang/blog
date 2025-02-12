@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SQL on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/sql/</link>
+    <description>Recent content in SQL on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 04 Oct 2023 19:34:40 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 문자열내 중복 공백, 단어 제거</title>
+      <link>https://junhkang.com/posts/12/</link>
+      <pubDate>Wed, 04 Oct 2023 19:34:40 +0000</pubDate>
+      <guid>https://junhkang.com/posts/12/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/12/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;중복-공백-제거&#34; ke-size=&#34;size26&#34;&gt;1. 중복 공백 제거&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;특정 문자열에 대해서 중복 공백 제거를 하고 싶다면 postgresql 정규식을 사용해서 가능하다.&lt;br&gt;
+(공백 외에 단일 문자에 대한 중복제거도 동일한 방법으로 가능하다.)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;select regexp_replace(name, &amp;#39; +&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;g&amp;#39;) from TABLE; -- &amp;#39;g&amp;#39; 옵션을 제거할 경우 최초 건에 대에서만 변경
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;중복-단어-제거&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 중복 단어 제거&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;컬럼 단위 중복제거는 distinct, group by를 통해 쉽게 가능하지만, 컬럼 내 문자열의 중복 단어 제거의 경우 다음과 같다.&lt;br&gt;
+(쉼표 기준으로 컬럼을 분리, 중복을 제거한 후 다시 연결)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

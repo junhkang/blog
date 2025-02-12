@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>3a4954  - Try-With-Resources  - 이펙티브자바 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/3a4954----try-with-resources----%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/</link>
+    <description>Recent content in 3a4954  - Try-With-Resources  - 이펙티브자바 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/3a4954----try-with-resources----%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%EC%9E%90%EB%B0%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[이펙티브 자바] 9. try-finally 보다는 try-with-resources를 사용하라</title>
+      <link>http://localhost:1313/posts/81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/81/</guid>
+      <description>&lt;p&gt;자바 라이브러리에는 close 메서드를 직접 호출해서 닫아줘야 하는 자원이 많다. 대표적으로 InputStream, ouputStream java.sql.connection 등이 있으며 해당 자원들은 클라이언트에서 놓치기 쉬워 예측할 수 없는 성능 문제로 이어지곤 한다. 이중 상당 수가 finalizer를 안정망으로 사용하여 문제에 대비하고 있긴 하지만, 완전히 안전하다고 할 수 없다. (해당 내용은 다음 포스트에서 확인 가능)
+&lt;a href=&#34;https://junhkang.tistory.com/80&#34;&gt;2024.03.31 - [이펙티브 자바] - [이펙티브 자바] 8. finalizer와 cleaner 사용을 피하라&lt;/a&gt;
+[이펙티브 자바] 8. finalizer 와 cleaner 사용을 피하라&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;finalizer와 cleaner란? finalizer와 cleaner는 자바의 2가지 객체 소멸자이다. finalizer는 Object.finalize() 메서드를 오버라이딩 함으로써 사용된다. 작동 여부 및 시점을 예측할 수 없고 상황에 따라 위험할
+junhkang.tistory.com
+흔히 사용하는 try-finally를 사용한 예외처리를 확인해보자&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;2-try-finally&#34;&gt;2. try-finally&lt;/h2&gt;
+&lt;h3 id=&#34;2-1-자원을-1개-사용하는-try-finally-메서드&#34;&gt;2-1. 자원을 1개 사용하는 try-finally 메서드&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;static String firstLineOfFile(String path) throws IOException    { BufferdReader br = new BufferedReader(new FileReader(Path)); try { return br.readLine(); }    finally { br.close(); } }&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

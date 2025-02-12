@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Substr on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/substr/</link>
+    <description>Recent content in Substr on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 24 Jul 2024 13:19:56 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/substr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] SUBSTRING, SUBSTR, 문자열 자르기</title>
+      <link>https://junhkang.com/posts/91/</link>
+      <pubDate>Wed, 24 Jul 2024 13:19:56 +0000</pubDate>
+      <guid>https://junhkang.com/posts/91/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;PostgreSQL에서 문자열을 다루는 다양한 방법이 있다. 그중 문자열을 원하는 방식대로 자를 수 있는 함수들에 대해 알아보자. 먼저, 가장 많이 쓰이는 SUBSTRING, SUBSTR의 기본 사용 법 및 응용, 성능에 대해 알아보자.&lt;/p&gt;
+&lt;h2 id=&#34;substring-기본-사용법&#34; ke-size=&#34;size26&#34;&gt;1. Substring 기본 사용법&lt;/h2&gt;
+&lt;p&gt;Substring과 Substr은 시작 위치(n), 길이(l)를 기준으로 문자열을 자를 수 있다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT substring(&amp;#39;문자열&amp;#39; FROM n FOR l); -- from, for 구문은 substring만 지원
+SELECT substring(&amp;#39;문자열&amp;#39;, n, l);
+SELECT substr(&amp;#39;문자열&amp;#39;, n, l);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;구문을 활용하여  PostgreSQL Tutorial 문자열에서 첫번째 위치인 P부터 10개의 문자열만을 추출하는 예제를 확인해 보면 동일한 결과를 확인할 수 있다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

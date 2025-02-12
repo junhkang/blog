@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lock  - PostgreSQL  - Transaction on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/lock----postgresql----transaction/</link>
+    <description>Recent content in Lock  - PostgreSQL  - Transaction on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 10 Oct 2023 14:42:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lock----postgresql----transaction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[PostgreSQL\\] 트랜잭션(Transaction)의 개념 및 사용
+</title>
+      <link>http://localhost:1313/posts/20/</link>
+      <pubDate>Tue, 10 Oct 2023 14:42:53 +0000</pubDate>
+      <guid>http://localhost:1313/posts/20/</guid>
+      <description>&lt;h2 id=&#34;postgresql-트랜잭션transaction의-개념-및-사용&#34;&gt;[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/h2&gt;
+&lt;p&gt;Postgresql&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/20/img.png&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## 1. 트랜잭션(Transaction)이란?
+트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순한 DML 작업의 롤백 용도뿐 아니라, 대용량 데이터 처리의 무결성, 에러발생 시, 여러 유저의 동시작업 등에서 사용된다.
+## 2. 트랜잭션 적용
+트랜잭션을 사용하는 커맨드 예제이다.
+``` sql
+--COMMIT 혹은 ROLLBACK으로 트랜잭션을 종료하지 않으면, 해당 업데이트 건은 데이터베이스에 적용되지 않는다.
+BEGIN;
+UPDATE accounts SET balance = balance - 100.00
+    WHERE name = &#39;Alice&#39;;
+COMMIT;
+```
+트랜잭션 COMMIT 전에 다른 유저가 동일한 row의 balance를 업데이트하려고 한다면, 그전 트랜잭션이 commit 혹은 rollback 되는 것을 대기해야하며 이를 lock 상태라고 한다. (Lock의 개념 및 상세는 다음 포스트에 상세하게 정리되어 있다.)
+&lt;a href=&#34;https://junhkang.tistory.com/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2023.09.11 - [Postgresql] - Postgresql Lock이란? (조회 및 kill, Dead lock)&lt;/a&gt;
+&lt;figure id=&#34;og_1696916122737&#34; contenteditable=&#34;false&#34; data-ke-type=&#34;opengraph&#34; data-ke-align=&#34;alignCenter&#34; data-og-type=&#34;article&#34; data-og-title=&#34;Postgresql Lock이란? (조회 및 kill, Dead lock)&#34; data-og-description=&#34;1. Lock 확인방법 SELECT PSAT.RELNAME, PL.LOCKTYPE, PL.PID, PL.MODE, PL.GRANTED FROM PG_LOCKS PL, PG_STAT_ALL_TABLES PSAT WHERE PL.RELATION = PSAT.RELID 2. Lock Kill 방법 SELECT PG_CANCEL_BACKEND([PID]) SELECT PG_TERMINATE_BACKEND([PID]) Lock 리스&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-source-url=&#34;https://junhkang.tistory.com/4&#34; data-og-url=&#34;https://junhkang.tistory.com/4&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/bWrV4O/hyT9HLKAMC/7s4v7Z7vko0clhjeGwkKrK/img.png?width=800&amp;amp;height=222&amp;amp;face=0_0_800_222,https://scrap.kakaocdn.net/dn/boZJY0/hyT9K2N9Uf/o23HphU38LKk4xWOXzOTGK/img.png?width=800&amp;amp;height=222&amp;amp;face=0_0_800_222,https://scrap.kakaocdn.net/dn/vNiAk/hyT9zts80U/71xUDxknDQOCALWTsbEww0/img.png?width=1195&amp;amp;height=333&amp;amp;face=0_0_1195_333&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-source-url=&#34;https://junhkang.tistory.com/4&#34;&gt;&lt;/a&gt;
+&lt;p&gt;Postgresql Lock이란? (조회 및 kill, Dead lock)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

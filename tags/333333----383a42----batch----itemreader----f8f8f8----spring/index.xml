@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>333333  - 383a42  - Batch  - ItemReader  - F8f8f8  - Spring on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/333333----383a42----batch----itemreader----f8f8f8----spring/</link>
+    <description>Recent content in 333333  - 383a42  - Batch  - ItemReader  - F8f8f8  - Spring on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/333333----383a42----batch----itemreader----f8f8f8----spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)</title>
+      <link>http://localhost:1313/posts/32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/32/</guid>
+      <description>&lt;p&gt;스프링 배치의 ItemReader는 다음과 같은 과정을 거쳐 데이터를 처리한다.
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img_1.png&#34;&gt;
+대부분의 데이터 형태는 이미 ItemReader로 제공하고 있기에 ItemReader, ItemStream 인터페이스 자체를 구현할 필요는 없다.
+ItemReader는 Chunk 기반 트랜잭션을 다루며 Cursor, Paging 가 대표적인 2가지 방식이다.&lt;/p&gt;
+&lt;h2 id=&#34;2-cursor-paging-형식&#34;&gt;2. Cursor, Paging 형식&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-1-cursor기반-itemreader&#34;&gt;2-1. Cursor기반 ItemReader&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;JDBC ResultSet의 기본 기능이다.&lt;/li&gt;
+&lt;li&gt;ResultSet이 Open 될 때마다 데이터베이스의 데이터가 반환된다.&lt;/li&gt;
+&lt;li&gt;데이터베이스와 연결 맺은 후 데이터를 Streaming 방식으로 I/O이다.&lt;/li&gt;
+&lt;li&gt;현재 행에서Cursor를 유지하며 다음 데이터를 호출하면 Cursor를 한 칸씩 옮기면서 데이터를 가져온다.&lt;/li&gt;
+&lt;li&gt;하나의 Connection으로 배치가 끝날때까지 사용되기에 Batch가 끝나기 전에 데이터베이스와 애플리케이션의 연결이 먼저 끊어질 수 있어 데이터베이스와 SocketTimeout을 충분한 값으로 설정하여야 한다.&lt;/li&gt;
+&lt;li&gt;모든 결과를 메모리에 할당 하기 때문에 메모리 사용량이 많아진다.&lt;/li&gt;
+&lt;li&gt;Chunk 사이즈 만큼의 트랜잭션 단위로 데이터를 처리한다.
+Cursor 기반 ItemReader 구현체&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;JdbcCursorItemReader- HibernateCursorItemReader- StoredProcedureItemReader- MybatisCursorItemReader&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;2-2-paging기반-itemreader&#34;&gt;2-2. Paging기반 ItemReader&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Chunk로 데이터베이스에서 데이터를 검색&lt;/li&gt;
+&lt;li&gt;Page Size 만큼만 한 번에 메모리로 가져오기에 메모리 사용량이 적어진다.&lt;/li&gt;
+&lt;li&gt;페이지 단위로 컨넥션을 맺고 끊기를 반복하기에 대량 데이터를 처리하기 좋다.&lt;/li&gt;
+&lt;li&gt;쿼리자체에 반환하고자하는 데이터 범위를 지정하여 사용한다. (offset, limit)&lt;/li&gt;
+&lt;li&gt;컨넥션 유지시간이 길지 않고 메모리를 효율적으로 사용해야 하는 데이터에 적합하다.
+Paging 기반 ItemReader 구현체&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;JdbcPagingItemReader- HibernatePagingItemReader- JpaPagingItemReader- MybatisPagingItemReader&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;3-mybatisitemreader-구현&#34;&gt;3. MybatisItemReader 구현&lt;/h2&gt;
+&lt;h3 id=&#34;3-1-mybatiscursoritemreader&#34;&gt;3-1. MybatisCursorItemReader&lt;/h3&gt;
+&lt;p&gt;MybatisCursorItemReader로 구현시 간단하다. 한 번에 조회해온 결과를 chunk만큼 트랜잭션을 분할하여 대용량 처리를 한다.
+BatchConfig.java
+&lt;code&gt;@Bean public T jobStep(StepBuilderFactory steps) throws Exception { return stepBuilderFactory.get(&amp;quot;JOB&amp;quot;). chunk(1000) -- Chunk 사이즈 조절 .reader(itemReader.reader(sqlSessionFactory)) .processor(new itemProcessor()) .writer(new itemWriter()) .build(); }&lt;/code&gt;
+ItemReader.Java
+&lt;code&gt;MyBatisCursorItemReader databaseReader = new MyBatisCursorItemReader&amp;lt;&amp;gt;(); databaseReader.setSqlSessionFactory(sqlSessionFactory); databaseReader.setQueryId(QueryId); databaseReader.setParameterValues(map); databaseReader.setSaveState(true); return databaseReader;&lt;/code&gt;
+데이터베이스에서 모든 결과를 메모리에 할당한 후, Chunk 사이즈만큼의 트랜잭션 단위로 데이터를 처리한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

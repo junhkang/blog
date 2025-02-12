@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AWS on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/aws/</link>
+    <description>Recent content in AWS on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 31 Dec 2024 12:30:05 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[AWS] Bastion 서버 설정 및 서버 접속 상태 한눈에 구분하기</title>
+      <link>https://junhkang.com/posts/123/</link>
+      <pubDate>Tue, 31 Dec 2024 12:30:05 +0000</pubDate>
+      <guid>https://junhkang.com/posts/123/</guid>
+      <description>&lt;hr&gt;
+&lt;h3 id=&#34;bastion-서버란&#34; ke-size=&#34;size23&#34;&gt;1. Bastion 서버란?&lt;/h3&gt;
+&lt;p&gt;Bastion 서버란 클라우드 환경, 네트워크 환경에서 보안 게이트웨이 역할을 하는 서버로, 외부 네트워크에서 private 서버로 접속할 때 보안을 강화해 주고 접근제어를 구현해 준다. 외부 사용자가 특정 IP에서만 Bastion 서버에 접속하도록 설정할 수 있으며, private 서버들은 Bastion 서버를 통해서 트래픽을 철저하게 관리할 수 있다. 이번 포스트에선 Bastion서버의 설정 방법과, 다중 서버를 Bastion 서버에서 관리할 시 접속상태를 한눈에 구분할 수 있는 방법에 대해 알아보자.&lt;/p&gt;
+&lt;h3 id=&#34;bastion-서버-설정-방법&#34; ke-size=&#34;size23&#34;&gt;2. Bastion 서버 설정 방법&lt;/h3&gt;
+&lt;h4 id=&#34;aws-인스턴스-생성&#34; ke-size=&#34;size20&#34;&gt;2-1.aws 인스턴스 생성 &lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;t2 micro~t3 micro - 소규모 개발팀&lt;/li&gt;
+&lt;li&gt;t3 small  - 중간 규모팀&lt;/li&gt;
+&lt;li&gt;T3.medium, M5.large - 대규모팀 (다수 개발자, 운영팀)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/123/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-31%20%EC%98%A4%ED%9B%84%2012.14.14.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS] RDS 적정 인스턴스 선택, 비용 최적화</title>
+      <link>https://junhkang.com/posts/27/</link>
+      <pubDate>Mon, 16 Oct 2023 18:35:57 +0000</pubDate>
+      <guid>https://junhkang.com/posts/27/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/27/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;rds란&#34; ke-size=&#34;size26&#34;&gt;1. RDS란?&lt;/h2&gt;
+&lt;p&gt;RDS는 클라우드에서 데이터베이스를 쉽게 설정, 운영 및 확장할 수 있는 완전관리형 오픈소스 관계형 데이터베이스이다. &lt;/p&gt;
+&lt;p&gt;온디맨드, 혹은 예약형 인스턴스 구매로 유연한 데이터베이스 관리가 가능하며 스토리지 및 메모리 등의 설정에 따라 금액이 달라진다.&lt;/p&gt;
+&lt;h2 id=&#34;rds-비용을-결정하는-요소&#34; ke-size=&#34;size26&#34;&gt;2. RDS 비용을 결정하는 요소&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DB 인스턴스 가용시간&lt;/strong&gt; - 1초 단위로 청구되며 1회 최소 10분 과금&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;스토리지 (월별 GB당)&lt;/strong&gt; - DB인스턴스에 프로비저닝 한 스토리지 용량&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;월별 I/O&lt;/strong&gt; - 총 스토리지 I/O 요청 수&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;백업 스토리지&lt;/strong&gt; - 자동 데이터베이스 백업 및 모든 데이터베이스 스냅샷과 연결된 스토리지&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;데이터 전송&lt;/strong&gt; - RDS에서 인스턴스를 통한 데이터 송수신&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;티어별 계산은 여기서 가능 (PostgreSQL 기준)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS] AMI(Amazon Machine Image) 개념 및 적용</title>
+      <link>https://junhkang.com/posts/19/</link>
+      <pubDate>Mon, 09 Oct 2023 15:21:27 +0000</pubDate>
+      <guid>https://junhkang.com/posts/19/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/19/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;amiamazon-machine-image란&#34; ke-size=&#34;size26&#34;&gt;1. AMI(Amazon Machine Image)란?&lt;/h2&gt;
+&lt;p&gt;인스턴스를 생성하는데 필요한 정보를 가지고 있는 이미지이다. 한 AMI로 동일 속성을 가진 인스턴스를 여러 개 생성할 수 있으며 인스턴스의 설정값을 가지고 있는 템플릿으로 보면 된다. AMI 생성 시 소프트웨어 구성이 기재된 템플릿 (예: 운영 체제, 애플리케이션 서버, 애플리케이션)을 추출하고, AMI를 사용하여 신규 인스턴스를 바로 복제 가능하다.&lt;/p&gt;
+&lt;h2 id=&#34;주의사항&#34; ke-size=&#34;size26&#34;&gt;2. 주의사항&lt;/h2&gt;
+&lt;p&gt;AMI 생성시 기존 인스턴스가 정지 또는 최소전력 상태로 전환되니 주의해야 한다. AMI 생성 시 인스턴스 재부팅 안 함 옵션이 선택가능하지만, 재부팅을 하지 않을 경우 시스템의 무결성을 보장할 수 없다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[AWS] Elastic IP (탄력적 IP)의 개념 및 적용</title>
+      <link>https://junhkang.com/posts/18/</link>
+      <pubDate>Mon, 09 Oct 2023 14:41:55 +0000</pubDate>
+      <guid>https://junhkang.com/posts/18/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/18/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;elastic-ip-탄력적-ip-란&#34; ke-size=&#34;size26&#34;&gt;1. Elastic IP (탄력적 IP) 란?&lt;/h2&gt;
+&lt;p&gt;EIP(Elastic Ip Address)란 인터넷으로 접속이 가능한 공인 IP를 할당하여, 인스턴스에 탈부착할 수 있는 서비스이다. 인스턴스 혹은 네트워크 인터페이스에 연결이 가능하며 삭제 전까지 해당 IP를 유지할 수 있다.
+ &lt;/p&gt;
+&lt;p&gt;EC2 인스턴스 생성 시 공인 IP 사용 설정을 Enable로 변경 (default는 Disable)할 경우 인스턴스 자체에 공인 IP를 할당받을 수 있는데 왜 굳이 Elastic IP를 사용하는 것일까?&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/18/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%ED%9B%84%201.56.51.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;인스턴스가 stop 후 재시작될 경우 공인 IP가 변경되는 경우가 발생한다. 인스턴스 자체의 공인 IP가 변경될 경우 큰 문제로 이어질 수 있어&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

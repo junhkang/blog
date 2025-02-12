@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Transaction on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/transaction/</link>
+    <description>Recent content in Transaction on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 08 Mar 2024 15:27:32 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/transaction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 트랜잭션(Transaction)의 작동원리</title>
+      <link>https://junhkang.com/posts/67/</link>
+      <pubDate>Fri, 08 Mar 2024 15:27:32 +0000</pubDate>
+      <guid>https://junhkang.com/posts/67/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/67/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;기본-트랜잭션의-개념-및-원리&#34; ke-size=&#34;size26&#34;&gt;1. 기본 트랜잭션의 개념 및 원리&lt;/h2&gt;
+&lt;p&gt;트랜잭션의 기본 개념과 사용 방법은 다음 포스트에서 확인이 가능하다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;[Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;기본적으로 트랜잭션이 어떤 것인지, COMMIT, ROLLBACK도 익숙하게 사용하고 있다면, PostgreSQL 내부의 트랜잭션이 어떤 구조로 작동하며 세부 단계를 어떻게 확인 가능한지 자세히 알아보자.&lt;/p&gt;
+&lt;h2 id=&#34;트랜잭션과-식별자-transactions-and-identifiers&#34; ke-size=&#34;size26&#34;&gt;2. 트랜잭션과 식별자 (Transactions and Identifiers)&lt;/h2&gt;
+&lt;p&gt;기본 개념에서 확인했듯이 트랜잭션은 명시적으로 실행(BEGIN, START TRANSACTION), 종료 (COMMIT, ROLLBACK) 할 수 있다. 명시적 트랜잭션 외의 SQL 구문들은 단일 트랜잭션이 자동으로 적용된다. 그렇다면 각각의 트랜잭션이 어떻게 구분되는지 먼저 살펴보자.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용</title>
+      <link>https://junhkang.com/posts/20/</link>
+      <pubDate>Tue, 10 Oct 2023 14:42:53 +0000</pubDate>
+      <guid>https://junhkang.com/posts/20/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/20/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;트랜잭션transaction이란&#34; ke-size=&#34;size26&#34;&gt;1. 트랜잭션(Transaction)이란?&lt;/h2&gt;
+&lt;p&gt;트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순한 DML 작업의 롤백 용도뿐 아니라, 대용량 데이터 처리의 무결성, 에러발생 시, 여러 유저의 동시작업 등에서 사용된다.&lt;/p&gt;
+&lt;h2 id=&#34;트랜잭션-적용&#34; ke-size=&#34;size26&#34;&gt;2. 트랜잭션 적용&lt;/h2&gt;
+&lt;p&gt;트랜잭션을 사용하는 커맨드 예제이다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--COMMIT 혹은 ROLLBACK으로 트랜잭션을 종료하지 않으면, 해당 업데이트 건은 데이터베이스에 적용되지 않는다.
+
+BEGIN;
+UPDATE accounts SET balance = balance - 100.00
+    WHERE name = &amp;#39;Alice&amp;#39;;
+COMMIT;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;트랜잭션 COMMIT 전에 다른 유저가 동일한 row의 balance를 업데이트하려고 한다면, 그전 트랜잭션이 commit 혹은 rollback 되는 것을 대기해야하며 이를 lock 상태라고 한다. (Lock의 개념 및 상세는 다음 포스트에 상세하게 정리되어 있다.)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

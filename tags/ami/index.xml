@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ami on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/ami/</link>
+    <description>Recent content in Ami on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 09 Oct 2023 15:21:27 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/ami/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[AWS] AMI(Amazon Machine Image) 개념 및 적용</title>
+      <link>https://junhkang.com/posts/19/</link>
+      <pubDate>Mon, 09 Oct 2023 15:21:27 +0000</pubDate>
+      <guid>https://junhkang.com/posts/19/</guid>
+      <description>&lt;hr&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/19/img.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;amiamazon-machine-image란&#34; ke-size=&#34;size26&#34;&gt;1. AMI(Amazon Machine Image)란?&lt;/h2&gt;
+&lt;p&gt;인스턴스를 생성하는데 필요한 정보를 가지고 있는 이미지이다. 한 AMI로 동일 속성을 가진 인스턴스를 여러 개 생성할 수 있으며 인스턴스의 설정값을 가지고 있는 템플릿으로 보면 된다. AMI 생성 시 소프트웨어 구성이 기재된 템플릿 (예: 운영 체제, 애플리케이션 서버, 애플리케이션)을 추출하고, AMI를 사용하여 신규 인스턴스를 바로 복제 가능하다.&lt;/p&gt;
+&lt;h2 id=&#34;주의사항&#34; ke-size=&#34;size26&#34;&gt;2. 주의사항&lt;/h2&gt;
+&lt;p&gt;AMI 생성시 기존 인스턴스가 정지 또는 최소전력 상태로 전환되니 주의해야 한다. AMI 생성 시 인스턴스 재부팅 안 함 옵션이 선택가능하지만, 재부팅을 하지 않을 경우 시스템의 무결성을 보장할 수 없다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

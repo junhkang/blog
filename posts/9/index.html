@@ -1,0 +1,133 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>[PostgreSQL] SP-GiST인덱스의 원리 및 특징 | Jun Kang's Blog</title>
+<meta name=keywords content="Index,PostgreSQL,SP-GIST"><meta name=description content='
+1. SP-GiST 인덱스란?
+Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=&ldquo;color: #333333; font-family: -apple-system, BlinkMacSystemFont, &lsquo;Helvetica Neue&rsquo;, &lsquo;Apple SD Gothic Neo&rsquo;, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;&rdquo;}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=&ldquo;background-color: #fdfdfd; color: #000000; text-align: start;"}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.'><meta name=author content="Jun Kang"><link rel=canonical href=https://junhkang.com/posts/9/><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=https://junhkang.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://junhkang.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://junhkang.com/favicon-32x32.png><link rel=apple-touch-icon href=https://junhkang.com/apple-touch-icon.png><link rel=mask-icon href=https://junhkang.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://junhkang.com/posts/9/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://junhkang.com/posts/9/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] SP-GiST인덱스의 원리 및 특징"><meta property="og:description" content=' 1. SP-GiST 인덱스란? Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=“color: #333333; font-family: -apple-system, BlinkMacSystemFont, ‘Helvetica Neue’, ‘Apple SD Gothic Neo’, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;”}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=“background-color: #fdfdfd; color: #000000; text-align: start;"}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.'><meta property="og:locale" content="ko"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-09-13T18:11:46+00:00"><meta property="article:modified_time" content="2023-09-13T18:11:46+00:00"><meta property="article:tag" content="Index"><meta property="article:tag" content="PostgreSQL"><meta property="article:tag" content="SP-GIST"><meta name=twitter:card content="summary"><meta name=twitter:title content="[PostgreSQL] SP-GiST인덱스의 원리 및 특징"><meta name=twitter:description content='
+1. SP-GiST 인덱스란?
+Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=&ldquo;color: #333333; font-family: -apple-system, BlinkMacSystemFont, &lsquo;Helvetica Neue&rsquo;, &lsquo;Apple SD Gothic Neo&rsquo;, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;&rdquo;}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=&ldquo;background-color: #fdfdfd; color: #000000; text-align: start;"}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://junhkang.com/posts/"},{"@type":"ListItem","position":2,"name":"[PostgreSQL] SP-GiST인덱스의 원리 및 특징","item":"https://junhkang.com/posts/9/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[PostgreSQL] SP-GiST인덱스의 원리 및 특징","name":"[PostgreSQL] SP-GiST인덱스의 원리 및 특징","description":" 1. SP-GiST 인덱스란? Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=\u0026ldquo;color: #333333; font-family: -apple-system, BlinkMacSystemFont, \u0026lsquo;Helvetica Neue\u0026rsquo;, \u0026lsquo;Apple SD Gothic Neo\u0026rsquo;, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;\u0026rdquo;}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=\u0026ldquo;background-color: #fdfdfd; color: #000000; text-align: start;\u0026quot;}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.\n","keywords":["Index","PostgreSQL","SP-GIST"],"articleBody":" 1. SP-GiST 인덱스란? Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=“color: #333333; font-family: -apple-system, BlinkMacSystemFont, ‘Helvetica Neue’, ‘Apple SD Gothic Neo’, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;”}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=“background-color: #fdfdfd; color: #000000; text-align: start;\"}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.\n1-1. SP-GiST 인덱스 생성 CREATE INDEX idx_spgist_example ON example_table USING spgist (column1); 1-2. 장점 다양한 종류의 데이터 타입에 사용 가능 : 기하학, IP, 다른 복잡한 데이터 타입\n복잡한 쿼리에 사용 가능 : 복잡한 데이터구조, 쿼리에 사용 적합하도록 설계 빠른 검색 효율\n1-3. 단점 복잡한 구현 방법 : btree/hash 에 비해 구현이 복잡하다.\n느린 업데이트 : SP-GiST index는 업데이트가 느리다, 복잡한 알고리즘인 만큼 특정 데이터 변경시 인덱스의 업데이트가 느리다. 한정된 쿼리 유형 : 복잡한 유형의 쿼리에 특화 되어있다보니 =, \u003c등 간단한 타입의 비교에는 고려되지 않을 수 있다.\n1-4. 그렇다면 SP-GiST는 GiST인덱스와 어떻게 다를까? [[▪ ]{style=“font-family: AppleSDGothicNeo-Regular, ‘Malgun Gothic’, ‘맑은 고딕’, dotum, 돋움, sans-serif; color: #666666; text-align: left;”}]{style=“font-family: AppleSDGothicNeo-Regular, ‘Malgun Gothic’, ‘맑은 고딕’, dotum, 돋움, sans-serif; color: #333333; text-align: start;\"}1-4-1. Operator ▪ GiST에 비해 SP-GiST를 지원하는 operator가 적다. (SP-GiST 지원 Operator는 아래에서 확인가능)\n(GiST는 (k) NN[ searches를 포함한 모든 operator 지원을 받는다.)]{style=“color: #232629; text-align: left;”}\n[[▪ ]{style=“font-family: AppleSDGothicNeo-Regular, ‘Malgun Gothic’, ‘맑은 고딕’, dotum, 돋움, sans-serif; color: #666666; text-align: left;”}]{style=“font-family: AppleSDGothicNeo-Regular, ‘Malgun Gothic’, ‘맑은 고딕’, dotum, 돋움, sans-serif; color: #333333; text-align: start;\"}1-4-2. 인덱스 생성 시간 ▪ GiST 인덱스의 생성시간은 데이터 증가에 따라 비선형적이지만 안정적으로 증가한다.\n▪ SP-GiST 인덱스는 적은 데이터일 경우 빠르지만, 몇 억 건이 넘어갈 경우 GiST에 비해 현저히 떨어지는 속도를 보인다.\n[[▪ ]{style=“font-family: AppleSDGothicNeo-Regular, ‘Malgun Gothic’, ‘맑은 고딕’, dotum, 돋움, sans-serif; color: #666666; text-align: left;”}]{style=“font-family: AppleSDGothicNeo-Regular, ‘Malgun Gothic’, ‘맑은 고딕’, dotum, 돋움, sans-serif; color: #333333; text-align: start;\"}1-4-3. 데이터 밀집도에 따른 효율성 ▪ GIST는 기하학적 구조의 공간 분포와 토폴로지에 크게 민감하지 않다.\n▪ SP_GIST는 공간 분할(Spatial Partitioning)로 인해 중첩되지 않는 지오메트리에 가장 효과적이며 공간적으로 균일한 분포에 대한 검색에 효율적이다.\n데이터 사이즈, 구조, 사용하는 쿼리 등에 따라 인덱스의 효율성이 달라질 수 있어, 실제 데이터로 GiST, SP-GiST의 성능테스트가 꼭 필요하다.\n2. 지도 / 좌표 형태의 데이터 인덱싱 다음과 같이 위도/경도 데이터로 조회를 시도할 시 효율적이다\nSELECT city_name FROM locations WHERE ST_DWithin(ST_MakePoint(:longitude, :latitude), ST_MakePoint(longitude, latitude), :distance); 지도의4분 할로 지속적으로 나눈다. 각각의 사각형이 index page 역할을 한다\n나눠진 부분을 좀 더 상세히 보면\n다음 좌표에서 (2,7) 위에 존재하는 좌표들을 찾고 싶다면 select * from points where p \u003e^ point '(2,7)' (4,4)를 (2,7)과 비교하여 더 큰 좌표가 존재할 수 있는 영역을 확인한다.\n1 사분면의 중심좌표인 (6,6)으로 다시 비교하여 더 큰 좌표가 존재할 수 있는 영역을 확인한 후 다음과 같은 인덱스 구조를 생성한다.\n3. Built-in Operator Class Name Indexable Operators Ordering Operators\nbox_ops \u003c\u003c (box,box) \u003c-\u003e (box,point)\n\u0026\\\u003c (box,box) \u0026\\\u003e (box,box) \\\u003e\\\u003e (box,box) \\\u003c@ (box,box) @\\\u003e (box,box) \\~= (box,box) \u0026\u0026 (box,box) \\\u003c\\\u003c\\| (box,box) \u0026\\\u003c\\| (box,box) \\|\u0026\\\u003e (box,box) \\|\\\u003e\\\u003e (box,box) inet_ops\\ \u003c\u003c (inet,inet) \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\\n\\\u003c\\\u003c= (inet,inet) \\\u003e\\\u003e (inet,inet) \\\u003e\\\u003e= (inet,inet) = (inet,inet) \\\u003c\\\u003e (inet,inet) \\\u003c (inet,inet) \\\u003c= (inet,inet) \\\u003e (inet,inet) \\\u003e= (inet,inet) \u0026\u0026 (inet,inet) kd_point_ops\\ |\u003e\u003e (point,point) \u003c-\u003e (point,point)\n\\ \\ \\ \\ \\ \\ \\ \\ \\\n\\\u003c\\\u003c (point,point) \\\u003e\\\u003e (point,point) \\\u003c\\\u003c\\| (point,point) \\~= (point,point) \\\u003c@ (point,box) poly_ops\\ \u003c\u003c (polygon,polygon) \u003c-\u003e (polygon,point)\n\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\\n\u0026\\\u003c (polygon,polygon) \u0026\\\u003e (polygon,polygon) \\\u003e\\\u003e (polygon,polygon) \\\u003c@ (polygon,polygon) @\\\u003e (polygon,polygon) \\~= (polygon,polygon) \u0026\u0026 (polygon,polygon) \\\u003c\\\u003c\\| (polygon,polygon) \u0026\\\u003c\\| (polygon,polygon) \\|\\\u003e\\\u003e (polygon,polygon) \\|\u0026\\\u003e (polygon,polygon) quad_point_ops\\ |\u003e\u003e (point,point) \u003c-\u003e (point,point)\n\\ \\ \\ \\ \\ \\ \\ \\ \\\n\\\u003c\\\u003c (point,point) \\\u003e\\\u003e (point,point) \\\u003c\\\u003c\\| (point,point) \\~= (point,point) \\\u003c@ (point,box) range_ops\\ = (anyrange,anyrange) \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\\n\u0026\u0026 (anyrange,anyrange) @\\\u003e (anyrange,anyelement) @\\\u003e (anyrange,anyrange) \\\u003c@ (anyrange,anyrange) \\\u003c\\\u003c (anyrange,anyrange) \\\u003e\\\u003e (anyrange,anyrange) \u0026\\\u003c (anyrange,anyrange) \u0026\\\u003e (anyrange,anyrange) -\\|- (anyrange,anyrange) text_ops\\ = (text,text) \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\\n\\\u003c (text,text) \\\u003c= (text,text) \\\u003e (text,text) \\\u003e= (text,text) \\~\\\u003c\\~ (text,text) \\~\\\u003c=\\~ (text,text) \\~\\\u003e=\\~ (text,text) \\~\\\u003e\\~ (text,text) \\^@ (text,text) 참고\nhttps://www.postgresql.org/docs/current/spgist-builtin-opclasses.htmlhttps://www.postgresql.org/docs/current/spgist-builtin-opclasses.html\nhttps://gis.stackexchange.com/questions/374091/when-to-use-gist-and-when-to-use-sp-gist-indexhttps://gis.stackexchange.com/questions/374091/when-to-use-gist-and-when-to-use-sp-gist-index\n\\\n","wordCount":"708","inLanguage":"en","datePublished":"2023-09-13T18:11:46Z","dateModified":"2023-09-13T18:11:46Z","author":{"@type":"Person","name":"Jun Kang"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://junhkang.com/posts/9/"},"publisher":{"@type":"Organization","name":"Jun Kang's Blog","logo":{"@type":"ImageObject","url":"https://junhkang.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://junhkang.com/ accesskey=h title="Jun Kang's Blog (Alt + H)">Jun Kang's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://junhkang.com/about/ title=About><span>About</span></a></li><li><a href=https://junhkang.com/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://junhkang.com/sankun/ title=Sankun><span>Sankun</span></a></li><li><a href=https://junhkang.com/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://junhkang.com/posts/ title=Posts><span>Posts</span></a></li><li><a href=https://junhkang.com/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://junhkang.com/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">[PostgreSQL] SP-GiST인덱스의 원리 및 특징</h1><div class=post-meta><span title='2023-09-13 18:11:46 +0000 UTC'>September 13, 2023</span>&nbsp;·&nbsp;Jun Kang</div></header><div class=post-content><hr><h2 id=sp-gist-인덱스란 ke-size=size26>1. SP-GiST 인덱스란?<a hidden class=anchor aria-hidden=true href=#sp-gist-인덱스란>#</a></h2><p>Space-Partitioned Generalized Search Tree의 약자이다. [GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. ]{style=&ldquo;color: #333333; font-family: -apple-system, BlinkMacSystemFont, &lsquo;Helvetica Neue&rsquo;, &lsquo;Apple SD Gothic Neo&rsquo;, Arial, sans-serif; font-size: 16px; letter-spacing: 0px;&rdquo;}[SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. ]{style=&ldquo;background-color: #fdfdfd; color: #000000; text-align: start;"}기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.</p><h3 id=sp-gist-인덱스-생성 style=color:#000;text-align:start ke-size=size23>1-1. SP-GiST 인덱스 생성<a hidden class=anchor aria-hidden=true href=#sp-gist-인덱스-생성>#</a></h3><pre tabindex=0><code>CREATE INDEX idx_spgist_example ON example_table USING spgist (column1);
+</code></pre><h3 id=장점 ke-size=size23>1-2. 장점<a hidden class=anchor aria-hidden=true href=#장점>#</a></h3><blockquote><p><strong>다양한 종류의 데이터 타입에 사용 가능</strong> : 기하학, IP, 다른 복잡한 데이터 타입<br><strong>복잡한 쿼리에 사용 가능</strong> : 복잡한 데이터구조, 쿼리에 사용 적합하도록 설계
+<strong>빠른 검색 효율</strong></p></blockquote><h3 id=단점 ke-size=size23>1-3. 단점<a hidden class=anchor aria-hidden=true href=#단점>#</a></h3><blockquote><p><strong>복잡한 구현 방법</strong> : btree/hash 에 비해 구현이 복잡하다.<br><strong>느린 업데이트</strong> : SP-GiST index는 업데이트가 느리다, 복잡한 알고리즘인 만큼 특정 데이터 변경시 인덱스의 업데이트가 느리다.
+<strong>한정된 쿼리 유형</strong> : 복잡한 유형의 쿼리에 특화 되어있다보니 =, &lt;등 간단한 타입의 비교에는 고려되지 않을 수 있다.</p></blockquote><h3 id=그렇다면-sp-gist는-gist인덱스와-어떻게-다를까 ke-size=size23>1-4. 그렇다면 SP-GiST는 GiST인덱스와 어떻게 다를까?<a hidden class=anchor aria-hidden=true href=#그렇다면-sp-gist는-gist인덱스와-어떻게-다를까>#</a></h3><h4 id=operator style=color:#000;text-align:start ke-size=size20>[[▪ ]{style=&ldquo;font-family: AppleSDGothicNeo-Regular, &lsquo;Malgun Gothic&rsquo;, &lsquo;맑은 고딕&rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&rdquo;}]{style=&ldquo;font-family: AppleSDGothicNeo-Regular, &lsquo;Malgun Gothic&rsquo;, &lsquo;맑은 고딕&rsquo;, dotum, 돋움, sans-serif; color: #333333; text-align: start;"}1-4-1. Operator<a hidden class=anchor aria-hidden=true href=#operator>#</a></h4><blockquote><p>▪ GiST에 비해 SP-GiST를 지원하는 operator가 적다. (SP-GiST 지원 Operator는 아래에서 확인가능)<br>(GiST는 (k) NN[ searches를 포함한 모든 operator 지원을 받는다.)]{style=&ldquo;color: #232629; text-align: left;&rdquo;}</p></blockquote><h4 id=인덱스-생성-시간 ke-size=size20>[[▪ ]{style=&ldquo;font-family: AppleSDGothicNeo-Regular, &lsquo;Malgun Gothic&rsquo;, &lsquo;맑은 고딕&rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&rdquo;}]{style=&ldquo;font-family: AppleSDGothicNeo-Regular, &lsquo;Malgun Gothic&rsquo;, &lsquo;맑은 고딕&rsquo;, dotum, 돋움, sans-serif; color: #333333; text-align: start;"}1-4-2. 인덱스 생성 시간<a hidden class=anchor aria-hidden=true href=#인덱스-생성-시간>#</a></h4><blockquote><p>▪ GiST 인덱스의 생성시간은 데이터 증가에 따라 비선형적이지만 안정적으로 증가한다.<br>▪ SP-GiST 인덱스는 적은 데이터일 경우 빠르지만, 몇 억 건이 넘어갈 경우 GiST에 비해 현저히 떨어지는 속도를 보인다.</p></blockquote><h4 id=데이터-밀집도에-따른-효율성 ke-size=size20>[[▪ ]{style=&ldquo;font-family: AppleSDGothicNeo-Regular, &lsquo;Malgun Gothic&rsquo;, &lsquo;맑은 고딕&rsquo;, dotum, 돋움, sans-serif; color: #666666; text-align: left;&rdquo;}]{style=&ldquo;font-family: AppleSDGothicNeo-Regular, &lsquo;Malgun Gothic&rsquo;, &lsquo;맑은 고딕&rsquo;, dotum, 돋움, sans-serif; color: #333333; text-align: start;"}1-4-3. 데이터 밀집도에 따른 효율성<a hidden class=anchor aria-hidden=true href=#데이터-밀집도에-따른-효율성>#</a></h4><blockquote><p>▪ GIST는 기하학적 구조의 공간 분포와 토폴로지에 크게 민감하지 않다.<br>▪ SP_GIST는 공간 분할(Spatial Partitioning)로 인해 중첩되지 않는 지오메트리에 가장 효과적이며 공간적으로 균일한 분포에 대한 검색에 효율적이다.</p></blockquote><p>데이터 사이즈, 구조, 사용하는 쿼리 등에 따라 인덱스의 효율성이 달라질 수 있어, 실제 데이터로 GiST, SP-GiST의 성능테스트가 꼭 필요하다.</p><h2 id=지도-좌표-형태의-데이터-인덱싱 ke-size=size26>2. 지도 / 좌표 형태의 데이터 인덱싱<a hidden class=anchor aria-hidden=true href=#지도-좌표-형태의-데이터-인덱싱>#</a></h2><p>다음과 같이 위도/경도 데이터로 조회를 시도할 시 효율적이다</p><pre tabindex=0><code>SELECT city_name
+
+FROM locations
+
+WHERE ST_DWithin(ST_MakePoint(:longitude, :latitude), ST_MakePoint(longitude, latitude), :distance);
+</code></pre><p> </p><img src=0><p>지도의4분 할로 지속적으로 나눈다. 각각의 사각형이 index page 역할을 한다</p><p>나눠진 부분을 좀 더 상세히 보면</p><p><img loading=lazy src=/images/posts/9/img_1.png></p><p>다음 좌표에서 (2,7) 위에 존재하는 좌표들을 찾고 싶다면 </p><pre tabindex=0><code>select * from points where p &gt;^ point &#39;(2,7)&#39;
+</code></pre><p>(4,4)를 (2,7)과 비교하여 더 큰 좌표가 존재할 수 있는 영역을 확인한다.</p><p>1 사분면의 중심좌표인 (6,6)으로 다시 비교하여 더 큰 좌표가 존재할 수 있는 영역을 확인한 후 다음과 같은 인덱스 구조를 생성한다.</p><p><img loading=lazy src=/images/posts/9/img_2.png>
+ </p><h2 id=3-built-in-operator-class>3. Built-in Operator Class<a hidden class=anchor aria-hidden=true href=#3-built-in-operator-class>#</a></h2><hr><p><strong>Name</strong> <strong>Indexable Operators</strong> <strong>Ordering Operators</strong></p><p>box_ops &lt;&lt; (box,box) &lt;-> (box,point)</p><pre><code>                      &amp;\&lt; (box,box)               
+
+                      &amp;\&gt; (box,box)               
+
+                      \&gt;\&gt; (box,box)              
+
+                      \&lt;@ (box,box)               
+
+                      @\&gt; (box,box)               
+
+                      \~= (box,box)               
+
+                      &amp;&amp; (box,box)                
+
+                      \&lt;\&lt;\| (box,box)            
+
+                      &amp;\&lt;\| (box,box)             
+
+                      \|&amp;\&gt; (box,box)             
+
+                      \|\&gt;\&gt; (box,box)            
+</code></pre><p>inet_ops\ &lt;&lt; (inet,inet)<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\</p><pre><code>                      \&lt;\&lt;= (inet,inet)           
+
+                      \&gt;\&gt; (inet,inet)            
+
+                      \&gt;\&gt;= (inet,inet)           
+
+                      = (inet,inet)               
+
+                      \&lt;\&gt; (inet,inet)            
+
+                      \&lt; (inet,inet)              
+
+                      \&lt;= (inet,inet)             
+
+                      \&gt; (inet,inet)              
+
+                      \&gt;= (inet,inet)             
+
+                      &amp;&amp; (inet,inet)              
+</code></pre><p>kd_point_ops\ |>> (point,point) &lt;-> (point,point)<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\</p><pre><code>                      \&lt;\&lt; (point,point)          
+
+                      \&gt;\&gt; (point,point)          
+
+                      \&lt;\&lt;\| (point,point)        
+
+                      \~= (point,point)           
+
+                      \&lt;@ (point,box)             
+</code></pre><p>poly_ops\ &lt;&lt; (polygon,polygon) &lt;-> (polygon,point)<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\</p><pre><code>                      &amp;\&lt; (polygon,polygon)       
+
+                      &amp;\&gt; (polygon,polygon)       
+
+                      \&gt;\&gt; (polygon,polygon)      
+
+                      \&lt;@ (polygon,polygon)       
+
+                      @\&gt; (polygon,polygon)       
+
+                      \~= (polygon,polygon)       
+
+                      &amp;&amp; (polygon,polygon)        
+
+                      \&lt;\&lt;\| (polygon,polygon)    
+
+                      &amp;\&lt;\| (polygon,polygon)     
+
+                      \|\&gt;\&gt; (polygon,polygon)    
+
+                      \|&amp;\&gt; (polygon,polygon)     
+</code></pre><p>quad_point_ops\ |>> (point,point) &lt;-> (point,point)<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\</p><pre><code>                      \&lt;\&lt; (point,point)          
+
+                      \&gt;\&gt; (point,point)          
+
+                      \&lt;\&lt;\| (point,point)        
+
+                      \~= (point,point)           
+
+                      \&lt;@ (point,box)             
+</code></pre><p>range_ops\ = (anyrange,anyrange)<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\</p><pre><code>                      &amp;&amp; (anyrange,anyrange)      
+
+                      @\&gt; (anyrange,anyelement)   
+
+                      @\&gt; (anyrange,anyrange)     
+
+                      \&lt;@ (anyrange,anyrange)     
+
+                      \&lt;\&lt; (anyrange,anyrange)    
+
+                      \&gt;\&gt; (anyrange,anyrange)    
+
+                      &amp;\&lt; (anyrange,anyrange)     
+
+                      &amp;\&gt; (anyrange,anyrange)     
+
+                      -\|- (anyrange,anyrange)    
+</code></pre><p>text_ops\ = (text,text)<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\<br>\</p><pre><code>                      \&lt; (text,text)              
+
+                      \&lt;= (text,text)             
+
+                      \&gt; (text,text)              
+
+                      \&gt;= (text,text)             
+
+                      \~\&lt;\~ (text,text)          
+
+                      \~\&lt;=\~ (text,text)         
+
+                      \~\&gt;=\~ (text,text)         
+
+                      \~\&gt;\~ (text,text)          
+
+                      \^@ (text,text)             
+</code></pre><hr><p> </p><p>참고</p><p><a href=https://www.postgresql.org/docs/current/spgist-builtin-opclasses.htmlhttps://www.postgresql.org/docs/current/spgist-builtin-opclasses.html>https://www.postgresql.org/docs/current/spgist-builtin-opclasses.htmlhttps://www.postgresql.org/docs/current/spgist-builtin-opclasses.html</a></p><p><a href=https://gis.stackexchange.com/questions/374091/when-to-use-gist-and-when-to-use-sp-gist-indexhttps://gis.stackexchange.com/questions/374091/when-to-use-gist-and-when-to-use-sp-gist-index>https://gis.stackexchange.com/questions/374091/when-to-use-gist-and-when-to-use-sp-gist-indexhttps://gis.stackexchange.com/questions/374091/when-to-use-gist-and-when-to-use-sp-gist-index</a></p><p>\</p></div><footer class=post-footer><ul class=post-tags><li><a href=https://junhkang.com/tags/index/>Index</a></li><li><a href=https://junhkang.com/tags/postgresql/>PostgreSQL</a></li><li><a href=https://junhkang.com/tags/sp-gist/>SP-GIST</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://junhkang.com/>Jun Kang's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

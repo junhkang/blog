@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CHECK  - Foreign  - PostgreSQL  - Primary  - Constraint  - Not  - ScrollCheck  - ScrollFk  - ScrollNotNull  - ScrollPk  - ScrollUnique  - Unique on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/check----foreign----postgresql----primary----constraint----not----scrollcheck----scrollfk----scrollnotnull----scrollpk----scrollunique----unique/</link>
+    <description>Recent content in CHECK  - Foreign  - PostgreSQL  - Primary  - Constraint  - Not  - ScrollCheck  - ScrollFk  - ScrollNotNull  - ScrollPk  - ScrollUnique  - Unique on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 10 Oct 2023 15:41:50 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/check----foreign----postgresql----primary----constraint----not----scrollcheck----scrollfk----scrollnotnull----scrollpk----scrollunique----unique/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[PostgreSQL\\] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)
+</title>
+      <link>http://localhost:1313/posts/21/</link>
+      <pubDate>Tue, 10 Oct 2023 15:41:50 +0000</pubDate>
+      <guid>http://localhost:1313/posts/21/</guid>
+      <description>&lt;h2 id=&#34;postgresql-제약조건-constraint-개념-및-설정-primary-keys-foreign-keys-unique-not-null-check&#34;&gt;[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)&lt;/h2&gt;
+&lt;p&gt;Postgresql&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/21/img.png&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## PostgreSQL 제약조건 (Constrant)란?
+데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.
+제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.
+1\. [Primary Keys(PK)](#scrollPk)
+2\. [Foreign Keys(FK)](#scrollFk)
+3\. [Check](#scrollCheck)
+4\. [Not-null](#scrollNotNull)
+5\. [Unique](#scrollUnique)
+## 1. Primary Keys (PK)
+- Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.
+- Not- null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.
+- PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.
+- B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)
+&lt;a href=&#34;https://junhkang.tistory.com/6&#34; style=&#34;color: #0070d1;&#34;&gt;2023.09.12 - [Postgresql] - [PostgreSQL] B-tree 인덱스의 원리 및 특징&lt;/a&gt;
+&lt;figure id=&#34;og_1696918959574&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/dagOSZ/hyT9KIwNHJ/IfKTv4CfDHVgL0OrAjCCUk/img.png?width=800&amp;amp;height=333&amp;amp;face=0_0_800_333,https://scrap.kakaocdn.net/dn/7HFrR/hyT9JW8Axt/VAMnlzSRQPiwpXYK6sAVcK/img.png?width=800&amp;amp;height=333&amp;amp;face=0_0_800_333,https://scrap.kakaocdn.net/dn/NyGfn/hyT9JJAJrD/HhfROVwKjJ7KaDNv3ZXk6k/img.png?width=960&amp;amp;height=400&amp;amp;face=0_0_960_400&#34; data-og-url=&#34;https://junhkang.tistory.com/6&#34; data-og-source-url=&#34;https://junhkang.tistory.com/6&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-description=&#34;PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다. 그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에&#34; data-og-title=&#34;[PostgreSQL] B-tree 인덱스의 원리 및 특징&#34; data-og-type=&#34;article&#34; data-ke-align=&#34;alignCenter&#34; data-ke-type=&#34;opengraph&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/6&#34; style=&#34;color: #000000;&#34; data-source-url=&#34;https://junhkang.tistory.com/6&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[PostgreSQL] B-tree 인덱스의 원리 및 특징&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

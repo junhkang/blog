@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>383a42  - PG_STAT_STATEMENTS  - PostgreSQL  - F8f8f8  - 쿼리성능 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/383a42----pg_stat_statements----postgresql----f8f8f8----%EC%BF%BC%EB%A6%AC%EC%84%B1%EB%8A%A5/</link>
+    <description>Recent content in 383a42  - PG_STAT_STATEMENTS  - PostgreSQL  - F8f8f8  - 쿼리성능 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/383a42----pg_stat_statements----postgresql----f8f8f8----%EC%BF%BC%EB%A6%AC%EC%84%B1%EB%8A%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] RDS 쿼리 성능 분석 방법 : pg_stat_statements 설치, 고려사항 및 주요 지표</title>
+      <link>http://localhost:1313/posts/94/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/94/</guid>
+      <description>&lt;p&gt;RDS에서는 외부 익스텐션 사용이 제한된다. 쿼리 통계 및 성능에 대한 지표를 알 수 있는 여러 가지 익스텐션이 있지만, 그중 pg_stat_statements가 허용된다. pg_stat_statements의 원리, 사용법, 주요 지표에 대해 알아보자.
+pg_stat_statements는 실행된 쿼리에 대한 통계를 수집하고 저장한다. 다음은 저장되는 주요 지표들이고, 이를 통해 쿼리 성능을 분석하고 최적화할 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;쿼리빈도&lt;/li&gt;
+&lt;li&gt;쿼리 실행시간&lt;/li&gt;
+&lt;li&gt;쿼리 리소스 사용량 (CPU, 디스크I/O, 버퍼 히트 등)&lt;/li&gt;
+&lt;li&gt;쿼리 텍스트 저장&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-설치&#34;&gt;2. 설치&lt;/h2&gt;
+&lt;p&gt;설치가 되어있지않다면 익스텐션을 먼저 설치하면 된다.
+&lt;code&gt;CREATE EXTENSION pg_stat_statements;&lt;/code&gt;
+만약 설치가 안된다면, RDS 데이터베이스가 할당된 파라미터 그룹에서 &amp;ldquo;shared_preload_libraries&amp;rdquo; 파라미터에 &amp;ldquo;pg_stat_statements&amp;quot;추가되어 있는지 확인하자
+![](/images/posts/94/스크린샷 2024-08-14 오후 4.44.51.png)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

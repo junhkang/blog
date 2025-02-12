@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>3a4954 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/3a4954/</link>
+    <description>Recent content in 3a4954 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/3a4954/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Linux] JDK 여러 버전 적용하기, 여러개의 패키지 관리하기 (update-alternatives)</title>
+      <link>http://localhost:1313/posts/60/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/60/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Spring] Java 21 롬복(lombok) 버전 설정 (java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;)</title>
+      <link>http://localhost:1313/posts/57/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/57/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Spring] 스프링부트 3 jstl 적용(maven), (절대 URI인 [http://java.sun.com/jsp/jstl/core]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.)</title>
+      <link>http://localhost:1313/posts/58/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/58/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Spring] 스프링부트 3, 스프링 시큐리티 6, 로그인 세션 유지, 로그인 풀림</title>
+      <link>http://localhost:1313/posts/59/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/59/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[디자인패턴] 전략(Strategy) 패턴의 개념, 예제, 장단점, 활용</title>
+      <link>http://localhost:1313/posts/87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/87/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[디자인패턴] 컴포지트(Composite) 패턴의 개념, 예제, 장단점, 활용</title>
+      <link>http://localhost:1313/posts/63/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/63/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[이펙티브 자바] 3. private 생성자나 열거 타입으로 싱글턴임을 보장하라</title>
+      <link>http://localhost:1313/posts/55/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/55/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[이펙티브 자바] 4. 인스턴스화를 막으려거든 private 생성자를 사용하라</title>
+      <link>http://localhost:1313/posts/62/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/62/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[이펙티브 자바] 9. try-finally 보다는 try-with-resources를 사용하라</title>
+      <link>http://localhost:1313/posts/81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/81/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

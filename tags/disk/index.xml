@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Disk on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/disk/</link>
+    <description>Recent content in Disk on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 19 Mar 2024 16:31:20 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/disk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] DISK(디스크) 사용량 모니터링</title>
+      <link>https://junhkang.com/posts/74/</link>
+      <pubDate>Tue, 19 Mar 2024 16:31:20 +0000</pubDate>
+      <guid>https://junhkang.com/posts/74/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;disk-영역&#34; ke-size=&#34;size26&#34;&gt;1. Disk 영역&lt;/h2&gt;
+&lt;p&gt;PostgreSQL의 저장 영역은 크게 Heap, Index, Toast 3개로 나뉜다. 각 테이블의 대부분의 데이터를 메인 heap 영역에 저장한고, 테이블 칼럼 중 매우 큰 데이터를 받을 수 있는 칼럼은 TOAST 영역에 별도 저장한다. TOAST 테이블에는 실제 데이터를 저장하고, 본래 테이블에는 해당 데이터를 가리키는 포인터만 남게 된다. TOAST 테이블의 유효한 인덱스는 1개뿐이고, 기준 테이블에는 더 많은 인덱스가 존재할 수 있다. 테이블과 인덱스는 각각의 디스크파일에 저장 되며 각 파일이 1G가 넘으면 별도 파일로 분리된다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

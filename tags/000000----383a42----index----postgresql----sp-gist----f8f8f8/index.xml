@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>000000  - 383a42  - Index  - PostgreSQL  - SP-GIST  - F8f8f8 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/000000----383a42----index----postgresql----sp-gist----f8f8f8/</link>
+    <description>Recent content in 000000  - 383a42  - Index  - PostgreSQL  - SP-GIST  - F8f8f8 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/000000----383a42----index----postgresql----sp-gist----f8f8f8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] SP-GiST인덱스의 원리 및 특징</title>
+      <link>http://localhost:1313/posts/9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/9/</guid>
+      <description>&lt;p&gt;Space-Partitioned Generalized Search Tree의 약자이다. GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. 기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.&lt;/p&gt;
+&lt;h3 id=&#34;1-1-sp-gist-인덱스-생성&#34;&gt;1-1. SP-GiST 인덱스 생성&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;CREATE INDEX idx_spgist_example ON example_table USING spgist (column1);&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

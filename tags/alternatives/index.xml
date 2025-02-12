@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Alternatives on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/alternatives/</link>
+    <link>http://localhost:50666/tags/alternatives/</link>
     <description>Recent content in Alternatives on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 05 Feb 2024 18:08:28 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/alternatives/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/alternatives/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Linux] JDK 여러 버전 적용하기, 여러개의 패키지 관리하기 (update-alternatives)</title>
-      <link>https://junhkang.com/posts/60/</link>
+      <link>http://localhost:50666/posts/60/</link>
       <pubDate>Mon, 05 Feb 2024 18:08:28 +0000</pubDate>
-      <guid>https://junhkang.com/posts/60/</guid>
+      <guid>http://localhost:50666/posts/60/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21을 서버에 적용하면서, 기존 버전과 동시에 사용해야 하는 상황 발생&lt;/p&gt;

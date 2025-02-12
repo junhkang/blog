@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Prepared on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/prepared/</link>
+    <link>http://localhost:50666/tags/prepared/</link>
     <description>Recent content in Prepared on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 08 Mar 2024 16:26:45 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/prepared/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:50666/tags/prepared/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 2단계 커밋 프로토콜(Two-Phase Commit Protocol), Prepare transaction</title>
-      <link>https://junhkang.com/posts/68/</link>
+      <link>http://localhost:50666/posts/68/</link>
       <pubDate>Fri, 08 Mar 2024 16:26:45 +0000</pubDate>
-      <guid>https://junhkang.com/posts/68/</guid>
+      <guid>http://localhost:50666/posts/68/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/68/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:50666/images/posts/68/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;단계-커밋-프로토콜two-phase-commit-2pc&#34; ke-size=&#34;size26&#34;&gt;1. 2단계 커밋 프로토콜([two-phase commit (2PC))&lt;/h2&gt;
 &lt;p&gt;PostgreSQL은 two-phase commit (2PC) 프로토콜을 지원한다. 다수의 분산 시스템 환경에서 모든 데이터베이스가 정상적으로 수정되었음을 보장하는 두 단계 커밋 프로토콜로 분산 트랜잭션에 참여한 모든 데이터베이스가 모두 함께 커밋되거나 롤백되는 것을 보장한다. PostgreSQL의 2단계 트랜잭션은 외부 트랜잭션 관리 시스템에서 사용하기 위해 존재하며 X/Open XA 표준에서 제안된 특징과 모델을 따른다. (사용빈도가 낮은 일부 기능은 구현되지 않았다.) 2단계 커밋은 다음 스탭에 따라 작동된다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Coordinator                                         Cohort

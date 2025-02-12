@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Optimizer on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/optimizer/</link>
+    <link>http://localhost:1313/tags/optimizer/</link>
     <description>Recent content in Optimizer on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 14 Mar 2024 18:51:34 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/optimizer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/optimizer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] Planner, Optimizer (플래너, 옵티마이저)란? Planner, Optimizer (플래너, 옵티마이저)의 개념과 작동방식</title>
-      <link>https://junhkang.com/posts/71/</link>
+      <link>http://localhost:1313/posts/71/</link>
       <pubDate>Thu, 14 Mar 2024 18:51:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/71/</guid>
+      <guid>http://localhost:1313/posts/71/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/71/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/71/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;planner-optimizer-플래너-옵티마이저-란&#34; ke-size=&#34;size26&#34;&gt;1. Planner / Optimizer (플래너 / 옵티마이저) 란?&lt;/h2&gt;
 &lt;p&gt;Planner / Optimizer는 쿼리의 최적화된 실행 계획을 만들어낸다. 한 개의 SQL 쿼리도 결과는 같지만, 다양한 방법과 순서로 실행될 수 있다. Planner / Optimizer (이후는 Planner로 명칭)는 실행 가능한 각각의 플랜을 검사하여 궁극적으로 가장 빠르게 실행 &amp;quot;기대&amp;quot;되는 플랜을 선택한다. &lt;/p&gt;
 &lt;h3 id=&#34;genetic-query-optimize&#34; ke-size=&#34;size23&#34;&gt;1-1. Genetic Query Optimize&lt;/h3&gt;

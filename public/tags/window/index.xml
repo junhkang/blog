@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Window on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/window/</link>
+    <link>http://localhost:1313/tags/window/</link>
     <description>Recent content in Window on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 31 Oct 2023 13:58:57 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/window/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/window/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 윈도우 함수(Window Functions)의 개념, 성능 및 사용법 (over, sum/rank/ntitle/cume_dist 등...)</title>
-      <link>https://junhkang.com/posts/40/</link>
+      <link>http://localhost:1313/posts/40/</link>
       <pubDate>Tue, 31 Oct 2023 13:58:57 +0000</pubDate>
-      <guid>https://junhkang.com/posts/40/</guid>
+      <guid>http://localhost:1313/posts/40/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/40/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/40/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;윈도우-함수-window-functions란&#34; ke-size=&#34;size26&#34;&gt;1. 윈도우 함수 (Window Functions)란?&lt;/h2&gt;
 &lt;p&gt;윈도우 함수는 행과 행 간의 관계를 쉽게 정의하기 위해 만든 함수이다. 이 기능은 일반 집계함수의 연산과 유사하지만, 일반 집계함수가 행 각각을 단일 그룹화해서 출력하는 반면에, 윈도우 함수는 각각의 행들이 &lt;strong&gt;그룹화되지 않으며 별도의 ID&lt;/strong&gt;를 가진다. 그렇기에 윈도우 함수는 현재 row의 정보보다 더 많은 정보에 접근이 가능하다. 예를 들면 다음과 같다.&lt;/p&gt;
 &lt;blockquote&gt;

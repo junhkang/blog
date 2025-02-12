@@ -24,6 +24,10 @@ minifyOutput = true
   github = "https://github.com/junhkang"
   linkedin = "https://www.linkedin.com/in/junh-kang"
   env = "production"  # GA 작동을 위한 환경 설정
+  favicon = "favicon.ico"
+  hideFooter = true       # 전체 푸터를 숨기거나
+  hideMadeWithHugo = true  # Hugo 워터마크만 숨기기
+
 
 [params.analytics.google]
   SiteVerificationTag = "G-LE7D0WZLFJ"
@@ -76,7 +80,7 @@ ShowTags = true
   identifier = "categories"
   name = "Categories"
   url = "/categories/"
-  weight = 10
+  weight = 3
 
 [[menu.main]]
   identifier = "posts"
@@ -88,7 +92,7 @@ ShowTags = true
   identifier = "tags"
   name = "Tags"
   url = "/tags/"
-  weight = 3
+  weight = 6
 
 [[menu.main]]
   identifier = "archives"
@@ -100,7 +104,7 @@ ShowTags = true
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 6
+  weight = 7
 
 [markup]
   defaultMarkdownHandler = "goldmark"

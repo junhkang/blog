@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>B-Tree on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/b-tree/</link>
+    <link>https://junhkang.com/tags/b-tree/</link>
     <description>Recent content in B-Tree on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 12 Sep 2023 19:12:12 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/b-tree/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/b-tree/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] B-tree 인덱스의 원리 및 특징</title>
-      <link>http://localhost:1313/posts/6/</link>
+      <link>https://junhkang.com/posts/6/</link>
       <pubDate>Tue, 12 Sep 2023 19:12:12 +0000</pubDate>
-      <guid>http://localhost:1313/posts/6/</guid>
+      <guid>https://junhkang.com/posts/6/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.&lt;/p&gt;
 &lt;p&gt;그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에 대해 알아보자.&lt;/p&gt;
@@ -24,7 +24,7 @@
 ▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;b-tree-인덱스의-원리&#34; ke-size=&#34;size26&#34;&gt;2. B-tree 인덱스의 원리&lt;/h2&gt;
 &lt;h3 id=&#34;b-tree-인덱스의-자료구조-형태&#34; ke-size=&#34;size23&#34;&gt;▪ B-tree 인덱스의 자료구조 형태&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/6/img.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/6/img.png&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -17,7 +17,43 @@ Not null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가
 PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.
 B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)
 
-[PostgreSQL] B-tree 인덱스의 원리 및 특징"><meta name=author content="Jun Kang"><link rel=canonical href=http://localhost:1313/posts/21/><meta name=google-site-verification content="G-LE7D0WZLFJ"><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/21/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/21/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)"><meta property="og:description" content=" PostgreSQL 제약조건 (Constrant)란? 데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.
+[PostgreSQL] B-tree 인덱스의 원리 및 특징"><meta name=author content="Jun Kang"><link rel=canonical href=http://localhost:1313/posts/21/><meta name=google-site-verification content="G-LE7D0WZLFJ"><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/21/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/posts/21/"><meta property="og:title" content="[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check) | Jun Kang's Blog"><meta property="og:description" content="
+
+PostgreSQL 제약조건 (Constrant)란?
+데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.
+제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.
+ 
+1. Primary Keys(PK)
+2. Foreign Keys(FK)
+3. Check
+4. Not-null
+5. Unique
+1. Primary Keys (PK)
+
+Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.
+Not null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.
+PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.
+B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)
+
+[PostgreSQL] B-tree 인덱스의 원리 및 특징"><meta property="og:image" content="http://localhost:1313/images/posts/21/img.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:1313/posts/21/"><meta property="twitter:title" content="[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check) | Jun Kang's Blog"><meta property="twitter:description" content="
+
+PostgreSQL 제약조건 (Constrant)란?
+데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.
+제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.
+ 
+1. Primary Keys(PK)
+2. Foreign Keys(FK)
+3. Check
+4. Not-null
+5. Unique
+1. Primary Keys (PK)
+
+Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.
+Not null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.
+PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.
+B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)
+
+[PostgreSQL] B-tree 인덱스의 원리 및 특징"><meta property="twitter:image" content="http://localhost:1313/images/posts/21/img.png"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/21/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)"><meta property="og:description" content=" PostgreSQL 제약조건 (Constrant)란? 데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.
 제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다. 1. Primary Keys(PK)
 2. Foreign Keys(FK)
 3. Check

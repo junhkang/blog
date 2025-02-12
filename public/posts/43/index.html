@@ -13,7 +13,35 @@
 @Bean - 메서드를 모두 호출하여 반환된 객체를 스프링 컨테이너에 등록
  
 [자동]
-@ComponentScan - 해당 클레스클래스 패키지와 하위의 @Component, @Service, @Repository, @Controller 클래스를 탐색하여 빈등록 "><meta name=author content="Jun Kang"><link rel=canonical href=http://localhost:1313/posts/43/><meta name=google-site-verification content="G-LE7D0WZLFJ"><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/43/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/43/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[Spring] 스프링 컨테이너(Spring container)의 개념"><meta property="og:description" content=" 1. 스프링 컨테이너(Spring container)란? 스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.
+@ComponentScan - 해당 클레스클래스 패키지와 하위의 @Component, @Service, @Repository, @Controller 클래스를 탐색하여 빈등록 "><meta name=author content="Jun Kang"><link rel=canonical href=http://localhost:1313/posts/43/><meta name=google-site-verification content="G-LE7D0WZLFJ"><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/43/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/posts/43/"><meta property="og:title" content="[Spring] 스프링 컨테이너(Spring container)의 개념 | Jun Kang's Blog"><meta property="og:description" content="
+1. 스프링 컨테이너(Spring container)란?
+스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.
+
+객체의 생명주기 관리
+생성된 객체들의 추가적인 기능 제공
+
+스프링에서는 자바 객체를 빈(Bean)이라고 하며 컨테이너는 내부의 빈 라이프사이클(생성, 제거 등)을 하며 추가 기능을 제공한다. 기존 스프링에서는 xml 파일로 설정하나 스프링 부트에서는 자바 클래스에서 설정가능하다. 주요 설정으로는
+ 
+[수동]
+@Configuration - 어플리케이션 구성정보를 등록
+@Bean - 메서드를 모두 호출하여 반환된 객체를 스프링 컨테이너에 등록
+ 
+[자동]
+@ComponentScan - 해당 클레스클래스 패키지와 하위의 @Component, @Service, @Repository, @Controller 클래스를 탐색하여 빈등록 "><meta property="og:image" content="http://localhost:1313/images/posts/43/img.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:1313/posts/43/"><meta property="twitter:title" content="[Spring] 스프링 컨테이너(Spring container)의 개념 | Jun Kang's Blog"><meta property="twitter:description" content="
+1. 스프링 컨테이너(Spring container)란?
+스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.
+
+객체의 생명주기 관리
+생성된 객체들의 추가적인 기능 제공
+
+스프링에서는 자바 객체를 빈(Bean)이라고 하며 컨테이너는 내부의 빈 라이프사이클(생성, 제거 등)을 하며 추가 기능을 제공한다. 기존 스프링에서는 xml 파일로 설정하나 스프링 부트에서는 자바 클래스에서 설정가능하다. 주요 설정으로는
+ 
+[수동]
+@Configuration - 어플리케이션 구성정보를 등록
+@Bean - 메서드를 모두 호출하여 반환된 객체를 스프링 컨테이너에 등록
+ 
+[자동]
+@ComponentScan - 해당 클레스클래스 패키지와 하위의 @Component, @Service, @Repository, @Controller 클래스를 탐색하여 빈등록 "><meta property="twitter:image" content="http://localhost:1313/images/posts/43/img.png"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/43/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[Spring] 스프링 컨테이너(Spring container)의 개념"><meta property="og:description" content=" 1. 스프링 컨테이너(Spring container)란? 스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.
 객체의 생명주기 관리 생성된 객체들의 추가적인 기능 제공 스프링에서는 자바 객체를 빈(Bean)이라고 하며 컨테이너는 내부의 빈 라이프사이클(생성, 제거 등)을 하며 추가 기능을 제공한다. 기존 스프링에서는 xml 파일로 설정하나 스프링 부트에서는 자바 클래스에서 설정가능하다. 주요 설정으로는 [수동]
 @Configuration - 어플리케이션 구성정보를 등록
 @Bean - 메서드를 모두 호출하여 반환된 객체를 스프링 컨테이너에 등록 [자동]

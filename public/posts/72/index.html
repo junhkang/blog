@@ -88,7 +88,185 @@ text, varchar, char같이 길이 변경이 가능한 필드의 경우 값이 크
 삭제된 칼럼에 대해 새로 생성된 ROW도 내부적으로는 null 표시되지만, 추적을 위해 여전히 공간을 차지하여 최대 개수에 영향을 준다.
 
 2. 결론
-운영 단계에서 1억 개 이상의 테이블을 생성하거나 1000개가 넘는 칼럼의 테이블을 생성하는 일은 없을 것이고, 이러한 물리적 제약보다 자원의 한계 (용량 및 성능이슈)를 먼저 만날 것이기에 정확한 수치를 정확히 외울 필요는 없겠지만, 삭제된 칼럼들과 그 이후 생성된 ROW들이 내부적으로는 추적을 위해 해당 컬럼을 NULL로 저장하며, 이 과정에서 사용되는 NULL비트맵이 공간을 차지하기에 최대 카운트에 영향을 준다는 것 운영 시에 유의해야 할 내용이다.'><meta name=author content="Jun Kang"><link rel=canonical href=http://localhost:1313/posts/72/><meta name=google-site-verification content="G-LE7D0WZLFJ"><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/72/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/72/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] PostgreSQL의 물리적 한계치"><meta property="og:description" content=' 1. PostreSQL의 물리적 한계치 물론 사용 가능한 disk 용량, 성능 이슈 등 실직적인 제한이 먼저 적용되겠지만, 모든 자원이 충분하다고 가정할 때 물리적인 limit이다.
+운영 단계에서 1억 개 이상의 테이블을 생성하거나 1000개가 넘는 칼럼의 테이블을 생성하는 일은 없을 것이고, 이러한 물리적 제약보다 자원의 한계 (용량 및 성능이슈)를 먼저 만날 것이기에 정확한 수치를 정확히 외울 필요는 없겠지만, 삭제된 칼럼들과 그 이후 생성된 ROW들이 내부적으로는 추적을 위해 해당 컬럼을 NULL로 저장하며, 이 과정에서 사용되는 NULL비트맵이 공간을 차지하기에 최대 카운트에 영향을 준다는 것 운영 시에 유의해야 할 내용이다.'><meta name=author content="Jun Kang"><link rel=canonical href=http://localhost:1313/posts/72/><meta name=google-site-verification content="G-LE7D0WZLFJ"><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=http://localhost:1313/favicon.ico><link rel=icon type=image/png sizes=16x16 href=http://localhost:1313/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=http://localhost:1313/favicon-32x32.png><link rel=apple-touch-icon href=http://localhost:1313/apple-touch-icon.png><link rel=mask-icon href=http://localhost:1313/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=http://localhost:1313/posts/72/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:type" content="article"><meta property="og:url" content="http://localhost:1313/posts/72/"><meta property="og:title" content="[PostgreSQL] PostgreSQL의 물리적 한계치 | Jun Kang's Blog"><meta property="og:description" content='
+
+1. PostreSQL의 물리적 한계치
+물론 사용 가능한 disk 용량, 성능 이슈 등 실직적인 제한이 먼저 적용되겠지만, 모든 자원이 충분하다고 가정할 때 물리적인 limit이다.
+
+  
+      
+          항목
+          최대치
+      
+  
+  
+      
+          데이터베이스 사이즈
+          무제한
+      
+      
+          데이터베이스 수량
+          4,294,950,911
+      
+      
+          데이터베이스 당 Relations(테이블, 뷰, 인덱스 등의 테이블 객체)수량 
+          1,431,650,303
+      
+      
+          Relations 사이즈
+          32TB 
+      
+      
+          테이블 당 ROW 수량
+          4,294,967,295 pages영역의 크기에 해당하는 ROW
+      
+      
+          테이블 당 COL 수량
+          1,600
+      
+      
+          결과셋의 COL 수량
+          1,664
+      
+      
+          COL 사이즈
+          1GB
+      
+      
+          테이블 당 인덱스 수량
+          무제한
+      
+      
+          인덱스 당 컬럼
+          32
+      
+      
+          파티션 키
+          32
+      
+      
+          식별자 키 (ex, 테이블, ROW, COL 등의 명칭)
+          63 bytes
+      
+      
+          function의 매개변수
+          100
+      
+      
+          쿼리파라미터
+          65,535
+      
+      
+           
+          
+      
+  
+
+
+테이블당 ROW 수량은 4,294,967,295개의 pages 영역에 저장 가능한 ROWS로 제한되어 있는데, 4,294,967,295는 2^32 - 1로 32비트 시스템에서 사용가능한 최대 정수이다.  데이터베이스에서 최대로 관리할 수 있는 pages의 수며, 각 페이지에는 여러 튜플이 저장될 수 있다.
+테이블 당 인덱스의 수량은 이론상은 &ldquo;무제한"이제만, 실제로는 데이터베이스가 관리할 수 있는 최대 Relations (테이블, 뷰, 인덱스 등의 테이블 객체)에 의해 제한된다. 
+위 표의 인덱스 당 칼럼 수, 파티션 키 수량, 식별자 키, 함수 매개변수 최대 수량은 기본값이며 설정값을 변경하여 증가시킬 수 있다.
+테이블 당 최대 칼럼 수는 1600개이지만, 저장되는 튜플이 8192바이트의 힙 페이지에 fit 해야 한다는 조건 때문에 더 줄어들 수 있다. 예를 들어 튜플 헤더를 제외하고,
+
+1600개의 int칼럼 투플 - 6400 bytes로 힙페이지에 정상 저장 가능 (6400 < 8192)
+1600의 bigint칼럼 투플 - 12800 bytes로 heap page를 초과 (12800 < 8192)
+
+
+text, varchar, char같이 길이 변경이 가능한 필드의 경우 값이 크면 TOAST 테이블 영역이라 불리는 주 저장공간 외부영역에 값을 저장하고, 본래 테이블에는 해당 데이터를 가리키는 포인터만 남게 된다. 
+테이블에서 삭제된 칼럼들도 최대 칼럼 개수에 포함된다. 
+삭제된 칼럼에 대해 새로 생성된 ROW도 내부적으로는 null 표시되지만, 추적을 위해 여전히 공간을 차지하여 최대 개수에 영향을 준다.
+
+2. 결론
+운영 단계에서 1억 개 이상의 테이블을 생성하거나 1000개가 넘는 칼럼의 테이블을 생성하는 일은 없을 것이고, 이러한 물리적 제약보다 자원의 한계 (용량 및 성능이슈)를 먼저 만날 것이기에 정확한 수치를 정확히 외울 필요는 없겠지만, 삭제된 칼럼들과 그 이후 생성된 ROW들이 내부적으로는 추적을 위해 해당 컬럼을 NULL로 저장하며, 이 과정에서 사용되는 NULL비트맵이 공간을 차지하기에 최대 카운트에 영향을 준다는 것 운영 시에 유의해야 할 내용이다.'><meta property="og:image" content="http://localhost:1313/images/posts/72/img.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:1313/posts/72/"><meta property="twitter:title" content="[PostgreSQL] PostgreSQL의 물리적 한계치 | Jun Kang's Blog"><meta property="twitter:description" content='
+
+1. PostreSQL의 물리적 한계치
+물론 사용 가능한 disk 용량, 성능 이슈 등 실직적인 제한이 먼저 적용되겠지만, 모든 자원이 충분하다고 가정할 때 물리적인 limit이다.
+
+  
+      
+          항목
+          최대치
+      
+  
+  
+      
+          데이터베이스 사이즈
+          무제한
+      
+      
+          데이터베이스 수량
+          4,294,950,911
+      
+      
+          데이터베이스 당 Relations(테이블, 뷰, 인덱스 등의 테이블 객체)수량 
+          1,431,650,303
+      
+      
+          Relations 사이즈
+          32TB 
+      
+      
+          테이블 당 ROW 수량
+          4,294,967,295 pages영역의 크기에 해당하는 ROW
+      
+      
+          테이블 당 COL 수량
+          1,600
+      
+      
+          결과셋의 COL 수량
+          1,664
+      
+      
+          COL 사이즈
+          1GB
+      
+      
+          테이블 당 인덱스 수량
+          무제한
+      
+      
+          인덱스 당 컬럼
+          32
+      
+      
+          파티션 키
+          32
+      
+      
+          식별자 키 (ex, 테이블, ROW, COL 등의 명칭)
+          63 bytes
+      
+      
+          function의 매개변수
+          100
+      
+      
+          쿼리파라미터
+          65,535
+      
+      
+           
+          
+      
+  
+
+
+테이블당 ROW 수량은 4,294,967,295개의 pages 영역에 저장 가능한 ROWS로 제한되어 있는데, 4,294,967,295는 2^32 - 1로 32비트 시스템에서 사용가능한 최대 정수이다.  데이터베이스에서 최대로 관리할 수 있는 pages의 수며, 각 페이지에는 여러 튜플이 저장될 수 있다.
+테이블 당 인덱스의 수량은 이론상은 &ldquo;무제한"이제만, 실제로는 데이터베이스가 관리할 수 있는 최대 Relations (테이블, 뷰, 인덱스 등의 테이블 객체)에 의해 제한된다. 
+위 표의 인덱스 당 칼럼 수, 파티션 키 수량, 식별자 키, 함수 매개변수 최대 수량은 기본값이며 설정값을 변경하여 증가시킬 수 있다.
+테이블 당 최대 칼럼 수는 1600개이지만, 저장되는 튜플이 8192바이트의 힙 페이지에 fit 해야 한다는 조건 때문에 더 줄어들 수 있다. 예를 들어 튜플 헤더를 제외하고,
+
+1600개의 int칼럼 투플 - 6400 bytes로 힙페이지에 정상 저장 가능 (6400 < 8192)
+1600의 bigint칼럼 투플 - 12800 bytes로 heap page를 초과 (12800 < 8192)
+
+
+text, varchar, char같이 길이 변경이 가능한 필드의 경우 값이 크면 TOAST 테이블 영역이라 불리는 주 저장공간 외부영역에 값을 저장하고, 본래 테이블에는 해당 데이터를 가리키는 포인터만 남게 된다. 
+테이블에서 삭제된 칼럼들도 최대 칼럼 개수에 포함된다. 
+삭제된 칼럼에 대해 새로 생성된 ROW도 내부적으로는 null 표시되지만, 추적을 위해 여전히 공간을 차지하여 최대 개수에 영향을 준다.
+
+2. 결론
+운영 단계에서 1억 개 이상의 테이블을 생성하거나 1000개가 넘는 칼럼의 테이블을 생성하는 일은 없을 것이고, 이러한 물리적 제약보다 자원의 한계 (용량 및 성능이슈)를 먼저 만날 것이기에 정확한 수치를 정확히 외울 필요는 없겠지만, 삭제된 칼럼들과 그 이후 생성된 ROW들이 내부적으로는 추적을 위해 해당 컬럼을 NULL로 저장하며, 이 과정에서 사용되는 NULL비트맵이 공간을 차지하기에 최대 카운트에 영향을 준다는 것 운영 시에 유의해야 할 내용이다.'><meta property="twitter:image" content="http://localhost:1313/images/posts/72/img.png"><script async src="https://www.googletagmanager.com/gtag/js?id=G-LE7D0WZLFJ"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-LE7D0WZLFJ")}</script><meta property="og:url" content="http://localhost:1313/posts/72/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[PostgreSQL] PostgreSQL의 물리적 한계치"><meta property="og:description" content=' 1. PostreSQL의 물리적 한계치 물론 사용 가능한 disk 용량, 성능 이슈 등 실직적인 제한이 먼저 적용되겠지만, 모든 자원이 충분하다고 가정할 때 물리적인 limit이다.
 항목 최대치 데이터베이스 사이즈 무제한 데이터베이스 수량 4,294,950,911 데이터베이스 당 Relations(테이블, 뷰, 인덱스 등의 테이블 객체)수량 1,431,650,303 Relations 사이즈 32TB 테이블 당 ROW 수량 4,294,967,295 pages영역의 크기에 해당하는 ROW 테이블 당 COL 수량 1,600 결과셋의 COL 수량 1,664 COL 사이즈 1GB 테이블 당 인덱스 수량 무제한 인덱스 당 컬럼 32 파티션 키 32 식별자 키 (ex, 테이블, ROW, COL 등의 명칭) 63 bytes function의 매개변수 100 쿼리파라미터 65,535 테이블당 ROW 수량은 4,294,967,295개의 pages 영역에 저장 가능한 ROWS로 제한되어 있는데, 4,294,967,295는 2^32 - 1로 32비트 시스템에서 사용가능한 최대 정수이다. 데이터베이스에서 최대로 관리할 수 있는 pages의 수며, 각 페이지에는 여러 튜플이 저장될 수 있다. 테이블 당 인덱스의 수량은 이론상은 “무제한"이제만, 실제로는 데이터베이스가 관리할 수 있는 최대 Relations (테이블, 뷰, 인덱스 등의 테이블 객체)에 의해 제한된다. 위 표의 인덱스 당 칼럼 수, 파티션 키 수량, 식별자 키, 함수 매개변수 최대 수량은 기본값이며 설정값을 변경하여 증가시킬 수 있다. 테이블 당 최대 칼럼 수는 1600개이지만, 저장되는 튜플이 8192바이트의 힙 페이지에 fit 해야 한다는 조건 때문에 더 줄어들 수 있다. 예를 들어 튜플 헤더를 제외하고, 1600개의 int칼럼 투플 - 6400 bytes로 힙페이지에 정상 저장 가능 (6400 < 8192) 1600의 bigint칼럼 투플 - 12800 bytes로 heap page를 초과 (12800 < 8192) text, varchar, char같이 길이 변경이 가능한 필드의 경우 값이 크면 TOAST 테이블 영역이라 불리는 주 저장공간 외부영역에 값을 저장하고, 본래 테이블에는 해당 데이터를 가리키는 포인터만 남게 된다. 테이블에서 삭제된 칼럼들도 최대 칼럼 개수에 포함된다. 삭제된 칼럼에 대해 새로 생성된 ROW도 내부적으로는 null 표시되지만, 추적을 위해 여전히 공간을 차지하여 최대 개수에 영향을 준다. 2. 결론 운영 단계에서 1억 개 이상의 테이블을 생성하거나 1000개가 넘는 칼럼의 테이블을 생성하는 일은 없을 것이고, 이러한 물리적 제약보다 자원의 한계 (용량 및 성능이슈)를 먼저 만날 것이기에 정확한 수치를 정확히 외울 필요는 없겠지만, 삭제된 칼럼들과 그 이후 생성된 ROW들이 내부적으로는 추적을 위해 해당 컬럼을 NULL로 저장하며, 이 과정에서 사용되는 NULL비트맵이 공간을 차지하기에 최대 카운트에 영향을 준다는 것 운영 시에 유의해야 할 내용이다.'><meta property="og:locale" content="ko"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-03-18T15:00:18+00:00"><meta property="article:modified_time" content="2024-03-18T15:00:18+00:00"><meta property="article:tag" content="PostgreSQL"><meta name=twitter:card content="summary"><meta name=twitter:title content="[PostgreSQL] PostgreSQL의 물리적 한계치"><meta name=twitter:description content='
 
 1. PostreSQL의 물리적 한계치

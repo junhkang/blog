@@ -59,4 +59,53 @@ document.addEventListener('DOMContentLoaded', function() {
     socialIcons.appendChild(counterDiv);
 });
 </script>
+{{ end }}
+
+<!-- Google Analytics -->
+{{ with .Site.Params.googleAnalytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>
+{{ end }}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta property="og:description" content="{{- with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{- .Site.Params.description -}}{{ end }}{{ end -}}">
+{{ with .Params.cover }}
+    {{ with .image }}
+        <meta property="og:image" content="{{ . | absURL }}">
+    {{ end }}
+{{ else }}
+    {{ $images := findRE "!\\[.*?\\]\\((.*?)\\)" .RawContent 1 }}
+    {{ if ge (len $images) 1 }}
+        {{ $image := index $images 0 | replaceRE "!\\[.*?\\]\\((.*?)\\)" "$1" | replaceRE "\n" "" | string }}
+        <meta property="og:image" content="{{ $image | absURL }}">
+    {{ else }}
+        <meta property="og:image" content="{{ .Site.Params.defaultImage | absURL }}">
+    {{ end }}
+{{ end }}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta property="twitter:description" content="{{- with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{- .Site.Params.description -}}{{ end }}{{ end -}}">
+{{ with .Params.cover }}
+    {{ with .image }}
+        <meta property="twitter:image" content="{{ . | absURL }}">
+    {{ end }}
+{{ else }}
+    {{ $images := findRE "!\\[.*?\\]\\((.*?)\\)" .RawContent 1 }}
+    {{ if ge (len $images) 1 }}
+        {{ $image := index $images 0 | replaceRE "!\\[.*?\\]\\((.*?)\\)" "$1" | replaceRE "\n" "" | string }}
+        <meta property="twitter:image" content="{{ $image | absURL }}">
+    {{ else }}
+        <meta property="twitter:image" content="{{ .Site.Params.defaultImage | absURL }}">
+    {{ end }}
 {{ end }} 

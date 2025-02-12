@@ -20,13 +20,15 @@ minifyOutput = true
 
 [params]
   author = "Jun Kang"
-  description = ""
+  description = "AI와 빅데이터로 건설업계의 디지털 혁신을 이끄는 산업의 역군 Jun Kang입니다. 대규모 데이터 처리, DB 최적화, 확장 가능한 시스템 구축에 관심이 많으며, 건강한 개발 문화를 만들어가고 있습니다."
   github = "https://github.com/junhkang"
   linkedin = "https://www.linkedin.com/in/junh-kang"
   env = "production"  # GA 작동을 위한 환경 설정
   favicon = "favicon.ico"
   hideFooter = true       # 전체 푸터를 숨기거나
   hideMadeWithHugo = true  # Hugo 워터마크만 숨기기
+  defaultImage = "/images/og_img.jpg"  # 기본 OG 이미지 경로
+  keywords = ["개발", "백엔드", "클라우드", "DevOps", "데이터베이스", "산군"]  # 배열 형태로 변경
 
 
 [params.analytics.google]

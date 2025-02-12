@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Expain  - PostgreSQL  - 성능향상 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/expain----postgresql----%EC%84%B1%EB%8A%A5%ED%96%A5%EC%83%81/</link>
+    <description>Recent content in Expain  - PostgreSQL  - 성능향상 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/expain----postgresql----%EC%84%B1%EB%8A%A5%ED%96%A5%EC%83%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 쿼리 성능향상 (실행계획 보는 법, 상세 확인방법, Explain의 어떤 지표를 봐야할까?)</title>
+      <link>http://localhost:1313/posts/26/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/26/</guid>
+      <description>&lt;p&gt;&lt;code&gt;--Synopsis EXPLAIN [ ( option [, ...] ) ] 쿼리문 EXPLAIN [ ANALYZE ] [ VERBOSE ] 쿼리문 option 자리에 사용할 수 있는 것들: ANALYZE [ boolean ] VERBOSE [ boolean ] COSTS [ boolean ] BUFFERS [ boolean ] TIMING [ boolean ] FORMAT { TEXT | XML | JSON | YAML }&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;이후 설명에서 사용될 테스트 데이터는 아래의 &amp;ldquo;7. 테스트 데이터 생성&amp;rdquo; 부분 쿼리 확인&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-explain이란&#34;&gt;2. EXPLAIN이란?&lt;/h2&gt;
+&lt;p&gt;EXPLAIN을 통한 실행 계획 확인은 PostgreSQL PLANNER가 만든 쿼리 플랜을 보여준다. 조건에 부합하는 자료를 찾기 위해 어떤 테이블 및 인덱스를 조회하는지, 어떤 SCAN 방식을 사용하는지, 각 테이블별 조인 알고리즘은 어떤 것을 사용하는지를 보여준다.
+&lt;code&gt;EXPLAIN ANALYZE SELECT * from TEST_EXPLAIN;&lt;/code&gt;
+![](/images/posts/26/스크린샷 2023-10-12 오후 4.44.59.png)
+테스트 테이블의 100만개의 행을 조건 없이 조회했을 때의 플랜 조회이다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

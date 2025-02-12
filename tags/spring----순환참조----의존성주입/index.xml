@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Spring  - 순환참조  - 의존성주입 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/spring----%EC%88%9C%ED%99%98%EC%B0%B8%EC%A1%B0----%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85/</link>
+    <description>Recent content in Spring  - 순환참조  - 의존성주입 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 17 Nov 2023 14:36:15 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/spring----%EC%88%9C%ED%99%98%EC%B0%B8%EC%A1%B0----%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[Spring\\] 순환참조란? The dependencies of some of the beans in the application context form a cycle
+</title>
+      <link>http://localhost:1313/posts/47/</link>
+      <pubDate>Fri, 17 Nov 2023 14:36:15 +0000</pubDate>
+      <guid>http://localhost:1313/posts/47/</guid>
+      <description>&lt;h2 id=&#34;spring-순환참조란-the-dependencies-of-some-of-the-beans-in-the-application-context-form-a-cycle&#34;&gt;[Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle&lt;/h2&gt;
+&lt;p&gt;Spring&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/47/img.png&#34; /&gt; &lt;/span&gt;
+&lt;figcaption&gt;출처: https://ch4njun.tistory.com/269&lt;/figcaption&gt;
+&lt;/figure&gt;
+## 1. 순환참조란?
+&lt;span style=&#34;color: #333333; text-align: start;&#34;&gt;순환참조는 맞물린 의존성 주입 (DI) 상태에서 어떤 빈을 먼저 생성할지 결정하지 못해서 생기에 발생한다. BeanA에서 BeanB를 참조(BeanA-\&gt;BeanB) 일 경우 스프링은 &lt;/span&gt;BeanB를 먼저 생성 후 BeanA를 생성하기에, BeanB에서 다시 BeanA를 참조할 경우 (BeanA-\&gt;BeanB-\&gt;BeanA) 순환 참조가 발생하게된다. 
+## &lt;span style=&#34;color: #37352f;&#34;&gt;&lt;span style=&#34;background-color: #ffffff;&#34;&gt;2. 의존성 주입 &lt;/span&gt;&lt;/span&gt;
+의존성 주입의 3가지 상황 (&lt;span style=&#34;background-color: #ffffff; color: #37352f; text-align: start;&#34;&gt;생성자 주입방식, 필드 주입방식, Setter주입)에서 순환참조가 발생할수 있다. 다음 포스트&lt;/span&gt;&lt;span style=&#34;background-color: #ffffff;&#34;&gt; 각각의 상세 내용을 확인할 수 있고, &lt;span style=&#34;background-color: #ffffff; color: #333333; text-align: start;&#34;&gt;이번 포스트에서는 각각의 경우에 순환참조가 발생하면 어떤 차이점이 있는지 확인해 보자.&lt;/span&gt;&lt;/span&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/42&#34; style=&#34;background-color: #e6f5ff; color: #0070d1; text-align: start;&#34;&gt;2023.11.06 - [Spring] - [Spring] IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&lt;/a&gt;
+&lt;figure id=&#34;og_1700199093227&#34; style=&#34;color: #333333; text-align: start;&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/baheK9/hyUytMCIHi/CasZjIBANKAFMtLMfkKKik/img.png?width=800&amp;amp;height=342&amp;amp;face=0_0_800_342,https://scrap.kakaocdn.net/dn/byY92Y/hyUyuEK7pC/3tSsPgVkoup3Qi5xKB4PQ1/img.png?width=800&amp;amp;height=342&amp;amp;face=0_0_800_342,https://scrap.kakaocdn.net/dn/blRXTd/hyUyuLwXV8/3jlcUZD0lAAa8xTAasCdOK/img.png?width=849&amp;amp;height=363&amp;amp;face=0_0_849_363&#34; data-og-url=&#34;https://junhkang.tistory.com/42&#34; data-og-source-url=&#34;https://junhkang.tistory.com/42&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-description=&#34;1. IoC (Inversion of Control) 제어의 역전 IoC란 메인 프로그램에서 컨테이너나 프레임워크로 객체와 객체의 의존성에 대한 제어를 넘기는 것을 말한다. 프레임워크 없이 개발할 때는 각 객체에 대한&#34; data-og-title=&#34;[Spring] IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&#34; data-og-type=&#34;article&#34; data-ke-align=&#34;alignCenter&#34; data-ke-type=&#34;opengraph&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/42&#34; style=&#34;color: #000000;&#34; data-source-url=&#34;https://junhkang.tistory.com/42&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[Spring] IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

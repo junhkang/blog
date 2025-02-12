@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Bean  - Spring  - Spring on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/bean----spring----spring/</link>
+    <description>Recent content in Bean  - Spring  - Spring on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/bean----spring----spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] 스프링 컨테이너(Spring container)의 개념</title>
+      <link>http://localhost:1313/posts/43/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/43/</guid>
+      <description>&lt;p&gt;스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;객체의 생명주기 관리&lt;/li&gt;
+&lt;li&gt;생성된 객체들의 추가적인 기능 제공
+스프링에서는 자바 객체를 빈(Bean)이라고 하며 컨테이너는 내부의 빈 라이프사이클(생성, 제거 등)을 하며 추가 기능을 제공한다. 기존 스프링에서는 xml 파일로 설정하나 스프링 부트에서는 자바 클래스에서 설정가능하다. 주요 설정으로는
+[수동]
+@Configuration - 어플리케이션 구성정보를 등록
+@Bean - 메서드를 모두 호출하여 반환된 객체를 스프링 컨테이너에 등록
+[자동]
+@ComponentScan - 해당 클레스클래스 패키지와 하위의 @Component, @Service, @Repository, @Controller 클래스를 탐색하여 빈등록
+@Component - 스프링 런타임시 자동으로 빈을 찾아 등록
+이전 포스트의 IoC는 스프링 빈들의 생명 주기를 관리하기 위해 사용하며, 스프링 컨테이너는 DI(의존성 주입)이 이루어진 빈들을 BeanFactory, ApplicationContext 2개의 컨테이너로 제어하고 관리한다.
+&lt;a href=&#34;https://junhkang.tistory.com/42&#34;&gt;2023.11.06 - [Spring] - [Spring] IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&lt;/a&gt;
+[Spring] IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;IoC (Inversion of Control) 제어의 역전 IoC란 메인 프로그램에서 컨테이너나 프레임워크로 객체와 객체의 의존성에 대한 제어를 넘기는 것을 말한다. 프레임워크 없이 개발할 때는 각 객체에 대한
+junhkang.tistory.com
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/43/img.png&#34;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;2-왜-스프링-컨테이너를-사용할까&#34;&gt;2. 왜 스프링 컨테이너를 사용할까?&lt;/h2&gt;
+&lt;p&gt;자바 코드를 작성시 new생성자를 통해 객체를 매번 생성할 경우, 객체 간의 참조가 많아지고 의존성이 높아지게 된다. 이는 객체 지향 프로그램 원칙에 위배되며 객체 간의 의존성 및 결합도를 낮추기 위해 스프링 컨테이너가 사용된다. 스프링 컨테이너는 구현 클래스의 의존성을 제거하고 인터페이스에만 의존하도록 설계 가능하도록 한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

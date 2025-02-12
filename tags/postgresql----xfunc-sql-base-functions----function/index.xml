@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PostgreSQL  - XFUNC-SQL-BASE-FUNCTIONS  - Function on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/postgresql----xfunc-sql-base-functions----function/</link>
+    <description>Recent content in PostgreSQL  - XFUNC-SQL-BASE-FUNCTIONS  - Function on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/postgresql----xfunc-sql-base-functions----function/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 함수(Function)의 정의 및 상세 사용법 (다양한 예제)</title>
+      <link>http://localhost:1313/posts/46/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/46/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;SQL 함수는 임의의 SQL문들을 실행하고 마지막 쿼리의 결과를 반환한다. 단순한 형태의 함수는 마지막 쿼리의 첫 번째 row가 리턴된다. (order by 를 사용하지 않는 경우 다중 row의 첫 번째 행은 별도 정의되지 않기에 결과 row가 매번 다를 수 있다.)&lt;/li&gt;
+&lt;li&gt;마지막 쿼리가 row를 하나도 반환하지 않을 경우 null이 리턴된다.&lt;/li&gt;
+&lt;li&gt;SQL 함수는 함수의 리턴 유형을 특정 타입의 집합 (SET)으로 선언하거나, 테이블로 선언하여 반환할 수 있다. 이 경우에는 마지막 쿼리의 모든 ROW가 리턴된다.&lt;/li&gt;
+&lt;li&gt;SQL함수의 body는 세미콜론(;)으로 구분된 SQL구문의 집합이어야만 한다.&lt;/li&gt;
+&lt;li&gt;마지막 구문 뒤의 세미콜론(;)은 생략하여도된다.&lt;/li&gt;
+&lt;li&gt;함수가 void를 리턴하는 것으로 선언되지 않았다면, 마지막 구문은 반환절이 존재하는 select, insert, update, delete 여야만 한다.&lt;/li&gt;
+&lt;li&gt;모든 종류의 SQL 언어의 명령 모음은 패키징 되어 함수로 정의될 수 있다.&lt;/li&gt;
+&lt;li&gt;select쿼리 외에도 insert, update, delete, merge 등의 데이터 수정쿼리 및 기타 SQL을 포함할 수 있지만, 트랜잭션 제어 명령( ex. commit, savepoint) 및 vacutaion 등의 일부 유틸리티 명령은 사용할 수 없다.&lt;/li&gt;
+&lt;li&gt;SQL이 작동은 하지만 특정 값을 리턴하지 않는 SQL 함수를 정의하고 싶다면, void를 리턴하는 것으로 정의할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-1-1-function-간단-예시&#34;&gt;▶ 1-1. Function 간단 예시&lt;/h3&gt;
+&lt;h2 id=&#34;clean_emp&#34;&gt;다음은 emp 테이블에서 음수의 salary를 삭제하는 함수이다.
+`CREATE FUNCTION clean_emp() RETURNS void AS &#39;
+DELETE FROM emp
+WHERE salary &amp;lt; 0;
+&amp;rsquo; LANGUAGE SQL;
+SELECT clean_emp();
+clean_emp&lt;/h2&gt;
+&lt;p&gt;(1 row)&lt;code&gt;리턴 타입이 없는 문제를 해결하기 위해 프러시저로도 실행이 가능하다.&lt;/code&gt;CREATE PROCEDURE clean_emp() AS &#39;
+DELETE FROM emp
+WHERE salary &amp;lt; 0;
+&amp;rsquo; LANGUAGE SQL;
+CALL clean_emp();`
+이처럼 단순한 케이스에서 리턴값이 없는 함수와 프러시저는 작성 스타일 외에는 없어보인다. 하지만 프로시져는 transaction 컨트롤 등 추가적인 기능을 제공한다. 또한 프러시저가 SQL 표준이므로 return 값이 없는 경우 프러시저를 사용해야 한다.
+함수와 프러시저의 차이는 다음 포스트에서 확인이 가능하다.
+&lt;a href=&#34;https://junhkang.tistory.com/3&#34;&gt;2023.09.08 - [Postgresql] - [PostgreSQL] Trigger, Procedure, Function (history 관리하기)&lt;/a&gt;
+[PostgreSQL] Trigger, Procedure, Function (history 관리하기)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

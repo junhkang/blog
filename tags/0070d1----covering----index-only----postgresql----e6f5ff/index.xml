@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>0070d1  - Covering  - Index-Only  - PostgreSQL  - E6f5ff on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/0070d1----covering----index-only----postgresql----e6f5ff/</link>
+    <description>Recent content in 0070d1  - Covering  - Index-Only  - PostgreSQL  - E6f5ff on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/0070d1----covering----index-only----postgresql----e6f5ff/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] Index-Only 스캔과 Covering 인덱스, Index-only스캔의 효율적인 사용</title>
+      <link>http://localhost:1313/posts/70/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/70/</guid>
+      <description>&lt;p&gt;PostgreSQL의 모든 인덱스는 &amp;ldquo;보조(Secondary)&amp;rdquo; 인덱스이다. 각 인덱스는 테이블의 메인 데이터 영역(테이블의 heap 영역)과 분리되어서 저장된다. 그렇기 때문에 일반적인 인덱스 스캔에서 각 ROW를 찾기 위해서는, index와 heap 영역 모두에 접근하여 데이터를 탐색해야 한다. 보통 WHERE 절 조건에 부합하는 데이터들은&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;인덱스 영역 - 서로 가까이 존재하여 정렬된 순서로 빠르게 접근할 수 있다. (인덱스 테이블은 정렬된 상태로 생성)&lt;/li&gt;
+&lt;li&gt;heap 영역 -  특별한 규칙 없이 어디에서든 분포할 수 있기에 heap 영역을 스캔할 때는 무작위로 접근하게 되어 속도가 느리다.
+이 퍼포먼스 문제를 해결하기 위해 PostgreSQL은 힙 영역에 대한 접근 없이 인덱스 내에서만 데이터를 조회하는 Index-only 스캔을 지원한다. 기본 개념은 말 그대로 heap 영역의 참조 없이 index 항목에서 바로 값을 반환하는 것으로 매우 효율적으로 보이지만 몇 가지 제한사항이 있다.&lt;/li&gt;
+&lt;li&gt;칼럼에 적용된 인덱스 유형이 Index-only 스캔을 지원해야 한다. (B-tree인덱스는 언제나 지원하고, GiST, SP-GiST는 특정 연산자에 한해서만 지원, 나머지 3가지 인덱스는 지원하지 않는다.)&lt;/li&gt;
+&lt;li&gt;인덱스가 각 항목에 대해 원래 데이터 값을 물리적으로 온전히 저장하거나 재구성할 수 있어야 한다. 예를 들어 GIN인덱스가 Index-only 스캔을 지원하지 않는 이유는 각 인덱스가 실제 데이터의 물리적인 값이 아닌 일부 특징 (ex. 최대, 최솟값)만을 가지고 있는 유형의 인덱스 이기 때문이다.&lt;/li&gt;
+&lt;li&gt;실행되는 쿼리가 인덱스로 설정된 칼럼만을 조건절에 참조해야 한다. 예를 들어 x, y칼럼에 인덱스가 설정되어 있고, z 칼럼에 인덱스가 설정되어 있지 않다면, 다음 쿼리는 index-only 스캔을 사용할 수 있다.
+&lt;code&gt;SELECT x, y FROM tab WHERE x = &#39;key&#39;; SELECT x FROM tab WHERE x = &#39;key&#39; AND y 반면에 다음 쿼리는 인덱스가 적용되지 않은 z 칼럼이 조건절, 혹은 target에 포함되어 있기에 index-only 스캔 사용이 불가능하다. &lt;/code&gt;SELECT x, z FROM tab WHERE x = &amp;lsquo;key&amp;rsquo;;
+SELECT x FROM tab WHERE x = &amp;lsquo;key&amp;rsquo; AND z
+이 조건들에 부합하면, 쿼리의 결과에 해당하는 데이터가 인덱스 영역 내에 모두 존재한다는 것이기에 Index-only 스캔이 가능하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2-visiblity&#34;&gt;2. Visiblity&lt;/h2&gt;
+&lt;p&gt;위의 조건에 부합하여 Index-only 스캔이 가능하더라도, 효율적인 스캔을 위해 PostgreSQL에서는 테이블 검색에 대한 추가 요구 사항이 있다. 바로 검색 결과의 각 ROW가 쿼리의 MVCC 스냅숏에 &amp;ldquo;보이는지(visible)&amp;ldquo;이다. MVCC는 PostgreSQL에서 동시성을 지원하는 원칙이며 (상세 내용은 다음 링크 참고 - &lt;a href=&#34;https://junhkang.tistory.com/15&#34;&gt;2023.10.06 - [Postgresql] - [PostgreSQL] MVCC (Multi-Version Concurrency Control)&lt;/a&gt;)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

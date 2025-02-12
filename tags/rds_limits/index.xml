@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RDS_Limits on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/rds_limits/</link>
+    <description>Recent content in RDS_Limits on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/rds_limits/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[AWS] RDS 적정 인스턴스 선택, 비용 최적화</title>
+      <link>http://localhost:1313/posts/27/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/27/</guid>
+      <description>&lt;p&gt;RDS는 클라우드에서 데이터베이스를 쉽게 설정, 운영 및 확장할 수 있는 완전관리형 오픈소스 관계형 데이터베이스이다.&lt;/p&gt;
+&lt;p&gt;온디맨드, 혹은 예약형 인스턴스 구매로 유연한 데이터베이스 관리가 가능하며 스토리지 및 메모리 등의 설정에 따라 금액이 달라진다.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;RDS 비용을 결정하는 요소&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DB 인스턴스 가용시간 - 1초 단위로 청구되며 1회 최소 10분 과금&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;스토리지 (월별 GB당) - DB인스턴스에 프로비저닝 한 스토리지 용량&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;월별 I/O - 총 스토리지 I/O 요청 수&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;백업 스토리지 - 자동 데이터베이스 백업 및 모든 데이터베이스 스냅샷과 연결된 스토리지&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

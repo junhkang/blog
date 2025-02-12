@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Index  - PostgreSQL  - 미사용  - 인덱스 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/index----postgresql----%EB%AF%B8%EC%82%AC%EC%9A%A9----%EC%9D%B8%EB%8D%B1%EC%8A%A4/</link>
+    <description>Recent content in Index  - PostgreSQL  - 미사용  - 인덱스 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 06 Oct 2023 16:52:50 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index----postgresql----%EB%AF%B8%EC%82%AC%EC%9A%A9----%EC%9D%B8%EB%8D%B1%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[PostgreSQL\\] 미사용 인덱스(INDEX) 찾기 및 삭제, 성능향상
+</title>
+      <link>http://localhost:1313/posts/14/</link>
+      <pubDate>Fri, 06 Oct 2023 16:52:50 +0000</pubDate>
+      <guid>http://localhost:1313/posts/14/</guid>
+      <description>&lt;h2 id=&#34;postgresql-미사용-인덱스index-찾기-및-삭제-성능향상&#34;&gt;[PostgreSQL] 미사용 인덱스(INDEX) 찾기 및 삭제, 성능향상&lt;/h2&gt;
+&lt;p&gt;Postgresql&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/14/img.png&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## 1. 인덱스(INDEX) 상세 개념
+&lt;a href=&#34;https://junhkang.tistory.com/5&#34; style=&#34;background-color: #e6f5ff; color: #0070d1; text-align: start;&#34;&gt;2023.09.12 - [Postgresql] - [PostgreSQL] 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/a&gt;
+&lt;figure id=&#34;og_1696578218603&#34; contenteditable=&#34;false&#34; data-ke-type=&#34;opengraph&#34; data-ke-align=&#34;alignCenter&#34; data-og-type=&#34;article&#34; data-og-title=&#34;[PostgreSQL]  인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&#34; data-og-description=&#34;1. 인덱스 컨트롤 1-1. 인덱스 조회 SELECT * FROM pg_indexes WHERE tablename = &amp;#39;{테이블명}&amp;#39;; -- 테이블명에 &amp;#39;&amp;#39; 필요 1-2. 인덱스 생성 -- 단일 인덱스 CREATE INDEX {인덱스명} ON {테이블명} USING btree({컬럼명}); -- 결&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-source-url=&#34;https://junhkang.tistory.com/5&#34; data-og-url=&#34;https://junhkang.tistory.com/5&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/jT5Qk/hyT9EmVxjM/GA1iVbWPMbxiVrWAzZr031/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/d4cQIN/hyT9MFgMhu/2yuDdfFuMgPf2k0Es5V9pk/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/bhivgz/hyT54ALOhJ/AyiFaRfKiZQeC4AjysLIWK/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-source-url=&#34;https://junhkang.tistory.com/5&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[PostgreSQL] 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

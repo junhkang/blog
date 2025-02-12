@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>F8f8f8 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/f8f8f8/</link>
+    <description>Recent content in F8f8f8 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/f8f8f8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] Switch와 else-if의 효율성 비교 (Switch와 else-if 중에 어떤 걸 사용해야 할까?)</title>
+      <link>http://localhost:1313/posts/36/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/36/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Java] 자바 스트림(Streams)의 개념과 사용 방법</title>
+      <link>http://localhost:1313/posts/56/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/56/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Linux] JDK 여러 버전 적용하기, 여러개의 패키지 관리하기 (update-alternatives)</title>
+      <link>http://localhost:1313/posts/60/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/60/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Linux] 스왑 메모리(Swap Memory)의 개념과 적용방법</title>
+      <link>http://localhost:1313/posts/34/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/34/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 2단계 커밋 프로토콜(Two-Phase Commit Protocol), Prepare transaction</title>
+      <link>http://localhost:1313/posts/68/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/68/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] CREATE TABLE AS (결과물을 테이블로)</title>
+      <link>http://localhost:1313/posts/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/24/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] DISK(디스크) 사용량 모니터링</title>
+      <link>http://localhost:1313/posts/74/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/74/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] RDS 쿼리 성능 분석 방법 : pg_stat_statements 설치, 고려사항 및 주요 지표</title>
+      <link>http://localhost:1313/posts/94/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] SP-GiST인덱스의 원리 및 특징</title>
+      <link>http://localhost:1313/posts/9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] TOAST (The Oversized-Attribute Storage Technique)의 개념, PostgreSQL의 대용량 속성 저장 기법</title>
+      <link>http://localhost:1313/posts/75/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/75/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] UNION, INTERSECT, EXCEPT, SQL 쿼리 결합의 개념, 사용법 및 주의사항</title>
+      <link>http://localhost:1313/posts/83/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/83/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] Vacuum 개념 및 적절한 사용</title>
+      <link>http://localhost:1313/posts/17/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/17/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 고급 GROUPING 전략 : SETS, CUBE, ROLLUP의 개념, 효과적인 사용법 및 주의사항</title>
+      <link>http://localhost:1313/posts/84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/84/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 데이터베이스 상속(Inheritance)의 개념과 사용법 및 성능비교 (Inherits, Only)</title>
+      <link>http://localhost:1313/posts/39/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/39/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 명시적 JOIN 절로 플래너(Planner) 제어, 성능 향상</title>
+      <link>http://localhost:1313/posts/44/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/44/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 외래키(Foreign Keys) 개념, 사용법, 장단점, 적용검토</title>
+      <link>http://localhost:1313/posts/64/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/64/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)</title>
+      <link>http://localhost:1313/posts/21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/21/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용</title>
+      <link>http://localhost:1313/posts/20/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/20/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 페이징 : OFFSET과 LIMIT의 올바른 사용과 주의점</title>
+      <link>http://localhost:1313/posts/82/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/82/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Spring] 단위 테스트, JUnit의 개념 및 단위 테스트 코드 작성 방법</title>
+      <link>http://localhost:1313/posts/45/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/45/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Spring] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)</title>
+      <link>http://localhost:1313/posts/32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/32/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Spring] 스프링부트 &#43; Mybatis 데이터소스 여러개 연결 (스프링 다중 데이터베이스 연결)</title>
+      <link>http://localhost:1313/posts/33/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/33/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[WEB] JWT 토큰 인증의 개념과 장단점</title>
+      <link>http://localhost:1313/posts/41/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/41/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용</title>
+      <link>http://localhost:1313/posts/93/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/93/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[디자인패턴] 전략(Strategy) 패턴의 개념, 예제, 장단점, 활용</title>
+      <link>http://localhost:1313/posts/87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/87/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[디자인패턴] 컴포지트(Composite) 패턴의 개념, 예제, 장단점, 활용</title>
+      <link>http://localhost:1313/posts/63/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/63/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[이펙티브 자바] 1. 생성자 대신 정적 팩터리 메서드를 고려하라</title>
+      <link>http://localhost:1313/posts/53/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/53/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[이펙티브 자바] 3. private 생성자나 열거 타입으로 싱글턴임을 보장하라</title>
+      <link>http://localhost:1313/posts/55/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/55/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[이펙티브 자바] 6. 불필요한 객체 생성을 피하라</title>
+      <link>http://localhost:1313/posts/77/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/77/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

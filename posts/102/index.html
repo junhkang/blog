@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>모듈러 RAG(Modular RAG): 유연한 AI 애플리케이션을 위한 차세대 아키텍처 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+모듈러 RAG(Modular RAG): 유연한 AI 애플리케이션을 위한 차세대 아키텍처
+::: box-info
+LLM
+2024-11-09 11:22:47
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+모듈러 RAG(Modular Retrieval-Augmented Generation)는 기존의
+RAG(Retrieval-Augmented Generation) 모델을 더욱 유연하고 효율적으로
+구성할 수 있도록 설계된 접근 방식입니다. RAG는 외부 데이터에서 정보를
+검색(Retrieval)하고 이를 바탕으로 생성(Generation)하는 구조로, 최신
+정보에 기반한 고정밀 응답을 생성할 수 있는 장점이 있습니다. 그러나 기존
+RAG 모델은 모든 응답 과정이 하나의 구조 안에서 일괄적으로 이루어지기
+때문에, 특정 워크플로우에 최적화된 처리가 어려울 수 있습니다. 이 한계를
+해결하기 위해 모듈러 RAG가 등장했습니다.
+
+모듈러 RAG는 기본적으로 RAG의 검색과 생성 단계를 독립된 모듈로 분리하고,
+각각을 개별적으로 설정하거나 교체할 수 있는 구조를 제공합니다. 이렇게
+함으로써 특정 검색 엔진이나 언어 모델에 고정되지 않고, 다양한 검색
+방법과 모델 조합을 통해 상황에 맞는 최적화된 RAG 시스템을 구현할 수
+있습니다.
+
+모듈러 RAG의 주요 개념과 작동 방식
+
+모듈러 RAG의 핵심은 검색과 생성을 분리하고, 이들 모듈을 독립적으로
+구성할 수 있다는 점입니다. 이 구조 덕분에 사용자 요구나 데이터 특성에
+맞게 각 단계의 모듈을 자유롭게 교체하거나 수정할 수 있습니다.\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/102/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/102/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      모듈러 RAG(Modular RAG): 유연한 AI 애플리케이션을 위한 차세대 아키텍처
+    </h1>
+    <div class="post-meta"><span title='2024-11-09 11:22:47 +0000 UTC'>November 9, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="모듈러-ragmodular-rag-유연한-ai-애플리케이션을-위한-차세대-아키텍처" class="title-article">모듈러 RAG(Modular RAG): 유연한 AI 애플리케이션을 위한 차세대 아키텍처<a hidden class="anchor" aria-hidden="true" href="#모듈러-ragmodular-rag-유연한-ai-애플리케이션을-위한-차세대-아키텍처">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-09 11:22:47
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+모듈러 RAG(Modular Retrieval-Augmented Generation)는 기존의
+RAG(Retrieval-Augmented Generation) 모델을 더욱 유연하고 효율적으로
+구성할 수 있도록 설계된 접근 방식입니다. RAG는 외부 데이터에서 정보를
+검색(Retrieval)하고 이를 바탕으로 생성(Generation)하는 구조로, 최신
+정보에 기반한 고정밀 응답을 생성할 수 있는 장점이 있습니다. 그러나 기존
+RAG 모델은 모든 응답 과정이 하나의 구조 안에서 일괄적으로 이루어지기
+때문에, 특정 워크플로우에 최적화된 처리가 어려울 수 있습니다. 이 한계를
+해결하기 위해 모듈러 RAG가 등장했습니다.<br>
+<br>
+모듈러 RAG는 기본적으로 RAG의 검색과 생성 단계를 독립된 모듈로 분리하고,
+각각을 개별적으로 설정하거나 교체할 수 있는 구조를 제공합니다. 이렇게
+함으로써 특정 검색 엔진이나 언어 모델에 고정되지 않고, 다양한 검색
+방법과 모델 조합을 통해 상황에 맞는 최적화된 RAG 시스템을 구현할 수
+있습니다.<br>
+<br>
+모듈러 RAG의 주요 개념과 작동 방식<br>
+<br>
+모듈러 RAG의 핵심은 검색과 생성을 분리하고, 이들 모듈을 독립적으로
+구성할 수 있다는 점입니다. 이 구조 덕분에 사용자 요구나 데이터 특성에
+맞게 각 단계의 모듈을 자유롭게 교체하거나 수정할 수 있습니다.\</p>
+<ol>
+<li>독립된 검색 모듈<br>
+검색 모듈은 질문에 대한 관련 정보를 외부 데이터베이스나 검색 엔진에서
+찾아오는 역할을 수행합니다. 기존 RAG 시스템에서는 단일 검색 엔진에
+의존하는 경우가 많았으나, 모듈러 RAG에서는 상황에 맞는 여러 검색 방식을
+동시에 활용할 수 있습니다. 예를 들어, 키워드 기반 검색, 의미적 유사성을
+사용하는 벡터 검색, 특정 도메인의 지식 그래프 탐색 등 다양한 방법이
+독립된 모듈로 구현되어 더 정확한 정보를 제공할 수 있습니다.\</li>
+<li>유연한 생성 모듈<br>
+생성 모듈은 검색된 정보를 바탕으로 사용자가 원하는 형태의 응답을
+생성합니다. 모듈러 RAG에서는 단일 언어 모델에 의존하지 않고, 필요에 따라
+여러 생성 모델을 선택할 수 있습니다. 예를 들어, 사용자가 간단한 정보를
+원할 때는 경량 모델을, 복잡한 응답을 생성할 때는 대규모 모델을 선택하는
+식으로 구성할 수 있습니다. 이처럼 생성 모듈을 유연하게 설정하면, 응답의
+품질을 유지하면서 비용을 절감할 수 있는 효과를 얻을 수 있습니다.\</li>
+<li>확장 가능한 워크플로우<br>
+모듈러 RAG는 검색과 생성 단계를 독립적으로 구성할 수 있기 때문에, 복잡한
+워크플로우를 단계적으로 확장할 수 있는 장점이 있습니다. 예를 들어, 첫
+번째 검색 결과가 충분하지 않은 경우 추가 검색을 수행하거나, 여러 번의
+생성 단계를 거쳐 답변을 보완하는 등 다단계 워크플로우를 설정할 수
+있습니다. 이를 통해 더욱 깊이 있고 세밀한 응답을 제공할 수 있습니다.<br>
+<br>
+모듈러 RAG의 장점<br>
+<br>
+모듈러 RAG가 제공하는 주요 장점은 다음과 같습니다:\</li>
+<li>유연한 구성 가능성:<br>
+각 모듈을 독립적으로 구성할 수 있어, 다양한 검색 방식과 생성 모델을
+상황에 맞게 선택할 수 있습니다. 이는 특정 도메인이나 애플리케이션
+요구사항에 최적화된 RAG 시스템을 구축하는 데 매우 유리합니다.\</li>
+<li>확장성과 비용 효율성:<br>
+모듈러 구조 덕분에 응답의 복잡도에 따라 적합한 모델을 선택하여 자원을
+효율적으로 사용할 수 있습니다. 이를 통해 비용을 절감하면서도 성능을
+최적화할 수 있습니다.\</li>
+<li>복잡한 워크플로우 지원:<br>
+여러 단계의 검색과 생성을 조합한 복잡한 워크플로우를 구축할 수 있어,
+단순한 응답 생성 이상의 정교한 처리 과정을 지원합니다. 이는 고도화된
+정보 제공 서비스나 대화형 애플리케이션에서 중요한 역할을 합니다.<br>
+<br>
+모듈러 RAG의 응용 사례<br>
+<br>
+모듈러 RAG는 다양한 응용 분야에서 활용될 수 있으며, 특히 다음과 같은
+분야에서 두각을 나타내고 있습니다:<br>
+• 전문 분야의 문서 검색 및 분석: 법률, 의료 등 전문 지식이 요구되는
+분야에서, 모듈러 RAG는 고유의 지식 그래프와 벡터 검색 등을 조합하여
+최적의 정보 검색과 분석을 제공합니다. 이를 통해 사용자에게 깊이 있는
+정보를 정확히 전달할 수 있습니다.<br>
+• 지속적인 학습과 개선이 필요한 챗봇: 사용자와의 대화 맥락을
+기억하면서도 최신 정보를 반영하는 고객 서비스 챗봇에서 모듈러 RAG는
+효과적으로 활용됩니다. 대화 중 필요할 때마다 외부 정보를 검색하고,
+복잡한 질문에는 추가 검색과 생성 단계를 거쳐 더욱 정확한 답변을
+제공합니다.<br>
+• RAG 기반 학습 도구: 교육용 도구에서도 모듈러 RAG가 유용합니다. 학생의
+질문에 맞춰 필요한 정보를 검색하고, 다양한 난이도의 응답을 생성하여 개별
+학습 수준에 맞는 피드백을 제공할 수 있습니다.<br>
+<br>
+모듈러 RAG의 미래 전망<br>
+<br>
+모듈러 RAG는 기존 RAG 아키텍처의 한계를 극복하고, 더 유연하고 효율적인
+AI 솔루션을 제공하기 위해 개발된 접근 방식으로, 앞으로 더욱 많은
+분야에서 응용될 가능성이 큽니다. 특히 빠르게 변화하는 정보 환경에서
+실시간으로 신뢰성 높은 답변을 제공하는 시스템이 필요할 때, 모듈러 RAG는
+강력한 선택지가 될 것입니다.<br>
+<br>
+또한 AI 기술이 복잡해짐에 따라, 특정 문제에 맞춰 커스터마이징이 가능한
+모듈형 구조의 수요는 계속해서 증가할 것입니다. 모듈러 RAG는 이러한
+흐름에 맞추어 AI 모델을 구성하고 최적화하는 데 필수적인 기술로 자리잡을
+전망입니다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

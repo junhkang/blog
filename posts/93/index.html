@@ -1,0 +1,164 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용 | Jun Kang's Blog</title>
+<meta name=keywords content="디자인패턴,빌더패턴"><meta name=description content="
+1. 빌더(Builder) 패턴이란?
+일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다
+예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. 
+2. 빌더 패턴의 구조
+
+빌더패턴 예제 클래스 다이어그램
+
+Builder 역 - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음
+ConcreteBuilder 역 - 인터페이스를 구현, 실제 인스턴스 생성으로 호출되는 메서드가 여기에서 정의 TextBuilder, HTMLBuilder 클래스가 역할을 맡음
+Director 역- Builder의 인터페이스를 사용하여 인스턴스 생성한다. Concrete Builder역에 의존하지 않으며, ConcreteBuilder에 상관없이 작동하도록 Builder의 메서드만 활용한다. 예제에서는 Director클래스가 역할을 맡음
+
+3. 예제
+빌더 패턴을 사용하여 문서 작성하는 프로그램을 구현해보자."><meta name=author content="Jun Kang"><link rel=canonical href=https://junhkang.com/posts/93/><link crossorigin=anonymous href=/assets/css/stylesheet.74700298e7318c6a254db46da1e4db20401442caa2ca390299eb96ba781bad05.css integrity="sha256-dHACmOcxjGolTbRtoeTbIEAUQsqiyjkCmeuWungbrQU=" rel="preload stylesheet" as=style><link rel=icon href=https://junhkang.com/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://junhkang.com/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://junhkang.com/favicon-32x32.png><link rel=apple-touch-icon href=https://junhkang.com/apple-touch-icon.png><link rel=mask-icon href=https://junhkang.com/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://junhkang.com/posts/93/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:url" content="https://junhkang.com/posts/93/"><meta property="og:site_name" content="Jun Kang's Blog"><meta property="og:title" content="[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용"><meta property="og:description" content=" 1. 빌더(Builder) 패턴이란? 일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다
+예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. 2. 빌더 패턴의 구조 빌더패턴 예제 클래스 다이어그램
+Builder 역 - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음 ConcreteBuilder 역 - 인터페이스를 구현, 실제 인스턴스 생성으로 호출되는 메서드가 여기에서 정의 TextBuilder, HTMLBuilder 클래스가 역할을 맡음 Director 역- Builder의 인터페이스를 사용하여 인스턴스 생성한다. Concrete Builder역에 의존하지 않으며, ConcreteBuilder에 상관없이 작동하도록 Builder의 메서드만 활용한다. 예제에서는 Director클래스가 역할을 맡음 3. 예제 빌더 패턴을 사용하여 문서 작성하는 프로그램을 구현해보자."><meta property="og:locale" content="ko"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-07-29T14:45:35+00:00"><meta property="article:modified_time" content="2024-07-29T14:45:35+00:00"><meta property="article:tag" content="디자인패턴"><meta property="article:tag" content="빌더패턴"><meta name=twitter:card content="summary"><meta name=twitter:title content="[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용"><meta name=twitter:description content="
+1. 빌더(Builder) 패턴이란?
+일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다
+예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. 
+2. 빌더 패턴의 구조
+
+빌더패턴 예제 클래스 다이어그램
+
+Builder 역 - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음
+ConcreteBuilder 역 - 인터페이스를 구현, 실제 인스턴스 생성으로 호출되는 메서드가 여기에서 정의 TextBuilder, HTMLBuilder 클래스가 역할을 맡음
+Director 역- Builder의 인터페이스를 사용하여 인스턴스 생성한다. Concrete Builder역에 의존하지 않으며, ConcreteBuilder에 상관없이 작동하도록 Builder의 메서드만 활용한다. 예제에서는 Director클래스가 역할을 맡음
+
+3. 예제
+빌더 패턴을 사용하여 문서 작성하는 프로그램을 구현해보자."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://junhkang.com/posts/"},{"@type":"ListItem","position":2,"name":"[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용","item":"https://junhkang.com/posts/93/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용","name":"[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용","description":" 1. 빌더(Builder) 패턴이란? 일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다\n예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. 2. 빌더 패턴의 구조 빌더패턴 예제 클래스 다이어그램\nBuilder 역 - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음 ConcreteBuilder 역 - 인터페이스를 구현, 실제 인스턴스 생성으로 호출되는 메서드가 여기에서 정의 TextBuilder, HTMLBuilder 클래스가 역할을 맡음 Director 역- Builder의 인터페이스를 사용하여 인스턴스 생성한다. Concrete Builder역에 의존하지 않으며, ConcreteBuilder에 상관없이 작동하도록 Builder의 메서드만 활용한다. 예제에서는 Director클래스가 역할을 맡음 3. 예제 빌더 패턴을 사용하여 문서 작성하는 프로그램을 구현해보자.\n","keywords":["디자인패턴","빌더패턴"],"articleBody":" 1. 빌더(Builder) 패턴이란? 일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다\n예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. 2. 빌더 패턴의 구조 빌더패턴 예제 클래스 다이어그램\nBuilder 역 - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음 ConcreteBuilder 역 - 인터페이스를 구현, 실제 인스턴스 생성으로 호출되는 메서드가 여기에서 정의 TextBuilder, HTMLBuilder 클래스가 역할을 맡음 Director 역- Builder의 인터페이스를 사용하여 인스턴스 생성한다. Concrete Builder역에 의존하지 않으며, ConcreteBuilder에 상관없이 작동하도록 Builder의 메서드만 활용한다. 예제에서는 Director클래스가 역할을 맡음 3. 예제 빌더 패턴을 사용하여 문서 작성하는 프로그램을 구현해보자.\n문서의 기본적인 구조는 다음과 같다.\n타이틀을 한 개 포함 문자열을 몇 개 포함 항목을 몇개 포함 해당 구현을 빌더패턴으로 구현하기 위해 다음 클래스들을 구현해 보자. (위에서 본 클래스 다이어그램을 참고)\nBuilder 클래스 - 문서를 구성하는 메서드 결정하는 추상 클래스 Director 클래스- 그 메서드를 이용해 구체적인 문서 한 개 완성 TextBuilder - 텍스트를 이용해서 문서를 제작하는 구현 클래스 HTMLBuilder - HTML을 이용해서 문서 제작하는 구현 클래스 4. 예제 클래스 분석 4-1. Builder 클래스 public abstract class Builder { public abstract void makeTitle(String title); public abstract void makeString(String str); public abstract void makeItems(String[] items); public abstract void close(); } Builder 클래스는 문서를 만드는 메서드를 선언한 추상 클래스이다. makeTitle, makeString, makeItems는 각각 제목, 문자, 항목을 문서 안에 만들며 close메서드를 통해 문서를 최종 완성한다.\n4-2. Director 클래스 public class Director { private final Builder builder; public Director(Builder builder) { this.builder = builder; } public void construct() { builder.makeTitle(\"Greeting\"); builder.makeString(\"일반적인 인사\"); builder.makeItems(new String[]{ \"How are you?\", \"Hello.\", \"Hi.\", }); builder.makeString(\"시간대별 인사\"); builder.makeItems(new String[]{ \"Good Morning.\", \"Good Afternoon.\", \"Good Evening.\", }); builder.close(); } } Director 클래스는 Builder 클래스에 선언된 메서드로 문서를 제작한다. Builder 클래스는 추상 클래스이므로 인스턴스를 만들 수 없다.\nDirector의 생성자에 실제 전달되는 것은 Builder의 하위 클래스이고, 실제 구현체는 TextBuilder, HTMLBuilder의 인스턴스이다. 하위 클래스 종류에 따라 Director 클래스가 만들 구체적인 최종 문서형 식이 지정된다. construct 메서드는 실제로 문서를 만드는 메서드로 호출되면 문서가 생성된다.\n4-3. TextBuilder 클래스 public class TextBuilder extends Builder{ private StringBuilder sb = new StringBuilder(); @Override public void makeTitle(String title) { sb.append(\"==============================\\n\"); sb.append(\"[\").append(title).append(\"]\\n\"); sb.append(\"\\n\"); } @Override public void makeString(String str) { sb.append(\"■\").append(str).append(\"\\n\"); sb.append(\"\\n\"); } @Override public void makeItems(String[] items) { for (String item : items) { sb.append(\" ・\").append(item).append(\"\\n\"); } sb.append(\"\\n\"); } @Override public void close() { sb.append(\"==============================\\n\"); } public String getTextResult() { return sb.toString(); } } TextBuilder 클래스는 Builder 클래스의 하위 클래스로 텍스트를 사용한 문서 생성의 각 메서드를 구체화한다.\n4-4. HTMLBuilder 클래스 public class HTMLBuilder extends Builder { private String filename = \"untitled.html\"; private StringBuilder sb = new StringBuilder(); @Override public void makeTitle(String title) { filename = title + \".html\"; sb.append(\"\").append(title).append(\"\\n\"); sb.append(\"\").append(title).append(\"\\n\"); } @Override public void makeString(String str) { sb.append(\"\").append(str).append(\"\n\\n\"); } @Override public void makeItems(String[] items) { sb.append(\"\\n\"); for (String item : items) { sb.append(\"\").append(item).append(\"\\n\"); } sb.append(\"/n/n\"); } @Override public void close() { sb.append(\"\\n\"); } public String getHTMLResult() { return sb.toString(); } } \bHTMLBuilder 클래스는 Builder 클래스의 하위 클래스로 HTML을 사용한 문서 생성의 각 메서드를 구체화한다.\n4-5. Main 클래스 public class Main { public static void main(String[] args) { if (args.length != 1) { usage(); System.exit(0); } if (args[0].equals(\"text\")) { TextBuilder textBuilder = new TextBuilder(); Director director = new Director(textBuilder); director.construct(); String result = textBuilder.getTextResult(); System.out.println(result); } else if (args[0].equals(\"html\")) { HTMLBuilder htmlBuilder = new HTMLBuilder(); Director director = new Director(htmlBuilder); director.construct(); String filename = htmlBuilder.getHTMLResult(); System.out.println(\"HTML파일 \" + filename + \" 이 작성되었습니다.\"); }else { usage(); System.exit(0); } } public static void usage() { System.out.println(\"Usage: java Main text 텍스트로 문서 작성\"); System.out.println(\"Usage: java Main html HTML로 문서 작성\"); } } 빌더패턴을 테스트하기 위한 클래스로 text 문서를 선택하여 생성할 경우 다음과 같은 결과를 확인할 수 있다.\n5. 정리 빌더 패턴은 복잡한 인스턴스를 효율적으로 조립해 가는 과정이다. 예제에서 확인할 수 있는 내용 중 중요한 점은 자세한 구축과정이 Director 역할에 의해 감추어진다는 것이다. 객체 지향에서는 “누가 무엇을 알고 있는가\"가 중요하다. 빌더 패턴의 예제에서도 어느 클래스가 어떤 메서드를 사용할 수 있는지 고민해 볼 필요가 있다. 예제에선 Main 클래스의 Builder 클래스의 메서드를 직접 호출하지 않는다. Director 클래스의 construct 메서드만 호출할 뿐이고 문서가 완성된다. Director 클래스가 알고 있는 것은 Builder 클래스이고 Director 클래스는 Builder 클래스의 메서드를 활용하여 문서를 구축한다. 자신이 실제로 사용하는 구현체 클래스가 어떤 것인지 모른다. (TextBuilder, HTMLBuilder, etc... ) 그리고 이렇게 하위 클래스를 모르는 것은 쉽게 교체할 수 있기 때문에 매우 유용하게 적용될 수 있다. ","wordCount":"721","inLanguage":"en","datePublished":"2024-07-29T14:45:35Z","dateModified":"2024-07-29T14:45:35Z","author":{"@type":"Person","name":"Jun Kang"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://junhkang.com/posts/93/"},"publisher":{"@type":"Organization","name":"Jun Kang's Blog","logo":{"@type":"ImageObject","url":"https://junhkang.com/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://junhkang.com/ accesskey=h title="Jun Kang's Blog (Alt + H)">Jun Kang's Blog</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://junhkang.com/about/ title=About><span>About</span></a></li><li><a href=https://junhkang.com/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://junhkang.com/sankun/ title=Sankun><span>Sankun</span></a></li><li><a href=https://junhkang.com/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://junhkang.com/posts/ title=Posts><span>Posts</span></a></li><li><a href=https://junhkang.com/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://junhkang.com/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><h1 class="post-title entry-hint-parent">[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용</h1><div class=post-meta><span title='2024-07-29 14:45:35 +0000 UTC'>July 29, 2024</span>&nbsp;·&nbsp;Jun Kang</div></header><div class=post-content><hr><h2 id=빌더builder-패턴이란 ke-size=size26>1. 빌더(Builder) 패턴이란?<a hidden class=anchor aria-hidden=true href=#빌더builder-패턴이란>#</a></h2><p>일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다</p><p>예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. </p><h2 id=빌더-패턴의-구조 ke-size=size26>2. 빌더 패턴의 구조<a hidden class=anchor aria-hidden=true href=#빌더-패턴의-구조>#</a></h2><p><img loading=lazy src=/images/posts/93/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-07-29%20%EC%98%A4%ED%9B%84%202.34.00.png></p><p>빌더패턴 예제 클래스 다이어그램</p><ul><li><strong>Builder 역</strong> - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음</li><li><strong>ConcreteBuilder 역</strong> - 인터페이스를 구현, 실제 인스턴스 생성으로 호출되는 메서드가 여기에서 정의 TextBuilder, HTMLBuilder 클래스가 역할을 맡음</li><li><strong>Director 역</strong>- Builder의 인터페이스를 사용하여 인스턴스 생성한다. Concrete Builder역에 의존하지 않으며, ConcreteBuilder에 상관없이 작동하도록 Builder의 메서드만 활용한다. 예제에서는 Director클래스가 역할을 맡음</li></ul><h2 id=예제 ke-size=size26>3. 예제<a hidden class=anchor aria-hidden=true href=#예제>#</a></h2><p>빌더 패턴을 사용하여 문서 작성하는 프로그램을 구현해보자.</p><p>문서의 기본적인 구조는 다음과 같다.</p><ul><li>타이틀을 한 개 포함</li><li>문자열을 몇 개 포함</li><li>항목을 몇개 포함</li></ul><p>해당 구현을 빌더패턴으로 구현하기 위해 다음 클래스들을 구현해 보자. (위에서 본 클래스 다이어그램을 참고)</p><ul><li>Builder 클래스 - 문서를 구성하는 메서드 결정하는 추상 클래스</li><li>Director 클래스- 그 메서드를 이용해 구체적인 문서 한 개 완성</li><li>TextBuilder - 텍스트를 이용해서 문서를 제작하는 구현 클래스</li><li>HTMLBuilder - HTML을 이용해서 문서 제작하는 구현 클래스</li></ul><h2 id=예제-클래스-분석 ke-size=size26>4. 예제 클래스 분석<a hidden class=anchor aria-hidden=true href=#예제-클래스-분석>#</a></h2><h3 id=builder-클래스 ke-size=size23>4-1. Builder 클래스<a hidden class=anchor aria-hidden=true href=#builder-클래스>#</a></h3><pre tabindex=0><code>public abstract class Builder {
+    public abstract void makeTitle(String title);
+    public abstract void makeString(String str);
+    public abstract void makeItems(String[] items);
+    public abstract void close();
+}
+</code></pre><p>Builder 클래스는 문서를 만드는 메서드를 선언한 추상 클래스이다. makeTitle, makeString, makeItems는 각각 제목, 문자, 항목을 문서 안에 만들며 close메서드를 통해 문서를 최종 완성한다.</p><h3 id=director-클래스 ke-size=size23>4-2. Director 클래스<a hidden class=anchor aria-hidden=true href=#director-클래스>#</a></h3><pre tabindex=0><code>public class Director {
+    private final Builder builder;
+
+    public Director(Builder builder) {
+        this.builder = builder;
+    }
+
+    public void construct() {
+        builder.makeTitle(&#34;Greeting&#34;);
+        builder.makeString(&#34;일반적인 인사&#34;);
+        builder.makeItems(new String[]{
+                &#34;How are you?&#34;,
+                &#34;Hello.&#34;,
+                &#34;Hi.&#34;,
+        });
+        builder.makeString(&#34;시간대별 인사&#34;);
+        builder.makeItems(new String[]{
+                &#34;Good Morning.&#34;,
+                &#34;Good Afternoon.&#34;,
+                &#34;Good Evening.&#34;,
+        });
+        builder.close();
+    }
+}
+</code></pre><p>Director 클래스는 Builder 클래스에 선언된 메서드로 문서를 제작한다. Builder 클래스는 추상 클래스이므로 인스턴스를 만들 수 없다.</p><p>Director의 생성자에 실제 전달되는 것은 Builder의 하위 클래스이고, 실제 구현체는 TextBuilder, HTMLBuilder의 인스턴스이다. 하위 클래스 종류에 따라 Director 클래스가 만들 구체적인 최종 문서형 식이 지정된다. construct 메서드는 실제로 문서를 만드는 메서드로 호출되면 문서가 생성된다.</p><h3 id=textbuilder-클래스 ke-size=size23>4-3. TextBuilder 클래스<a hidden class=anchor aria-hidden=true href=#textbuilder-클래스>#</a></h3><pre tabindex=0><code>public class TextBuilder extends Builder{
+    private StringBuilder sb = new StringBuilder();
+
+    @Override
+    public void makeTitle(String title) {
+        sb.append(&#34;==============================\n&#34;);
+        sb.append(&#34;[&#34;).append(title).append(&#34;]\n&#34;);
+        sb.append(&#34;\n&#34;);
+    }
+    @Override
+    public void makeString(String str)  {
+        sb.append(&#34;■&#34;).append(str).append(&#34;\n&#34;);
+        sb.append(&#34;\n&#34;);
+    }
+
+    @Override
+    public void makeItems(String[] items) {
+        for (String item : items) {
+            sb.append(&#34;  ・&#34;).append(item).append(&#34;\n&#34;);
+        }
+        sb.append(&#34;\n&#34;);
+    }
+
+    @Override
+    public void close() {
+        sb.append(&#34;==============================\n&#34;);
+    }
+
+    public String getTextResult() {
+        return sb.toString();
+    }
+
+}
+</code></pre><p>TextBuilder 클래스는 Builder 클래스의 하위 클래스로 텍스트를 사용한 문서 생성의 각 메서드를 구체화한다.</p><h3 id=htmlbuilder-클래스 ke-size=size23>4-4. HTMLBuilder 클래스<a hidden class=anchor aria-hidden=true href=#htmlbuilder-클래스>#</a></h3><pre tabindex=0><code>public class HTMLBuilder extends Builder    {
+    private String filename = &#34;untitled.html&#34;;
+    private StringBuilder sb = new StringBuilder();
+
+    @Override
+    public void makeTitle(String title) {
+        filename = title + &#34;.html&#34;;
+        sb.append(&#34;&lt;html&gt;&lt;head&gt;&lt;title&gt;&#34;).append(title).append(&#34;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;\n&#34;);
+        sb.append(&#34;&lt;h1&gt;&#34;).append(title).append(&#34;&lt;/h1&gt;\n&#34;);
+    }
+
+    @Override
+    public void makeString(String str) {
+        sb.append(&#34;&lt;p&gt;&#34;).append(str).append(&#34;&lt;/p&gt;\n&#34;);
+    }
+
+    @Override
+    public void makeItems(String[] items)   {
+        sb.append(&#34;&lt;ul&gt;\n&#34;);
+        for (String item : items) {
+            sb.append(&#34;&lt;li&gt;&#34;).append(item).append(&#34;&lt;/li&gt;\n&#34;);
+        }
+        sb.append(&#34;&lt;/ul&gt;/n/n&#34;);
+    }
+
+    @Override
+    public void close() {
+        sb.append(&#34;&lt;/body&gt;&lt;/html&gt;\n&#34;);
+    }
+
+    public String getHTMLResult() {
+        return sb.toString();
+    }
+}
+</code></pre><p> </p><p>HTMLBuilder 클래스는 Builder 클래스의 하위 클래스로 HTML을 사용한 문서 생성의 각 메서드를 구체화한다.</p><h3 id=main-클래스 ke-size=size23>4-5. Main 클래스<a hidden class=anchor aria-hidden=true href=#main-클래스>#</a></h3><pre tabindex=0><code>public class Main {
+    public static void main(String[] args)  {
+        if (args.length != 1) {
+            usage();
+            System.exit(0);
+        }
+
+        if (args[0].equals(&#34;text&#34;)) {
+            TextBuilder textBuilder = new TextBuilder();
+            Director director = new Director(textBuilder);
+            director.construct();
+            String result = textBuilder.getTextResult();
+            System.out.println(result);
+        }   else if (args[0].equals(&#34;html&#34;))    {
+            HTMLBuilder htmlBuilder = new HTMLBuilder();
+            Director director = new Director(htmlBuilder);
+            director.construct();
+            String filename = htmlBuilder.getHTMLResult();
+            System.out.println(&#34;HTML파일 &#34; + filename + &#34; 이 작성되었습니다.&#34;);
+        }else {
+            usage();
+            System.exit(0);
+        }
+    }
+
+    public static void usage()  {
+        System.out.println(&#34;Usage: java Main text 텍스트로 문서 작성&#34;);
+        System.out.println(&#34;Usage: java Main html HTML로 문서 작성&#34;);
+    }
+}
+</code></pre><p>빌더패턴을 테스트하기 위한 클래스로 text 문서를 선택하여 생성할 경우 다음과 같은 결과를 확인할 수 있다.</p><p><img loading=lazy src=/images/posts/93/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-07-29%20%EC%98%A4%ED%9B%84%201.14.13.png></p><h2 id=정리 ke-size=size26>5. 정리<a hidden class=anchor aria-hidden=true href=#정리>#</a></h2><p>빌더 패턴은 복잡한 인스턴스를 효율적으로 조립해 가는 과정이다. 예제에서 확인할 수 있는 내용 중 중요한 점은 자세한 구축과정이 Director 역할에 의해 감추어진다는 것이다. 
+ </p><p>객체 지향에서는 &ldquo;누가 무엇을 알고 있는가"가 중요하다. 빌더 패턴의 예제에서도 어느 클래스가 어떤 메서드를 사용할 수 있는지 고민해 볼 필요가 있다. 예제에선 Main 클래스의 Builder 클래스의 메서드를 직접 호출하지 않는다. Director 클래스의 construct 메서드만 호출할 뿐이고 문서가 완성된다.
+ </p><p>Director 클래스가 알고 있는 것은 Builder 클래스이고 Director 클래스는 Builder 클래스의 메서드를 활용하여 문서를 구축한다. 자신이 실제로 사용하는 구현체 클래스가 어떤 것인지 모른다. (TextBuilder, HTMLBuilder, etc... )  그리고 이렇게 하위 클래스를 모르는 것은 쉽게 교체할 수 있기 때문에 매우 유용하게 적용될 수 있다.
+ </p><p> </p></div><footer class=post-footer><ul class=post-tags><li><a href=https://junhkang.com/tags/%EB%94%94%EC%9E%90%EC%9D%B8%ED%8C%A8%ED%84%B4/>디자인패턴</a></li><li><a href=https://junhkang.com/tags/%EB%B9%8C%EB%8D%94%ED%8C%A8%ED%84%B4/>빌더패턴</a></li></ul></footer></article></main><footer class=footer><span>&copy; 2025 <a href=https://junhkang.com/>Jun Kang's Blog</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

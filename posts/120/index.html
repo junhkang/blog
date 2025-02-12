@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Attention Mechanism: LLM의 언어 이해를 혁신한 핵심 기술 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+Attention Mechanism: LLM의 언어 이해를 혁신한 핵심 기술
+::: box-info
+LLM
+2024-11-27 08:18:39
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+Attention Mechanism(어텐션 메커니즘)은 현대 딥러닝, 특히 LLM(Large
+Language Model)의 성능을 가능하게 한 핵심 기술이다. 어텐션은 입력
+데이터의 특정 부분에 &ldquo;집중&quot;하여 더 중요한 정보를 선택적으로 처리할 수
+있도록 설계된 메커니즘이다. 이 개념은 특히 자연어 처리(NLP)와 컴퓨터
+비전에서 폭넓게 활용되며, Transformer 아키텍처를 비롯한 최신 모델의
+기반이 되었다.
+
+Attention Mechanism의 기본 개념
+
+어텐션 메커니즘은 데이터의 모든 부분을 동일하게 처리하는 대신, 특정
+데이터가 중요도에 따라 다르게 가중치를 받도록 한다. 예를 들어, &ldquo;저는
+AI를 정말 좋아합니다&quot;라는 문장에서 &ldquo;AI&quot;와 &ldquo;좋아합니다&quot;가 문장의 핵심
+의미를 전달한다면, 어텐션 메커니즘은 이 두 단어에 더 높은 가중치를
+부여한다.
+
+어텐션 메커니즘의 작동 방식
+\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/120/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/120/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Attention Mechanism: LLM의 언어 이해를 혁신한 핵심 기술
+    </h1>
+    <div class="post-meta"><span title='2024-11-27 08:18:39 +0000 UTC'>November 27, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="attention-mechanism-llm의-언어-이해를-혁신한-핵심-기술" class="title-article">Attention Mechanism: LLM의 언어 이해를 혁신한 핵심 기술<a hidden class="anchor" aria-hidden="true" href="#attention-mechanism-llm의-언어-이해를-혁신한-핵심-기술">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-27 08:18:39
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+Attention Mechanism(어텐션 메커니즘)은 현대 딥러닝, 특히 LLM(Large
+Language Model)의 성능을 가능하게 한 핵심 기술이다. 어텐션은 입력
+데이터의 특정 부분에 &ldquo;집중&quot;하여 더 중요한 정보를 선택적으로 처리할 수
+있도록 설계된 메커니즘이다. 이 개념은 특히 자연어 처리(NLP)와 컴퓨터
+비전에서 폭넓게 활용되며, Transformer 아키텍처를 비롯한 최신 모델의
+기반이 되었다.<br>
+<br>
+Attention Mechanism의 기본 개념<br>
+<br>
+어텐션 메커니즘은 데이터의 모든 부분을 동일하게 처리하는 대신, 특정
+데이터가 중요도에 따라 다르게 가중치를 받도록 한다. 예를 들어, &ldquo;저는
+AI를 정말 좋아합니다&quot;라는 문장에서 &ldquo;AI&quot;와 &ldquo;좋아합니다&quot;가 문장의 핵심
+의미를 전달한다면, 어텐션 메커니즘은 이 두 단어에 더 높은 가중치를
+부여한다.<br>
+<br>
+어텐션 메커니즘의 작동 방식<br>
+\</p>
+<ol>
+<li>Query, Key, Value<br>
+입력 데이터는 Query, Key, Value라는 세 가지 벡터로 변환된다.<br>
+• Query: 현재 처리 중인 토큰의 특성을 나타냄<br>
+• Key: 다른 토큰의 특성을 나타냄<br>
+• Value: 실제로 전달되는 정보\</li>
+<li>가중치 계산<br>
+Query와 Key 간의 내적(dot product)을 통해 각 데이터 쌍의 중요도를
+계산하고, 이를 Softmax 함수로 정규화하여 가중치로 변환한다.\</li>
+<li>정보 결합<br>
+계산된 가중치를 Value에 곱하여 중요한 정보를 강조하고, 이를 합산하여
+최종 출력을 생성한다.<br>
+<br>
+어텐션 메커니즘의 주요 유형<br>
+\</li>
+<li>Self-Attention<br>
+입력 시퀀스의 각 토큰이 다른 모든 토큰과 상호작용하여 자신의 문맥을
+이해한다. Transformer 모델의 핵심 구성 요소이다.\</li>
+<li>Cross-Attention<br>
+두 개의 다른 데이터 시퀀스(예: 텍스트와 이미지)가 서로의 정보를 교환하는
+방식이다. 멀티모달 학습에서 자주 사용된다.\</li>
+<li>Scaled Dot-Product Attention<br>
+Query와 Key의 내적을 계산한 후, 스케일링과 Softmax를 통해 가중치를
+정규화하는 방식이다.\</li>
+<li>Multi-Head Attention<br>
+여러 개의 어텐션 헤드를 사용하여 다양한 문맥적 특징을 학습한다. 이는
+Transformer 모델에서 중요한 역할을 한다.<br>
+<br>
+Attention Mechanism의 혁신<br>
+\</li>
+<li>Transformer 아키텍처<br>
+Attention Mechanism은 RNN과 LSTM의 한계를 극복하고 병렬 처리가 가능한
+Transformer 모델의 핵심 구성 요소이다. 이를 통해 LLM은 대규모 데이터를
+효율적으로 학습할 수 있게 되었다.\</li>
+<li>문맥 이해 개선<br>
+어텐션은 긴 문장에서 문맥 정보를 유지하고, 중요한 부분을 효과적으로
+강조할 수 있어 자연어 처리 작업의 정확도를 크게 향상시켰다.\</li>
+<li>멀티모달 데이터 처리<br>
+이미지, 텍스트, 음성을 결합하여 처리하는 멀티모달 학습에서 어텐션
+메커니즘은 각 모달 간의 정보를 효과적으로 통합하는 데 사용된다.<br>
+<br>
+Attention Mechanism의 응용 사례<br>
+\</li>
+<li>자연어 처리(NLP)<br>
+번역, 텍스트 요약, 질문 응답 시스템 등에서 어텐션 메커니즘은 필수적인
+기술로 자리 잡았다.\</li>
+<li>컴퓨터 비전<br>
+이미지를 처리하는 데 있어 관심 영역을 강조하거나, 객체 검출 및 이미지
+설명 작업에 활용된다.\</li>
+<li>음성 인식 및 합성<br>
+음성 신호의 시간적 패턴을 학습하고, 텍스트와 음성을 결합하는 작업에서
+어텐션이 사용된다.\</li>
+<li>추천 시스템<br>
+사용자 행동 데이터에서 중요한 패턴을 학습하여 더 정확한 추천을
+제공한다.<br>
+<br>
+Attention Mechanism의 한계와 도전 과제<br>
+\</li>
+<li>계산 비용<br>
+입력 데이터 길이에 따라 계산량이 제곱으로 증가하므로, 긴 시퀀스를
+처리하는 데 비용이 많이 든다.\</li>
+<li>복잡한 구조<br>
+어텐션 메커니즘은 직관적이지만 구현과 최적화가 복잡할 수 있다.\</li>
+<li>해석 가능성 부족<br>
+어텐션 가중치가 중요도를 나타내지만, 항상 인간이 직관적으로 이해할 수
+있는 방식은 아니다.<br>
+<br>
+Attention Mechanism의 미래<br>
+<br>
+어텐션 메커니즘은 LLM을 비롯한 AI 기술의 발전을 이끄는 핵심 기술로,
+앞으로도 많은 연구와 혁신이 이루어질 것이다. 특히, 효율성을 개선한
+Sparse Attention, 긴 시퀀스를 처리할 수 있는 Longformer와 같은 새로운
+아키텍처가 주목받고 있다.<br>
+<br>
+멀티모달 학습, 강화 학습, 그리고 실시간 응용 프로그램에서 어텐션
+메커니즘의 역할은 점점 더 중요해질 것이다. 어텐션은 AI가 인간의 복잡한
+데이터를 이해하고 처리하는 데 필수적인 도구로 계속해서 진화할 것이다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

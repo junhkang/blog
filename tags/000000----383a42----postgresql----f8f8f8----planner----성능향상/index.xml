@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>000000  - 383a42  - PostgreSQL  - F8f8f8  - Planner  - 성능향상 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/000000----383a42----postgresql----f8f8f8----planner----%EC%84%B1%EB%8A%A5%ED%96%A5%EC%83%81/</link>
+    <description>Recent content in 000000  - 383a42  - PostgreSQL  - F8f8f8  - Planner  - 성능향상 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/000000----383a42----postgresql----f8f8f8----planner----%EC%84%B1%EB%8A%A5%ED%96%A5%EC%83%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 명시적 JOIN 절로 플래너(Planner) 제어, 성능 향상</title>
+      <link>http://localhost:1313/posts/44/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/44/</guid>
+      <description>&lt;p&gt;PostgreSQL은 쿼리 Planner가 가장 효율적인 쿼리 플랜을 세워 쿼리를 실행시킨다. 이번 포스트는 쿼리 Planner가 플랜을 검색하는 과정을 의도적으로 제한하여 플랜 검색 시간을 단축시키는 방법에 대한 내용이다. 쿼리 선택지를 제한함으로써 시간을 줄이지만, 그만큼 모든 경우를 비교하는 것이기 아니라서 최고의 플랜을 찾을 수 없기에, 테이블 scan 방식 및 인덱스 등 쿼리의 작동방식을 명확히 이해한 후 설정이 필요하며, 설정전 성능비교, 설정 후의 데이터 증감에 따른 지속적인 모니터링이 필요하다.&lt;/p&gt;
+&lt;h2 id=&#34;2-플래너의-작동&#34;&gt;2. 플래너의 작동&lt;/h2&gt;
+&lt;h3 id=&#34;2-1-join&#34;&gt;2-1. JOIN&lt;/h3&gt;
+&lt;p&gt;Planner의 작동방식을 보기 위해 간단한 조인 쿼리를 확인해 보자
+&lt;code&gt;SELECT * FROM a, b, c WHERE a.id = b.id AND b.ref = c.id;&lt;/code&gt;
+PostgreSQL 플래너는 조인 순서를 자유롭게 정할 수 있다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Retrieval-Augmented Generation (RAG): AI 모델의 새로운 도약과 확장 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+Retrieval-Augmented Generation (RAG): AI 모델의 새로운 도약과 확장
+::: box-info
+LLM
+2024-11-07 20:08:50
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+최근 인공지능(AI) 모델은 그 성능과 응용 가능성에서 눈부신 발전을
+이루었지만, 여전히 한계점도 존재합니다. 대부분의 AI 언어 모델은 대규모의
+정적 데이터셋을 학습하여 지식을 습득하는데, 이 방식은 빠르게 변화하는
+정보 환경에서 한계를 드러냅니다. 새로운 정보를 즉각적으로 반영할 수
+없으며, 학습 데이터에 포함되지 않은 지식에는 접근할 수 없습니다. 이러한
+문제를 해결하고자 등장한 기술이 바로 **Retrieval-Augmented Generation
+(RAG)**입니다. RAG는 AI 모델이 외부 데이터베이스에 접근하여 실시간으로
+관련 정보를 검색하고 이를 바탕으로 응답을 생성하도록 돕는 혁신적인
+기술입니다.
+
+RAG의 기본 개념
+
+RAG는 이름 그대로, &lsquo;검색(Retrieval)&lsquo;과 &lsquo;생성(Generation)&lsquo;을 결합한
+기술입니다. 질문이나 요청을 받으면 AI 모델은 먼저 외부 데이터베이스나
+문서 저장소에서 관련 정보를 검색합니다. 그런 다음, 검색된 정보를
+바탕으로 모델이 응답을 생성하는 방식입니다. 예를 들어, 사용자가 특정
+제품에 대한 최신 정보를 묻는다면, RAG 모델은 그 제품에 대한 최신 리뷰나
+기술 문서를 검색하여 이를 바탕으로 정확하고 신뢰성 높은 응답을
+제공합니다.
+
+이 방식은 기존의 LLM(Large Language Model)이 가지고 있던 고정된 지식
+문제를 해결합니다. 전통적인 LLM은 학습 이후 새로운 정보를 학습 데이터에
+추가하지 않는 이상 최신 정보를 반영할 수 없으므로, 시의성 있는 응답을
+제공하는 데 한계가 있습니다. 반면, RAG는 최신 데이터를 검색해 활용하기
+때문에 최신 정보를 포함한 응답을 실시간으로 생성할 수 있습니다.
+
+RAG의 작동 원리
+
+RAG는 두 가지 주요 컴포넌트로 구성됩니다:
+\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/100/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/100/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Retrieval-Augmented Generation (RAG): AI 모델의 새로운 도약과 확장
+    </h1>
+    <div class="post-meta"><span title='2024-11-07 20:08:50 +0000 UTC'>November 7, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="retrieval-augmented-generation-rag-ai-모델의-새로운-도약과-확장" class="title-article">Retrieval-Augmented Generation (RAG): AI 모델의 새로운 도약과 확장<a hidden class="anchor" aria-hidden="true" href="#retrieval-augmented-generation-rag-ai-모델의-새로운-도약과-확장">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-07 20:08:50
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+최근 인공지능(AI) 모델은 그 성능과 응용 가능성에서 눈부신 발전을
+이루었지만, 여전히 한계점도 존재합니다. 대부분의 AI 언어 모델은 대규모의
+정적 데이터셋을 학습하여 지식을 습득하는데, 이 방식은 빠르게 변화하는
+정보 환경에서 한계를 드러냅니다. 새로운 정보를 즉각적으로 반영할 수
+없으며, 학습 데이터에 포함되지 않은 지식에는 접근할 수 없습니다. 이러한
+문제를 해결하고자 등장한 기술이 바로 **Retrieval-Augmented Generation
+(RAG)**입니다. RAG는 AI 모델이 외부 데이터베이스에 접근하여 실시간으로
+관련 정보를 검색하고 이를 바탕으로 응답을 생성하도록 돕는 혁신적인
+기술입니다.<br>
+<br>
+RAG의 기본 개념<br>
+<br>
+RAG는 이름 그대로, &lsquo;검색(Retrieval)&lsquo;과 &lsquo;생성(Generation)&lsquo;을 결합한
+기술입니다. 질문이나 요청을 받으면 AI 모델은 먼저 외부 데이터베이스나
+문서 저장소에서 관련 정보를 검색합니다. 그런 다음, 검색된 정보를
+바탕으로 모델이 응답을 생성하는 방식입니다. 예를 들어, 사용자가 특정
+제품에 대한 최신 정보를 묻는다면, RAG 모델은 그 제품에 대한 최신 리뷰나
+기술 문서를 검색하여 이를 바탕으로 정확하고 신뢰성 높은 응답을
+제공합니다.<br>
+<br>
+이 방식은 기존의 LLM(Large Language Model)이 가지고 있던 고정된 지식
+문제를 해결합니다. 전통적인 LLM은 학습 이후 새로운 정보를 학습 데이터에
+추가하지 않는 이상 최신 정보를 반영할 수 없으므로, 시의성 있는 응답을
+제공하는 데 한계가 있습니다. 반면, RAG는 최신 데이터를 검색해 활용하기
+때문에 최신 정보를 포함한 응답을 실시간으로 생성할 수 있습니다.<br>
+<br>
+RAG의 작동 원리<br>
+<br>
+RAG는 두 가지 주요 컴포넌트로 구성됩니다:<br>
+\</p>
+<ol>
+<li>검색 단계(Retrieval Step): 질문에 맞는 관련 문서나 정보를 외부
+데이터베이스에서 검색하는 단계입니다. 이 과정에서 일반적으로 검색 엔진
+또는 벡터 데이터베이스가 사용되며, 문서의 벡터화를 통해 의미적 유사성을
+기준으로 문서를 찾아냅니다.\</li>
+<li>생성 단계(Generation Step): 검색된 정보를 바탕으로 AI 모델이 최종
+응답을 생성하는 단계입니다. 이 과정에서 검색된 정보가 모델의 입력으로
+들어가며, 모델은 이를 바탕으로 자연스럽고 맥락에 맞는 응답을
+생성합니다.<br>
+<br>
+이 두 가지 단계는 상호보완적으로 작동하여, 단순한 검색이나 단순한 생성
+방식에 비해 훨씬 정확하고 실용적인 결과를 만들어냅니다.<br>
+<br>
+RAG의 장점<br>
+<br>
+RAG가 제공하는 주요 장점은 다음과 같습니다:<br>
+\</li>
+<li>실시간 정보 제공: 외부 데이터베이스에서 실시간으로 정보를 검색해오기
+때문에, 모델이 새로운 정보에 빠르게 대응할 수 있습니다. 특히 빠르게
+변하는 트렌드나 최신 뉴스와 같은 정보를 반영해야 하는 응용 분야에서 큰
+이점을 가집니다.\</li>
+<li>높은 정확성: RAG는 학습된 모델의 지식에만 의존하지 않기 때문에,
+모르는 정보나 부족한 정보가 있을 경우 외부 데이터를 통해 이를 보완할 수
+있습니다. 이를 통해 사용자에게 더 정확한 정보를 제공할 수 있습니다.\</li>
+<li>효율적인 메모리 사용: 대규모의 데이터를 직접 모델에 포함하지 않아도,
+외부 저장소에서 필요한 정보만 가져오기 때문에 학습 및 추론 시 모델이
+차지하는 메모리 용량이 상대적으로 적습니다.<br>
+<br>
+RAG의 응용 사례<br>
+<br>
+RAG는 다양한 산업과 응용 분야에서 사용될 수 있습니다. 예를 들어, 다음과
+같은 분야에서 그 가능성을 입증하고 있습니다:<br>
+<br>
+• 고객 지원: 고객 문의에 대한 정확하고 신속한 답변이 요구되는 고객 지원
+부서에서는, RAG를 통해 최신 정보나 특정 제품에 대한 세부 정보를
+실시간으로 제공할 수 있습니다.<br>
+• 의료 정보 제공: 의료 분야에서는 최신 연구 결과와 치료법이 중요한
+역할을 합니다. RAG는 의료 데이터베이스에서 최신 정보를 검색해 의료진이나
+환자에게 최신의 정확한 의료 정보를 제공하는 데 활용될 수 있습니다.<br>
+• 기술 문서 검색 및 Q&amp;A: 기술 관련 문서나 사용자 매뉴얼은 자주
+업데이트되기 때문에, RAG를 통해 최신 기술 문서나 패치 노트에 기반한
+답변을 제공할 수 있습니다.<br>
+<br>
+RAG의 미래 전망<br>
+<br>
+RAG는 정보 검색과 언어 모델을 융합한 대표적인 AI 기술로, 앞으로 더욱
+다양한 분야에서 응용될 가능성이 큽니다. 특히 기업이 보유한 사내 데이터를
+효과적으로 활용하거나, 최신 정보를 요구하는 서비스에서 그 가치를
+인정받고 있습니다. 또한, RAG는 발전 가능성이 큰 기술로, 검색 및 생성
+단계를 더욱 최적화하고, 대규모 데이터를 처리하는 능력을 향상시키는
+방향으로 연구가 활발히 진행되고 있습니다.<br>
+<br>
+RAG는 단순히 AI 모델에 데이터를 추가하는 것이 아니라, 실시간으로 외부
+정보를 활용함으로써 모델의 지능과 활용 범위를 확장하는 혁신적인 방법을
+제공합니다. 앞으로도 RAG와 같은 기술은 인공지능의 한계를 극복하고 더
+많은 가능성을 열어가는 데 핵심적인 역할을 할 것으로 기대됩니다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

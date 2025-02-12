@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Zero-Shot Learning: 데이터가 없는 새로운 개념에 대한 AI 학습의 가능성 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content=":::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta
+Zero-Shot Learning: 데이터가 없는 새로운 개념에 대한 AI 학습의 가능성
+::: box-info
+LLM
+2024-11-14 14:39:34
+:::
+::::
+:::::
+::::::
+
+::::: article-view
+::: contents_style
+인공지능(AI) 모델이 발전하면서 점점 더 다양한 응용 분야에 적용되고
+있지만, 여전히 모델이 새로운 개념이나 주제에 대해 학습하기 위해서는
+다량의 데이터가 필요하다는 한계가 있습니다. 특히, 학습 데이터가
+부족하거나 아예 존재하지 않는 상황에서는 기존의 학습 방식으로는 대응이
+어렵습니다. 이러한 문제를 해결하기 위해 등장한 기술이 바로 Zero-Shot
+Learning입니다. Zero-Shot Learning은 모델이 사전 학습 데이터에 없는
+새로운 개념이나 클래스에 대해 예측할 수 있도록 만드는 학습 방법으로, AI
+모델의 적용 범위를 획기적으로 넓히는 기술로 주목받고 있습니다.
+
+Zero-Shot Learning은 AI 모델이 새로운 데이터나 클래스에 대해 &lsquo;0개의
+예제(Zero-Shot)&lsquo;만으로도 일반화된 지식을 기반으로 예측을 수행할 수
+있도록 하는 방법입니다. 이를 통해 모델은 새로운 개념을 별도로 학습하지
+않아도 유사한 개념을 추론하여 높은 수준의 정확도로 예측할 수 있게
+됩니다. 이 방법은 학습 데이터 수집이 어려운 분야, 예를 들어 희귀한 질병
+진단이나 새로운 제품 분류와 같은 곳에서 큰 잠재력을 가지고 있습니다.
+
+Zero-Shot Learning의 주요 개념과 작동 원리
+
+Zero-Shot Learning은 모델이 새로운 개념이나 클래스에 대해 유사성과 추론
+능력을 바탕으로 예측할 수 있도록 다양한 기법을 사용합니다. Zero-Shot
+Learning의 작동 원리를 이해하기 위해서는 다음과 같은 주요 개념을 살펴볼
+필요가 있습니다.\">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/posts/107/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/107/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Zero-Shot Learning: 데이터가 없는 새로운 개념에 대한 AI 학습의 가능성
+    </h1>
+    <div class="post-meta"><span title='2024-11-14 14:39:34 +0000 UTC'>November 14, 2024</span>&nbsp;·&nbsp;Jun Kang
+
+</div>
+  </header> 
+  <div class="post-content"><p>:::::::::::: {.main role=&ldquo;main&rdquo;}
+::::::::::: area-main
+:::::::::: area-view
+:::::: article-header
+::::: inner-article-header
+:::: box-meta</p>
+<h2 id="zero-shot-learning-데이터가-없는-새로운-개념에-대한-ai-학습의-가능성" class="title-article">Zero-Shot Learning: 데이터가 없는 새로운 개념에 대한 AI 학습의 가능성<a hidden class="anchor" aria-hidden="true" href="#zero-shot-learning-데이터가-없는-새로운-개념에-대한-ai-학습의-가능성">#</a></h2>
+<p>::: box-info
+LLM</p>
+<p>2024-11-14 14:39:34
+:::
+::::
+:::::
+::::::</p>
+<hr>
+<p>::::: article-view
+::: contents_style
+인공지능(AI) 모델이 발전하면서 점점 더 다양한 응용 분야에 적용되고
+있지만, 여전히 모델이 새로운 개념이나 주제에 대해 학습하기 위해서는
+다량의 데이터가 필요하다는 한계가 있습니다. 특히, 학습 데이터가
+부족하거나 아예 존재하지 않는 상황에서는 기존의 학습 방식으로는 대응이
+어렵습니다. 이러한 문제를 해결하기 위해 등장한 기술이 바로 Zero-Shot
+Learning입니다. Zero-Shot Learning은 모델이 사전 학습 데이터에 없는
+새로운 개념이나 클래스에 대해 예측할 수 있도록 만드는 학습 방법으로, AI
+모델의 적용 범위를 획기적으로 넓히는 기술로 주목받고 있습니다.<br>
+<br>
+Zero-Shot Learning은 AI 모델이 새로운 데이터나 클래스에 대해 &lsquo;0개의
+예제(Zero-Shot)&lsquo;만으로도 일반화된 지식을 기반으로 예측을 수행할 수
+있도록 하는 방법입니다. 이를 통해 모델은 새로운 개념을 별도로 학습하지
+않아도 유사한 개념을 추론하여 높은 수준의 정확도로 예측할 수 있게
+됩니다. 이 방법은 학습 데이터 수집이 어려운 분야, 예를 들어 희귀한 질병
+진단이나 새로운 제품 분류와 같은 곳에서 큰 잠재력을 가지고 있습니다.<br>
+<br>
+Zero-Shot Learning의 주요 개념과 작동 원리<br>
+<br>
+Zero-Shot Learning은 모델이 새로운 개념이나 클래스에 대해 유사성과 추론
+능력을 바탕으로 예측할 수 있도록 다양한 기법을 사용합니다. Zero-Shot
+Learning의 작동 원리를 이해하기 위해서는 다음과 같은 주요 개념을 살펴볼
+필요가 있습니다.\</p>
+<ol>
+<li>임베딩 공간(Embedding Space)<br>
+Zero-Shot Learning에서는 모델이 학습 데이터를 벡터화하여 의미적으로
+비슷한 데이터를 유사한 위치에 배치하는 임베딩 공간을 생성합니다. 이
+임베딩 공간에서는 서로 유사한 개념이 가깝게 위치하게 되며, 모델은 이를
+통해 새롭게 등장한 개념이 기존의 학습된 개념과 어느 정도 유사한지 파악할
+수 있습니다. 예를 들어, 고양이와 강아지의 사진을 학습한 모델은 같은
+공간에서 &ldquo;호랑이&quot;라는 새로운 클래스가 나타났을 때 고양이와 유사한 위치에
+배치하여 이를 예측할 수 있습니다.\</li>
+<li>속성 기반 학습(Attribute-Based Learning)<br>
+Zero-Shot Learning에서는 각 클래스의 특징이나 속성(Attribute)을 이용해
+모델이 새로운 클래스에 대해 예측할 수 있도록 합니다. 예를 들어, &ldquo;얼룩이
+있는 털&quot;과 &ldquo;네 발&quot;이라는 속성을 사용하면, &ldquo;호랑이&quot;라는 새로운 동물에
+대한 학습 데이터가 없어도 모델이 기존의 동물 클래스와의 유사성을
+바탕으로 호랑이를 추론할 수 있게 됩니다. 이러한 속성 기반 학습은 사전에
+학습된 개념을 재조합하여 새로운 개념을 추론하는 데 큰 도움이 됩니다.\</li>
+<li>언어 모델 활용<br>
+Zero-Shot Learning에서는 언어 모델을 활용하여 새로운 개념에 대한 텍스트
+설명을 모델에 제공함으로써 예측 능력을 향상시킬 수 있습니다. 예를 들어,
+텍스트 설명을 통해 &ldquo;호랑이&quot;가 &ldquo;네 발이 있고, 얼룩이 있는 포유류&quot;라는
+정보를 주면, 모델은 기존의 학습된 동물 클래스와 비교하여 호랑이를 유사한
+범주로 분류할 수 있습니다. 이러한 방식은 이미지, 텍스트, 오디오 등
+다양한 형식의 데이터를 함께 활용하여 Zero-Shot 학습을 더욱 효과적으로
+수행하게 합니다.\</li>
+<li>사전 학습된 대형 모델(Pretrained Large Models)<br>
+최근 Zero-Shot Learning에서는 사전에 다양한 데이터를 학습한 대형 언어
+모델(예: GPT, BERT)을 활용하여 새로운 개념에 대한 추론 능력을
+극대화합니다. 대형 모델은 이미 방대한 데이터에서 다양한 패턴과 개념을
+학습한 상태이기 때문에, 특정 개념이 학습되지 않았더라도 기존 지식을
+바탕으로 유사한 개념에 대해 예측할 수 있습니다.<br>
+<br>
+Zero-Shot Learning의 장점<br>
+<br>
+Zero-Shot Learning이 제공하는 주요 장점은 다음과 같습니다:\</li>
+<li>데이터 수집 비용 절감<br>
+Zero-Shot Learning은 새로운 개념에 대한 데이터를 수집할 필요가 없기
+때문에, 학습 데이터 수집과 레이블링에 드는 비용과 시간을 절감할 수
+있습니다. 이는 특히 희귀하거나 접근하기 어려운 데이터가 필요한 분야에서
+큰 이점이 됩니다.\</li>
+<li>빠른 학습 및 예측<br>
+새로운 클래스에 대한 데이터를 별도로 학습할 필요 없이 기존의 학습된
+지식을 바탕으로 예측할 수 있어, 모델이 새로운 개념에 빠르게 적응할 수
+있습니다. 이는 실시간으로 새로운 개념이 등장하는 분야에서 효과적입니다.\</li>
+<li>높은 유연성<br>
+Zero-Shot Learning은 기존에 학습된 개념을 유연하게 재조합하여 새로운
+개념에 대한 예측을 수행할 수 있어, 모델의 적용 범위가 크게 확장됩니다.
+이를 통해 AI 모델이 더 다양한 응용 사례에서 사용될 수 있습니다.\</li>
+<li>지속적인 모델 성능 향상<br>
+사전 학습된 대형 모델을 활용하면 Zero-Shot Learning의 성능이 더욱
+향상됩니다. 이러한 모델은 학습된 개념을 바탕으로 새로운 문제에 대한 적응
+능력이 뛰어나, 추가적인 학습 없이도 일정 수준 이상의 예측 정확도를
+제공합니다.<br>
+<br>
+Zero-Shot Learning의 응용 사례<br>
+<br>
+Zero-Shot Learning은 다양한 응용 분야에서 그 잠재력을 발휘하고 있으며,
+특히 다음과 같은 사례에서 널리 활용되고 있습니다:<br>
+• 희귀 질병 진단: 의료 분야에서는 특정 질병의 발생 빈도가 낮아 대량의
+데이터를 확보하기 어려운 경우가 많습니다. Zero-Shot Learning을 활용하면,
+기존의 유사한 질병 데이터와 속성을 바탕으로 희귀 질병을 진단할 수
+있습니다.<br>
+• 신제품 분류 및 추천 시스템: 전자 상거래와 같은 분야에서는 신제품이
+지속적으로 출시됩니다. Zero-Shot Learning을 활용하면, 신제품에 대한
+별도의 학습 없이도 기존 제품의 유사성을 바탕으로 분류 및 추천이
+가능합니다.<br>
+• 희귀 언어 번역 및 처리: 주요 언어가 아닌 희귀 언어에 대해 학습되지
+않은 모델도 Zero-Shot Learning을 통해 기존 언어 모델을 바탕으로 번역과
+처리가 가능합니다. 예를 들어, 특정 방언이나 소수 언어에 대해 사전 학습된
+유사한 언어 지식을 통해 Zero-Shot 번역을 수행할 수 있습니다.<br>
+• 이상 탐지 시스템: 금융, 보안 등에서는 이상 거래나 비정상적인 행동을
+탐지하는 것이 중요한데, Zero-Shot Learning을 통해 새로운 유형의 이상
+패턴이 발생했을 때도 기존의 유사한 패턴을 기반으로 예측할 수 있습니다.<br>
+<br>
+Zero-Shot Learning의 미래 전망<br>
+<br>
+Zero-Shot Learning은 앞으로 더욱 중요해질 기술로, 데이터가 부족하거나
+예측할 새로운 개념이 지속적으로 등장하는 모든 분야에서 필수적인 역할을
+할 것입니다. 특히, 사전 학습된 대형 언어 모델이 발전하면서 Zero-Shot
+Learning의 성능은 점점 더 높아지고 있으며, 향후 더 많은 응용 분야에
+적용될 것으로 기대됩니다.<br>
+<br>
+또한 Zero-Shot Learning은 비지도 학습과 결합되어, AI 모델이 지속적으로
+학습할 수 있는 능력을 부여하며, 데이터가 없는 상황에서도 모델의 활용
+가능성을 극대화할 것입니다. 앞으로 AI가 더 많은 분야에서 인간의
+의사결정을 지원하는 데 있어 Zero-Shot Learning은 중요한 역할을 하게 될
+것입니다.
+:::</li>
+</ol>
+<p>\</p>
+<p>::: tags
+#오블완 #티스토리챌린지
+:::
+:::::
+::::::::::
+:::::::::::
+::::::::::::</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

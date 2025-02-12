@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>383a42  - F8f8f8  - Mybatis  - 기존  - 다중  - 추가될  - 스프링부트  - 데이터베이스 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/383a42----f8f8f8----mybatis----%EA%B8%B0%EC%A1%B4----%EB%8B%A4%EC%A4%91----%EC%B6%94%EA%B0%80%EB%90%A0----%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8----%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</link>
+    <description>Recent content in 383a42  - F8f8f8  - Mybatis  - 기존  - 다중  - 추가될  - 스프링부트  - 데이터베이스 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/383a42----f8f8f8----mybatis----%EA%B8%B0%EC%A1%B4----%EB%8B%A4%EC%A4%91----%EC%B6%94%EA%B0%80%EB%90%A0----%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8----%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] 스프링부트 &#43; Mybatis 데이터소스 여러개 연결 (스프링 다중 데이터베이스 연결)</title>
+      <link>http://localhost:1313/posts/33/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/33/</guid>
+      <description>&lt;p&gt;추가될 데이터베이스의  속성을 application.properties에 추가
+&lt;code&gt;#기존 DB Setting spring.datasource.url={url} spring.datasource.driverClassName={driverClassName} spring.datasource.username={username} spring.datasource.password={password} spring.datasource.schema={schema} #추가될 DB Setting new.datasource.url={url} new.datasource.driverClassName={driverClassName} new.datasource.username={username} new.datasource.password={password} new.datasource.schema={schema}&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-데이터베이스-연결-빈-속성-추가&#34;&gt;2. 데이터베이스 연결 빈 속성 추가&lt;/h2&gt;
+&lt;p&gt;기존 데이터베이스 연결 설정을 하는 DatabaseConfig.java 외에 NewDatabaseConfig.java신규로 추가한다.
+기존 DatabaseConfig.java
+`@Bean(name=&amp;ldquo;sqlSessionFactory&amp;rdquo;)
+@Primary
+public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;sessionFactory 설정 -
+return sessionFactory.getObject();
+}
+@Bean(name=&amp;ldquo;sqlSessionTemplate&amp;rdquo;)
+@Primary
+public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) throws Exception {
+&amp;ndash; sessionTemplate 설정
+return  new SqlSessionTemplate(sqlSessionFactory);
+}
+@Bean(name=&amp;ldquo;dataSource&amp;rdquo;)
+@Primary
+public DataSource dataSource() {&lt;/li&gt;
+&lt;li&gt;데이터베이스 연결설정 -
+return new DataSource();
+}&lt;code&gt;신규 추가된 NewDatabaseConfig.java 설정&lt;/code&gt;@Bean(name=&amp;ldquo;newSqlSessionFactory&amp;rdquo;)
+public SqlSessionFactory newSqlSessionFactory(@Qualifier(&amp;ldquo;newDataSource&amp;rdquo;) DataSource newDataSource) throws Exception {&lt;/li&gt;
+&lt;li&gt;SqlSessionFactory 설정 -
+return newSessionFactory.getObject();
+}
+@Bean(name=&amp;ldquo;newSqlSessionTemplate&amp;rdquo;)
+public SqlSessionTemplate newSqlSessionTemplate(@Qualifier(&amp;ldquo;newSqlSessionFactory&amp;rdquo;) SqlSessionFactory newSqlSessionFactory) throws Exception {&lt;/li&gt;
+&lt;li&gt;SqlSessionTemplate 설정 -
+return new SqlSessionTemplate(newSqlSessionFactory);
+}
+@Bean(name=&amp;ldquo;newDataSource&amp;rdquo;)
+public DataSource newDataSource() {&lt;/li&gt;
+&lt;li&gt;데이터베이스 연결설정 -
+return new DataSource();
+}&lt;code&gt;다음 예제대로 SqlSessionFactory, SqlSessionTemplate, DataSource 빈만 별도로 등록해 주면 설정한 데이터베이스 주소로 연결이 가능하다. 다만, NewDatabaseConfig.java의 빈 설정을 보면&lt;/code&gt;public SqlSessionTemplate newSqlSessionTemplate(@Qualifier(&amp;ldquo;newSqlSessionFactory&amp;rdquo;) SqlSessionFactory newSqlSessionFactory)`
+다음과 같이 최초 설정에도 SqlSessionTemplate, SqlSessionFactory 빈 등록 시 새로 생성된 SqlSessionFactory, DataSource를 명시해주지 않는다면 기존 설정의 @Primary 설정을 따라 기존사용 중인 데이터베이스 접속 정보를 사용하게 되기에 의존성 주입을 별도로 해주어야 한다. 별도로 명시하지 않을 경우, 최초 빈 등록시 신규 데이터베이스는 컨넥션만 맺은 채로, 신규 데이터베이스 연결 설정도 1번 데이터베이스 연결 설정 빈을 참조하게 된다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-데이터소스-설정&#34;&gt;3. 데이터소스 설정&lt;/h2&gt;
+&lt;p&gt;추가 데이터베이스 연결 빈 설정이 완료되면 등록된 2개의 데이터 소스 중 접속정보를 선택하여 사용 가능하다.
+&lt;code&gt;private final SqlSessionTemplate sqlSessionTemplate; private final SqlSessionTemplate newSqlSessionTemplate; public TestRepository(@Qualifier(&amp;quot;newSqlSessionTemplate&amp;quot;) SqlSessionTemplate sqlSessionTemplate, SqlSessionTemplate sqlSessionTemplate) { this.newSqlSessionTemplate = newSqlSessionTemplate; this.sqlSessionTemplate = sqlSessionTemplate; } --기존 데이터베이스 연결 public Integer connectionTest() throws Exception { log.info(newSqlSessionTemplate.getConnection().get~()); -- 접속 정보 확인 return newSqlSessionTemplate.selectOne(&amp;quot;~.connectionTest&amp;quot;); } --신규 데이터베이스 연결 public Integer connectionTest() throws Exception { log.info(sqlSessionTemplate.getConnection().get~()); -- 접속 정보 확인 return sqlSessionTemplate.selectOne(&amp;quot;~.connectionTest&amp;quot;); }&lt;/code&gt;
+기존 사용중인 데이터베이스 연결 빈 설정값에 @Primary 지정을 해주면 기존에 사용 중이던 SqlSessionTemplate에 어떤 빈을 사용할지 명시하지 않아도 @Primary 지정된 빈 설정을 따라간다. 예제와 같이 newSqlSessionTemplate에 의존성 주입을 해주어야 하지만, sqlSessionTemplate는 디폴트 설정인 기존 데이터베이스 설정을 사용한다.
+#데이터베이스 #mybatis #스프링부트 #다중 연결&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

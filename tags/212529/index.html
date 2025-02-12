@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>212529 | Jun Kang&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Jun Kang">
+<link rel="canonical" href="http://localhost:1313/tags/212529/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/212529/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/212529/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Jun Kang&#39;s Blog (Alt + H)">Jun Kang&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    212529
+  </h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] GIN인덱스의 원리 및 특징
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다. 저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.## 2. full text search에서의 적용### 2-1. 샘플 테이블 및 데이터 생성create table ts(doc text, doc_tsv tsvector);insert into ts(doc) values(&#39;Can a sheet slitter slit sheets?&#39;),(&#39;How many sheets could a sheet slitter slit?&#39;),(&#39;I slit a sheet, a sheet I slit.&#39;),(&#39;Upon a slitted sheet I sit.&#39;),(&#39;Whoever slit the sheets is a good sheet slitter.&#39;),(&#39;I am a sheet slitter.&#39;),(&#39;I slit sheets.&#39;),(&#39;I am the sleekest sheet slitter that ever slit sheets.&#39;),(&#39;She slits the sheet she sits on.&#39;);update ts set doc_tsv = to_tsvector(doc);create index on ts using gin(doc_tsv);select doc from ts where doc_tsv @@ to_tsquery(&#39;many &amp; slitter&#39;);### 2-2. 조회 결과 및 플랜 확인 QUERY PLAN---------------------------------------------------------------------Bitmap Heap Scan on tsRecheck Cond: (doc_tsv @@ to_tsquery(&#39;many &amp; slitter&#39;::text))-&gt; Bitmap Index Scan on ts_doc_tsv_idxIndex Cond: (doc_tsv @@ to_tsquery(&#39;many &amp; slitter&#39;::text))(4 rows)`` doc---------------------------------------------How many sheets could a sheet slitter slit?(1 row)### 2-3. 작동 방식&gt; ▪ 먼저 쿼리에서 검색에 사용할 lexeme인 ‘many’와 ‘slitter’를 추출한다. ▪ lexeme B-tree에서 2개의 키를 동시에 찾는다.- mani = (0,2)- slitter = (0,1),(0,2),(1,2),(1,3),(2,2)▪ 마지막으로, 발견된 TID각각에 대해 검색 쿼리에 부합하는지 확인한다.(예제의 쿼리의 경우 and 조건이기에 (0,2)에 해당하는 TID만 리턴하게 된다.)## 3. 특징▪ GIN의 업데이트는 매우 느리다. document는 보통 많은 lexeme을 포함하고, 1개의 document가 업데이트되거나 추가된다고 해도 인덱스 트리 내에서는 많은 업데이트가 진행된다.▪ 반면에, 몇몇의 document가 동시에 업데이트된다면, 중복되는 Lexeme들이 존재할 것이고, 총 인덱스 업데이트량은 개별 업데이트 시보다 줄어들 것이다.▪ GIN인덱스의 또 하나의 특징은 항상 결과를 bitmap으로 리턴한다는 것이다. (TID 자체로 리턴하지 않는다.) 그렇기 때문에 Limit을 통한 결괏값 제한은 그렇게 효율적이지 않다.▪ full text search, array, json 등의 타입 조회에 효율적이다.참고 : https://postgrespro.com/blog/pgsql/4261647#Gin #Index #PostgreSQL
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] GIN인덱스의 원리 및 특징" href="http://localhost:1313/posts/10/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[PostgreSQL] MVCC (Multi-Version Concurrency Control)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터베이스를 쿼리 하는 동안 데이터의 현재 상태에 관계없이 얼마 전의 데이터 스냅샷을 볼 수 있음을 의미한다. 데이터를 쿼리 하기 위해 트랜잭션을 만들었다면 해당 Transaction은 데이터의 스냅샷을 보고 있는 것이다.동일한 행에 서로 다른 트랜잭션이 동시에 업데이트를 시도할 때, 일관성 없는 데이터가 조회되지 않도록 트랜잭션을 보호하여 각 데이터베이스 세션에 대한 트랜잭션 격리를 제공한다. Multiversion과 Lock model의 주요 차이점은 MVCC에서 데이터 read를 위해 획득한 lock과 데이터 쓰기를 위해 획득한 lock이 충돌하지 않는다는 것이다. (따라서 read와 write는 서로 block 하지 않는다.) 이러한 방식을 통해서 Reading 하는 작업에 대해서 Lock을 걸지 않기에 높은 성능을 얻을 수 있게 된다.### 1-1. Postgresql Lock에 대한 상세 설명2023.09.11 - [Postgresql] - Postgresql Lock이란? (조회 및 kill, Dead lock)Postgresql Lock이란? (조회 및 kill, Dead lock)1. Lock 확인방법 SELECT PSAT.RELNAME, PL.LOCKTYPE, PL.PID, PL.MODE, PL.GRANTED FROM PG_LOCKS PL, PG_STAT_ALL_TABLES PSAT WHERE PL.RELATION = PSAT.RELID 2. Lock Kill 방법 SELECT PG_CANCEL_BACKEND([PID]) SELECT PG_TERMINATE_BACKEND([PID]) Lock 리스junhkang.tistory.com## 2. PostgreSQL의 MVCCPostgreSQL에서는 record를 tuple이라고 한다. PostgreSQL에서는 멀티버전에 대한 정보를 하나의 Page ( Table )에서 관리하고 있다. 모든 테이블에는 System Columns을 가지고 있고 이들은 미리 정의된 컬럼들로 내부 동작에 사용된다. 이 컬럼 중 mvcc를 구현하게 해주는 것이 xmin, xmax 컬럼이다.&gt; xmin – Tuple을 insert 하거나 update 하는 시점의 Transaction ID를 갖는 메타데이터xmax – Tuple을 delete 하거나 update 하는 시점의 Transaction ID를 갖는 메타데이터신규 insert, update시 xmin에 현재 transaction id를 넣고 xmax에는 null 값을 넣는다. delete, update시 이전 tuple의 xmax에는 작업을 수행한 transaction id 값을 넣는다. 이를 통해 트랜잭션이 시작된 시점의 Transaction ID와 같거나 작은 Transacion ID를 가지는 데이터를 읽는다. (xmin과 xmax의 범위를 통해 해당 트랜잭션이 조회할 수 있는 데이터인지를 판단한다.)xmin | xmax | value-------&#43;-------&#43;-----100 | 120 | A102 | 120 | B110 | 134 | C115 | 0 | D115 | 120 | E&gt; [Transaction ID 별 조회 가능한 데이터]Transaction 101에서는 ATransaction 109에서는 A, BTransaction 112에서는 A, B, CTransaction 117에서는 A, B, C, D, E하나의 page에 이전 tuple들이 그대로 존재하기 때문에, row가 삭제되어도 용량은 그대로 차지하는 경우가 있다. 쿼리 성능 또한 지속적으로 떨어지게 된다. 따라서 PostgreSQL에서는 Vacuum 작업을 진행해주어야 한다.Vacuum에 대한 상세 개념은 해당 포스트에서 확인할 수 있다.2023.10.09 - [Postgresql] - [PostgreSQL] Vacuum 개념 및 적절한 사용[PostgreSQL] Vacuum 개념 및 적절한 사용1. Vacuum 이란? Vacuum은 postgresql에서 dead tuple이 차지하는 저장공간을 회수한다. 일반적으로 Postgresql에서 update, delete tuple 은 물리적으로 삭제되지 않으며 vacuum이 완료될 때까지 계속 존재한다. (updatjunhkang.tistory.com[참고]https://techblog.woowahan.com/9478/https://www.postgresql.org/docs/9.1/ddl-system-columns.htmlhttps://www.postgresql.org/docs/7.1/mvcc.html#Lock #Vacuum #PostgreSQL #MVCC
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [PostgreSQL] MVCC (Multi-Version Concurrency Control)" href="http://localhost:1313/posts/15/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">[Spring] 스프링부트 3, 스프링 시큐리티 6, 로그인 세션 유지, 로그인 풀림
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>스프링 부트 3, 스프링 시큐리티 6 업데이트가 되며 기존에 사용 중인 WebSecurityConfigurerAdapter를 더 이상 지원하지 않기에기존의 WebSecurityConfigurerAdapter를 상속받아 기능을 구현하는 대신 컴포넌트화 시켜서 구현해야한다.SecurityFilterChain으로 스프링 시큐리티를 구현 중(antMacher -&gt; requestMacher, dispatcherTypeMatcher설정 등 기본 Spring Security6.0 마이그레이션 가이드는 적용 완료https://docs.spring.io/spring-security/reference/5.8/migration/index.html)Preparing for 6.0 :: Spring SecurityThe first step is to ensure you are the latest patch release of Spring Boot 2.7. Next, you should ensure you are on the latest patch release of Spring Security 5.8. If you are using Spring Boot, you will need to override the Spring Boot version from Springdocs.spring.ioSecurityContext에 로그인 시도 시 정상적으로 인증정보를 바인딩하고 있으나, 페이지 이동 시 인증정보가 없어지는 현상 발생## 2. 해결SecurityContextPersistenceFilterSecurityContext의 영속성을 컨트롤하는 SecurityContextPersistenceFilter의 설정이 누락되어 있었다.SecurityContext의 영속화는 SecurityContextRepository를 통해 이루어지며 SecurityContextHolder에 SecurityContext를 넣어 요청 전반에 걸쳐 SecurityContext를 사용할 수 있도록 해준다.따라서 HttpSecurity에 SecurityContextPersistenceFilter 설정을 추가해 주면 정상적으로 로그인 세션이 유지된다..addFilterBefore(new SecurityContextPersistenceFilter(), BasicAuthenticationFilter.class)* 마이그레이션 전부터 세션유지시간이 커스텀 되어 있었기에 이번 케이스와는 별개지만, SecurityContextPersistenceFilter가 정상적으로 설정되어 있는데도 로그인 메서드 내에서는 정상적으로 인증정보가 등록되지만, 얼마 지나지 않아 풀린다면 스프링시큐리티 세션 시간, 혹은 세션 생성 설정을 확인해봐야 할 수도 있다.https://docs.spring.io/spring-security/site/docs/4.0.x/apidocs/org/springframework/security/config/http/SessionCreationPolicy.htmlSessionCreationPolicy (Spring Security 4.0.4.RELEASE API)NEVER Spring Security will never create an HttpSession, but will use the HttpSession if it already existsdocs.spring.io#spring #Spring Security
+...</p>
+  </div>
+  <footer class="entry-footer">Jun Kang</footer>
+  <a class="entry-link" aria-label="post link to [Spring] 스프링부트 3, 스프링 시큐리티 6, 로그인 세션 유지, 로그인 풀림" href="http://localhost:1313/posts/59/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Jun Kang&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

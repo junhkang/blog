@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PostgreSQL  - Vacuum on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/postgresql----vacuum/</link>
+    <description>Recent content in PostgreSQL  - Vacuum on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 09 Oct 2023 13:33:14 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/postgresql----vacuum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[PostgreSQL\\] Vacuum 개념 및 적절한 사용
+</title>
+      <link>http://localhost:1313/posts/17/</link>
+      <pubDate>Mon, 09 Oct 2023 13:33:14 +0000</pubDate>
+      <guid>http://localhost:1313/posts/17/</guid>
+      <description>&lt;h2 id=&#34;postgresql-vacuum-개념-및-적절한-사용&#34;&gt;[PostgreSQL] Vacuum 개념 및 적절한 사용&lt;/h2&gt;
+&lt;p&gt;Postgresql&lt;/p&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/17/img.png&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+## 1. Vacuum 이란?
+Vacuum은 postgresql에서 dead tuple이 차지하는 저장공간을 회수한다. 일반적으로 Postgresql에서 update, delete tuple 은 물리적으로 삭제되지 않으며 vacuum이 완료될 때까지 계속 존재한다. 
+(update, delete 시 tuple의 순환은 MVCC 개념에서 확인할 수 있다.)
+&lt;a href=&#34;https://junhkang.tistory.com/15&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2023.10.06 - [Postgresql] - [PostgreSQL] MVCC (Multi-Version Concurrency Control)&lt;/a&gt;
+&lt;figure id=&#34;og_1696821226831&#34; contenteditable=&#34;false&#34; data-ke-type=&#34;opengraph&#34; data-ke-align=&#34;alignCenter&#34; data-og-type=&#34;article&#34; data-og-title=&#34;[PostgreSQL] MVCC (Multi-Version Concurrency Control)&#34; data-og-description=&#34;1. MVCC란? 동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터&#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-source-url=&#34;https://junhkang.tistory.com/15&#34; data-og-url=&#34;https://junhkang.tistory.com/15&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/btoNCo/hyT9zfoYAx/0flcWh9gNpxwXLug0VvtP1/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/bCE6yz/hyT9BqJWnz/yARLM2Qekm9VpU4B5IGjdK/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557,https://scrap.kakaocdn.net/dn/gnGqh/hyT5QQCkSL/K5l2f3GLqy8ffjNXzkyrFk/img.png?width=540&amp;amp;height=557&amp;amp;face=0_0_540_557&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/15&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-source-url=&#34;https://junhkang.tistory.com/15&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[PostgreSQL] MVCC (Multi-Version Concurrency Control)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

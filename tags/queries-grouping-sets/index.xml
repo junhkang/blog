@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>QUERIES-GROUPING-SETS on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/queries-grouping-sets/</link>
+    <description>Recent content in QUERIES-GROUPING-SETS on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/queries-grouping-sets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 고급 GROUPING 전략 : SETS, CUBE, ROLLUP의 개념, 효과적인 사용법 및 주의사항</title>
+      <link>http://localhost:1313/posts/84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/84/</guid>
+      <description>&lt;p&gt;고급 &amp;ldquo;GROUP BY&amp;quot;의 기능들로 PostgreSQL에서는 SETS, CUBE, ROLLUP 기능을 제공한다. 기본적인 콘셉트는 일반 GROUP BY와 동일하게 FROM / WHERE 절에서 선택된 데이터는 각각 지정된 그룹으로 GROUP BY 되고, 각 그룹에 대해 집계가 계산된 후, 결과가 반환된다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;다음은 테스트로 사용할 테이블 정보이다. (마지막 장의 4. 테이블 &amp;amp; 데이터 생성 참고)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;![](/images/posts/84/스크린샷 2024-04-09 오후 2.20.01.png)&lt;/p&gt;
+&lt;h3 id=&#34;1-1-group-by-sets의-개념-및-사용법&#34;&gt;1-1. GROUP BY SETS의 개념 및 사용법&lt;/h3&gt;
+&lt;p&gt;GROUPING SETS의 각 하위 요소(subsets)들은 하나 이상의 열 혹은 표현식을 지정할 수 있으며 조합에 맞게 집계 결과를 별도로 계산한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

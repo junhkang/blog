@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SFTP  - Ssh on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/sftp----ssh/</link>
+    <description>Recent content in SFTP  - Ssh on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 03 Jan 2025 15:38:03 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/sftp----ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>\\[LINUX\\] SFTP 초기화 오류 \\: Failed to connect and initialize SSH connection. Message\\: \\[Failed to connect SFTP channel
+</title>
+      <link>http://localhost:1313/posts/124/</link>
+      <pubDate>Fri, 03 Jan 2025 15:38:03 +0000</pubDate>
+      <guid>http://localhost:1313/posts/124/</guid>
+      <description>&lt;h2 id=&#34;linux-sftp-초기화-오류--failed-to-connect-and-initialize-ssh-connection-message-failed-to-connect-sftp-channel&#34;&gt;[LINUX] SFTP 초기화 오류 : Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel&lt;/h2&gt;
+&lt;p&gt;Linux&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel. Message [4: Received message is too long: 458961709]]&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;1-문제상황&#34;&gt;1. 문제상황&lt;/h3&gt;
+&lt;figure class=&#34;imageblock alignCenter&#34;&gt;
+&lt;span data-lightbox=&#34;lightbox&#34;&gt; &lt;img src=&#34;http://localhost:1313/images/posts/124/스크린샷%202025-01-03%20오후%203.32.21.png&#34; /&gt; &lt;/span&gt;
+&lt;/figure&gt;
+기존에 잘 작동하던 SFTP를 활용한 CI/CD가 갑자기 작동하지 않는다. 에러 메시지에 따르면 약 438mb의 메시지를 받은 상황인데, 파일을 실제로 업로드하는 시점이 아닌 SFTP연결 시도를 하는 순간(SSH연결을 설정하고 초기화하는 부분)에도 이렇게 큰 응답을 받는 상황이었다.
+### 2. 원인파악
+SSH 접속시, 서버 간 구분을 주기 위해 ~/. bashrc의 설정을 통해 웰컴메시지를 출력하는 부분이 문제였다. (다음 포스트에서 진행한 서버별 웰컴 메시지 등록 부분에서 작업과정 확인 가능)
+&lt;a href=&#34;https://junhkang.tistory.com/123&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2024.12.31 - [AWS] - [AWS] Bastion 서버 설정 및 서버 접속 상태 한눈에 구분하기&lt;/a&gt;
+&lt;figure id=&#34;og_1735885355933&#34; contenteditable=&#34;false&#34; data-ke-type=&#34;opengraph&#34; data-ke-align=&#34;alignCenter&#34; data-og-type=&#34;article&#34; data-og-title=&#34;[AWS] Bastion 서버 설정 및 서버 접속 상태 한눈에 구분하기&#34; data-og-description=&#34;1. Bastion 서버란?Bastion 서버란 클라우드 환경, 네트워크 환경에서 보안 게이트웨이 역할을 하는 서버로, 외부 네트워크에서 private 서버로 접속할 때 보안을 강화해 주고 접근제어를 &#34; data-og-host=&#34;junhkang.tistory.com&#34; data-og-source-url=&#34;https://junhkang.tistory.com/123&#34; data-og-url=&#34;https://junhkang.tistory.com/123&#34; data-og-image=&#34;https://scrap.kakaocdn.net/dn/0h1U1/hyXSqAEx4K/iaGRvkAYaVbe7IP0aJ9KZK/img.png?width=800&amp;amp;height=238&amp;amp;face=0_0_800_238,https://scrap.kakaocdn.net/dn/bjrHXC/hyXWyqeZYA/mlnDutIidAsbBifoKoXpWK/img.png?width=800&amp;amp;height=238&amp;amp;face=0_0_800_238&#34;&gt;
+&lt;a href=&#34;https://junhkang.tistory.com/123&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; data-source-url=&#34;https://junhkang.tistory.com/123&#34;&gt;&lt;/a&gt;
+&lt;p&gt;[AWS] Bastion 서버 설정 및 서버 접속 상태 한눈에 구분하기&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

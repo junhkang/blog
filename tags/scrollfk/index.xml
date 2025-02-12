@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ScrollFk on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/scrollfk/</link>
+    <description>Recent content in ScrollFk on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/scrollfk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)</title>
+      <link>http://localhost:1313/posts/21/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/21/</guid>
+      <description>&lt;p&gt;데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.&lt;/p&gt;
+&lt;p&gt;제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;#scrollPk&#34;&gt;Primary Keys(PK)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;#scrollFk&#34;&gt;Foreign Keys(FK)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;#scrollCheck&#34;&gt;Check&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;#scrollNotNull&#34;&gt;Not-null&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;#scrollUnique&#34;&gt;Unique&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Primary Keys (PK)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Primary Keys는 테이블의 각 ROW를 구분하는 유니크한 컬럼 혹은 컬럼의 조합이다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Not- null, Unique Constraints의 조합이다. 테이블인 단 1개의 PK만 가질 수 있다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PK 생성 시 Postgresql은 B-tree 인덱스를 자동으로 부여한다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;B-tree 인덱스를 사용하기 때문에 컬럼의 조합으로 PK를 설정 시 순서가 중요하다. (상세 내용은 다음 포스트에서 확인이 가능하다.)
+&lt;a href=&#34;https://junhkang.tistory.com/6&#34;&gt;2023.09.12 - [Postgresql] - [PostgreSQL] B-tree 인덱스의 원리 및 특징&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

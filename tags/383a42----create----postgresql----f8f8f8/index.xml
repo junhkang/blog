@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>383a42  - CREATE  - PostgreSQL  - F8f8f8 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/383a42----create----postgresql----f8f8f8/</link>
+    <description>Recent content in 383a42  - CREATE  - PostgreSQL  - F8f8f8 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/383a42----create----postgresql----f8f8f8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] CREATE TABLE AS (결과물을 테이블로)</title>
+      <link>http://localhost:1313/posts/24/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/24/</guid>
+      <description>&lt;p&gt;&lt;code&gt;-- 기본 CREATE TABLE films_recent AS SELECT * FROM films WHERE date_prod &amp;gt;= &#39;2002-01-01&#39;; --Synopsis CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } ] TABLE table_name [ (column_name [, ...] ) ] [ [ WITH | WITHOUT ] OIDS ] AS query&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-create-table-as-옵션&#34;&gt;2. CREATE TABLE AS 옵션&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;TEMPORARY / TEMP
+임시 테이블로 생성되며 세션이 종료될 시 삭제된다.&lt;/li&gt;
+&lt;li&gt;WITH OIDS / WITHOUT OIDS
+CREATE TABLE AS로 생성된 테이블이 OID를 포함하는지 여부이다. 사용하기 위해서는 default_with_oids 설정이 필요하다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3-create-table-as란&#34;&gt;3. CREATE TABLE AS란?&lt;/h2&gt;
+&lt;h3 id=&#34;3-1-장점&#34;&gt;3-1. 장점&lt;/h3&gt;
+&lt;p&gt;데이터 작업을 하다 보면 종종 특정 쿼리의 결과물로 별도 테이블을 생성하는 경우가 있다. 일반 테이블을 생성 후 SELECT-INSERT를 사용해도 되지만, 컬럼 명이나 data type을 별도로 맞춰 넣는 작업을 해야 한다. 하지만 CREATE TABLE AS는 테이블을 생성 후 SELECT 쿼리의 결과물을 바로 채워 넣고 테이블의 각 컬럼들은 SELECT 결과의 명칭 (alias를 통해 명시적으로 컬럼명을 재정의 할 수 있다.)과 data type을 자동으로 생성한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

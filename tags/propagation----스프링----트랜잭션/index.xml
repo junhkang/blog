@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Propagation  - 스프링  - 트랜잭션 on Jun Kang&#39;s Blog</title>
+    <link>http://localhost:1313/tags/propagation----%EC%8A%A4%ED%94%84%EB%A7%81----%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</link>
+    <description>Recent content in Propagation  - 스프링  - 트랜잭션 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.143.1</generator>
+    <language>ko</language>
+    <atom:link href="http://localhost:1313/tags/propagation----%EC%8A%A4%ED%94%84%EB%A7%81----%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Spring] 스프링 트랜잭션의 개념 및 적용 (@Transactional 사용법)</title>
+      <link>http://localhost:1313/posts/29/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/29/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;2023.10.10 - [Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;
+[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;트랜잭션(Transaction)이란? 트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순
+junhkang.tistory.com&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;스프링에서-제공하는-트랜잭션&#34;&gt;스프링에서 제공하는 트랜잭션&lt;/h2&gt;
+&lt;p&gt;◆ 동기화 (Synchronization)
+트랜잭션을 시작하기 위한 Connection 객체를 특별 저장소에 보관하고 필요할 때 쓸 수 있도록 한다.
+작업 쓰레드마다 Connection 객체를 독립적으로 관리하기에 멀티 스레드 환경에서도 충돌이 발생하지 않는다. 하지만 JDBC가 아닌 Hiberate 같은 기능을 사용한다면 JDBC 종속적인 트랜잭션 동기화 코드들은 문제가 발생한다. 대표적으로 Hibernate는 Connection이 아니라 Session 객체를 사용하기 때문이다. 이를 해결하기 위해 트랜잭션 관리 부분을 추상화한 기술을 제공하고 있다.
+◆ 추상화 (Abstraction)
+어플리케이션에 각 기술(JDBC, Hibernate 등) 종속된 코드를 사용하지 않고 일관된 트랜잭션 처리를 할 수 있다.
+(스프링의 트랜잭션 경계 설정을 위한 추상 인터페이스는 PlatformTransactionManager)
+◆ 트랜잭션 분리
+트랜잭션과 비즈니스 로직 코드가 얽혀 있는 경우 깔끔한 분리를 위해 @Transactional 어노테이션을 지원한다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

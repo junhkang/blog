@@ -840,5 +840,7 @@
     <loc>https://junhkang.com/search/</loc>
   </url><url>
     <loc>https://junhkang.com/series/</loc>
+  </url><url>
+    <loc>https://junhkang.com/guestbook/</loc>
   </url>
 </urlset>

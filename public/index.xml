@@ -6,8 +6,15 @@
     <description>Recent content on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Feb 2025 16:37:22 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://junhkang.com/about/</link>
+      <pubDate>Mon, 10 Feb 2025 16:37:22 +0900</pubDate>
+      <guid>https://junhkang.com/about/</guid>
+      <description></description>
+    </item>
     <item>
       <title>[Spring] 스프링부트와 HikariCP를 활용한 Connection Pool 설정 및 최적화</title>
       <link>https://junhkang.com/posts/125/</link>
@@ -536,15 +543,6 @@ LIMIT 10 OFFSET 20
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/75/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;toast-the-oversized-attribute-storage-technique란&#34; ke-size=&#34;size26&#34;&gt;1. TOAST (The Oversized-Attribute Storage Technique)란?&lt;/h2&gt;
 &lt;p&gt;데이터베이스의 대용량 속성을 효율적으로 저장하고 관리하기 위한 기법으로, 데이터를 효율적으로 처리하고, 저장공간을 최적화하며 데이터 접근시간을 개선하기 위해 사용된다. PostgreSQL의 각 page영역은 일반적으로 8kb의 고정된 크기로 되어있고 각 tuple이 여러 페이지에 나뉘어 존재할 수 없다. (매우 큰 값을 바로 저장할 수 없다.) 이 한계를 극복하기 위해서, 큰 필드 값은 압축되어 저장되거나 여러 개의 물리적 ROWS로 분할되어 저장된다. 이 과정은 보통 개발자가 별도의 처리로직을 구현할 필요 없이 데이터베이스 백앤드에서 자동으로 이루어진다. 이 기법을 TOAST (The Oversized-Attribute Storage Technique)라고 하며 PostgreSQL에서 큰 데이터 값을 메모리 내에서 효율적으로 처리하는 데에 사용된다.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Jun Kang</title>
-      <link>https://junhkang.com/about/</link>
-      <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/about/</guid>
-      <description>&lt;p&gt;안녕하세요. &lt;a href=&#34;https://www.sankun.com&#34;&gt;산업의 역군&lt;/a&gt;의 &lt;strong&gt;Jun Kang&lt;/strong&gt;입니다.
-&lt;strong&gt;AI와 빅데이터&lt;/strong&gt;를 활용하여 건설업계의 디지털 혁신을 이끌고, 데이터 기반의 의사결정을 통해 더 공정한 기회를 제공하고자 합니다.&lt;/p&gt;
-&lt;p&gt;개발적으로는 빅데이터 처리, 데이터베이스 성능 최적화, 효율적인 개발 실천에 깊은 관심을 가지고 있습니다. 새로운 기술을 배우고 적용하는 데 열정을 가지고 있으며, 현재는 &lt;strong&gt;산업의 역군&lt;/strong&gt; 개발팀의 건강하고 지속 가능한 성장 문화를 구축하는 데 힘쓰고 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] DISK(디스크) 사용량 모니터링</title>
@@ -2144,6 +2142,13 @@ LANGUAGE &amp;#39;plpgsql&amp;#39;;
 &lt;/ol&gt;
 &lt;h2 id=&#34;full-text-search전문검색란&#34; ke-size=&#34;size26&#34;&gt;2. Full Text Search(전문검색)란?&lt;/h2&gt;
 &lt;p&gt;게시물의 내용/제목 등 문장, 문서 전체에서 키워드를 검색하는 기능이다. 단순한 like, 비교연산자와 달리 각 단어의 Token화 및 정규화를 통해 긴 문장내에서의 유사 검색을 가능하게 한다. Postgresql 기본 인덱스인 b-tree인덱스로는 Like 와 같은 패턴 매칭 검색시 양쪽에 %%를 거는 경우는 인덱스를 타지 않지만, gin 인덱스를 사용하여 빠른 검색이 가능하다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>방명록</title>
+      <link>https://junhkang.com/guestbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/guestbook/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -123,6 +123,11 @@ ShowTags = true
   name = "Search"
   url = "/search/"
   weight = 7
+[[menu.main]]
+  identifier = "guestbook"
+  name = "Guestbook"
+  url = "/guestbook/"
+  weight = 8
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -169,3 +174,16 @@ recentPostCount = 3
   category = "categories"
   tag = "tags"
   series = "series"
+
+[params.giscus.guestbook]
+    repo = "junhkang/blog"
+    repoID = "R_kgDON3GHLw"
+    category = "guestbook"
+    categoryID = "DIC_kwDON3GHL84Cm5Ff"
+    mapping = "pathname"
+    strict = "0"
+    reactionsEnabled = "1"
+    emitMetadata = "0"
+    inputPosition = "bottom"
+    theme = "preferred_color_scheme"
+    lang = "en"

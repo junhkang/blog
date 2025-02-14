@@ -547,6 +547,13 @@ LIMIT 10 OFFSET 20
 &lt;p&gt;개발적으로는 빅데이터 처리, 데이터베이스 성능 최적화, 효율적인 개발 실천에 깊은 관심을 가지고 있습니다. 새로운 기술을 배우고 적용하는 데 열정을 가지고 있으며, 현재는 &lt;strong&gt;산업의 역군&lt;/strong&gt; 개발팀의 건강하고 지속 가능한 성장 문화를 구축하는 데 힘쓰고 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>첫 번째 글 제목</title>
+      <link>https://junhkang.com/sankun/1/</link>
+      <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/1/</guid>
+      <description>글에 대한 간단한 설명을 여기에 작성합니다</description>
+    </item>
+    <item>
       <title>[PostgreSQL] DISK(디스크) 사용량 모니터링</title>
       <link>https://junhkang.com/posts/74/</link>
       <pubDate>Tue, 19 Mar 2024 16:31:20 +0000</pubDate>

@@ -53,6 +53,10 @@ interests:
   - "기술 문서 번역 및 지식 공유"
 
 teaching:
+  - title: "[Naver Connect & 모두의 연구소] - Generative AI 2025 코딩코치"
+    details: "인공지능 기술 직접 활용해보기"
+  - title: "[카카오 x 구름] - Deep Dive 백엔드 개발자 특강"
+    details: "포트폴리오 세미나 (매력적인 개발자 포트폴리오 만들기)"
   - title: "[모두의 연구소] - 연세대 DX코딩캠프 데이터 분석 심화 메인코치"
     details: "데이터 분석 심화 과정 메인 코치"
   - title: "[카카오 x 구름] - Deep Dive 백엔드 개발자 특강"

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] 스프링부트와 HikariCP를 활용한 Connection Pool 설정 및 최적화</title>
-      <link>https://junhkang.com/posts/125/</link>
+      <link>http://localhost:1313/posts/125/</link>
       <pubDate>Thu, 30 Jan 2025 16:50:24 +0000</pubDate>
-      <guid>https://junhkang.com/posts/125/</guid>
+      <guid>http://localhost:1313/posts/125/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;몇 년 전 운영 프로젝트 설정 시 자세하게 봤던 내용이지만, 트래픽이 대폭 증가하고, DBMS에 연결된 프로젝트와 모듈이 늘어남에 따라 재설정을 위해 개념을 다시 정리하게 되었다.&lt;/p&gt;
 &lt;h3 id=&#34;기본적인-데이터베이스-연결과정&#34; ke-size=&#34;size23&#34;&gt;1. 기본적인 데이터베이스 연결과정&lt;/h3&gt;
@@ -27,24 +27,24 @@
     </item>
     <item>
       <title>[LINUX] SFTP 초기화 오류 : Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel</title>
-      <link>https://junhkang.com/posts/124/</link>
+      <link>http://localhost:1313/posts/124/</link>
       <pubDate>Fri, 03 Jan 2025 15:38:03 +0000</pubDate>
-      <guid>https://junhkang.com/posts/124/</guid>
+      <guid>http://localhost:1313/posts/124/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel. Message [4: Received message is too long: 458961709]]&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h3 id=&#34;문제상황&#34; ke-size=&#34;size23&#34;&gt;1. 문제상황&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;기존에 잘 작동하던 SFTP를 활용한 CI/CD가 갑자기 작동하지 않는다. 에러 메시지에 따르면 약 438mb의 메시지를 받은 상황인데, 파일을 실제로 업로드하는 시점이 아닌 SFTP연결 시도를 하는 순간(SSH연결을 설정하고 초기화하는 부분)에도 이렇게 큰 응답을 받는 상황이었다.&lt;/p&gt;
 &lt;h3 id=&#34;원인파악&#34; ke-size=&#34;size23&#34;&gt;2. 원인파악&lt;/h3&gt;
 &lt;p&gt;SSH 접속시, 서버 간 구분을 주기 위해 ~/. bashrc의 설정을 통해 웰컴메시지를 출력하는 부분이 문제였다. (다음 포스트에서 진행한 서버별 웰컴 메시지 등록 부분에서 작업과정 확인 가능)&lt;/p&gt;</description>
     </item>
     <item>
       <title>[AWS] Bastion 서버 설정 및 서버 접속 상태 한눈에 구분하기</title>
-      <link>https://junhkang.com/posts/123/</link>
+      <link>http://localhost:1313/posts/123/</link>
       <pubDate>Tue, 31 Dec 2024 12:30:05 +0000</pubDate>
-      <guid>https://junhkang.com/posts/123/</guid>
+      <guid>http://localhost:1313/posts/123/</guid>
       <description>&lt;hr&gt;
 &lt;h3 id=&#34;bastion-서버란&#34; ke-size=&#34;size23&#34;&gt;1. Bastion 서버란?&lt;/h3&gt;
 &lt;p&gt;Bastion 서버란 클라우드 환경, 네트워크 환경에서 보안 게이트웨이 역할을 하는 서버로, 외부 네트워크에서 private 서버로 접속할 때 보안을 강화해 주고 접근제어를 구현해 준다. 외부 사용자가 특정 IP에서만 Bastion 서버에 접속하도록 설정할 수 있으며, private 서버들은 Bastion 서버를 통해서 트래픽을 철저하게 관리할 수 있다. 이번 포스트에선 Bastion서버의 설정 방법과, 다중 서버를 Bastion 서버에서 관리할 시 접속상태를 한눈에 구분할 수 있는 방법에 대해 알아보자.&lt;/p&gt;
@@ -55,15 +55,15 @@
 &lt;li&gt;t3 small  - 중간 규모팀&lt;/li&gt;
 &lt;li&gt;T3.medium, M5.large - 대규모팀 (다수 개발자, 운영팀)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/123/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-31%20%EC%98%A4%ED%9B%84%2012.14.14.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/123/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-31%20%EC%98%A4%ED%9B%84%2012.14.14.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LLM] Quota discoveryengine.googleapis.com/documents exceeded.</title>
-      <link>https://junhkang.com/posts/122/</link>
+      <link>http://localhost:1313/posts/122/</link>
       <pubDate>Tue, 17 Dec 2024 23:02:31 +0000</pubDate>
-      <guid>https://junhkang.com/posts/122/</guid>
+      <guid>http://localhost:1313/posts/122/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-17%20%EC%98%A4%ED%9B%84%2010.49.42.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/122/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-17%20%EC%98%A4%ED%9B%84%2010.49.42.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;문제-발생&#34; ke-size=&#34;size23&#34;&gt;1. 문제 발생&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Quota discoveryengine.googleapis.com/documents exceeded.&lt;/p&gt;&lt;/blockquote&gt;
@@ -71,15 +71,15 @@
 &lt;p&gt;기본 리밋은 100만건이지만 더 많은 데이터를 저장하기 위해서는 할당량 수정 요청이 필요하다.&lt;/p&gt;
 &lt;h3 id=&#34;할당량-수정-요청&#34; ke-size=&#34;size23&#34;&gt;2. 할당량 수정 요청&lt;/h3&gt;
 &lt;h4 id=&#34;iam-관리자---할당량-및-시스템-한도&#34; ke-size=&#34;size20&#34;&gt;2-1. IAM &amp;amp; 관리자 -&amp;gt; 할당량 및 시스템 한도&lt;/h4&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/122/img.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;초과된-항목-선택&#34; ke-size=&#34;size20&#34;&gt;2-2. 초과된 항목 선택&lt;/h4&gt;
 &lt;p&gt;할당량 수정을 원하는 항목의 맨 오른쪽 메뉴 탭에서 할당량 변경을 선택할 수 있다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LLM] Google Cloud Discovery Engine 데이터 스토어 업로드 포맷</title>
-      <link>https://junhkang.com/posts/121/</link>
+      <link>http://localhost:1313/posts/121/</link>
       <pubDate>Mon, 16 Dec 2024 22:47:00 +0000</pubDate>
-      <guid>https://junhkang.com/posts/121/</guid>
+      <guid>http://localhost:1313/posts/121/</guid>
       <description>&lt;hr&gt;
 &lt;h3 id=&#34;google-cloud-discovery-engine이란&#34; ke-size=&#34;size23&#34;&gt;1. Google Cloud Discovery Engine이란?&lt;/h3&gt;
 &lt;p&gt;Google Cloud Discovery Engine은 구글 클라우드 플랫폼에서 제공하는 검색 및 추천 서비스로, 웹사이트나 앱 내에서 사용자가 원하는 정보를 쉽고 빠르게 찾을 수 있도록 도와주는 서비스로 다음과 같은 특징을 가진다.&lt;/p&gt;
@@ -93,9 +93,9 @@
     </item>
     <item>
       <title>[Spring] 테스트 4 - 얼마나 깊게 테스트 코드를 작성해야 하는가?</title>
-      <link>https://junhkang.com/posts/99/</link>
+      <link>http://localhost:1313/posts/99/</link>
       <pubDate>Sun, 22 Sep 2024 17:59:07 +0000</pubDate>
-      <guid>https://junhkang.com/posts/99/</guid>
+      <guid>http://localhost:1313/posts/99/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;how-deep---얼마나-깊게-테스트-코드를-작성해야-하는가&#34; ke-size=&#34;size26&#34;&gt;4. HOW DEEP - 얼마나 깊게 테스트 코드를 작성해야 하는가?&lt;/h2&gt;
 &lt;h3 id=&#34;테스트-깊이를-결정하는-기준&#34; ke-size=&#34;size23&#34;&gt;4.1 테스트 깊이를 결정하는 기준&lt;/h3&gt;
@@ -112,13 +112,13 @@
 &lt;li&gt;&lt;strong&gt;유스 케이스 기반 테스트&lt;/strong&gt;: 핵심 사용자 흐름과 엣지 케이스를 기반으로 테스트를 작성합니다. 실제로 사용자가 자주 사용하는 기능이나 예외적인 상황에서의 동작을 검증하는 것이 중요합니다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;현실적인 제약과 팀 역량 고려&lt;/strong&gt;: 모든 부분을 깊이 테스트하는 것은 시간과 리소스 측면에서 비효율적일 수 있습니다. 팀의 역량과 프로젝트 일정 등을 고려하여 테스트 깊이를 조정하는 것이 필요합니다.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/99/img.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/99/img.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] 테스트 3 - 언제 테스트 코드를 적용해야 하는가?</title>
-      <link>https://junhkang.com/posts/98/</link>
+      <link>http://localhost:1313/posts/98/</link>
       <pubDate>Sun, 22 Sep 2024 17:57:13 +0000</pubDate>
-      <guid>https://junhkang.com/posts/98/</guid>
+      <guid>http://localhost:1313/posts/98/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;3-when---언제-테스트-코드를-적용해야-하는가&#34;&gt;3. WHEN - 언제 테스트 코드를 적용해야 하는가?&lt;/h1&gt;
 &lt;h2 id=&#34;tdd와-bdd의-개념-및-적용-시점&#34; ke-size=&#34;size26&#34;&gt;3.1 TDD와 BDD의 개념 및 적용 시점&lt;/h2&gt;
@@ -130,14 +130,14 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/98/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/98/img.png&#34;&gt;
 이미지출처: &lt;a href=&#34;https://medium.com/pilar-2020/applying-test-driven-development-6d6d3af186cbApplying&#34;&gt;https://medium.com/pilar-2020/applying-test-driven-development-6d6d3af186cbApplying&lt;/a&gt;\ Test-Driven\ Development&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] 테스트 2 - 테스트 코드를 어떻게 작성해야 하는가?</title>
-      <link>https://junhkang.com/posts/97/</link>
+      <link>http://localhost:1313/posts/97/</link>
       <pubDate>Sun, 22 Sep 2024 17:55:00 +0000</pubDate>
-      <guid>https://junhkang.com/posts/97/</guid>
+      <guid>http://localhost:1313/posts/97/</guid>
       <description>&lt;hr&gt;
 &lt;h1 id=&#34;2-how---테스트-코드를-어떻게-작성해야-하는가&#34;&gt;2. HOW - 테스트 코드를 어떻게 작성해야 하는가?&lt;/h1&gt;
 &lt;h2 id=&#34;테스트-케이스-선택-방법&#34; ke-size=&#34;size26&#34;&gt;2.1 테스트 케이스 선택 방법&lt;/h2&gt;
@@ -150,11 +150,11 @@
     </item>
     <item>
       <title>[Spring] 테스트 1 - 왜 테스트 코드를 작성해야 하는가?</title>
-      <link>https://junhkang.com/posts/96/</link>
+      <link>http://localhost:1313/posts/96/</link>
       <pubDate>Sun, 22 Sep 2024 17:50:22 +0000</pubDate>
-      <guid>https://junhkang.com/posts/96/</guid>
+      <guid>http://localhost:1313/posts/96/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/96/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/96/img.png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;1-why---왜-테스트를-작성해야-하는가&#34;&gt;1. WHY - 왜 테스트를 작성해야 하는가?&lt;/h1&gt;
 &lt;h2 id=&#34;테스트-코드의-중요성&#34; ke-size=&#34;size26&#34;&gt;1.1 테스트 코드의 중요성&lt;/h2&gt;
 &lt;p&gt;테스트 코드는 소프트웨어 개발에서 매우 중요한 역할을 합니다. 기능을 수정하거나 새로운 기능을 추가할 때 코드가 안정적으로 작동하는지 확인할 수 있는 수단이 바로 테스트 코드입니다. 이를 통해 예상하지 못한 버그를 방지하고, 코드 품질을 높일 수 있습니다.&lt;/p&gt;
@@ -164,11 +164,11 @@
     </item>
     <item>
       <title>[Spring] Caused by: java.lang.IllegalArgumentException: 이름이 {fragment}인, 둘 이상의 fragment들이 발견되었습니다.</title>
-      <link>https://junhkang.com/posts/95/</link>
+      <link>http://localhost:1313/posts/95/</link>
       <pubDate>Tue, 20 Aug 2024 10:41:57 +0000</pubDate>
-      <guid>https://junhkang.com/posts/95/</guid>
+      <guid>http://localhost:1313/posts/95/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/95/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/95/img.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[Caused by: java.lang.IllegalArgumentException: 이름이 {fragment}인, 둘 이상의 fragment들이 발견되었습니다. 이는 상대적 순서배열에서 불허됩니다. 상세 정보는 서블릿 스펙 8.2.2 2c 장을 참조하십시오. 절대적 순서배열을 사용하는 것을 고려해 보십시오.]
  &lt;/p&gt;&lt;/blockquote&gt;
@@ -181,9 +181,9 @@
     </item>
     <item>
       <title>[PostgreSQL] RDS 쿼리 성능 분석 방법 : pg_stat_statements 설치, 고려사항 및 주요 지표</title>
-      <link>https://junhkang.com/posts/94/</link>
+      <link>http://localhost:1313/posts/94/</link>
       <pubDate>Wed, 14 Aug 2024 17:49:46 +0000</pubDate>
-      <guid>https://junhkang.com/posts/94/</guid>
+      <guid>http://localhost:1313/posts/94/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;rds에서의-쿼리-성능-분석-pg_stat_statements란&#34; ke-size=&#34;size26&#34;&gt;1. RDS에서의 쿼리 성능 분석, pg_stat_statements란?&lt;/h2&gt;
 &lt;p&gt;RDS에서는 외부 익스텐션 사용이 제한된다. 쿼리 통계 및 성능에 대한 지표를 알 수 있는 여러 가지 익스텐션이 있지만, 그중 pg_stat_statements가 허용된다. pg_stat_statements의 원리, 사용법, 주요 지표에 대해 알아보자.
@@ -200,15 +200,15 @@
     </item>
     <item>
       <title>[디자인패턴] 빌더(Builder) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/93/</link>
+      <link>http://localhost:1313/posts/93/</link>
       <pubDate>Mon, 29 Jul 2024 14:45:35 +0000</pubDate>
-      <guid>https://junhkang.com/posts/93/</guid>
+      <guid>http://localhost:1313/posts/93/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;빌더builder-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 빌더(Builder) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;일반적으로 구조를 갖춘 큰 구조물을 건축, 구축하는 것을 build라고 한다&lt;/p&gt;
 &lt;p&gt;예를 들어 빌딩을 지을 때 지반다지기, 뼈대 만들기 등의 과정을 거치며 아래에서 위로 순차적으로 만들어간다. 복잡한 구조물을 단숨에 완성하기는 어렵기에, 구성하는 각 부분을 만들고 단계를 밟아가며 만들게 된다. Builder 패턴은 이처럼 구조를 가진 복잡한 인스턴스를 조립해 가는 패턴이다. &lt;/p&gt;
 &lt;h2 id=&#34;빌더-패턴의-구조&#34; ke-size=&#34;size26&#34;&gt;2. 빌더 패턴의 구조&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/93/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-07-29%20%EC%98%A4%ED%9B%84%202.34.00.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/93/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-07-29%20%EC%98%A4%ED%9B%84%202.34.00.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;빌더패턴 예제 클래스 다이어그램&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Builder 역&lt;/strong&gt; - 인스턴스를 결정, 인스턴스 각 부분을 만드는 메서드를 정의. 예제에서는 Builder 클래스가 역할을 맡음&lt;/li&gt;
@@ -220,11 +220,11 @@
     </item>
     <item>
       <title>[Spring] Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection, 데이터베이스 접속 에러</title>
-      <link>https://junhkang.com/posts/92/</link>
+      <link>http://localhost:1313/posts/92/</link>
       <pubDate>Thu, 25 Jul 2024 13:29:54 +0000</pubDate>
-      <guid>https://junhkang.com/posts/92/</guid>
+      <guid>http://localhost:1313/posts/92/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/92/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/92/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;p&gt;Amazon RDS and Amazon Aurora SSL/TLS 인증서를 업데이트 후 별다른 설정 변경을 하지 않았지만, 오랜만에 빌드하는 스프링부트 프로젝트의 데이터베이스 연결이 되지 않는 현상 발생하였다.
  &lt;/p&gt;
@@ -235,9 +235,9 @@
     </item>
     <item>
       <title>[PostgreSQL] SUBSTRING, SUBSTR, 문자열 자르기</title>
-      <link>https://junhkang.com/posts/91/</link>
+      <link>http://localhost:1313/posts/91/</link>
       <pubDate>Wed, 24 Jul 2024 13:19:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/91/</guid>
+      <guid>http://localhost:1313/posts/91/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;PostgreSQL에서 문자열을 다루는 다양한 방법이 있다. 그중 문자열을 원하는 방식대로 자를 수 있는 함수들에 대해 알아보자. 먼저, 가장 많이 쓰이는 SUBSTRING, SUBSTR의 기본 사용 법 및 응용, 성능에 대해 알아보자.&lt;/p&gt;
 &lt;h2 id=&#34;substring-기본-사용법&#34; ke-size=&#34;size26&#34;&gt;1. Substring 기본 사용법&lt;/h2&gt;
@@ -249,9 +249,9 @@ SELECT substr(&amp;#39;문자열&amp;#39;, n, l);
     </item>
     <item>
       <title>[이펙티브 자바] 10. equals는 일반 규약을 지켜 재정의하라</title>
-      <link>https://junhkang.com/posts/90/</link>
+      <link>http://localhost:1313/posts/90/</link>
       <pubDate>Sat, 29 Jun 2024 18:13:10 +0000</pubDate>
-      <guid>https://junhkang.com/posts/90/</guid>
+      <guid>http://localhost:1313/posts/90/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;equals를 단순히 재정의 하는 것은 쉽지만 함정이 많다. 이번 장에서는 equals를 재정의 할 때 고려해야 하는 점과, 재정의가 완료된 후 확인해야 하는 부분들에 대해 다루고 있다.&lt;/p&gt;
@@ -272,9 +272,9 @@ SELECT substr(&amp;#39;문자열&amp;#39;, n, l);
     </item>
     <item>
       <title>[GitHub] 민감한 정보 완전 삭제와 PR 히스토리 정리</title>
-      <link>https://junhkang.com/posts/89/</link>
+      <link>http://localhost:1313/posts/89/</link>
       <pubDate>Wed, 19 Jun 2024 10:48:11 +0000</pubDate>
-      <guid>https://junhkang.com/posts/89/</guid>
+      <guid>http://localhost:1313/posts/89/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;GitHub 리포지토리에 보안정책에 위반되거나 민감한 정보를 실수로 업로드하는 경우가 있다. 해당 브랜치를 지우거나 커밋 히스토리를 밀어버려도 이미 머지된 Pull Request라면, 깃허브 UI의 closed request 탭에서 파일 히스토리를 확인하면 해당 내용이 그대로 남아 있어 별도의 조치가 필요하다.&lt;/p&gt;
 &lt;h2 id=&#34;민감정보-파일-완전-삭제-리포지토리-복제-및-재생성&#34; ke-size=&#34;size26&#34;&gt;1. 민감정보 파일 완전 삭제 (리포지토리 복제 및 재생성)&lt;/h2&gt;
@@ -298,9 +298,9 @@ git push --force --tags
     </item>
     <item>
       <title>[PostgreSQL] 문자열에서 날짜/시간 변환 및 처리 과정</title>
-      <link>https://junhkang.com/posts/88/</link>
+      <link>http://localhost:1313/posts/88/</link>
       <pubDate>Thu, 02 May 2024 17:53:29 +0000</pubDate>
-      <guid>https://junhkang.com/posts/88/</guid>
+      <guid>http://localhost:1313/posts/88/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문자열에서-날짜시간으로의-변환&#34; ke-size=&#34;size26&#34;&gt;1. 문자열에서 날짜/시간으로의 변환&lt;/h2&gt;
 &lt;p&gt;PostgreSQL의 날짜형태의 칼럼을 조회할 때, 종종 정확한 날짜 형태를 사용하는 것이 아닌, 문자열, 혹은 숫자 형태로 간편하게 조회하는 경우가 있다. 예를 들어 2024/05/02 이후의 값을 조회할 때 다음 두 가지 조회 방법을 사용할 수 있다.&lt;/p&gt;
@@ -314,9 +314,9 @@ date_column &amp;gt; TO_DATE(&#39;20240502&#39;, &#39;YYYYMMDD&#39;)&lt;/p&gt;&l
     </item>
     <item>
       <title>[디자인패턴] 전략(Strategy) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/87/</link>
+      <link>http://localhost:1313/posts/87/</link>
       <pubDate>Fri, 12 Apr 2024 15:42:02 +0000</pubDate>
-      <guid>https://junhkang.com/posts/87/</guid>
+      <guid>http://localhost:1313/posts/87/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;전략strategy-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 전략(Strategy) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;Strategy는 전략이라는 뜻으로 적을 해치우는 작전, 게임을 이기는 전략, 문제를 풀어나가는 방법 등의 의미가 있고, 특히 프로그래밍에서는 문제를 해결하는 방식인 &amp;quot;알고리즘&amp;quot;을 의미한다.
@@ -327,9 +327,9 @@ date_column &amp;gt; TO_DATE(&#39;20240502&#39;, &#39;YYYYMMDD&#39;)&lt;/p&gt;&l
     </item>
     <item>
       <title>[PostgreSQL] ROWNUM 사용과 순번 부여하기 - ROW_NUMBER(), RANK(), DENSE_RANK()</title>
-      <link>https://junhkang.com/posts/86/</link>
+      <link>http://localhost:1313/posts/86/</link>
       <pubDate>Thu, 11 Apr 2024 14:12:42 +0000</pubDate>
-      <guid>https://junhkang.com/posts/86/</guid>
+      <guid>http://localhost:1313/posts/86/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;순번-부여하기&#34; ke-size=&#34;size26&#34;&gt;1. 순번 부여하기 &lt;/h2&gt;
 &lt;p&gt;PostgreSQL에서는 각 데이터에 의미 있는 순번을 부여하기 위해 ROW_NUMBER(), RANK(), DENSE_RANK() 함수를 제공한다. &lt;/p&gt;
@@ -340,19 +340,19 @@ RANK() OVER(PARTITION BY * ORDER BY * )
 DENSE_RANK() OVER(PARTITION BY * ORDER BY * )
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt; &lt;/p&gt;
 &lt;p&gt;예제를 통해 자세한 사용법을 알아보자. (2. 테스트 테이블 &amp;amp; 데이터 생성 참고)&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/86/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-11%20%EC%98%A4%ED%9B%84%201.56.30.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/86/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-11%20%EC%98%A4%ED%9B%84%201.56.30.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;예제에서 사용할 데이터&lt;/p&gt;
 &lt;h3 id=&#34;row_number&#34; ke-size=&#34;size23&#34;&gt;1-1. ROW_NUMBER()&lt;/h3&gt;
 &lt;h4 id=&#34;단일-그룹-순번-부여&#34; ke-size=&#34;size20&#34;&gt;          1-1-1. 단일 그룹 순번 부여&lt;/h4&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT ROW_NUMBER() OVER (ORDER BY BRAND) AS ROWNUM, *
 FROM TEST_COMPLEX_GROUP;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/86/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-11%20%EC%98%A4%ED%9B%84%201.57.20.png&#34;&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/86/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-11%20%EC%98%A4%ED%9B%84%201.57.20.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] 버전 확인: 필요성과 4가지 방법</title>
-      <link>https://junhkang.com/posts/85/</link>
+      <link>http://localhost:1313/posts/85/</link>
       <pubDate>Thu, 11 Apr 2024 13:31:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/85/</guid>
+      <guid>http://localhost:1313/posts/85/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;버전-확인이-왜-필요한가&#34; ke-size=&#34;size26&#34;&gt;1. 버전 확인이 왜 필요한가&lt;/h2&gt;
 &lt;p&gt;PostgreSQL를 안정적으로 운영하기 위해서는 보안 패치와 업데이트를 최신 상태로 유지하는 것이 중요하다. 또한 특정 기능이나 호환성 요구 사항을 충족하기 위해서도 버전 정보를 알고 있어야 한다. 이를 위해 현재 버전 및 공식 문서의 버전 관리 내용을 주기적으로 확인해주어야 한다. &lt;/p&gt;
@@ -362,24 +362,24 @@ FROM TEST_COMPLEX_GROUP;
     </item>
     <item>
       <title>[PostgreSQL] 고급 GROUPING 전략 : SETS, CUBE, ROLLUP의 개념, 효과적인 사용법 및 주의사항</title>
-      <link>https://junhkang.com/posts/84/</link>
+      <link>http://localhost:1313/posts/84/</link>
       <pubDate>Tue, 09 Apr 2024 16:24:14 +0000</pubDate>
-      <guid>https://junhkang.com/posts/84/</guid>
+      <guid>http://localhost:1313/posts/84/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;sets-cube-rollup의-개념-및-사용법&#34; ke-size=&#34;size26&#34;&gt;1. SETS, CUBE, ROLLUP의 개념 및 사용법&lt;/h2&gt;
 &lt;p&gt;고급 &amp;quot;GROUP BY&amp;quot;의 기능들로 PostgreSQL에서는 &lt;strong&gt;SETS, CUBE, ROLLUP&lt;/strong&gt; 기능을 제공한다. 기본적인 콘셉트는 일반 GROUP BY와 동일하게 FROM / WHERE 절에서 선택된 데이터는 각각 지정된 그룹으로 GROUP BY 되고, 각 그룹에 대해 집계가 계산된 후, 결과가 반환된다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;다음은 테스트로 사용할 테이블 정보이다. (마지막 장의 4. 테이블 &amp;amp; 데이터 생성 참고)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/84/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-09%20%EC%98%A4%ED%9B%84%202.20.01.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/84/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-09%20%EC%98%A4%ED%9B%84%202.20.01.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;group-by-sets의-개념-및-사용법&#34; ke-size=&#34;size23&#34;&gt;1-1. GROUP BY SETS의 개념 및 사용법&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;GROUPING SETS&lt;/strong&gt;의 각 하위 요소(subsets)들은 하나 이상의 열 혹은 표현식을 지정할 수 있으며 조합에 맞게 집계 결과를 별도로 계산한다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] UNION, INTERSECT, EXCEPT, SQL 쿼리 결합의 개념, 사용법 및 주의사항</title>
-      <link>https://junhkang.com/posts/83/</link>
+      <link>http://localhost:1313/posts/83/</link>
       <pubDate>Mon, 08 Apr 2024 16:04:29 +0000</pubDate>
-      <guid>https://junhkang.com/posts/83/</guid>
+      <guid>http://localhost:1313/posts/83/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;union-intersect-except를-통한-쿼리-결합&#34; ke-size=&#34;size26&#34;&gt;1. UNION, INTERSECT, EXCEPT를 통한 쿼리 결합&lt;/h2&gt;
 &lt;p&gt;UNION(결합), INTERSECT(교차), EXCEPT(차이) 구문을 통해 두 쿼리의 결과를 결합할 수 있다.&lt;/p&gt;
@@ -394,11 +394,11 @@ query1 EXCEPT [ALL] query2
     </item>
     <item>
       <title>[PostgreSQL] 페이징 : OFFSET과 LIMIT의 올바른 사용과 주의점</title>
-      <link>https://junhkang.com/posts/82/</link>
+      <link>http://localhost:1313/posts/82/</link>
       <pubDate>Mon, 08 Apr 2024 15:08:24 +0000</pubDate>
-      <guid>https://junhkang.com/posts/82/</guid>
+      <guid>http://localhost:1313/posts/82/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/82/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/82/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;limit과-offset의-개념-및-사용법&#34; ke-size=&#34;size26&#34;&gt;1. Limit과 Offset의 개념 및 사용법&lt;/h2&gt;
 &lt;p&gt;Limit과 Offset은 쿼리 결과 중 특정 부분의 ROW만을 조회하게 해주는 기능이다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT select_list
@@ -410,7 +410,7 @@ query1 EXCEPT [ALL] query2
 SELECT * FROM TEST_EXPLAIN 
 ORDER BY ID
 LIMIT 10 OFFSET 20
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/82/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-08%20%EC%98%A4%ED%9B%84%202.54.59.png&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/82/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-04-08%20%EC%98%A4%ED%9B%84%202.54.59.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;LIMIT을 지정하면 해당 값만큼의 결과만 출력되며 총 결과 값이 더 적을 경우 있는 만큼만 출력한다.&lt;/li&gt;
 &lt;li&gt;LIMIT ALL, LIMIT NULL은 LIMIT을 설정하지 않은 것 (전체 ROWS 리턴)과 동일하다.&lt;/li&gt;
@@ -423,9 +423,9 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[이펙티브 자바] 9. try-finally 보다는 try-with-resources를 사용하라</title>
-      <link>https://junhkang.com/posts/81/</link>
+      <link>http://localhost:1313/posts/81/</link>
       <pubDate>Sat, 06 Apr 2024 19:32:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/81/</guid>
+      <guid>http://localhost:1313/posts/81/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;자바 라이브러리에는 close 메서드를 직접 호출해서 닫아줘야 하는 자원이 많다. 대표적으로 InputStream, ouputStream java.sql.connection 등이 있으며 해당 자원들은 클라이언트에서 놓치기 쉬워 예측할 수 없는 성능 문제로 이어지곤 한다. 이중 상당 수가 finalizer를 안정망으로 사용하여 문제에 대비하고 있긴 하지만, 완전히 안전하다고 할 수 없다. (해당 내용은 다음 포스트에서 확인 가능)&lt;/p&gt;
@@ -445,20 +445,20 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[이펙티브 자바] 8. finalizer 와 cleaner 사용을 피하라</title>
-      <link>https://junhkang.com/posts/80/</link>
+      <link>http://localhost:1313/posts/80/</link>
       <pubDate>Sun, 31 Mar 2024 17:15:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/80/</guid>
+      <guid>http://localhost:1313/posts/80/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;finalizer와-cleaner란&#34; ke-size=&#34;size26&#34;&gt;1. finalizer와 cleaner란?&lt;/h2&gt;
 &lt;p&gt;finalizer와 cleaner는 자바의 2가지 객체 소멸자이다. finalizer는 &lt;strong&gt;Object.finalize()&lt;/strong&gt; 메서드를 오버라이딩 함으로써 사용된다. 작동 여부 및 시점을 예측할 수 없고 상황에 따라 위험할 수 있어 일반적으로 불필요하며, 기능의 잘못된 동작, 낮은 성능, 이식성 문제의 원인이 되기도 한다. 기본적으로는 사용하면 안 되고, 자바 9에서는 finalizer를 deprecated API로 지정하고, &lt;strong&gt;java.lang.ref.Cleaner&lt;/strong&gt; 클래스를 사용하여 구현된 cleaner를 대안으로 제시하였으나, cleaner 또한 finalizer보다는 덜 위험 하지만 여전히 예측불가하고 성능이 좋지 않아 일반적으로 불필요하다. &lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] Visibility Map(가시성 맵)의 개념, 원리, 생명주기 및 정보 확인 방법</title>
-      <link>https://junhkang.com/posts/79/</link>
+      <link>http://localhost:1313/posts/79/</link>
       <pubDate>Thu, 28 Mar 2024 15:54:02 +0000</pubDate>
-      <guid>https://junhkang.com/posts/79/</guid>
+      <guid>http://localhost:1313/posts/79/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/79/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/79/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;visibility-map가시성-맵란&#34; ke-size=&#34;size26&#34;&gt;1. Visibility Map(가시성 맵)란?&lt;/h2&gt;
 &lt;p&gt;Visibility Map은 트랜잭션에서 데이터에 접근할 때 어떤 데이터가 가시적인지(&lt;strong&gt;모든 트랜잭션에서 읽을 수 있는지&lt;/strong&gt;), 안정적인지 (&lt;strong&gt;동결된 튜플인지&lt;/strong&gt;) 판별하는데 도움을 준다. 데이터 접근 시 불필요한 I/O작업을 줄여주고, 데이터베이스가 어떤 페이지를 직접 접근할 수 있는지를 빠르게 판단함으로써 시스템의 효율적을 올려주는 역할을 한다.&lt;/p&gt;
 &lt;h2 id=&#34;visibility-map가시성-맵의-데이터-관리&#34; ke-size=&#34;size26&#34;&gt;2. Visibility Map(가시성 맵)의 데이터 관리&lt;/h2&gt;
@@ -466,12 +466,12 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[이펙티브 자바] 7. 다 쓴 객체 참조를 해제하라</title>
-      <link>https://junhkang.com/posts/78/</link>
+      <link>http://localhost:1313/posts/78/</link>
       <pubDate>Wed, 27 Mar 2024 17:04:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/78/</guid>
+      <guid>http://localhost:1313/posts/78/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/78/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/78/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;메모리-관리&#34; ke-size=&#34;size26&#34;&gt;1. 메모리 관리&lt;/h2&gt;
 &lt;p&gt;자바에선 가비지 컬렉터가 다 쓴 객체를 알아서 회수해 가기에 편리하고 효율적으로 메모리를 관리할 수 있다. 하지만 메모리 관리에 신경 쓰지 않아도 된다는 말은 절대 아니다. 메모리를 적절하게 관리하지 못하면 메모리 누수가 발생하고 심하면 프로그램이 종료될 수 있다.
  &lt;/p&gt;
@@ -505,11 +505,11 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[이펙티브 자바] 6. 불필요한 객체 생성을 피하라</title>
-      <link>https://junhkang.com/posts/77/</link>
+      <link>http://localhost:1313/posts/77/</link>
       <pubDate>Tue, 26 Mar 2024 18:25:25 +0000</pubDate>
-      <guid>https://junhkang.com/posts/77/</guid>
+      <guid>http://localhost:1313/posts/77/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/77/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/77/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;객체의-재사용&#34; style=&#34;color: #000000;&#34; ke-size=&#34;size26&#34;&gt;1. 객체의 재사용&lt;/h2&gt;
 &lt;p&gt;똑같은 객체를 매번 새로 생성하는 것보다 하나를 생성 후 재사용하는 것이 훨씬 효율적이다. 특히 불변 객체는 언제든 재사용이 가능하다. 다음은 객체 생성 시 사용하면 안 되는 극단적인 예이다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;String s = new String(&amp;#34;bikini&amp;#34;);
@@ -517,11 +517,11 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[이펙티브 자바] 5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라</title>
-      <link>https://junhkang.com/posts/76/</link>
+      <link>http://localhost:1313/posts/76/</link>
       <pubDate>Mon, 25 Mar 2024 14:36:42 +0000</pubDate>
-      <guid>https://junhkang.com/posts/76/</guid>
+      <guid>http://localhost:1313/posts/76/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/76/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/76/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;한 클래스 내에서 여러 개의 자원에 의존하여 사용되는 경우에 의존 객체 주입을 통해 유연성과 테스트 용이성을 개선하는 내용이다. 스프링의 의존성 주입 개념을 생각해 본다면 이미 당연하게 사용하고 있는 경우가 많을 것이지만, 의존 객체 주입의 장점을 다시 한번 생각해 볼 수 있는 내용이다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/42&#34;&gt;IoC(제어의 역전) &amp;amp; DI(의존성 주입)의 개념&lt;/a&gt;&lt;/p&gt;
@@ -529,44 +529,44 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[PostgreSQL] TOAST (The Oversized-Attribute Storage Technique)의 개념, PostgreSQL의 대용량 속성 저장 기법</title>
-      <link>https://junhkang.com/posts/75/</link>
+      <link>http://localhost:1313/posts/75/</link>
       <pubDate>Sat, 23 Mar 2024 21:01:58 +0000</pubDate>
-      <guid>https://junhkang.com/posts/75/</guid>
+      <guid>http://localhost:1313/posts/75/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/75/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/75/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;toast-the-oversized-attribute-storage-technique란&#34; ke-size=&#34;size26&#34;&gt;1. TOAST (The Oversized-Attribute Storage Technique)란?&lt;/h2&gt;
 &lt;p&gt;데이터베이스의 대용량 속성을 효율적으로 저장하고 관리하기 위한 기법으로, 데이터를 효율적으로 처리하고, 저장공간을 최적화하며 데이터 접근시간을 개선하기 위해 사용된다. PostgreSQL의 각 page영역은 일반적으로 8kb의 고정된 크기로 되어있고 각 tuple이 여러 페이지에 나뉘어 존재할 수 없다. (매우 큰 값을 바로 저장할 수 없다.) 이 한계를 극복하기 위해서, 큰 필드 값은 압축되어 저장되거나 여러 개의 물리적 ROWS로 분할되어 저장된다. 이 과정은 보통 개발자가 별도의 처리로직을 구현할 필요 없이 데이터베이스 백앤드에서 자동으로 이루어진다. 이 기법을 TOAST (The Oversized-Attribute Storage Technique)라고 하며 PostgreSQL에서 큰 데이터 값을 메모리 내에서 효율적으로 처리하는 데에 사용된다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jun Kang</title>
-      <link>https://junhkang.com/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;안녕하세요. &lt;a href=&#34;https://www.sankun.com&#34;&gt;산업의 역군&lt;/a&gt;의 &lt;strong&gt;Jun Kang&lt;/strong&gt;입니다.
 &lt;strong&gt;AI와 빅데이터&lt;/strong&gt;를 활용하여 건설업계의 디지털 혁신을 이끌고, 데이터 기반의 의사결정을 통해 더 공정한 기회를 제공하고자 합니다.&lt;/p&gt;
 &lt;p&gt;개발적으로는 빅데이터 처리, 데이터베이스 성능 최적화, 효율적인 개발 실천에 깊은 관심을 가지고 있습니다. 새로운 기술을 배우고 적용하는 데 열정을 가지고 있으며, 현재는 &lt;strong&gt;산업의 역군&lt;/strong&gt; 개발팀의 건강하고 지속 가능한 성장 문화를 구축하는 데 힘쓰고 있습니다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>첫 번째 글 제목</title>
-      <link>https://junhkang.com/sankun/1/</link>
+      <link>http://localhost:1313/sankun/1/</link>
       <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/sankun/1/</guid>
+      <guid>http://localhost:1313/sankun/1/</guid>
       <description>글에 대한 간단한 설명을 여기에 작성합니다</description>
     </item>
     <item>
       <title>[PostgreSQL] DISK(디스크) 사용량 모니터링</title>
-      <link>https://junhkang.com/posts/74/</link>
+      <link>http://localhost:1313/posts/74/</link>
       <pubDate>Tue, 19 Mar 2024 16:31:20 +0000</pubDate>
-      <guid>https://junhkang.com/posts/74/</guid>
+      <guid>http://localhost:1313/posts/74/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;disk-영역&#34; ke-size=&#34;size26&#34;&gt;1. Disk 영역&lt;/h2&gt;
 &lt;p&gt;PostgreSQL의 저장 영역은 크게 Heap, Index, Toast 3개로 나뉜다. 각 테이블의 대부분의 데이터를 메인 heap 영역에 저장한고, 테이블 칼럼 중 매우 큰 데이터를 받을 수 있는 칼럼은 TOAST 영역에 별도 저장한다. TOAST 테이블에는 실제 데이터를 저장하고, 본래 테이블에는 해당 데이터를 가리키는 포인터만 남게 된다. TOAST 테이블의 유효한 인덱스는 1개뿐이고, 기준 테이블에는 더 많은 인덱스가 존재할 수 있다. 테이블과 인덱스는 각각의 디스크파일에 저장 되며 각 파일이 1G가 넘으면 별도 파일로 분리된다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[디자인패턴] 데코레이터(Decorator) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/73/</link>
+      <link>http://localhost:1313/posts/73/</link>
       <pubDate>Mon, 18 Mar 2024 17:23:46 +0000</pubDate>
-      <guid>https://junhkang.com/posts/73/</guid>
+      <guid>http://localhost:1313/posts/73/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;데코레이터decorator-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 데코레이터(Decorator) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;중심이 되는 객체가 있고, 장식이 되는 기능을 하나씩 추가하여 목적에 더 맞는 객체로 만들어가는 디자인 패턴을 Decorator 패턴이라고 한다. decorator 란 &amp;quot;장식하는 사람&amp;quot;이라는 뜻이다. 예제를 통해 상세 개념을 확인해 보자. (Java언어로 배우는 디자인 패턴 입문, 3편의 예제를 그대로 사용하였다.) 적용할 예제는, 문자열 주위에 &amp;quot;장식틀&amp;quot;을 붙여 표현하는 것이다. 예를 들어 Hello World라는 기본 문구에 장식틀을 붙여 중첩 장식을 한 후 출력하는 예제이다.&lt;/p&gt;
@@ -577,11 +577,11 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[PostgreSQL] PostgreSQL의 물리적 한계치</title>
-      <link>https://junhkang.com/posts/72/</link>
+      <link>http://localhost:1313/posts/72/</link>
       <pubDate>Mon, 18 Mar 2024 15:00:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/72/</guid>
+      <guid>http://localhost:1313/posts/72/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/72/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/72/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;postresql의-물리적-한계치&#34; ke-size=&#34;size26&#34;&gt;1. PostreSQL의 물리적 한계치&lt;/h2&gt;
 &lt;p&gt;물론 사용 가능한 disk 용량, 성능 이슈 등 실직적인 제한이 먼저 적용되겠지만, 모든 자원이 충분하다고 가정할 때 물리적인 limit이다.&lt;/p&gt;
 &lt;table&gt;
@@ -673,11 +673,11 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[PostgreSQL] Planner, Optimizer (플래너, 옵티마이저)란? Planner, Optimizer (플래너, 옵티마이저)의 개념과 작동방식</title>
-      <link>https://junhkang.com/posts/71/</link>
+      <link>http://localhost:1313/posts/71/</link>
       <pubDate>Thu, 14 Mar 2024 18:51:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/71/</guid>
+      <guid>http://localhost:1313/posts/71/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/71/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/71/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;planner-optimizer-플래너-옵티마이저-란&#34; ke-size=&#34;size26&#34;&gt;1. Planner / Optimizer (플래너 / 옵티마이저) 란?&lt;/h2&gt;
 &lt;p&gt;Planner / Optimizer는 쿼리의 최적화된 실행 계획을 만들어낸다. 한 개의 SQL 쿼리도 결과는 같지만, 다양한 방법과 순서로 실행될 수 있다. Planner / Optimizer (이후는 Planner로 명칭)는 실행 가능한 각각의 플랜을 검사하여 궁극적으로 가장 빠르게 실행 &amp;quot;기대&amp;quot;되는 플랜을 선택한다. &lt;/p&gt;
 &lt;h3 id=&#34;genetic-query-optimize&#34; ke-size=&#34;size23&#34;&gt;1-1. Genetic Query Optimize&lt;/h3&gt;
@@ -686,9 +686,9 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[PostgreSQL] Index-Only 스캔과 Covering 인덱스, Index-only스캔의 효율적인 사용</title>
-      <link>https://junhkang.com/posts/70/</link>
+      <link>http://localhost:1313/posts/70/</link>
       <pubDate>Wed, 13 Mar 2024 18:52:22 +0000</pubDate>
-      <guid>https://junhkang.com/posts/70/</guid>
+      <guid>http://localhost:1313/posts/70/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-index-only-scans&#34;&gt;1. Index-Only Scans&lt;/h2&gt;
 &lt;p&gt;PostgreSQL의 모든 인덱스는 &lt;strong&gt;&amp;quot;보조(Secondary)&amp;quot;&lt;/strong&gt; 인덱스이다. 각 인덱스는 테이블의 메인 데이터 영역(테이블의 &lt;strong&gt;heap&lt;/strong&gt; 영역)과 분리되어서 저장된다. 그렇기 때문에 일반적인 인덱스 스캔에서 각 ROW를 찾기 위해서는, index와 heap 영역 모두에 접근하여 데이터를 탐색해야 한다. 보통 WHERE 절 조건에 부합하는 데이터들은&lt;/p&gt;
@@ -700,9 +700,9 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[PostgreSQL] 인덱스(INDEX)와 오더바이(ORDER BY), ORDER BY 성능개선, 효율적인 인덱스 적용</title>
-      <link>https://junhkang.com/posts/69/</link>
+      <link>http://localhost:1313/posts/69/</link>
       <pubDate>Tue, 12 Mar 2024 18:59:00 +0000</pubDate>
-      <guid>https://junhkang.com/posts/69/</guid>
+      <guid>http://localhost:1313/posts/69/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;인덱스index와-오더바이order-by&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스(INDEX)와 오더바이(ORDER BY)&lt;/h2&gt;
 &lt;p&gt;인덱스는 쿼리의 결과로 특정 row를 찾는 것뿐만 아니라, 특정 순서로 데이터를 정렬하는데도 효율적일 수 있다. ORDER BY와 인덱스를 효율적으로 사용하면 별도의 정렬 과정 없이 ORDER BY를 수행할 수 있다. PostgreSQL에서 현재 지원하는 인덱스 타입 중에서는 B-tree 인덱스만이 정렬 결과로 인덱스를 생성할 수 있다. 다른 인덱스 유형은 특정되지 않은 순서로, 실행 때마다 다른 순서로 열을 반환한다.&lt;/p&gt;
@@ -710,11 +710,11 @@ LIMIT 10 OFFSET 20
     </item>
     <item>
       <title>[PostgreSQL] 2단계 커밋 프로토콜(Two-Phase Commit Protocol), Prepare transaction</title>
-      <link>https://junhkang.com/posts/68/</link>
+      <link>http://localhost:1313/posts/68/</link>
       <pubDate>Fri, 08 Mar 2024 16:26:45 +0000</pubDate>
-      <guid>https://junhkang.com/posts/68/</guid>
+      <guid>http://localhost:1313/posts/68/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/68/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/68/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;단계-커밋-프로토콜two-phase-commit-2pc&#34; ke-size=&#34;size26&#34;&gt;1. 2단계 커밋 프로토콜([two-phase commit (2PC))&lt;/h2&gt;
 &lt;p&gt;PostgreSQL은 two-phase commit (2PC) 프로토콜을 지원한다. 다수의 분산 시스템 환경에서 모든 데이터베이스가 정상적으로 수정되었음을 보장하는 두 단계 커밋 프로토콜로 분산 트랜잭션에 참여한 모든 데이터베이스가 모두 함께 커밋되거나 롤백되는 것을 보장한다. PostgreSQL의 2단계 트랜잭션은 외부 트랜잭션 관리 시스템에서 사용하기 위해 존재하며 X/Open XA 표준에서 제안된 특징과 모델을 따른다. (사용빈도가 낮은 일부 기능은 구현되지 않았다.) 2단계 커밋은 다음 스탭에 따라 작동된다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Coordinator                                         Cohort
@@ -731,12 +731,12 @@ end
     </item>
     <item>
       <title>[PostgreSQL] 트랜잭션(Transaction)의 작동원리</title>
-      <link>https://junhkang.com/posts/67/</link>
+      <link>http://localhost:1313/posts/67/</link>
       <pubDate>Fri, 08 Mar 2024 15:27:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/67/</guid>
+      <guid>http://localhost:1313/posts/67/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/67/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/67/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;기본-트랜잭션의-개념-및-원리&#34; ke-size=&#34;size26&#34;&gt;1. 기본 트랜잭션의 개념 및 원리&lt;/h2&gt;
 &lt;p&gt;트랜잭션의 기본 개념과 사용 방법은 다음 포스트에서 확인이 가능하다.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;[Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;&lt;/p&gt;
@@ -746,22 +746,22 @@ end
     </item>
     <item>
       <title>[PostgreSQL] WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)의 개념 및 장단점</title>
-      <link>https://junhkang.com/posts/66/</link>
+      <link>http://localhost:1313/posts/66/</link>
       <pubDate>Mon, 26 Feb 2024 18:04:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/66/</guid>
+      <guid>http://localhost:1313/posts/66/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/66/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/66/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;wal-write-ahead-logging-아카이브-모드-백업archive-mode-backup이란&#34; ke-size=&#34;size26&#34;&gt;1. WAL (Write-Ahead Logging) / 아카이브 모드 백업(Archive mode backup)이란?&lt;/h2&gt;
 &lt;p&gt;아카이브 모드 백업을 이해하기 위해 WAL에 대한 개념을 먼저 살펴보자. WAL은 PostgreSQL에서 데이터의 무결성을 보장하는 표준 방법으로, 기본 콘셉트는 모든 데이터의 변경을 로깅 완료 후에 실행하는 것이다. WAL 기록을 영구적인 저장소에 먼저 기록한 후에 데이터의 변경 내용을 실행하는 것으로, 이 과정을 거치면 충돌 혹은 데이터에 문제가 있을 때 WAL 로깅 내용을 바탕으로 특정 시점으로 복구가 가능하여 데이터 무결성을 보장할 수 있다.
  &lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] 대량 데이터 인서트 시 성능 개선 및 주의 사항</title>
-      <link>https://junhkang.com/posts/65/</link>
+      <link>http://localhost:1313/posts/65/</link>
       <pubDate>Mon, 26 Feb 2024 14:31:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/65/</guid>
+      <guid>http://localhost:1313/posts/65/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/65/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/65/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;대량-데이터-인서트-시-성능-개선&#34; ke-size=&#34;size26&#34;&gt;대량 데이터 인서트 시 성능 개선&lt;/h2&gt;
 &lt;p&gt;최초 서비스 배포나 데이터 마이그레이션을 할 때 대량의 데이터를 한 번에 인서트 하는 경우가 있다. PostgreSQL 공식문서에서는 대량 인서트 시에 효율적으로 진행할 수 있는 방법을 제시해 준다. (대량 데이터를 인서트 할 때 효율적인 설정이지 데이터베이스 조회나 업데이트 등실제 운영 시에 사용할 방법은 아니다.)&lt;/p&gt;
 &lt;h2 id=&#34;autocommit-옵션-해제&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. Autocommit 옵션 해제&lt;/h2&gt;
@@ -769,11 +769,11 @@ end
     </item>
     <item>
       <title>[PostgreSQL] 외래키(Foreign Keys) 개념, 사용법, 장단점, 적용검토</title>
-      <link>https://junhkang.com/posts/64/</link>
+      <link>http://localhost:1313/posts/64/</link>
       <pubDate>Thu, 22 Feb 2024 18:28:23 +0000</pubDate>
-      <guid>https://junhkang.com/posts/64/</guid>
+      <guid>http://localhost:1313/posts/64/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/64/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/64/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;foreign-key-외래키란&#34; ke-size=&#34;size26&#34;&gt;1. Foreign Key 외래키란?&lt;/h2&gt;
 &lt;p&gt;Foreign key constraint 외래키 제약은 특정 칼럼 혹은 칼럼들의 값이 다른 테이블의 특정 row와 매칭되어야 하는 제약조건이다. 이를 두 관련 테이블 사이의 참조 무결성 (referential integrity)를 유지한다고 말한다. 그렇게 복잡한 개념은 아니니 바로 사용법을 확인해 보도록 하자&lt;/p&gt;
 &lt;h2 id=&#34;예제&#34; ke-size=&#34;size26&#34;&gt;2. 예제&lt;/h2&gt;
@@ -782,9 +782,9 @@ end
     </item>
     <item>
       <title>[디자인패턴] 컴포지트(Composite) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/63/</link>
+      <link>http://localhost:1313/posts/63/</link>
       <pubDate>Tue, 20 Feb 2024 18:08:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/63/</guid>
+      <guid>http://localhost:1313/posts/63/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;컴포지트composite-패턴이란&#34; ke-size=&#34;size26&#34;&gt;1. 컴포지트(Composite) 패턴이란?&lt;/h2&gt;
 &lt;p&gt;Composite는 혼합물, 복합물이란 뜻으로 중첩된 구조, 재귀적인 구조를 만드는 패턴이다. 대표적인 예로 윈도우 디렉터리와 파일을 들 수 있다. 디렉터리, 파일은 엄연히 다른 속성이지만 둘 다 디렉터리 안에 넣을 수 있다는 공통점이 있다. 디렉터리 내에는 또 다른 디렉터리가 있을 수 있기에 중첩, 재귀적인 구조를 만들어낸다.
@@ -794,11 +794,11 @@ end
     </item>
     <item>
       <title>[이펙티브 자바] 4. 인스턴스화를 막으려거든 private 생성자를 사용하라</title>
-      <link>https://junhkang.com/posts/62/</link>
+      <link>http://localhost:1313/posts/62/</link>
       <pubDate>Sun, 18 Feb 2024 15:44:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/62/</guid>
+      <guid>http://localhost:1313/posts/62/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/62/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/62/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;개념&#34; ke-size=&#34;size26&#34;&gt;1. 개념&lt;/h2&gt;
 &lt;p&gt;단순히 정적 메서드와 정적 필드만을 담은 클래스를 생성하는 경우가 있다. 객체 지향적 사고하지 않는 이들이 종종 남용하지만 쓰임새는 분명히 존재한다.
  &lt;/p&gt;
@@ -813,9 +813,9 @@ end
     </item>
     <item>
       <title>[디자인패턴] 추상 팩터리(Abstract Factory) 패턴의 개념, 예제, 장단점, 활용</title>
-      <link>https://junhkang.com/posts/61/</link>
+      <link>http://localhost:1313/posts/61/</link>
       <pubDate>Fri, 16 Feb 2024 17:20:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/61/</guid>
+      <guid>http://localhost:1313/posts/61/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;추상-팩토리abstract-factory-패턴-이란&#34; ke-size=&#34;size26&#34;&gt;1. 추상 팩토리(Abstract Factory) 패턴 이란?&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -825,7 +825,7 @@ end
 &lt;p&gt;&lt;strong&gt;추상 + 공장 패턴 :&lt;/strong&gt; 추상적인 공장에서 추상적인 부품을 조합하여 추상적인 제품을 만든다. 부품의 구체적인 구현에 집중하지 않고 인터페이스에 주목, 인터페이스만 사용하여 부품을 조립하고 제품으로 완성한다.
  &lt;/p&gt;
 &lt;p&gt;다음 표를 보면 추상 팩토리가 어떤 구조로 이루어졌는지 확인할 수 있다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/61/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/61/img.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Abstract Factory :&lt;/strong&gt; 최상위 공장, 메서드들을 추상화한다. AbstractProduct의 인스턴스를 만들기 위한 인터페이스를 결정한다.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Concrete Factory :&lt;/strong&gt; 서브 공장 클래스, 유형에 맞는 객체를 반환하도록 메서드들을 재정의한다. AbstractFactory의 인터페이스를 구현한다.&lt;/li&gt;
@@ -837,9 +837,9 @@ end
     </item>
     <item>
       <title>[Linux] JDK 여러 버전 적용하기, 여러개의 패키지 관리하기 (update-alternatives)</title>
-      <link>https://junhkang.com/posts/60/</link>
+      <link>http://localhost:1313/posts/60/</link>
       <pubDate>Mon, 05 Feb 2024 18:08:28 +0000</pubDate>
-      <guid>https://junhkang.com/posts/60/</guid>
+      <guid>http://localhost:1313/posts/60/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21을 서버에 적용하면서, 기존 버전과 동시에 사용해야 하는 상황 발생&lt;/p&gt;
@@ -853,9 +853,9 @@ end
     </item>
     <item>
       <title>[Spring] 스프링부트 3, 스프링 시큐리티 6, 로그인 세션 유지, 로그인 풀림</title>
-      <link>https://junhkang.com/posts/59/</link>
+      <link>http://localhost:1313/posts/59/</link>
       <pubDate>Fri, 02 Feb 2024 12:33:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/59/</guid>
+      <guid>http://localhost:1313/posts/59/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링 부트 3, 스프링 시큐리티 6 업데이트가 되며 기존에 사용 중인 WebSecurityConfigurerAdapter를 더 이상 지원하지 않기에&lt;/p&gt;
@@ -870,9 +870,9 @@ end
     </item>
     <item>
       <title>[Spring] 스프링부트 3 jstl 적용(maven), (절대 URI인 [http://java.sun.com/jsp/jstl/core]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.)</title>
-      <link>https://junhkang.com/posts/58/</link>
+      <link>http://localhost:1313/posts/58/</link>
       <pubDate>Wed, 31 Jan 2024 16:40:43 +0000</pubDate>
-      <guid>https://junhkang.com/posts/58/</guid>
+      <guid>http://localhost:1313/posts/58/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;
@@ -911,9 +911,9 @@ end
     </item>
     <item>
       <title>[Spring] Java 21 롬복(lombok) 버전 설정 (java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;)</title>
-      <link>https://junhkang.com/posts/57/</link>
+      <link>http://localhost:1313/posts/57/</link>
       <pubDate>Wed, 31 Jan 2024 10:35:34 +0000</pubDate>
-      <guid>https://junhkang.com/posts/57/</guid>
+      <guid>http://localhost:1313/posts/57/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21 버전 업 중 &lt;/p&gt;
@@ -934,11 +934,11 @@ end
     </item>
     <item>
       <title>[Java] 자바 스트림(Streams)의 개념과 사용 방법</title>
-      <link>https://junhkang.com/posts/56/</link>
+      <link>http://localhost:1313/posts/56/</link>
       <pubDate>Tue, 30 Jan 2024 21:41:20 +0000</pubDate>
-      <guid>https://junhkang.com/posts/56/</guid>
+      <guid>http://localhost:1313/posts/56/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;자바-스트림streams이란&#34; ke-size=&#34;size26&#34;&gt;1. 자바 스트림(Streams)이란?&lt;/h2&gt;
 &lt;p&gt;기존의 배열 또는 컬렉션 인스턴스는 for, foreach 같은 반복문을 통해 하나씩 핸들링하는 방식이었기에 로직이 복잡할수록 코드양도 많아지고 루프를 여러 번 도는 경우도 발생하였다. 그에 비해 자바 8에서 추가된 스트림(Streams)은 람다를 사용할 수 있는 기술 중 하나로 다음과 같은 특징을 가지고 있다.&lt;/p&gt;
 &lt;ul&gt;
@@ -952,22 +952,22 @@ end
     </item>
     <item>
       <title>[이펙티브 자바] 3. private 생성자나 열거 타입으로 싱글턴임을 보장하라</title>
-      <link>https://junhkang.com/posts/55/</link>
+      <link>http://localhost:1313/posts/55/</link>
       <pubDate>Wed, 24 Jan 2024 13:04:41 +0000</pubDate>
-      <guid>https://junhkang.com/posts/55/</guid>
+      <guid>http://localhost:1313/posts/55/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/55/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/55/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;싱글턴이란 인스턴스를 하나만 생성할 수 있는 클래스로, 함수와 같은 무상태 (stateless) 객체나 설계상 유일해야 하는 시스템 컴포넌트, 혹은 익숙한 스프링 빈이 대표적인 싱글턴의 예로 들 수 있다. 클래스를 싱글턴으로 만들 경우, (타입을 인터페이스로 정의한 후 인터페이스를 구현해서 만든 싱글턴이 아니라면) 싱글턴 인스턴스를 Mock으로 대체할 수 없기에 테스트가 어려울 수 있다.
  &lt;/p&gt;
 &lt;p&gt;싱글턴을 만드는 보편적인 두가지 방식이 있는데, 두 방식 모두생성자는 private으로 감춰두고 유일한 인스턴스에 접근할 수 있는 수단으로 public static 멤버를 하나 마련해 둔다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[이펙티브 자바] 2. 생성자에 매개변수가 많다면 빌더를 고려하라</title>
-      <link>https://junhkang.com/posts/54/</link>
+      <link>http://localhost:1313/posts/54/</link>
       <pubDate>Tue, 23 Jan 2024 15:38:26 +0000</pubDate>
-      <guid>https://junhkang.com/posts/54/</guid>
+      <guid>http://localhost:1313/posts/54/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/54/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/54/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;정적팩토리와 생성자에는 매개변수가 많을 경우 대응이 힘들다는 동일한 제약이 있다. 특히 매개변수가 굉장히 많은데 대부분이 고정값인 경우 일반적인 방법으로는 깔끔한 대응이 힘들다. 유연한 대응을 위해 보통 점층적 생성자패턴, 자바 빈즈 패턴, 빌더 패턴을 사용하는데, 이번 챕터에서는 빌더 패턴의 장점을 강조하고 있다. 각 패턴의 장단점을 자세히 살펴보고 빌더 패턴의 장점을 알아보자&lt;/p&gt;
 &lt;h2 id=&#34;점층적-생성자-패턴&#34; ke-size=&#34;size26&#34;&gt;1. 점층적 생성자 패턴&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -979,35 +979,35 @@ end
     </item>
     <item>
       <title>[이펙티브 자바] 1. 생성자 대신 정적 팩터리 메서드를 고려하라</title>
-      <link>https://junhkang.com/posts/53/</link>
+      <link>http://localhost:1313/posts/53/</link>
       <pubDate>Thu, 18 Jan 2024 15:51:04 +0000</pubDate>
-      <guid>https://junhkang.com/posts/53/</guid>
+      <guid>http://localhost:1313/posts/53/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;생성자-대신-정적-팩토리-메서드를-고려하라&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;생성자 대신 정적 팩토리 메서드를 고려하라&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;클라이언트가 클래스 인스턴스를 얻는 방법에는 전통적인 방법 중 하나는  public이다. 하지만 &lt;strong&gt;정적 팩터리 메서드&lt;/strong&gt;(&lt;strong&gt;static factory method&lt;/strong&gt;)도 꼭 알아두어야한다.&lt;/p&gt;
 &lt;h2 id=&#34;정적-팩터리-메서드란&#34; ke-size=&#34;size26&#34;&gt;1. 정적 팩터리 메서드란?&lt;/h2&gt;
 &lt;p&gt;그렇다면 정적 팩터리 메서드는 무엇일까? 간단히 말해 객체 생성의 역할을 하는 클래스 메서드로, static 메서드를 통해 인스턴스를 생성하는 것이다. 다음은 java의 기본 Boolean 클래스 내 정적 팩토리 메서드의 간단한 예시이다. &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/53/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-01-17%20%EC%98%A4%ED%9B%84%205.02.29.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/53/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-01-17%20%EC%98%A4%ED%9B%84%205.02.29.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;이팩티브 자바에서는 정적 팩토리 메서드를 사용할 시의 5가지 장점과 2가지 단점에 대해 서술하고 있어 자세한 비교를 통해 하나하나 알아보려 한다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] Java 21 외장 톰캣 버전 설정</title>
-      <link>https://junhkang.com/posts/52/</link>
+      <link>http://localhost:1313/posts/52/</link>
       <pubDate>Mon, 18 Dec 2023 14:13:48 +0000</pubDate>
-      <guid>https://junhkang.com/posts/52/</guid>
+      <guid>http://localhost:1313/posts/52/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;문제-상황&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;Java21 버전 업 중, 인텔리제이 내장 톰캣으로는 정상적으로 실행되지만, 커스텀 옵션을 사용 중인 외장톰캣을 그대로 사용 시 정상적으로 구동되지 않는 현상이 발견되었다.&lt;/p&gt;
 &lt;h2 id=&#34;해결&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;먼저, 빌드 및 path 등 기존 설정들은 문제가 없는 것을 확인하였고, 로컬 톰캣에서 정상적으로 구동됨을 확인하였기에 다른 부분을 추가로 확인해 보았다. 버전업 영향도 파악기간 중 기존에 톰캣 8.5 버전과 호환되는 것을 확인하였으나, 공식 홈페이지에서 재확인해보았다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/52/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/52/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;톰캣 8.5 버전의 자바 지원버전을 보면 &amp;quot;7 and later&amp;quot;로 되어있어 7 이후 버전을 다 사용 가능한 것으로 이해했었으나, 다른 버전을 시도.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] Spring Security6 filterchain 사용시 jsp 뷰 렌더링 설정</title>
-      <link>https://junhkang.com/posts/51/</link>
+      <link>http://localhost:1313/posts/51/</link>
       <pubDate>Mon, 18 Dec 2023 13:09:08 +0000</pubDate>
-      <guid>https://junhkang.com/posts/51/</guid>
+      <guid>http://localhost:1313/posts/51/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;현상&#34; ke-size=&#34;size26&#34;&gt;1. 현상&lt;/h2&gt;
 &lt;p&gt;스프링부트 3.*.* 버전 업을 하며 Spring Security6으로 업데이트 중이다.&lt;/p&gt;
@@ -1031,9 +1031,9 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Elastic Search] Elastic Search란? Elastic Search의 개념 및 장단점</title>
-      <link>https://junhkang.com/posts/50/</link>
+      <link>http://localhost:1313/posts/50/</link>
       <pubDate>Fri, 08 Dec 2023 14:57:54 +0000</pubDate>
-      <guid>https://junhkang.com/posts/50/</guid>
+      <guid>http://localhost:1313/posts/50/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;elastic-search란&#34; ke-size=&#34;size26&#34;&gt;1. Elastic Search란?&lt;/h2&gt;
 &lt;p&gt;Apache Lucene에 구축되어 배포된 검색 및 분석 엔진이다. 현재 검색엔진을 넘어 보안, 로그분석, Full-text 분석 등 다양한 영역에서 사용되며, Kibana, Logstash, Beats들과 함께 사용된다. 오픈 소스 프로젝트로 활발히 개발되고 있으며, 유닉스, 자바의 기초지식 필요하다. Apache Lucene의 한계를 보완하기 위한 새로운 검색엔진 프로젝트로 시작되었고 Logstash, Kibana와 함께 사용되어 ELK Stack (ES, Logstash, Kibana)라고 불렸으나 2013년 Logstash, Kibana 프로젝트 정식 흡수되었다.&lt;/p&gt;
@@ -1042,14 +1042,14 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[WEB] SSR(Server Side Rendering) 과 CSR(Client Side Rendering)의 개념 및 차이</title>
-      <link>https://junhkang.com/posts/49/</link>
+      <link>http://localhost:1313/posts/49/</link>
       <pubDate>Tue, 28 Nov 2023 12:33:47 +0000</pubDate>
-      <guid>https://junhkang.com/posts/49/</guid>
+      <guid>http://localhost:1313/posts/49/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;ssr-server-side-rendering&#34; ke-size=&#34;size26&#34;&gt;1. SSR (Server Side Rendering)&lt;/h2&gt;
 &lt;p&gt;서버에서 렌더링 준비를 마친 상태로 클라이언트에 자원을 전달한다.&lt;/p&gt;
 &lt;h3 id=&#34;ssr-작동-방식&#34; style=&#34;color: #000000; text-align: start;&#34; ke-size=&#34;size23&#34;&gt;1-1. SSR 작동 방식&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/49/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/49/img.png&#34;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;유저가 웹사이트 자원을 요청&lt;/li&gt;
 &lt;li&gt;서버에서 &amp;ldquo;렌더링 가능한&amp;rdquo; HTML 파일 생성 (리소스 체크, 컴파일 후 완성된 HTML 콘텐츠 생성)&lt;/li&gt;
@@ -1079,11 +1079,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[네트워크] REST, RESTful API의 개념 및 설계 가이드</title>
-      <link>https://junhkang.com/posts/48/</link>
+      <link>http://localhost:1313/posts/48/</link>
       <pubDate>Tue, 21 Nov 2023 17:36:52 +0000</pubDate>
-      <guid>https://junhkang.com/posts/48/</guid>
+      <guid>http://localhost:1313/posts/48/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/48/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/48/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;h2 id=&#34;1-rest란&#34;&gt;1. REST란?&lt;/h2&gt;
 &lt;p&gt;REST란 Representational State Transfer의 약자로 자원을 이름으로 구분하여 자원의 상태를 주고받는 것을 의미한다. HTTP URI를 통해 자원을 명시하고 HTTP Method를 통해 행위를 적용한다.&lt;/p&gt;
@@ -1118,11 +1118,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 순환참조란? The dependencies of some of the beans in the application context form a cycle</title>
-      <link>https://junhkang.com/posts/47/</link>
+      <link>http://localhost:1313/posts/47/</link>
       <pubDate>Fri, 17 Nov 2023 14:36:15 +0000</pubDate>
-      <guid>https://junhkang.com/posts/47/</guid>
+      <guid>http://localhost:1313/posts/47/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/47/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/47/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;순환참조란&#34; ke-size=&#34;size26&#34;&gt;1. 순환참조란?&lt;/h2&gt;
 &lt;p&gt;순환참조는 맞물린 의존성 주입 (DI) 상태에서 어떤 빈을 먼저 생성할지 결정하지 못해서 생기에 발생한다. BeanA에서 BeanB를 참조(BeanA-&amp;gt;BeanB) 일 경우 스프링은 BeanB를 먼저 생성 후 BeanA를 생성하기에, BeanB에서 다시 BeanA를 참조할 경우 (BeanA-&amp;gt;BeanB-&amp;gt;BeanA) 순환 참조가 발생하게된다. &lt;/p&gt;
 &lt;h2 id=&#34;의존성-주입&#34; ke-size=&#34;size26&#34;&gt;2. 의존성 주입 &lt;/h2&gt;
@@ -1130,11 +1130,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[PostgreSQL] 함수(Function)의 정의 및 상세 사용법 (다양한 예제)</title>
-      <link>https://junhkang.com/posts/46/</link>
+      <link>http://localhost:1313/posts/46/</link>
       <pubDate>Wed, 15 Nov 2023 17:12:23 +0000</pubDate>
-      <guid>https://junhkang.com/posts/46/</guid>
+      <guid>http://localhost:1313/posts/46/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/46/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/46/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;postgresql-function이란&#34; ke-size=&#34;size26&#34;&gt;1. PostgreSQL Function이란?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;SQL 함수는 임의의 SQL문들을 실행하고 마지막 쿼리의 결과를 반환한다. 단순한 형태의 함수는 마지막 쿼리의 첫 번째 row가 리턴된다. (order by 를 사용하지 않는 경우 다중 row의 첫 번째 행은 별도 정의되지 않기에 결과 row가 매번 다를 수 있다.)&lt;/li&gt;
@@ -1152,11 +1152,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 단위 테스트, JUnit의 개념 및 단위 테스트 코드 작성 방법</title>
-      <link>https://junhkang.com/posts/45/</link>
+      <link>http://localhost:1313/posts/45/</link>
       <pubDate>Tue, 14 Nov 2023 15:36:35 +0000</pubDate>
-      <guid>https://junhkang.com/posts/45/</guid>
+      <guid>http://localhost:1313/posts/45/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/45/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/45/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;단위-테스트&#34; style=&#34;color: #000000; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 단위 테스트&lt;/h2&gt;
 &lt;p&gt;하나의 모듈을 기준으로 독립적으로 진행되는 가장 작은 단위의 테스트이다. 통합 테스트의 경우 시스템을 구성하는 컴포넌트들이 커질수록 테스트 시간이 길어지지만, 단위 테스트의 경우 해당 부분만 독립적으로 테스트하기에 코드의 변경이 있어도 빠르게 문제 여부를 확인할 수 있다. CleanCode 책에 의하면 깨끗한 테스트 코드는 다음 5가지 규칙을 따라야 한다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1168,11 +1168,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[PostgreSQL] 명시적 JOIN 절로 플래너(Planner) 제어, 성능 향상</title>
-      <link>https://junhkang.com/posts/44/</link>
+      <link>http://localhost:1313/posts/44/</link>
       <pubDate>Wed, 08 Nov 2023 16:53:24 +0000</pubDate>
-      <guid>https://junhkang.com/posts/44/</guid>
+      <guid>http://localhost:1313/posts/44/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/44/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/44/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;개요&#34; ke-size=&#34;size26&#34;&gt;1. 개요&lt;/h2&gt;
 &lt;p&gt;PostgreSQL은 쿼리 Planner가 가장 효율적인 쿼리 플랜을 세워 쿼리를 실행시킨다. 이번 포스트는 쿼리 Planner가 플랜을 검색하는 과정을 의도적으로 제한하여 플랜 검색 시간을 단축시키는 방법에 대한 내용이다. 쿼리 선택지를 제한함으로써 시간을 줄이지만, 그만큼 모든 경우를 비교하는 것이기 아니라서 최고의 플랜을 찾을 수 없기에, 테이블 scan 방식 및 인덱스 등 쿼리의 작동방식을 명확히 이해한 후 설정이 필요하며, 설정전 성능비교, 설정 후의 데이터 증감에 따른 지속적인 모니터링이 필요하다.&lt;/p&gt;
 &lt;h2 id=&#34;플래너의-작동&#34; ke-size=&#34;size26&#34;&gt;2. 플래너의 작동&lt;/h2&gt;
@@ -1181,9 +1181,9 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] 스프링 컨테이너(Spring container)의 개념</title>
-      <link>https://junhkang.com/posts/43/</link>
+      <link>http://localhost:1313/posts/43/</link>
       <pubDate>Tue, 07 Nov 2023 16:45:10 +0000</pubDate>
-      <guid>https://junhkang.com/posts/43/</guid>
+      <guid>http://localhost:1313/posts/43/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;스프링-컨테이너spring-container란&#34; ke-size=&#34;size26&#34;&gt;1. 스프링 컨테이너(Spring container)란?&lt;/h2&gt;
 &lt;p&gt;스프링 프레임워크의 핵심 컴포넌트이며 주요한 용도는 다음과 같다.&lt;/p&gt;
@@ -1202,12 +1202,12 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[Spring] IoC(제어의 역전) &amp; DI(의존성 주입)의 개념</title>
-      <link>https://junhkang.com/posts/42/</link>
+      <link>http://localhost:1313/posts/42/</link>
       <pubDate>Mon, 06 Nov 2023 14:20:06 +0000</pubDate>
-      <guid>https://junhkang.com/posts/42/</guid>
+      <guid>http://localhost:1313/posts/42/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;ioc-inversion-of-control-제어의-역전&#34; ke-size=&#34;size26&#34;&gt;1. IoC (Inversion of Control) 제어의 역전&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/42/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/42/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;IoC란 메인 프로그램에서 컨테이너나 프레임워크로 객체와 객체의 의존성에 대한 제어를 넘기는 것을 말한다. 프레임워크 없이 개발할 때는 각 객체에 대한 라이프사이클 (생성, 설정, 초기화, 호출 등)을 개발자가 직접 관리한다. 하지만 프레임워크를 사용하면 객체의 생명주기를 프레임워크에 위임하여, 프레임워크가 개발자의 코드를 호출하고 흐름을 제어하게 할 수 있다.
  &lt;/p&gt;
 &lt;p&gt;이처럼, 제어의 역전은 객체를 직접 생성하거나 제어하는 것이아니라 외부에서 관리하는 객체를 가져와서 사용하는 것으로, 클레스 간의 결합을 느슨하게 하여 테스트와 유지관리를 더 쉽게 설계하는 원칙이다.
@@ -1215,9 +1215,9 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[WEB] JWT 토큰 인증의 개념과 장단점</title>
-      <link>https://junhkang.com/posts/41/</link>
+      <link>http://localhost:1313/posts/41/</link>
       <pubDate>Wed, 01 Nov 2023 18:47:24 +0000</pubDate>
-      <guid>https://junhkang.com/posts/41/</guid>
+      <guid>http://localhost:1313/posts/41/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;jwt의-개념&#34; ke-size=&#34;size26&#34;&gt;1. JWT의 개념&lt;/h2&gt;
 &lt;p&gt;JWT는 웹에서 사용자 인증/인가에 사용하는 토큰으로 Json Web Token의 줄임말이다. 웹에서 사용되는 JSON 형태의 토큰 표준 규격이며 쿠키와 유사하지만, 서명된 토큰이라는 차이점이 있다. 공개키, 개인키의 쌍으로 사용할 경우 서명된 토큰은 개인키를 보유한 서버에서만 복호화가 가능하다.
@@ -1229,11 +1229,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[PostgreSQL] 윈도우 함수(Window Functions)의 개념, 성능 및 사용법 (over, sum/rank/ntitle/cume_dist 등...)</title>
-      <link>https://junhkang.com/posts/40/</link>
+      <link>http://localhost:1313/posts/40/</link>
       <pubDate>Tue, 31 Oct 2023 13:58:57 +0000</pubDate>
-      <guid>https://junhkang.com/posts/40/</guid>
+      <guid>http://localhost:1313/posts/40/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/40/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/40/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;윈도우-함수-window-functions란&#34; ke-size=&#34;size26&#34;&gt;1. 윈도우 함수 (Window Functions)란?&lt;/h2&gt;
 &lt;p&gt;윈도우 함수는 행과 행 간의 관계를 쉽게 정의하기 위해 만든 함수이다. 이 기능은 일반 집계함수의 연산과 유사하지만, 일반 집계함수가 행 각각을 단일 그룹화해서 출력하는 반면에, 윈도우 함수는 각각의 행들이 &lt;strong&gt;그룹화되지 않으며 별도의 ID&lt;/strong&gt;를 가진다. 그렇기에 윈도우 함수는 현재 row의 정보보다 더 많은 정보에 접근이 가능하다. 예를 들면 다음과 같다.&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1242,11 +1242,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[PostgreSQL] 데이터베이스 상속(Inheritance)의 개념과 사용법 및 성능비교 (Inherits, Only)</title>
-      <link>https://junhkang.com/posts/39/</link>
+      <link>http://localhost:1313/posts/39/</link>
       <pubDate>Mon, 30 Oct 2023 18:22:27 +0000</pubDate>
-      <guid>https://junhkang.com/posts/39/</guid>
+      <guid>http://localhost:1313/posts/39/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/39/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/39/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;데이터베이스-상속inheritance이란&#34; ke-size=&#34;size26&#34;&gt;1. 데이터베이스 상속(Inheritance)이란?&lt;/h2&gt;
 &lt;p&gt;상속은 객체지향 데이터베이스의 개념 중 하나이다. PostgreSQL은 테이블 생성 시 하나 이상의 다른 테이블로부터의 상속 기능을 제공하며, 이를 잘 활용하면 데이터베이스 설계에 새로운 가능성들을 열어준다. 데이터뿐만 아니라 부모 테이블의 컬럼 속성 및 인덱스 등의 특징들도 자식 테이블로 상속되기에 상황에 따라 효율적인 설계가 가능하다.&lt;/p&gt;
 &lt;h2 id=&#34;데이터베이스-상속inherits-방법&#34; ke-size=&#34;size26&#34;&gt;2.데이터베이스 상속(Inherits) 방법&lt;/h2&gt;
@@ -1257,11 +1257,11 @@ public class SecurityConfig  {
     </item>
     <item>
       <title>[PostgreSQL] 날짜 형태 검증하기 (ERROR: date/time field value out of range)</title>
-      <link>https://junhkang.com/posts/38/</link>
+      <link>http://localhost:1313/posts/38/</link>
       <pubDate>Thu, 26 Oct 2023 14:11:08 +0000</pubDate>
-      <guid>https://junhkang.com/posts/38/</guid>
+      <guid>http://localhost:1313/posts/38/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/38/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/38/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;날짜-형태로-형변환&#34; ke-size=&#34;size26&#34;&gt;1. 날짜 형태로 형 변환&lt;/h2&gt;
 &lt;p&gt;데이터 베이스에서 날짜형태로 형 변환을 하는 것은 다음과 같은 방법으로 쉽게 가능하다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- Unix타임(int)형 변환
@@ -1278,9 +1278,9 @@ SELECT to_char(to_timestamp(1658792421), &amp;#39;DD-MM-YYYY&amp;#39;)
     </item>
     <item>
       <title>[Java] 가상 스레드 (Virtual Threads)란? 자바 21의 가상스레드 (Virtual Thread) 도입</title>
-      <link>https://junhkang.com/posts/37/</link>
+      <link>http://localhost:1313/posts/37/</link>
       <pubDate>Wed, 25 Oct 2023 16:37:30 +0000</pubDate>
-      <guid>https://junhkang.com/posts/37/</guid>
+      <guid>http://localhost:1313/posts/37/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;가상-스레드-virtual-threads란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 가상 스레드 (Virtual Threads)&lt;strong&gt;란?&lt;/strong&gt;&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;2023.09.20 릴리즈 된 자바 21에 추가된 가상 스레드(Virtual Threads)라는 기능을 살펴보자.&lt;/p&gt;
@@ -1290,11 +1290,11 @@ SELECT to_char(to_timestamp(1658792421), &amp;#39;DD-MM-YYYY&amp;#39;)
     </item>
     <item>
       <title>[Java] Switch와 else-if의 효율성 비교 (Switch와 else-if 중에 어떤 걸 사용해야 할까?)</title>
-      <link>https://junhkang.com/posts/36/</link>
+      <link>http://localhost:1313/posts/36/</link>
       <pubDate>Tue, 24 Oct 2023 18:55:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/36/</guid>
+      <guid>http://localhost:1313/posts/36/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/36/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/36/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;switch와-if-else&#34; ke-size=&#34;size26&#34;&gt;1. Switch와 if-else&lt;/h2&gt;
 &lt;p&gt;조건에 따라 실행을 분기해야 할 때 우리는 조건문을 사용한다. Java에서는 switch / if-else 두 조건문을 선택적으로 사용 가능하다. 보통 가독성을 기준으로 선택을 많이 하나, 효율성 기준에서 어떤 것을 선택하는 것이 좋을지 비교해보려 한다.
  &lt;/p&gt;
@@ -1305,9 +1305,9 @@ SELECT to_char(to_timestamp(1658792421), &amp;#39;DD-MM-YYYY&amp;#39;)
     </item>
     <item>
       <title>[Java] 클래스 로딩 과정(Java Class Loading Process)이란?</title>
-      <link>https://junhkang.com/posts/35/</link>
+      <link>http://localhost:1313/posts/35/</link>
       <pubDate>Mon, 23 Oct 2023 17:30:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/35/</guid>
+      <guid>http://localhost:1313/posts/35/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;클래스-로딩-과정-java-class-loading-process-이란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 클래스 로딩 과정 (Java Class Loading Process) 이란?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;자바 클래스 로딩 과정 (Java Class Loading Process)은 클래스 로더가 클래스 파일을 찾아 동적으로 JVM의 메모리 영역인 Runtime Data Areas에 올려놓는 과정을 말한다.
@@ -1318,16 +1318,16 @@ SELECT to_char(to_timestamp(1658792421), &amp;#39;DD-MM-YYYY&amp;#39;)
     </item>
     <item>
       <title>[Linux] 스왑 메모리(Swap Memory)의 개념과 적용방법</title>
-      <link>https://junhkang.com/posts/34/</link>
+      <link>http://localhost:1313/posts/34/</link>
       <pubDate>Mon, 23 Oct 2023 15:58:46 +0000</pubDate>
-      <guid>https://junhkang.com/posts/34/</guid>
+      <guid>http://localhost:1313/posts/34/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;리눅스-swap-메모리-설정-예제는-ec2-환경에서-진행&#34; ke-size=&#34;size26&#34;&gt;1. 리눅스 Swap 메모리 설정 (예제는 EC2 환경에서 진행)&lt;/h2&gt;
 &lt;h3 id=&#34;swap-메모리-확인&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size23&#34;&gt;1-1. Swap 메모리 확인&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;swapon -s 
 
 free -h
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/34/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-23%20%EC%98%A4%ED%9B%84%203.25.49.png&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/34/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-23%20%EC%98%A4%ED%9B%84%203.25.49.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;shared =&lt;/strong&gt; 하나의 프로세스에서 다른 프로세스의 데이터에 효율적으로 접근하기 위해 사용하는 메모리&lt;br&gt;
 &lt;strong&gt;buff/cache =&lt;/strong&gt; 버퍼와 캐시를 위해 사용하는 메모리, 커널이 성능향상을 위해 캐시 영역으로 사용되는 메모리&lt;br&gt;
@@ -1336,11 +1336,11 @@ free -h
     </item>
     <item>
       <title>[Spring] 스프링부트 &#43; Mybatis 데이터소스 여러개 연결 (스프링 다중 데이터베이스 연결)</title>
-      <link>https://junhkang.com/posts/33/</link>
+      <link>http://localhost:1313/posts/33/</link>
       <pubDate>Fri, 20 Oct 2023 17:57:36 +0000</pubDate>
-      <guid>https://junhkang.com/posts/33/</guid>
+      <guid>http://localhost:1313/posts/33/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;다음은 스프링부트 + 마이바티스 프로젝트에 2개 이상의 데이터소스를 연결하는 예제이다. &lt;/p&gt;
 &lt;p&gt;기존 스프링 데이터베이스 연동이 되어있다고 가정 후 진행되며, 신규 데이터베이스는 구별이 쉽도록 new 데이터베이스로 명칭 한다.&lt;/p&gt;
 &lt;h2 id=&#34;신규-데이터베이스-접속정보-추가&#34; ke-size=&#34;size26&#34;&gt;1. 신규 데이터베이스 접속정보 추가&lt;/h2&gt;
@@ -1364,19 +1364,19 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[Spring] 스프링 배치 ItemReader의 개념, (MybatisCursorItemReader, MybatisPagingItemReader 구현)</title>
-      <link>https://junhkang.com/posts/32/</link>
+      <link>http://localhost:1313/posts/32/</link>
       <pubDate>Thu, 19 Oct 2023 18:20:45 +0000</pubDate>
-      <guid>https://junhkang.com/posts/32/</guid>
+      <guid>http://localhost:1313/posts/32/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;itemreader란&#34; ke-size=&#34;size26&#34;&gt;1. ItemReader란?&lt;/h2&gt;
 &lt;p&gt;스프링 배치의 ItemReader는 다음과 같은 과정을 거쳐 데이터를 처리한다.
  &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img_1.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img_1.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;대부분의 데이터 형태는 이미 ItemReader로 제공하고 있기에 ItemReader, ItemStream 인터페이스 자체를 구현할 필요는 없다.&lt;/p&gt;
 &lt;p&gt;ItemReader는 Chunk 기반 트랜잭션을 다루며 Cursor, Paging 가 대표적인 2가지 방식이다.&lt;/p&gt;
 &lt;h2 id=&#34;cursor-paging-형식&#34; ke-size=&#34;size26&#34;&gt;2. Cursor, Paging 형식&lt;/h2&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/32/img_2.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;cursor기반-itemreader&#34; ke-size=&#34;size23&#34;&gt;2-1. Cursor기반 ItemReader&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;JDBC ResultSet의 기본 기능이다.&lt;/li&gt;
@@ -1391,9 +1391,9 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[네트워크] TCP/IP의 개념</title>
-      <link>https://junhkang.com/posts/31/</link>
+      <link>http://localhost:1313/posts/31/</link>
       <pubDate>Wed, 18 Oct 2023 17:46:05 +0000</pubDate>
-      <guid>https://junhkang.com/posts/31/</guid>
+      <guid>http://localhost:1313/posts/31/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;tcpip-란&#34; ke-size=&#34;size26&#34;&gt;1. TCP/IP 란?&lt;/h2&gt;
 &lt;p&gt;패킷 전송방식의 인터넷 프로토콜인 IP와 전송 조절 프로토콜인 TCP로 이루어져 있다. IP는 패킷 전달 여부를 보증하지 않고, 패킷을 보낸 순서대로 받는 것을 보장하지 않지만, TCP는 IP 위에서 동작하는 프로토콜로 데이터의 전달을 보증하고 보낸 순서대로 받게 해 준다. IP가 패킷 간의 관계를 이해하지 못하고 목적지를 찾아가는 데만 집중한다면 TCP는 Endpoint 간 통신할 준비가 되어있는지, 데이터 전송이 제대로 되었는지, 데이터가 변질되지 않은지, 데이터 유실은 없는지 등을 점검한다.
@@ -1402,24 +1402,24 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[네트워크] 소켓(SOCEKT) 통신, 3-way handshake의 개념</title>
-      <link>https://junhkang.com/posts/30/</link>
+      <link>http://localhost:1313/posts/30/</link>
       <pubDate>Wed, 18 Oct 2023 15:32:25 +0000</pubDate>
-      <guid>https://junhkang.com/posts/30/</guid>
+      <guid>http://localhost:1313/posts/30/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;소켓socket이란&#34; ke-size=&#34;size26&#34;&gt;1. 소켓(Socket)이란&lt;/h2&gt;
 &lt;p&gt;소켓은 떨어져 있는 두 호스트를 연결해 주는 도구로써 인터페이스 역할을 한다. TCP/IP 기반 네트워크 통신에서 데이터 송수신의 앤드포인트이며 앤드포인트는 IP, Port조합으로 이루어진 목적지를 나타낸다. 서버-클라이언트 간 데이터를 주고받는 양방향 연결 지향성 통신으로 지속적으로 연결을 유지하면서 실시간 데이터를 주고받는 데 사용된다.&lt;/p&gt;
 &lt;p&gt;소켓은 서버 소켓과 클라이언트 소켓으로 이루어지며, 다음은 소켓 간 통신이 이루어지는 과정이다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/30/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/30/img.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;서버-소켓&#34; ke-size=&#34;size23&#34;&gt;&lt;strong&gt;1-1. 서버 소켓&lt;/strong&gt;&lt;/h3&gt;
 &lt;p&gt;클라이언트에서 연결요청이 오기를 기다렸다가 연결 요청이 들어오면 클라이언트와 연결을 맺고 새로운 소켓을 만든다.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Spring] 스프링 트랜잭션의 개념 및 적용 (@Transactional 사용법)</title>
-      <link>https://junhkang.com/posts/29/</link>
+      <link>http://localhost:1313/posts/29/</link>
       <pubDate>Tue, 17 Oct 2023 18:37:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/29/</guid>
+      <guid>http://localhost:1313/posts/29/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/29/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/29/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;트랜잭션이란&#34; ke-size=&#34;size26&#34;&gt;트랜잭션이란?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/20&#34;&gt;[Postgresql] - [PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;스프링에서-제공하는-트랜잭션&#34; ke-size=&#34;size26&#34;&gt;스프링에서 제공하는 트랜잭션&lt;/h2&gt;
@@ -1430,11 +1430,11 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[운영체제(OS)] 스레드 (Thread), 멀티스레드(Multithreaded Programming)란?</title>
-      <link>https://junhkang.com/posts/28/</link>
+      <link>http://localhost:1313/posts/28/</link>
       <pubDate>Tue, 17 Oct 2023 14:01:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/28/</guid>
+      <guid>http://localhost:1313/posts/28/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/28/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/28/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;두 개의 실행 스레드를 가진 프로세스가 하나의 프로세서 위에서 실행 중인 모습&lt;/p&gt;
 &lt;h2 id=&#34;thread란&#34; ke-size=&#34;size26&#34;&gt;1. Thread란?&lt;/h2&gt;
 &lt;p&gt;CPU 수행의 기본단위이며 특히 프로세스 안의 흐름의 단위이다. 스레드가 수행되는 환경을 Task라고 하며 Thread ID, Program counter, register set, Stack space로 구성된다. 각각의 스레드는 레지스터 상태와 스택을 갖는다. Code, Data 섹션이나 운영체제 자원들은 스레드끼리 공유한다. &lt;/p&gt;
@@ -1452,11 +1452,11 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[AWS] RDS 적정 인스턴스 선택, 비용 최적화</title>
-      <link>https://junhkang.com/posts/27/</link>
+      <link>http://localhost:1313/posts/27/</link>
       <pubDate>Mon, 16 Oct 2023 18:35:57 +0000</pubDate>
-      <guid>https://junhkang.com/posts/27/</guid>
+      <guid>http://localhost:1313/posts/27/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/27/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/27/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;rds란&#34; ke-size=&#34;size26&#34;&gt;1. RDS란?&lt;/h2&gt;
 &lt;p&gt;RDS는 클라우드에서 데이터베이스를 쉽게 설정, 운영 및 확장할 수 있는 완전관리형 오픈소스 관계형 데이터베이스이다. &lt;/p&gt;
 &lt;p&gt;온디맨드, 혹은 예약형 인스턴스 구매로 유연한 데이터베이스 관리가 가능하며 스토리지 및 메모리 등의 설정에 따라 금액이 달라진다.&lt;/p&gt;
@@ -1472,11 +1472,11 @@ new.datasource.schema={schema}
     </item>
     <item>
       <title>[PostgreSQL] 쿼리 성능향상 (실행계획 보는 법, 상세 확인방법, Explain의 어떤 지표를 봐야할까?)</title>
-      <link>https://junhkang.com/posts/26/</link>
+      <link>http://localhost:1313/posts/26/</link>
       <pubDate>Thu, 12 Oct 2023 18:25:52 +0000</pubDate>
-      <guid>https://junhkang.com/posts/26/</guid>
+      <guid>http://localhost:1313/posts/26/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/26/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/26/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;실행-계획-확인&#34; ke-size=&#34;size26&#34;&gt;1. 실행 계획 확인&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;--Synopsis
 EXPLAIN [ ( option [, ...] ) ] 쿼리문
@@ -1494,11 +1494,11 @@ option 자리에 사용할 수 있는 것들:
     </item>
     <item>
       <title>[PostgreSQL] 뷰(VIEW) 테이블 개념 및 사용, 생성(CREATE), 수정(CREATE OR REPLACE), 삭제(DROP)</title>
-      <link>https://junhkang.com/posts/25/</link>
+      <link>http://localhost:1313/posts/25/</link>
       <pubDate>Wed, 11 Oct 2023 19:29:02 +0000</pubDate>
-      <guid>https://junhkang.com/posts/25/</guid>
+      <guid>http://localhost:1313/posts/25/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/25/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/25/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;뷰view-테이블의-사용-생성-삭제-수정&#34; ke-size=&#34;size26&#34;&gt;1. 뷰(VIEW) 테이블의 사용 (생성, 삭제, 수정)&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 기본 생성
 CREATE VIEW comedies AS
@@ -1533,11 +1533,11 @@ CREATE VIEW name [ ( column [, ...] ) ]
     </item>
     <item>
       <title>[PostgreSQL] CREATE TABLE AS (결과물을 테이블로)</title>
-      <link>https://junhkang.com/posts/24/</link>
+      <link>http://localhost:1313/posts/24/</link>
       <pubDate>Wed, 11 Oct 2023 18:44:51 +0000</pubDate>
-      <guid>https://junhkang.com/posts/24/</guid>
+      <guid>http://localhost:1313/posts/24/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/24/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/24/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;create-table-as-사용&#34; ke-size=&#34;size26&#34;&gt;1. CREATE TABLE AS 사용&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 기본
 CREATE TABLE films_recent AS
@@ -1553,11 +1553,11 @@ CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } ] TABLE table_name [ (column_na
     </item>
     <item>
       <title>[PostgreSQL] 시퀀스(Sequence)의 개념과 사용법(생성, 삭제, 조회 등)</title>
-      <link>https://junhkang.com/posts/23/</link>
+      <link>http://localhost:1313/posts/23/</link>
       <pubDate>Wed, 11 Oct 2023 14:12:44 +0000</pubDate>
-      <guid>https://junhkang.com/posts/23/</guid>
+      <guid>http://localhost:1313/posts/23/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/23/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/23/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;시퀀스sequence의-사용&#34; ke-size=&#34;size26&#34;&gt;1. 시퀀스(Sequence)의 사용&lt;/h2&gt;
 &lt;h3 id=&#34;생성-삭제-조회&#34; ke-size=&#34;size23&#34;&gt;          1-1. 생성, 삭제, 조회&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 101부터 시작하는 기본 시퀀스 생성
@@ -1598,11 +1598,11 @@ where c.relkind = &amp;#39;S&amp;#39;
     </item>
     <item>
       <title>[PostgreSQL] 역할 및 권한 (ROLE, USER, GROUP) 개념 및 설정</title>
-      <link>https://junhkang.com/posts/22/</link>
+      <link>http://localhost:1313/posts/22/</link>
       <pubDate>Wed, 11 Oct 2023 10:32:22 +0000</pubDate>
-      <guid>https://junhkang.com/posts/22/</guid>
+      <guid>http://localhost:1313/posts/22/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/22/img.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/22/img.jpg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;role&#34; ke-size=&#34;size26&#34;&gt;1. ROLE&lt;/h2&gt;
 &lt;h3 id=&#34;role-생성&#34; ke-size=&#34;size23&#34;&gt;        1-1. ROLE 생성&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 기본
@@ -1717,11 +1717,11 @@ where option can be:
     </item>
     <item>
       <title>[PostgreSQL] 제약조건 (Constraint) 개념 및 설정 (Primary Keys, Foreign Keys, Unique, Not null, Check)</title>
-      <link>https://junhkang.com/posts/21/</link>
+      <link>http://localhost:1313/posts/21/</link>
       <pubDate>Tue, 10 Oct 2023 15:41:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/21/</guid>
+      <guid>http://localhost:1313/posts/21/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/21/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/21/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;postgresql-제약조건-constrant란&#34; ke-size=&#34;size26&#34;&gt;PostgreSQL 제약조건 (Constrant)란?&lt;/h2&gt;
 &lt;p&gt;데이터베이스는 데이터 타입 외에 제약조건들을 통해 데이터의 무결성을 유지한다.&lt;/p&gt;
 &lt;p&gt;제약조건에는 여러 가지 종류가 있으며 DMBS에 마다 다양하지만, 이번 포스트는 PostgreSQL의 5가지 제약 조건들을 설명하겠다.
@@ -1742,11 +1742,11 @@ where option can be:
     </item>
     <item>
       <title>[PostgreSQL] 트랜잭션(Transaction)의 개념 및 사용</title>
-      <link>https://junhkang.com/posts/20/</link>
+      <link>http://localhost:1313/posts/20/</link>
       <pubDate>Tue, 10 Oct 2023 14:42:53 +0000</pubDate>
-      <guid>https://junhkang.com/posts/20/</guid>
+      <guid>http://localhost:1313/posts/20/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/20/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/20/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;트랜잭션transaction이란&#34; ke-size=&#34;size26&#34;&gt;1. 트랜잭션(Transaction)이란?&lt;/h2&gt;
 &lt;p&gt;트랜잭션은 데이터베이스에서 실행되는 일련의 작업들이다. 트랜잭션은 데이터베이스의 무결성 및 작업 간 충돌방지, 데이터 검증을 위해 필수적인 요소이다. 단순한 DML 작업의 롤백 용도뿐 아니라, 대용량 데이터 처리의 무결성, 에러발생 시, 여러 유저의 동시작업 등에서 사용된다.&lt;/p&gt;
 &lt;h2 id=&#34;트랜잭션-적용&#34; ke-size=&#34;size26&#34;&gt;2. 트랜잭션 적용&lt;/h2&gt;
@@ -1761,11 +1761,11 @@ COMMIT;
     </item>
     <item>
       <title>[AWS] AMI(Amazon Machine Image) 개념 및 적용</title>
-      <link>https://junhkang.com/posts/19/</link>
+      <link>http://localhost:1313/posts/19/</link>
       <pubDate>Mon, 09 Oct 2023 15:21:27 +0000</pubDate>
-      <guid>https://junhkang.com/posts/19/</guid>
+      <guid>http://localhost:1313/posts/19/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/19/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/19/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;amiamazon-machine-image란&#34; ke-size=&#34;size26&#34;&gt;1. AMI(Amazon Machine Image)란?&lt;/h2&gt;
 &lt;p&gt;인스턴스를 생성하는데 필요한 정보를 가지고 있는 이미지이다. 한 AMI로 동일 속성을 가진 인스턴스를 여러 개 생성할 수 있으며 인스턴스의 설정값을 가지고 있는 템플릿으로 보면 된다. AMI 생성 시 소프트웨어 구성이 기재된 템플릿 (예: 운영 체제, 애플리케이션 서버, 애플리케이션)을 추출하고, AMI를 사용하여 신규 인스턴스를 바로 복제 가능하다.&lt;/p&gt;
 &lt;h2 id=&#34;주의사항&#34; ke-size=&#34;size26&#34;&gt;2. 주의사항&lt;/h2&gt;
@@ -1773,25 +1773,25 @@ COMMIT;
     </item>
     <item>
       <title>[AWS] Elastic IP (탄력적 IP)의 개념 및 적용</title>
-      <link>https://junhkang.com/posts/18/</link>
+      <link>http://localhost:1313/posts/18/</link>
       <pubDate>Mon, 09 Oct 2023 14:41:55 +0000</pubDate>
-      <guid>https://junhkang.com/posts/18/</guid>
+      <guid>http://localhost:1313/posts/18/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/18/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/18/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;elastic-ip-탄력적-ip-란&#34; ke-size=&#34;size26&#34;&gt;1. Elastic IP (탄력적 IP) 란?&lt;/h2&gt;
 &lt;p&gt;EIP(Elastic Ip Address)란 인터넷으로 접속이 가능한 공인 IP를 할당하여, 인스턴스에 탈부착할 수 있는 서비스이다. 인스턴스 혹은 네트워크 인터페이스에 연결이 가능하며 삭제 전까지 해당 IP를 유지할 수 있다.
  &lt;/p&gt;
 &lt;p&gt;EC2 인스턴스 생성 시 공인 IP 사용 설정을 Enable로 변경 (default는 Disable)할 경우 인스턴스 자체에 공인 IP를 할당받을 수 있는데 왜 굳이 Elastic IP를 사용하는 것일까?&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/18/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%ED%9B%84%201.56.51.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/18/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%ED%9B%84%201.56.51.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;인스턴스가 stop 후 재시작될 경우 공인 IP가 변경되는 경우가 발생한다. 인스턴스 자체의 공인 IP가 변경될 경우 큰 문제로 이어질 수 있어&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] Vacuum 개념 및 적절한 사용</title>
-      <link>https://junhkang.com/posts/17/</link>
+      <link>http://localhost:1313/posts/17/</link>
       <pubDate>Mon, 09 Oct 2023 13:33:14 +0000</pubDate>
-      <guid>https://junhkang.com/posts/17/</guid>
+      <guid>http://localhost:1313/posts/17/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/17/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/17/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;vacuum-이란&#34; ke-size=&#34;size26&#34;&gt;1. Vacuum 이란?&lt;/h2&gt;
 &lt;p&gt;Vacuum은 postgresql에서 dead tuple이 차지하는 저장공간을 회수한다. 일반적으로 Postgresql에서 update, delete tuple 은 물리적으로 삭제되지 않으며 vacuum이 완료될 때까지 계속 존재한다. &lt;/p&gt;
 &lt;p&gt;(update, delete 시 tuple의 순환은 MVCC 개념에서 확인할 수 있다.)&lt;/p&gt;
@@ -1838,9 +1838,9 @@ and table_and_columns is:
     </item>
     <item>
       <title>[Linux] 심볼릭 링크 (Symbolic link) 설정하기</title>
-      <link>https://junhkang.com/posts/16/</link>
+      <link>http://localhost:1313/posts/16/</link>
       <pubDate>Mon, 09 Oct 2023 11:46:58 +0000</pubDate>
-      <guid>https://junhkang.com/posts/16/</guid>
+      <guid>http://localhost:1313/posts/16/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;심볼릭-링크-symbolic-link란&#34; ke-size=&#34;size26&#34;&gt;1. 심볼릭 링크 (Symbolic link)란?&lt;/h2&gt;
 &lt;p&gt;링크를 걸어 원본 파일을 직접 사용하는 것과 같은 효과를 낸다. 특정 폴더에 링크를 걸어 NAS, library 원본 파일을 사용하거나 톰캣 빌듯이 상위경로의 파일을 사용하고자 할 때 사용한다. 심볼릭 링크는 단순히 원본파일을 가리키도록 링크만 연결시켜둔 것으로 원본파일을 가리키기만 하고 있으므로 원본파일의 크기와 무관하며 원본파일이 삭제되어 존재하지 않을 경우에 빨간색으로 링크파일의 원본파일이 없다는 것을 알려준다.
@@ -1859,15 +1859,15 @@ and table_and_columns is:
 &lt;li&gt;t : 링크파일을 생성할 디렉토리를 지정한다.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;심볼릭-링크-생성directory&#34; ke-size=&#34;size23&#34;&gt;     2-2. 심볼릭 링크 생성(directory)&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/16/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%EC%A0%84%2011.35.53.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/16/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-09%20%EC%98%A4%EC%A0%84%2011.35.53.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] MVCC (Multi-Version Concurrency Control)</title>
-      <link>https://junhkang.com/posts/15/</link>
+      <link>http://localhost:1313/posts/15/</link>
       <pubDate>Fri, 06 Oct 2023 18:53:47 +0000</pubDate>
-      <guid>https://junhkang.com/posts/15/</guid>
+      <guid>http://localhost:1313/posts/15/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/15/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/15/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;h2 id=&#34;1-mvcc란&#34;&gt;1.  MVCC란?&lt;/h2&gt;
 &lt;p&gt;동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터베이스를 쿼리 하는 동안 데이터의 현재 상태에 관계없이 얼마 전의 데이터 스냅샷을 볼 수 있음을 의미한다. 데이터를 쿼리 하기 위해 트랜잭션을 만들었다면 해당 Transaction은 데이터의 스냅샷을 보고 있는 것이다.&lt;/p&gt;
@@ -1875,12 +1875,12 @@ and table_and_columns is:
     </item>
     <item>
       <title>[PostgreSQL] 미사용 인덱스(INDEX) 찾기 및 삭제, 성능향상</title>
-      <link>https://junhkang.com/posts/14/</link>
+      <link>http://localhost:1313/posts/14/</link>
       <pubDate>Fri, 06 Oct 2023 16:52:50 +0000</pubDate>
-      <guid>https://junhkang.com/posts/14/</guid>
+      <guid>http://localhost:1313/posts/14/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/14/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/14/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;인덱스index-상세-개념&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스(INDEX) 상세 개념&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://junhkang.tistory.com/5&#34;&gt;Postgresql 인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;미사용-인덱스&#34; ke-size=&#34;size26&#34;&gt;2. 미사용 인덱스&lt;/h2&gt;
@@ -1889,11 +1889,11 @@ and table_and_columns is:
     </item>
     <item>
       <title>ERROR: text search configuration name \&#34;english\&#34; must be schema-qualified</title>
-      <link>https://junhkang.com/posts/13/</link>
+      <link>http://localhost:1313/posts/13/</link>
       <pubDate>Thu, 05 Oct 2023 13:53:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/13/</guid>
+      <guid>http://localhost:1313/posts/13/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/13/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/13/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;발생&#34; ke-size=&#34;size26&#34;&gt;1. 발생&lt;/h2&gt;
 &lt;p&gt;해당 에러는 Postgresql에서 Full Text Search를 위해 tsvector 컬럼을 업데이트할 때 발생한다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 특정 컬럼을 ts_vector로 변경하여 업데이트
@@ -1918,11 +1918,11 @@ FOR EACH ROW EXECUTE PROCEDURE
     </item>
     <item>
       <title>[PostgreSQL] 문자열내 중복 공백, 단어 제거</title>
-      <link>https://junhkang.com/posts/12/</link>
+      <link>http://localhost:1313/posts/12/</link>
       <pubDate>Wed, 04 Oct 2023 19:34:40 +0000</pubDate>
-      <guid>https://junhkang.com/posts/12/</guid>
+      <guid>http://localhost:1313/posts/12/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/12/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/12/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;중복-공백-제거&#34; ke-size=&#34;size26&#34;&gt;1. 중복 공백 제거&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;특정 문자열에 대해서 중복 공백 제거를 하고 싶다면 postgresql 정규식을 사용해서 가능하다.&lt;br&gt;
@@ -1935,12 +1935,12 @@ FOR EACH ROW EXECUTE PROCEDURE
     </item>
     <item>
       <title>[PostgreSQL] BRIN 인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/11/</link>
+      <link>http://localhost:1313/posts/11/</link>
       <pubDate>Mon, 18 Sep 2023 19:03:08 +0000</pubDate>
-      <guid>https://junhkang.com/posts/11/</guid>
+      <guid>http://localhost:1313/posts/11/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/11/img.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/11/img.jpg&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;brin-인덱스란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. BRIN 인덱스란?&lt;/strong&gt;&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;▪ Block range index의 약자&lt;br&gt;
@@ -1950,9 +1950,9 @@ FOR EACH ROW EXECUTE PROCEDURE
     </item>
     <item>
       <title>[PostgreSQL] GIN인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/10/</link>
+      <link>http://localhost:1313/posts/10/</link>
       <pubDate>Wed, 13 Sep 2023 19:45:36 +0000</pubDate>
-      <guid>https://junhkang.com/posts/10/</guid>
+      <guid>http://localhost:1313/posts/10/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-gin-인덱스란&#34;&gt;1. GIN 인덱스란?&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -1988,9 +1988,9 @@ select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&a
     </item>
     <item>
       <title>[PostgreSQL] SP-GiST인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/9/</link>
+      <link>http://localhost:1313/posts/9/</link>
       <pubDate>Wed, 13 Sep 2023 18:11:46 +0000</pubDate>
-      <guid>https://junhkang.com/posts/9/</guid>
+      <guid>http://localhost:1313/posts/9/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;sp-gist-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. SP-GiST 인덱스란?&lt;/h2&gt;
 &lt;p&gt;Space-Partitioned Generalized Search Tree의 약자이다. GiST인덱스와 같이 지리, 좌표, ip주소 데이터 등 복잡한 유형의 데이터를 처리하는 인덱스 유형이다. GiST가 B-tree 인덱스를 통해 보관 데이터를 세분화할 때, 위계적 순서를 따라야 하기에, 이를 보완하기 위해 만들어진 유형으로, GiST로 분리된 공간을 다시 한번 공간 단위로 나누어 관리하는 개념이다. SP-GiST는 겹치지 않는 영역으로 재귀적 분할을 할 수 있는 구조에 적합하다. 기본적으로 SP-GiST는 다양한 데이터 유형, 복잡한 쿼리를 지원하도록 설계되었다.&lt;/p&gt;
@@ -2004,9 +2004,9 @@ select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&a
     </item>
     <item>
       <title>[PostgreSQL] GiST인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/8/</link>
+      <link>http://localhost:1313/posts/8/</link>
       <pubDate>Wed, 13 Sep 2023 16:27:51 +0000</pubDate>
-      <guid>https://junhkang.com/posts/8/</guid>
+      <guid>http://localhost:1313/posts/8/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;gist-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. GiST 인덱스란?&lt;/h2&gt;
 &lt;p&gt;Generalized Search Tree의 약자이며 B-tree와 같은 balanced search tree의 형태이다. B-tree인덱스는 정렬된 채로 비교&amp;amp;일치의 연산에 최적화된 채로 연결되어있다. 하지만 현대의 다양한 데이터 종류 (기하학적, 텍스트문서, 이미지 등)를 연산하는 데는 적합하지 않다.&lt;/p&gt;
@@ -2014,20 +2014,20 @@ select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&a
     </item>
     <item>
       <title>[PostgreSQL] Hash 인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/7/</link>
+      <link>http://localhost:1313/posts/7/</link>
       <pubDate>Wed, 13 Sep 2023 14:28:16 +0000</pubDate>
-      <guid>https://junhkang.com/posts/7/</guid>
+      <guid>http://localhost:1313/posts/7/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/7/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/7/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hash-인덱스란&#34; ke-size=&#34;size26&#34;&gt;1. Hash 인덱스란?&lt;/h2&gt;
 &lt;p&gt;해쉬 인덱스의 기본 아이디어는, hash function을 통해 작은 숫자를 데이터와 조합하여 integer 형태의 해쉬값 (최대 2^32 = 4B)을 생성하고 해쉬값을 테이블 행 정보(TID)가 저장될 배열의 인덱스 값으로 사용하는 것이다. 이 배열의 각 요소를 해시 테이블 버킷(hash table bucket)이라고 한다. 데이터 조회 시, hash function을 통해 생성된 key가 포함된 bucket을 찾고, 그 bucket만 확인하면 실제 데이터의 위치를 바로 확인할 수 있다. 데이터의 크기에 상관없이 인덱스의 크기가 작고 검색이 빠르다. 1개의 데이터를 조회하는 시간은 O(1)로 빠르지만 해쉬 테이블 내의 값들은 정렬이 되어있지 않기 때문에 범위 비교나 부정형 비교가 포함된 조건에서는 인덱스를 사용할 수 없다. Hash function이 버킷 단위로 소스 값을 더 균일하게 분배할수록 효율이 좋다. &lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] B-tree 인덱스의 원리 및 특징</title>
-      <link>https://junhkang.com/posts/6/</link>
+      <link>http://localhost:1313/posts/6/</link>
       <pubDate>Tue, 12 Sep 2023 19:12:12 +0000</pubDate>
-      <guid>https://junhkang.com/posts/6/</guid>
+      <guid>http://localhost:1313/posts/6/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;PostgreSQL에는 6가지의 인덱스 종류가 있다. 각각의 인덱스는 다양한 데이터 탐색을 위해 다른 알고리즘을 사용한다.&lt;/p&gt;
 &lt;p&gt;그중 가장 일반적으로 사용되고, 가장 먼저 도입된 알고리즘인 B-tree 인덱스에 대해 알아보자.&lt;/p&gt;
@@ -2039,15 +2039,15 @@ select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&a
 ▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;&lt;/blockquote&gt;
 &lt;h2 id=&#34;b-tree-인덱스의-원리&#34; ke-size=&#34;size26&#34;&gt;2. B-tree 인덱스의 원리&lt;/h2&gt;
 &lt;h3 id=&#34;b-tree-인덱스의-자료구조-형태&#34; ke-size=&#34;size23&#34;&gt;▪ B-tree 인덱스의 자료구조 형태&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/6/img.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/6/img.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL]  인덱스(INDEX)개념 및 생성, 삭제, 분석, 설계 방법</title>
-      <link>https://junhkang.com/posts/5/</link>
+      <link>http://localhost:1313/posts/5/</link>
       <pubDate>Tue, 12 Sep 2023 17:50:18 +0000</pubDate>
-      <guid>https://junhkang.com/posts/5/</guid>
+      <guid>http://localhost:1313/posts/5/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/5/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/5/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;인덱스-컨트롤&#34; ke-size=&#34;size26&#34;&gt;1. 인덱스 컨트롤&lt;/h2&gt;
 &lt;h3 id=&#34;인덱스-조회&#34; ke-size=&#34;size23&#34;&gt;1-1. 인덱스 조회 &lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT * FROM pg_indexes WHERE tablename = &amp;#39;{테이블명}&amp;#39;; -- 테이블명에 &amp;#39;&amp;#39; 필요
@@ -2074,11 +2074,11 @@ REINDEX DATABASE {데이터베이스명}
     </item>
     <item>
       <title>Postgresql Lock이란? (조회 및 kill, Dead lock)</title>
-      <link>https://junhkang.com/posts/4/</link>
+      <link>http://localhost:1313/posts/4/</link>
       <pubDate>Mon, 11 Sep 2023 18:02:56 +0000</pubDate>
-      <guid>https://junhkang.com/posts/4/</guid>
+      <guid>http://localhost:1313/posts/4/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/4/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/4/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;1-lock-확인방법&#34;&gt;1. Lock 확인방법&lt;/h2&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SELECT PSAT.RELNAME,
        PL.LOCKTYPE,
@@ -2105,15 +2105,15 @@ SELECT PG_TERMINATE_BACKEND([PID])
 &lt;li&gt;특정 락은 self-conflicting 될 수 있다.
 (ex. access exclusive 락은 중첩불가 access share 락은 여러 트랜잭션에서 다중으로 적용될 수 있다.)&lt;/li&gt;
 &lt;/ul&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/4/img_1.png&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/4/img_1.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[PostgreSQL] Trigger, Procedure, Function (history 관리하기)</title>
-      <link>https://junhkang.com/posts/3/</link>
+      <link>http://localhost:1313/posts/3/</link>
       <pubDate>Fri, 08 Sep 2023 13:37:27 +0000</pubDate>
-      <guid>https://junhkang.com/posts/3/</guid>
+      <guid>http://localhost:1313/posts/3/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/3/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/3/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;-가장보편적으로쓰이는간단한history-저장트리거생성예제&#34;&gt;* 가장 보편적으로 쓰이는 간단한 history 저장 트리거 생성 예제&lt;/h2&gt;
 &lt;p&gt;특정 테이블에 insert, update가 수행될 경우 무조건 내역에 “insert”를 하는 간단한 트리거 생성 예제이다.&lt;/p&gt;
 &lt;h4 id=&#34;1-1-함수를-실행할-트리거-생성&#34;&gt;1-1. 함수를 실행할 트리거 생성&lt;/h4&gt;
@@ -2138,11 +2138,11 @@ LANGUAGE &amp;#39;plpgsql&amp;#39;;
     </item>
     <item>
       <title>Full Text Search를 활용한 데이터베이스 성능 향상</title>
-      <link>https://junhkang.com/posts/2/</link>
+      <link>http://localhost:1313/posts/2/</link>
       <pubDate>Thu, 07 Sep 2023 17:25:06 +0000</pubDate>
-      <guid>https://junhkang.com/posts/2/</guid>
+      <guid>http://localhost:1313/posts/2/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/2/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/2/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;문제상황&#34; ke-size=&#34;size26&#34;&gt;1. 문제상황&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;긴 텍스트에서 단순 like 조합 외 방법으로 유사 문자열 검색&lt;br&gt;
@@ -2154,9 +2154,9 @@ LANGUAGE &amp;#39;plpgsql&amp;#39;;
     </item>
     <item>
       <title>방명록</title>
-      <link>https://junhkang.com/guestbook/</link>
+      <link>http://localhost:1313/guestbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/guestbook/</guid>
+      <guid>http://localhost:1313/guestbook/</guid>
       <description></description>
     </item>
   </channel>

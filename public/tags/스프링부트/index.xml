@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>스프링부트 on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/</link>
+    <link>http://localhost:1313/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/</link>
     <description>Recent content in 스프링부트 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 25 Jul 2024 13:29:54 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Spring] Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection, 데이터베이스 접속 에러</title>
-      <link>https://junhkang.com/posts/92/</link>
+      <link>http://localhost:1313/posts/92/</link>
       <pubDate>Thu, 25 Jul 2024 13:29:54 +0000</pubDate>
-      <guid>https://junhkang.com/posts/92/</guid>
+      <guid>http://localhost:1313/posts/92/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/92/img.png&#34;&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/92/img.png&#34;&gt;
  &lt;/p&gt;
 &lt;p&gt;Amazon RDS and Amazon Aurora SSL/TLS 인증서를 업데이트 후 별다른 설정 변경을 하지 않았지만, 오랜만에 빌드하는 스프링부트 프로젝트의 데이터베이스 연결이 되지 않는 현상 발생하였다.
  &lt;/p&gt;
@@ -25,11 +25,11 @@
     </item>
     <item>
       <title>[Spring] 스프링부트 &#43; Mybatis 데이터소스 여러개 연결 (스프링 다중 데이터베이스 연결)</title>
-      <link>https://junhkang.com/posts/33/</link>
+      <link>http://localhost:1313/posts/33/</link>
       <pubDate>Fri, 20 Oct 2023 17:57:36 +0000</pubDate>
-      <guid>https://junhkang.com/posts/33/</guid>
+      <guid>http://localhost:1313/posts/33/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/33/img.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;다음은 스프링부트 + 마이바티스 프로젝트에 2개 이상의 데이터소스를 연결하는 예제이다. &lt;/p&gt;
 &lt;p&gt;기존 스프링 데이터베이스 연동이 되어있다고 가정 후 진행되며, 신규 데이터베이스는 구별이 쉽도록 new 데이터베이스로 명칭 한다.&lt;/p&gt;
 &lt;h2 id=&#34;신규-데이터베이스-접속정보-추가&#34; ke-size=&#34;size26&#34;&gt;1. 신규 데이터베이스 접속정보 추가&lt;/h2&gt;

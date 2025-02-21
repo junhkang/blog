@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Java on Jun Kang&#39;s Blog</title>
-    <link>https://junhkang.com/tags/java/</link>
+    <link>http://localhost:1313/tags/java/</link>
     <description>Recent content in Java on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 30 Jan 2024 21:41:20 +0000</lastBuildDate>
-    <atom:link href="https://junhkang.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Java] 자바 스트림(Streams)의 개념과 사용 방법</title>
-      <link>https://junhkang.com/posts/56/</link>
+      <link>http://localhost:1313/posts/56/</link>
       <pubDate>Tue, 30 Jan 2024 21:41:20 +0000</pubDate>
-      <guid>https://junhkang.com/posts/56/</guid>
+      <guid>http://localhost:1313/posts/56/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/posts/56/img.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;자바-스트림streams이란&#34; ke-size=&#34;size26&#34;&gt;1. 자바 스트림(Streams)이란?&lt;/h2&gt;
 &lt;p&gt;기존의 배열 또는 컬렉션 인스턴스는 for, foreach 같은 반복문을 통해 하나씩 핸들링하는 방식이었기에 로직이 복잡할수록 코드양도 많아지고 루프를 여러 번 도는 경우도 발생하였다. 그에 비해 자바 8에서 추가된 스트림(Streams)은 람다를 사용할 수 있는 기술 중 하나로 다음과 같은 특징을 가지고 있다.&lt;/p&gt;
 &lt;ul&gt;
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>[Java] 가상 스레드 (Virtual Threads)란? 자바 21의 가상스레드 (Virtual Thread) 도입</title>
-      <link>https://junhkang.com/posts/37/</link>
+      <link>http://localhost:1313/posts/37/</link>
       <pubDate>Wed, 25 Oct 2023 16:37:30 +0000</pubDate>
-      <guid>https://junhkang.com/posts/37/</guid>
+      <guid>http://localhost:1313/posts/37/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;가상-스레드-virtual-threads란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 가상 스레드 (Virtual Threads)&lt;strong&gt;란?&lt;/strong&gt;&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;2023.09.20 릴리즈 된 자바 21에 추가된 가상 스레드(Virtual Threads)라는 기능을 살펴보자.&lt;/p&gt;
@@ -40,9 +40,9 @@
     </item>
     <item>
       <title>[Java] 클래스 로딩 과정(Java Class Loading Process)이란?</title>
-      <link>https://junhkang.com/posts/35/</link>
+      <link>http://localhost:1313/posts/35/</link>
       <pubDate>Mon, 23 Oct 2023 17:30:32 +0000</pubDate>
-      <guid>https://junhkang.com/posts/35/</guid>
+      <guid>http://localhost:1313/posts/35/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;클래스-로딩-과정-java-class-loading-process-이란&#34; ke-size=&#34;size26&#34;&gt;&lt;strong&gt;1. 클래스 로딩 과정 (Java Class Loading Process) 이란?&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;자바 클래스 로딩 과정 (Java Class Loading Process)은 클래스 로더가 클래스 파일을 찾아 동적으로 JVM의 메모리 영역인 Runtime Data Areas에 올려놓는 과정을 말한다.

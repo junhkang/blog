@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Index-Only on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/index-only/</link>
+    <link>https://junhkang.com/tags/index-only/</link>
     <description>Recent content in Index-Only on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Mar 2024 18:52:22 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index-only/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/index-only/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] Index-Only 스캔과 Covering 인덱스, Index-only스캔의 효율적인 사용</title>
-      <link>http://localhost:1313/posts/70/</link>
+      <link>https://junhkang.com/posts/70/</link>
       <pubDate>Wed, 13 Mar 2024 18:52:22 +0000</pubDate>
-      <guid>http://localhost:1313/posts/70/</guid>
+      <guid>https://junhkang.com/posts/70/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-index-only-scans&#34;&gt;1. Index-Only Scans&lt;/h2&gt;
 &lt;p&gt;PostgreSQL의 모든 인덱스는 &lt;strong&gt;&amp;quot;보조(Secondary)&amp;quot;&lt;/strong&gt; 인덱스이다. 각 인덱스는 테이블의 메인 데이터 영역(테이블의 &lt;strong&gt;heap&lt;/strong&gt; 영역)과 분리되어서 저장된다. 그렇기 때문에 일반적인 인덱스 스캔에서 각 ROW를 찾기 위해서는, index와 heap 영역 모두에 접근하여 데이터를 탐색해야 한다. 보통 WHERE 절 조건에 부합하는 데이터들은&lt;/p&gt;

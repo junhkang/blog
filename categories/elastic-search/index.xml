@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Elastic Search on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/categories/elastic-search/</link>
+    <link>https://junhkang.com/categories/elastic-search/</link>
     <description>Recent content in Elastic Search on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Fri, 08 Dec 2023 14:57:54 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/elastic-search/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/categories/elastic-search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Elastic Search] Elastic Search란? Elastic Search의 개념 및 장단점</title>
-      <link>http://localhost:1313/posts/50/</link>
+      <link>https://junhkang.com/posts/50/</link>
       <pubDate>Fri, 08 Dec 2023 14:57:54 +0000</pubDate>
-      <guid>http://localhost:1313/posts/50/</guid>
+      <guid>https://junhkang.com/posts/50/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;elastic-search란&#34; ke-size=&#34;size26&#34;&gt;1. Elastic Search란?&lt;/h2&gt;
 &lt;p&gt;Apache Lucene에 구축되어 배포된 검색 및 분석 엔진이다. 현재 검색엔진을 넘어 보안, 로그분석, Full-text 분석 등 다양한 영역에서 사용되며, Kibana, Logstash, Beats들과 함께 사용된다. 오픈 소스 프로젝트로 활발히 개발되고 있으며, 유닉스, 자바의 기초지식 필요하다. Apache Lucene의 한계를 보완하기 위한 새로운 검색엔진 프로젝트로 시작되었고 Logstash, Kibana와 함께 사용되어 ELK Stack (ES, Logstash, Kibana)라고 불렸으나 2013년 Logstash, Kibana 프로젝트 정식 흡수되었다.&lt;/p&gt;

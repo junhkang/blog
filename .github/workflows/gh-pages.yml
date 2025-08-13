@@ -28,7 +28,7 @@ jobs:
 
       - name: Build
         run: |
-          hugo --minify --baseURL "https://junhkang.com/"
+          hugo --buildFuture --minify --baseURL "https://junhkang.com/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

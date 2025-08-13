@@ -15,7 +15,6 @@
       <guid>https://junhkang.com/posts/126/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/126/img.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;#PostgreSQL POSITION 함수로 문자열 내 위치 찾기&lt;/p&gt;
 &lt;p&gt;PostgreSQL에서 문자열 처리 작업을 하다 보면, &lt;strong&gt;특정 단어가 문자열 안에 포함되어 있는지&lt;/strong&gt; 또는 &lt;strong&gt;어느 위치에 있는지&lt;/strong&gt;를 알아야 할 때가 있습니다. 이럴 때 유용하게 쓸 수 있는 함수가 바로 &lt;code&gt;POSITION()&lt;/code&gt; 입니다.&lt;/p&gt;
 &lt;h2 id=&#34;1-position-함수란&#34;&gt;1. POSITION 함수란?&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;POSITION()&lt;/code&gt; 함수는 &lt;strong&gt;문자열 안에서 부분 문자열(substring)의 첫 번째 위치를 반환&lt;/strong&gt;합니다.&lt;br&gt;

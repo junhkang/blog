@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cleaner on Jun Kang&#39;s Blog</title>
-    <link>http://localhost:1313/tags/cleaner/</link>
+    <link>https://junhkang.com/tags/cleaner/</link>
     <description>Recent content in Cleaner on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
     <lastBuildDate>Sun, 31 Mar 2024 17:15:18 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cleaner/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://junhkang.com/tags/cleaner/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[이펙티브 자바] 8. finalizer 와 cleaner 사용을 피하라</title>
-      <link>http://localhost:1313/posts/80/</link>
+      <link>https://junhkang.com/posts/80/</link>
       <pubDate>Sun, 31 Mar 2024 17:15:18 +0000</pubDate>
-      <guid>http://localhost:1313/posts/80/</guid>
+      <guid>https://junhkang.com/posts/80/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;finalizer와-cleaner란&#34; ke-size=&#34;size26&#34;&gt;1. finalizer와 cleaner란?&lt;/h2&gt;
 &lt;p&gt;finalizer와 cleaner는 자바의 2가지 객체 소멸자이다. finalizer는 &lt;strong&gt;Object.finalize()&lt;/strong&gt; 메서드를 오버라이딩 함으로써 사용된다. 작동 여부 및 시점을 예측할 수 없고 상황에 따라 위험할 수 있어 일반적으로 불필요하며, 기능의 잘못된 동작, 낮은 성능, 이식성 문제의 원인이 되기도 한다. 기본적으로는 사용하면 안 되고, 자바 9에서는 finalizer를 deprecated API로 지정하고, &lt;strong&gt;java.lang.ref.Cleaner&lt;/strong&gt; 클래스를 사용하여 구현된 cleaner를 대안으로 제시하였으나, cleaner 또한 finalizer보다는 덜 위험 하지만 여전히 예측불가하고 성능이 좋지 않아 일반적으로 불필요하다. &lt;/p&gt;</description>

@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true  # 테마가 submodule로 설치되어 있다면 필요
+          submodules: false  # submodule 비활성화
           fetch-depth: 0    # 전체 git history 가져오기
 
       - name: Setup Hugo

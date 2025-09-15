@@ -2,16 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://junhkang.com/categories/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/database/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
     <loc>https://junhkang.com/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/position/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/categories/postgresql/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/postgresql/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/posts/126/</loc>
     <lastmod>2025-08-13T14:46:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/</loc>
     <lastmod>2025-08-13T14:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/posts/125/</loc>
-    <lastmod>2025-01-30T16:50:24+00:00</lastmod>
+    <loc>https://junhkang.com/tags/query/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/categories/</loc>
+    <loc>https://junhkang.com/tags/sql/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/string/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/</loc>
+    <lastmod>2025-08-13T14:46:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/posts/125/</loc>
     <lastmod>2025-01-30T16:50:24+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/connection/</loc>
@@ -24,9 +51,6 @@
     <lastmod>2025-01-30T16:50:24+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/categories/spring/</loc>
-    <lastmod>2025-01-30T16:50:24+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/</loc>
     <lastmod>2025-01-30T16:50:24+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/124/</loc>
@@ -102,12 +126,6 @@
     <lastmod>2024-08-14T17:49:46+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/pg_stat_statements/</loc>
-    <lastmod>2024-08-14T17:49:46+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/categories/postgresql/</loc>
-    <lastmod>2024-08-14T17:49:46+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/postgresql/</loc>
     <lastmod>2024-08-14T17:49:46+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EC%BF%BC%EB%A6%AC%EC%84%B1%EB%8A%A5/</loc>
@@ -774,9 +792,6 @@
     <lastmod>2023-10-05T13:53:18+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/12/</loc>
-    <lastmod>2023-10-04T19:34:40+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/sql/</loc>
     <lastmod>2023-10-04T19:34:40+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/11/</loc>

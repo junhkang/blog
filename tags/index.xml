@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.143.1</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Aug 2025 14:46:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database</title>
+      <link>https://junhkang.com/tags/database/</link>
+      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Position</title>
+      <link>https://junhkang.com/tags/position/</link>
+      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/position/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Query</title>
+      <link>https://junhkang.com/tags/query/</link>
+      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/query/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://junhkang.com/tags/sql/</link>
+      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>String</title>
+      <link>https://junhkang.com/tags/string/</link>
+      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/string/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Connection</title>
       <link>https://junhkang.com/tags/connection/</link>
@@ -111,13 +153,6 @@
       <link>https://junhkang.com/tags/pg_stat_statements/</link>
       <pubDate>Wed, 14 Aug 2024 17:49:46 +0000</pubDate>
       <guid>https://junhkang.com/tags/pg_stat_statements/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PostgreSQL</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Wed, 14 Aug 2024 17:49:46 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
       <description></description>
     </item>
     <item>
@@ -1021,13 +1056,6 @@
       <link>https://junhkang.com/tags/to_tsvector/</link>
       <pubDate>Thu, 05 Oct 2023 13:53:18 +0000</pubDate>
       <guid>https://junhkang.com/tags/to_tsvector/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SQL</title>
-      <link>https://junhkang.com/tags/sql/</link>
-      <pubDate>Wed, 04 Oct 2023 19:34:40 +0000</pubDate>
-      <guid>https://junhkang.com/tags/sql/</guid>
       <description></description>
     </item>
     <item>

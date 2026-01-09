@@ -4,7 +4,7 @@
     <title>Index on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/index/</link>
     <description>Recent content in Index on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Tue, 12 Mar 2024 18:59:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index/index.xml" rel="self" type="application/rss+xml" />
@@ -44,7 +44,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;▪ Block range index의 약자&lt;br&gt;
 ▪ Page 검색에 도움 되는 메타 데이터를 뽑아서 인덱스를 구성 (ex, 특정컬럼의 최대/최솟값)&lt;br&gt;
-▪ 특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;&lt;/blockquote&gt;
+▪ 특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Block range는 테이블 내에서 근접한 물리주소를 가진 page 그룹을 의미한다. 각 Block range 에 대해 일부 요약 정보가 인덱스로 저장된다. 예를 들어 상점의 판매 주문을 저장하는 테이블에는 각 주문이 배치된 날짜 열이 있을 수 있으며 대부분의 경우 이전 주문시점에 맞게 순차적으로 주문정보가 들어갈 것이고, ZIP 코드 열을 저장하는 테이블에는 도시에 대한 모든 코드가 자연스럽게 그룹화되어 있을 것이다.&lt;/p&gt;</description>
     </item>
     <item>
@@ -55,7 +56,8 @@
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-gin-인덱스란&#34;&gt;1. GIN 인덱스란?&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;2-full-text-search에서의-적용&#34;&gt;2. full text search에서의 적용&lt;/h2&gt;
 &lt;h3 id=&#34;2-1-샘플-테이블-및-데이터-생성&#34;&gt;2-1. 샘플 테이블 및 데이터 생성&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;create table ts(doc text, doc_tsv tsvector);
@@ -135,7 +137,8 @@ select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&a
 &lt;p&gt;▪ 트리의 노드를 밸런스 있게 재정렬한 트리형태의 자료구조&lt;br&gt;
 ▪ B-tree는 Binary 가 아닌 Balanced의 약자&lt;br&gt;
 ▪ 컬럼의 기존 데이터를 변형하지 않음&lt;br&gt;
-▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;&lt;/blockquote&gt;
+▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;b-tree-인덱스의-원리&#34; ke-size=&#34;size26&#34;&gt;2. B-tree 인덱스의 원리&lt;/h2&gt;
 &lt;h3 id=&#34;b-tree-인덱스의-자료구조-형태&#34; ke-size=&#34;size23&#34;&gt;▪ B-tree 인덱스의 자료구조 형태&lt;/h3&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/6/img.png&#34;&gt;&lt;/p&gt;</description>

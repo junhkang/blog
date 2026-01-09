@@ -4,7 +4,7 @@
     <title>Posts on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/posts/</link>
     <description>Recent content in Posts on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Aug 2025 14:46:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -55,7 +55,8 @@ MySQL의 &lt;code&gt;LOCATE()&lt;/code&gt;, Oracle의 &lt;code&gt;INSTR()&lt;/co
       <description>&lt;hr&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel. Message [4: Received message is too long: 458961709]]&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;jenkins.plugins.publish_over.BapPublisherException: Failed to connect and initialize SSH connection. Message: [Failed to connect SFTP channel. Message [4: Received message is too long: 458961709]]&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;문제상황&#34; ke-size=&#34;size23&#34;&gt;1. 문제상황&lt;/h3&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/124/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202025-01-03%20%EC%98%A4%ED%9B%84%203.32.21.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;기존에 잘 작동하던 SFTP를 활용한 CI/CD가 갑자기 작동하지 않는다. 에러 메시지에 따르면 약 438mb의 메시지를 받은 상황인데, 파일을 실제로 업로드하는 시점이 아닌 SFTP연결 시도를 하는 순간(SSH연결을 설정하고 초기화하는 부분)에도 이렇게 큰 응답을 받는 상황이었다.&lt;/p&gt;
@@ -88,14 +89,16 @@ MySQL의 &lt;code&gt;LOCATE()&lt;/code&gt;, Oracle의 &lt;code&gt;INSTR()&lt;/co
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-12-17%20%EC%98%A4%ED%9B%84%2010.49.42.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;문제-발생&#34; ke-size=&#34;size23&#34;&gt;1. 문제 발생&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Quota discoveryengine.googleapis.com/documents exceeded.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Quota discoveryengine.googleapis.com/documents exceeded.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;GCP에서 MLOps를 구축 중, RAG를 위한 Discovery engine의 데이터 최대 수량이 초과되었다는 경고를 받게 되었다.&lt;/p&gt;
 &lt;p&gt;기본 리밋은 100만건이지만 더 많은 데이터를 저장하기 위해서는 할당량 수정 요청이 필요하다.&lt;/p&gt;
 &lt;h3 id=&#34;할당량-수정-요청&#34; ke-size=&#34;size23&#34;&gt;2. 할당량 수정 요청&lt;/h3&gt;
 &lt;h4 id=&#34;iam-관리자---할당량-및-시스템-한도&#34; ke-size=&#34;size20&#34;&gt;2-1. IAM &amp;amp; 관리자 -&amp;gt; 할당량 및 시스템 한도&lt;/h4&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/img.png&#34;&gt;&lt;/p&gt;
 &lt;h4 id=&#34;초과된-항목-선택&#34; ke-size=&#34;size20&#34;&gt;2-2. 초과된 항목 선택&lt;/h4&gt;
-&lt;p&gt;할당량 수정을 원하는 항목의 맨 오른쪽 메뉴 탭에서 할당량 변경을 선택할 수 있다.&lt;/p&gt;</description>
+&lt;p&gt;할당량 수정을 원하는 항목의 맨 오른쪽 메뉴 탭에서 할당량 변경을 선택할 수 있다.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/122/img_1.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[LLM] Google Cloud Discovery Engine 데이터 스토어 업로드 포맷</title>
@@ -193,12 +196,14 @@ MySQL의 &lt;code&gt;LOCATE()&lt;/code&gt;, Oracle의 &lt;code&gt;INSTR()&lt;/co
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/95/img.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[Caused by: java.lang.IllegalArgumentException: 이름이 {fragment}인, 둘 이상의 fragment들이 발견되었습니다. 이는 상대적 순서배열에서 불허됩니다. 상세 정보는 서블릿 스펙 8.2.2 2c 장을 참조하십시오. 절대적 순서배열을 사용하는 것을 고려해 보십시오.]
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Spring MVC가 포함되어 있는 상태에서 중복된 디펜던시를 추가하면서 발생한 에러이다. 라이브러리 버전업, 혹은 신규 라이브러리 추가 시 주로 발생하는 현상으로, 메이븐 클린을 통해 메이븐 리포지토리를 정리하면 된다.
  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;메이븐 클린(프로젝트 우클릭 &amp;gt; maven &amp;gt; maven clean)
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;그래도 안된다면 실제로 중복된 라이브러리를 정렬 혹은 정리가 필요하다.&lt;/p&gt;</description>
     </item>
     <item>
@@ -252,7 +257,8 @@ MySQL의 &lt;code&gt;LOCATE()&lt;/code&gt;, Oracle의 &lt;code&gt;INSTR()&lt;/co
  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[### Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host &amp;ldquo;{host}&amp;rdquo;, user &amp;ldquo;{user}&amp;rdquo;, database &amp;ldquo;{database}&amp;rdquo;, no encryption ]
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;RDS 인증서 업데이트 작업 후 SSL 요구설정이 활성화된 것으로, 해당 에러가 나며 접속이 안된다면 다음과 같이 조치할 수 있다.&lt;/p&gt;</description>
     </item>
     <item>
@@ -328,7 +334,8 @@ git push --force --tags
 &lt;p&gt;PostgreSQL의 날짜형태의 칼럼을 조회할 때, 종종 정확한 날짜 형태를 사용하는 것이 아닌, 문자열, 혹은 숫자 형태로 간편하게 조회하는 경우가 있다. 예를 들어 2024/05/02 이후의 값을 조회할 때 다음 두 가지 조회 방법을 사용할 수 있다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;date_column &amp;gt; &#39;20240502&#39;&lt;br&gt;
-date_column &amp;gt; TO_DATE(&#39;20240502&#39;, &#39;YYYYMMDD&#39;)&lt;/p&gt;&lt;/blockquote&gt;
+date_column &amp;gt; TO_DATE(&#39;20240502&#39;, &#39;YYYYMMDD&#39;)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;예제와 같이 PostgreSQL은 일련의 문자/숫자열을 조건에 맞는 날짜형으로 자동으로 디코딩을 해주는데,  문자열을 인식하는 상세 과정을 순서대로 알아보자.&lt;/p&gt;
 &lt;h2 id=&#34;문자열에서-날짜시간으로의-디코딩-과정&#34; ke-size=&#34;size26&#34;&gt;2. 문자열에서 날짜/시간으로의 디코딩 과정&lt;/h2&gt;
 &lt;h3 id=&#34;문자열을-토큰으로-분리하고-각-토큰을-시간-시간대-또는-숫자로-분류한다.&#34; ke-size=&#34;size23&#34;&gt;2-1. 문자열을 토큰으로 분리하고 각 토큰을 시간, 시간대, 또는 숫자로 분류한다.&lt;/h3&gt;
@@ -498,7 +505,7 @@ LIMIT 10 OFFSET 20
 &lt;p&gt;자바에선 가비지 컬렉터가 다 쓴 객체를 알아서 회수해 가기에 편리하고 효율적으로 메모리를 관리할 수 있다. 하지만 메모리 관리에 신경 쓰지 않아도 된다는 말은 절대 아니다. 메모리를 적절하게 관리하지 못하면 메모리 누수가 발생하고 심하면 프로그램이 종료될 수 있다.
  &lt;/p&gt;
 &lt;p&gt;메모리를 적절하게 관리하지 못하는 경우의 예제를 살펴보자. 다음은 스택을 간단하게 구현한 자바 코드이다.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-arduino&#34; data-lang=&#34;arduino&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;class &lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Stack&lt;/span&gt; {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-arduino&#34; data-lang=&#34;arduino&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Stack&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; Object[] elements;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; DEFAULT_INITIAL_CAPACITY &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;;
@@ -827,7 +834,8 @@ end
 &lt;blockquote&gt;
 &lt;p&gt;추상 - 구체적으로 어떻게 구현되는지 생각하지 않고 인터페이스(API)에만 주목하는 상태&lt;br&gt;
 공장 - 부품을 조립하여 제품 완성
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;추상 + 공장 패턴 :&lt;/strong&gt; 추상적인 공장에서 추상적인 부품을 조합하여 추상적인 제품을 만든다. 부품의 구체적인 구현에 집중하지 않고 인터페이스에 주목, 인터페이스만 사용하여 부품을 조립하고 제품으로 완성한다.
  &lt;/p&gt;
 &lt;p&gt;다음 표를 보면 추상 팩토리가 어떤 구조로 이루어졌는지 확인할 수 있다.&lt;/p&gt;
@@ -883,7 +891,8 @@ end
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;타 라이브러리와 동일하게 javax -&amp;gt; jakarta 기반 jstl maven dependency를 추가해주면 된다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; &amp;lt;dependency&amp;gt;
@@ -924,7 +933,8 @@ end
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21 버전 업 중 &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;라는 에러와 함께 빌드 실패&lt;/p&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;JDK21과 호환되지 않는 롬복(lombok) 버전 문제로 확인, (JDK21과 호환되는 최소 롬복(lombok) 버전은 &lt;strong&gt;1.18.30이다.)&lt;/strong&gt;&lt;/p&gt;
@@ -1932,7 +1942,8 @@ FOR EACH ROW EXECUTE PROCEDURE
 &lt;h2 id=&#34;중복-공백-제거&#34; ke-size=&#34;size26&#34;&gt;1. 중복 공백 제거&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;특정 문자열에 대해서 중복 공백 제거를 하고 싶다면 postgresql 정규식을 사용해서 가능하다.&lt;br&gt;
-(공백 외에 단일 문자에 대한 중복제거도 동일한 방법으로 가능하다.)&lt;/p&gt;&lt;/blockquote&gt;
+(공백 외에 단일 문자에 대한 중복제거도 동일한 방법으로 가능하다.)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;select regexp_replace(name, &amp;#39; +&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;g&amp;#39;) from TABLE; -- &amp;#39;g&amp;#39; 옵션을 제거할 경우 최초 건에 대에서만 변경
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;중복-단어-제거&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 중복 단어 제거&lt;/h2&gt;
 &lt;blockquote&gt;
@@ -1951,7 +1962,8 @@ FOR EACH ROW EXECUTE PROCEDURE
 &lt;blockquote&gt;
 &lt;p&gt;▪ Block range index의 약자&lt;br&gt;
 ▪ Page 검색에 도움 되는 메타 데이터를 뽑아서 인덱스를 구성 (ex, 특정컬럼의 최대/최솟값)&lt;br&gt;
-▪ 특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;&lt;/blockquote&gt;
+▪ 특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Block range는 테이블 내에서 근접한 물리주소를 가진 page 그룹을 의미한다. 각 Block range 에 대해 일부 요약 정보가 인덱스로 저장된다. 예를 들어 상점의 판매 주문을 저장하는 테이블에는 각 주문이 배치된 날짜 열이 있을 수 있으며 대부분의 경우 이전 주문시점에 맞게 순차적으로 주문정보가 들어갈 것이고, ZIP 코드 열을 저장하는 테이블에는 도시에 대한 모든 코드가 자연스럽게 그룹화되어 있을 것이다.&lt;/p&gt;</description>
     </item>
     <item>
@@ -1962,7 +1974,8 @@ FOR EACH ROW EXECUTE PROCEDURE
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-gin-인덱스란&#34;&gt;1. GIN 인덱스란?&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;2-full-text-search에서의-적용&#34;&gt;2. full text search에서의 적용&lt;/h2&gt;
 &lt;h3 id=&#34;2-1-샘플-테이블-및-데이터-생성&#34;&gt;2-1. 샘플 테이블 및 데이터 생성&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;create table ts(doc text, doc_tsv tsvector);
@@ -2042,7 +2055,8 @@ select doc from ts where doc_tsv @@ to_tsquery(&amp;#39;many &amp;amp; slitter&a
 &lt;p&gt;▪ 트리의 노드를 밸런스 있게 재정렬한 트리형태의 자료구조&lt;br&gt;
 ▪ B-tree는 Binary 가 아닌 Balanced의 약자&lt;br&gt;
 ▪ 컬럼의 기존 데이터를 변형하지 않음&lt;br&gt;
-▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;&lt;/blockquote&gt;
+▪ 인덱스 구조체 내에서는 항상 정렬된 상태를 유지&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;b-tree-인덱스의-원리&#34; ke-size=&#34;size26&#34;&gt;2. B-tree 인덱스의 원리&lt;/h2&gt;
 &lt;h3 id=&#34;b-tree-인덱스의-자료구조-형태&#34; ke-size=&#34;size23&#34;&gt;▪ B-tree 인덱스의 자료구조 형태&lt;/h3&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/6/img.png&#34;&gt;&lt;/p&gt;</description>
@@ -2101,7 +2115,8 @@ SELECT PG_TERMINATE_BACKEND([PID])
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Lock 리스트에서 조회된 PID를 넣고 cancel, 혹은 terminate 시켜주면 된다. cancel은 해당 프로세스만을, terminate는 상위 프로세스들까지 종료시킨다.&lt;/p&gt;
 &lt;h2 id=&#34;3-lock-이란-postgresql&#34;&gt;3. Lock 이란? (Postgresql)&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Postgresql은 다양한 종류의 lock 기능을 제공한다. 애플리케이션 단에서 제어도 가능하지만, 대부분 기본적인 SQL 실행 시 적절한 락을 자동실행시켜 관련 테이블의 무결성 유지한다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Postgresql은 다양한 종류의 lock 기능을 제공한다. 애플리케이션 단에서 제어도 가능하지만, 대부분 기본적인 SQL 실행 시 적절한 락을 자동실행시켜 관련 테이블의 무결성 유지한다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;테이블-단위-lock&#34; ke-size=&#34;size23&#34;&gt;&lt;strong&gt;3-1.  테이블 단위 Lock&lt;/strong&gt;&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
@@ -2110,7 +2125,8 @@ SELECT PG_TERMINATE_BACKEND([PID])
 &lt;li&gt;한 테이블에는 2개의 트랜잭션이 동시에 락 적용 될 수 없다. (서로 충돌되지 않는 락은 여러 트랜잭션에 동시에 적용될 수 있다.)&lt;/li&gt;
 &lt;li&gt;특정 락은 self-conflicting 될 수 있다.
 (ex. access exclusive 락은 중첩불가 access share 락은 여러 트랜잭션에서 다중으로 적용될 수 있다.)&lt;/li&gt;
-&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/4/img_1.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>

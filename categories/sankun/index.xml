@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sankun on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/categories/sankun/</link>
+    <description>Recent content in Sankun on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.154.3</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/categories/sankun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025년 회고 - CTO로서의 성장과 변화</title>
+      <link>https://junhkang.com/sankun/2/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/2/</guid>
+      <description>2025년 한 해 동안 산군 개발조직과 함께 겪은 변화와 성장, 그리고 앞으로의 방향성</description>
+    </item>
+  </channel>
+</rss>

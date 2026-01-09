@@ -4,7 +4,7 @@
     <title>데이터베이스 on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</link>
     <description>Recent content in 데이터베이스 on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 25 Jul 2024 13:29:54 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,8 @@
  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[### Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host &amp;ldquo;{host}&amp;rdquo;, user &amp;ldquo;{user}&amp;rdquo;, database &amp;ldquo;{database}&amp;rdquo;, no encryption ]
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;RDS 인증서 업데이트 작업 후 SSL 요구설정이 활성화된 것으로, 해당 에러가 나며 접속이 안된다면 다음과 같이 조치할 수 있다.&lt;/p&gt;</description>
     </item>
     <item>

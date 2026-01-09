@@ -4,7 +4,7 @@
     <title>Spring on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/categories/spring/</link>
     <description>Recent content in Spring on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/spring/index.xml" rel="self" type="application/rss+xml" />
@@ -105,12 +105,14 @@
 &lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/95/img.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[Caused by: java.lang.IllegalArgumentException: 이름이 {fragment}인, 둘 이상의 fragment들이 발견되었습니다. 이는 상대적 순서배열에서 불허됩니다. 상세 정보는 서블릿 스펙 8.2.2 2c 장을 참조하십시오. 절대적 순서배열을 사용하는 것을 고려해 보십시오.]
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Spring MVC가 포함되어 있는 상태에서 중복된 디펜던시를 추가하면서 발생한 에러이다. 라이브러리 버전업, 혹은 신규 라이브러리 추가 시 주로 발생하는 현상으로, 메이븐 클린을 통해 메이븐 리포지토리를 정리하면 된다.
  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;메이븐 클린(프로젝트 우클릭 &amp;gt; maven &amp;gt; maven clean)
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;그래도 안된다면 실제로 중복된 라이브러리를 정렬 혹은 정리가 필요하다.&lt;/p&gt;</description>
     </item>
     <item>
@@ -125,7 +127,8 @@
  &lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[### Error querying database. Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host &amp;ldquo;{host}&amp;rdquo;, user &amp;ldquo;{user}&amp;rdquo;, database &amp;ldquo;{database}&amp;rdquo;, no encryption ]
- &lt;/p&gt;&lt;/blockquote&gt;
+ &lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;RDS 인증서 업데이트 작업 후 SSL 요구설정이 활성화된 것으로, 해당 에러가 나며 접속이 안된다면 다음과 같이 조치할 수 있다.&lt;/p&gt;</description>
     </item>
     <item>
@@ -154,7 +157,8 @@
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;타 라이브러리와 동일하게 javax -&amp;gt; jakarta 기반 jstl maven dependency를 추가해주면 된다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; &amp;lt;dependency&amp;gt;
@@ -195,7 +199,8 @@
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21 버전 업 중 &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;라는 에러와 함께 빌드 실패&lt;/p&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;JDK21과 호환되지 않는 롬복(lombok) 버전 문제로 확인, (JDK21과 호환되는 최소 롬복(lombok) 버전은 &lt;strong&gt;1.18.30이다.)&lt;/strong&gt;&lt;/p&gt;

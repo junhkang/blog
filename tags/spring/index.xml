@@ -4,7 +4,7 @@
     <title>Spring on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/spring/</link>
     <description>Recent content in Spring on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
@@ -51,7 +51,8 @@
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;스프링부트 3 버전 업데이트 중 jstl URI / 라이브러리를 찾지 못하는 현상 발생&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://java.sun.com/jsp/jstl/core&#34;&gt;http://java.sun.com/jsp/jstl/core&lt;/a&gt;]을(를), web.xml 또는 이 애플리케이션과 함께 배치된 JAR 파일 내에서 찾을 수 없습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;타 라이브러리와 동일하게 javax -&amp;gt; jakarta 기반 jstl maven dependency를 추가해주면 된다.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; &amp;lt;dependency&amp;gt;
@@ -92,7 +93,8 @@
 &lt;h2 id=&#34;문제-상황&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;1. 문제 상황&lt;/h2&gt;
 &lt;p&gt;JDK21 버전 업 중 &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;라는 에러와 함께 빌드 실패&lt;/p&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
 &lt;p&gt;JDK21과 호환되지 않는 롬복(lombok) 버전 문제로 확인, (JDK21과 호환되는 최소 롬복(lombok) 버전은 &lt;strong&gt;1.18.30이다.)&lt;/strong&gt;&lt;/p&gt;

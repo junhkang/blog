@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Sql on Jun Kang&#39;s Blog</title>
+    <title>SQL on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/sql/</link>
-    <description>Recent content in Sql on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <description>Recent content in SQL on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Aug 2025 14:46:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
@@ -40,7 +40,8 @@ MySQL의 &lt;code&gt;LOCATE()&lt;/code&gt;, Oracle의 &lt;code&gt;INSTR()&lt;/co
 &lt;h2 id=&#34;중복-공백-제거&#34; ke-size=&#34;size26&#34;&gt;1. 중복 공백 제거&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;특정 문자열에 대해서 중복 공백 제거를 하고 싶다면 postgresql 정규식을 사용해서 가능하다.&lt;br&gt;
-(공백 외에 단일 문자에 대한 중복제거도 동일한 방법으로 가능하다.)&lt;/p&gt;&lt;/blockquote&gt;
+(공백 외에 단일 문자에 대한 중복제거도 동일한 방법으로 가능하다.)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;select regexp_replace(name, &amp;#39; +&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;g&amp;#39;) from TABLE; -- &amp;#39;g&amp;#39; 옵션을 제거할 경우 최초 건에 대에서만 변경
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;중복-단어-제거&#34; style=&#34;color: #333333; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 중복 단어 제거&lt;/h2&gt;
 &lt;blockquote&gt;

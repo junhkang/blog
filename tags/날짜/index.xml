@@ -4,7 +4,7 @@
     <title>날짜 on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/%EB%82%A0%EC%A7%9C/</link>
     <description>Recent content in 날짜 on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 02 May 2024 17:53:29 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EB%82%A0%EC%A7%9C/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,8 @@
 &lt;p&gt;PostgreSQL의 날짜형태의 칼럼을 조회할 때, 종종 정확한 날짜 형태를 사용하는 것이 아닌, 문자열, 혹은 숫자 형태로 간편하게 조회하는 경우가 있다. 예를 들어 2024/05/02 이후의 값을 조회할 때 다음 두 가지 조회 방법을 사용할 수 있다.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;date_column &amp;gt; &#39;20240502&#39;&lt;br&gt;
-date_column &amp;gt; TO_DATE(&#39;20240502&#39;, &#39;YYYYMMDD&#39;)&lt;/p&gt;&lt;/blockquote&gt;
+date_column &amp;gt; TO_DATE(&#39;20240502&#39;, &#39;YYYYMMDD&#39;)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;예제와 같이 PostgreSQL은 일련의 문자/숫자열을 조건에 맞는 날짜형으로 자동으로 디코딩을 해주는데,  문자열을 인식하는 상세 과정을 순서대로 알아보자.&lt;/p&gt;
 &lt;h2 id=&#34;문자열에서-날짜시간으로의-디코딩-과정&#34; ke-size=&#34;size26&#34;&gt;2. 문자열에서 날짜/시간으로의 디코딩 과정&lt;/h2&gt;
 &lt;h3 id=&#34;문자열을-토큰으로-분리하고-각-토큰을-시간-시간대-또는-숫자로-분류한다.&#34; ke-size=&#34;size23&#34;&gt;2-1. 문자열을 토큰으로 분리하고 각 토큰을 시간, 시간대, 또는 숫자로 분류한다.&lt;/h3&gt;

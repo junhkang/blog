@@ -4,7 +4,7 @@
     <title>Gin on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/gin/</link>
     <description>Recent content in Gin on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Sep 2023 19:45:36 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/gin/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,8 @@
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;1-gin-인덱스란&#34;&gt;1. GIN 인덱스란?&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Generalized Inverted Index의 약자이다. 이전 포스트인 full text search에서 사용하는 인덱스의 유형. 기본 구조는 B-tree와 유사하지만, 저장 형태가 다르다.  저장된 요소 자제에 대한 검색이 아닌 인덱스 컬럼의 값을 split 한 token인 lexeme 배열에 대해서 검색을 한다. array_ops, tsvector_ops, jsonb_ops, jsonb_path_ops 등 의 built-in operators를 통해 접근이 가능하다.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;2-full-text-search에서의-적용&#34;&gt;2. full text search에서의 적용&lt;/h2&gt;
 &lt;h3 id=&#34;2-1-샘플-테이블-및-데이터-생성&#34;&gt;2-1. 샘플 테이블 및 데이터 생성&lt;/h3&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;create table ts(doc text, doc_tsv tsvector);

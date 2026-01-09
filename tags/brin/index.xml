@@ -4,7 +4,7 @@
     <title>Brin on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/brin/</link>
     <description>Recent content in Brin on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.154.3</generator>
     <language>ko</language>
     <lastBuildDate>Mon, 18 Sep 2023 19:03:08 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/brin/index.xml" rel="self" type="application/rss+xml" />
@@ -20,7 +20,8 @@
 &lt;blockquote&gt;
 &lt;p&gt;▪ Block range index의 약자&lt;br&gt;
 ▪ Page 검색에 도움 되는 메타 데이터를 뽑아서 인덱스를 구성 (ex, 특정컬럼의 최대/최솟값)&lt;br&gt;
-▪ 특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;&lt;/blockquote&gt;
+▪ 특정 컬럼이 물리 주소의 일정한 상관관계를 가지는 매우 큰 테이블을 다루기 위해 설계 (타임시쿼스한 대용량 데이터 조회에 유용)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Block range는 테이블 내에서 근접한 물리주소를 가진 page 그룹을 의미한다. 각 Block range 에 대해 일부 요약 정보가 인덱스로 저장된다. 예를 들어 상점의 판매 주문을 저장하는 테이블에는 각 주문이 배치된 날짜 열이 있을 수 있으며 대부분의 경우 이전 주문시점에 맞게 순차적으로 주문정보가 들어갈 것이고, ZIP 코드 열을 저장하는 테이블에는 도시에 대한 모든 코드가 자연스럽게 그룹화되어 있을 것이다.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -159,12 +159,6 @@ ShowLastMod = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-# 카테고리/태그 표시 설정
-ShowBreadCrumbs = true
-ShowPostNavLinks = true
-ShowTaxonomies = true
-ShowCategories = true
-
 # 카테고리 페이지 설정
 [params.categoryPage]
 enableRecentPosts = true

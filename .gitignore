@@ -1,0 +1,23 @@
+# Hugo
+/public/
+/resources/
+.hugo_build.lock
+
+# 개인 메모 파일 (외부 노출 방지)
+memo.md
+temp.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+

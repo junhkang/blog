@@ -4,7 +4,7 @@
     <title>Spring on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/categories/spring/</link>
     <description>Recent content in Spring on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.154.3</generator>
+    <generator>Hugo -- 0.155.0</generator>
     <language>ko</language>
     <lastBuildDate>Thu, 30 Jan 2025 16:50:24 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/spring/index.xml" rel="self" type="application/rss+xml" />
@@ -145,7 +145,7 @@
 )&lt;/p&gt;
 &lt;p&gt;SecurityContext에 로그인 시도 시 정상적으로 인증정보를 바인딩하고 있으나, 페이지 이동 시 인증정보가 없어지는 현상 발생&lt;/p&gt;
 &lt;h2 id=&#34;해결&#34; style=&#34;color: #3a4954; text-align: start;&#34; ke-size=&#34;size26&#34;&gt;2. 해결&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ebnf&#34; data-lang=&#34;ebnf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SecurityContextPersistenceFilter&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-ebnf&#34; data-lang=&#34;ebnf&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SecurityContextPersistenceFilter&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;SecurityContext의 영속성을 컨트롤하는 SecurityContextPersistenceFilter의 설정이 누락되어 있었다. &lt;/p&gt;</description>
     </item>
     <item>

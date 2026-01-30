@@ -4,7 +4,7 @@
     <title>Postgresql on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/categories/postgresql/</link>
     <description>Recent content in Postgresql on Jun Kang&#39;s Blog</description>
-    <generator>Hugo -- 0.154.3</generator>
+    <generator>Hugo -- 0.155.0</generator>
     <language>ko</language>
     <lastBuildDate>Wed, 13 Aug 2025 14:46:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
@@ -19,13 +19,13 @@
 &lt;h2 id=&#34;1-position-함수란&#34;&gt;1. POSITION 함수란?&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;POSITION()&lt;/code&gt; 함수는 &lt;strong&gt;문자열 안에서 부분 문자열(substring)의 첫 번째 위치를 반환&lt;/strong&gt;합니다.&lt;br&gt;
 MySQL의 &lt;code&gt;LOCATE()&lt;/code&gt;, Oracle의 &lt;code&gt;INSTR()&lt;/code&gt;와 비슷한 역할을 합니다.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;POSITION&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;substring&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; string)&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;POSITION&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;substring&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; string)&lt;span style=&#34;color:#f92672&#34;&gt;`&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;리턴값&lt;/strong&gt;: 부분 문자열이 시작하는 위치 (1부터 시작)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;찾지 못하면&lt;/strong&gt;: 0 반환&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;2-기본-예제&#34;&gt;2. 기본 예제&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;POSITION&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;abc&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;123abc456&amp;#39;&lt;/span&gt;); 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;POSITION&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;abc&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;IN&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;123abc456&amp;#39;&lt;/span&gt;); 
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- 4 SELECT POSITION(&amp;#39;zzz&amp;#39; IN &amp;#39;123abc456&amp;#39;); -- 0
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;&#39;abc&#39;&lt;/code&gt;는 네 번째 문자에서 시작하므로 &lt;code&gt;4&lt;/code&gt;를 반환합니다.&lt;br&gt;
 &lt;code&gt;&#39;zzz&#39;&lt;/code&gt;는 존재하지 않기 때문에 &lt;code&gt;0&lt;/code&gt;이 나옵니다.&lt;/p&gt;</description>

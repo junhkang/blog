@@ -131,10 +131,10 @@
     <loc>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/tags/postgresql/</loc>
+    <loc>https://junhkang.com/categories/postgresql/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/categories/postgresql/</loc>
+    <loc>https://junhkang.com/tags/postgresql/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/vacuum/</loc>

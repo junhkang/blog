@@ -95,39 +95,45 @@ ShowTags = true
   weight = 2
 
 [[menu.main]]
+  identifier = "personal"
+  name = "Personal"
+  url = "/personal/"
+  weight = 3
+
+[[menu.main]]
   identifier = "categories"
   name = "Categories"
   url = "/categories/"
-  weight = 3
+  weight = 4
 
 [[menu.main]]
   identifier = "posts"
   name = "Posts"
   url = "/posts/"
-  weight = 4
+  weight = 5
 
 [[menu.main]]
   identifier = "tags"
   name = "Tags"
   url = "/tags/"
-  weight = 6
+  weight = 7
 
 [[menu.main]]
   identifier = "archives"
   name = "Archives"
   url = "/archives/"
-  weight = 5
+  weight = 6
 
 [[menu.main]]
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 7
+  weight = 8
 [[menu.main]]
   identifier = "guestbook"
   name = "Guestbook"
   url = "/guestbook/"
-  weight = 8
+  weight = 9
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -157,7 +163,15 @@ ShowLastMod = true
   showPagination = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON", "LLMS"]
+
+# GEO: llms.txt — 생성형 검색엔진이 사이트 구조와 대표 문서를 평문으로 파악하게 한다.
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  rel = "alternate"
+  protocol = "https://"
 
 # 카테고리 페이지 설정
 [params.categoryPage]

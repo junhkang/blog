@@ -117,3 +117,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9413249746505723"
      crossorigin="anonymous"></script> 
+<!-- ─────────────────────────────────────────────────────────────
+     AEO: FAQPage 구조화 데이터
+     글의 front matter 에 faq: [{q: "...", a: "..."}] 가 있으면
+     본문의 "자주 묻는 질문" 섹션과 짝을 이루는 JSON-LD 를 내보낸다.
+     답변 검색엔진(AI Overview, Perplexity 등)이 인용할 단위를 명시하는 용도.
+     ───────────────────────────────────────────────────────────── -->
+{{ with .Params.faq }}
+  {{ $items := slice }}
+  {{ range . }}
+    {{ $items = $items | append (dict
+        "@type" "Question"
+        "name" .q
+        "acceptedAnswer" (dict "@type" "Answer" "text" .a)) }}
+  {{ end }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "FAQPage"
+  "mainEntity" $items
+  | jsonify | safeJS }}
+</script>
+{{ end }}
+
+<!-- ─────────────────────────────────────────────────────────────
+     E-E-A-T: 저자 엔티티(Person). sameAs 로 외부 프로필과 동일인임을 선언한다.
+     사이트 전역에 1회만 두면 되므로 홈과 About 에서만 내보낸다.
+     ───────────────────────────────────────────────────────────── -->
+{{ if or .IsHome (eq .RelPermalink "/about/") }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" site.Params.author
+  "url" (absURL "about/")
+  "image" (absURL site.Params.favicon)
+  "jobTitle" "CTO"
+  "worksFor" (dict "@type" "Organization" "name" "(주)산군" "url" "https://www.sankun.com")
+  "description" site.Params.description
+  "knowsAbout" (slice "PostgreSQL" "데이터베이스 성능 최적화" "백엔드 개발" "데이터 파이프라인" "LLM" "RAG" "클라우드 인프라" "개발 조직 운영")
+  "sameAs" (slice site.Params.github site.Params.linkedin)
+  | jsonify | safeJS }}
+</script>
+{{ end }}

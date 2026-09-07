@@ -69,7 +69,7 @@
             {{ range .Params.teaching }}
             <div class="teaching-item">
                 <h3>{{ .title }}</h3>
-                <p>{{ .details }}</p>
+                {{ with .details }}<p>{{ . }}</p>{{ end }}
             </div>
             {{ end }}
         </section>

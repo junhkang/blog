@@ -23,12 +23,12 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.165.0'
           extended: true    # extended 버전 사용
 
       - name: Build
         run: |
-          hugo --buildFuture --minify --baseURL "https://junhkang.com/"
+          hugo --minify --baseURL "https://junhkang.com/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

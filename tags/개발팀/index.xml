@@ -6,8 +6,15 @@
     <description>Recent content in 개발팀 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%ED%8C%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>티켓 1건은 1건이 아니다 — 개발팀 지표에 무게를 붙인 이야기</title>
+      <link>https://junhkang.com/sankun/ticket-weight-kpi/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ticket-weight-kpi/</guid>
+      <description>11줄짜리 수정과 430줄짜리 수정이 똑같이 &amp;#39;1건&amp;#39;으로 세어지고 있었습니다. 티켓마다 무게를 매겨 팀의 역량이 실제로 어디에 쓰였는지 보이게 만든 과정과, 그 지표를 평가에 쓰지 않기로 한 이유를 적었습니다.</description>
+    </item>
     <item>
       <title>2025년 회고 - CTO로서의 성장과 변화</title>
       <link>https://junhkang.com/sankun/2/</link>

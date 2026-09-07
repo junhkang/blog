@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>PostgreSQL on Jun Kang&#39;s Blog</title>
+    <title>Postgresql on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/postgresql/</link>
-    <description>Recent content in PostgreSQL on Jun Kang&#39;s Blog</description>
+    <description>Recent content in Postgresql on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 13 Aug 2025 14:46:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 21:30:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 트랜잭션 ID는 42억 개인데 왜 20억마다 freeze가 도는가</title>
+      <link>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</guid>
+      <description>PostgreSQL의 트랜잭션 ID는 32비트라 약 42억 개인데, 실제 freeze 기준은 그 절반인 20억입니다. 순환 카운터에서 두 트랜잭션의 전후 관계를 부호 있는 정수 비교로 판정하기 때문인데, 그 원리와 age() 모니터링 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>PostgreSQL POSITION 함수로 문자열 내 위치 찾기</title>
       <link>https://junhkang.com/posts/126/</link>

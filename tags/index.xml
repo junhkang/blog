@@ -6,27 +6,188 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 21:40:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>CTO</title>
-      <link>https://junhkang.com/tags/cto/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/cto/</guid>
+      <title>Observability</title>
+      <link>https://junhkang.com/tags/observability/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/observability/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>로그</title>
+      <link>https://junhkang.com/tags/%EB%A1%9C%EA%B7%B8/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%A1%9C%EA%B7%B8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>리눅스</title>
+      <link>https://junhkang.com/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>모니터링</title>
+      <link>https://junhkang.com/tags/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>운영</title>
+      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>트러블슈팅</title>
+      <link>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://junhkang.com/tags/ai/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AX</title>
+      <link>https://junhkang.com/tags/ax/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/ax/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>개발문화</title>
+      <link>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>생산성</title>
+      <link>https://junhkang.com/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>조직</title>
+      <link>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>KPI</title>
+      <link>https://junhkang.com/tags/kpi/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/kpi/</guid>
       <description></description>
     </item>
     <item>
       <title>개발팀</title>
       <link>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%ED%8C%80/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%ED%8C%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>스타트업</title>
+      <link>https://junhkang.com/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</guid>
       <description></description>
     </item>
     <item>
       <title>조직문화</title>
       <link>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81%EB%AC%B8%ED%99%94/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81%EB%AC%B8%ED%99%94/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>지표</title>
+      <link>https://junhkang.com/tags/%EC%A7%80%ED%91%9C/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%A7%80%ED%91%9C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Request ID</title>
+      <link>https://junhkang.com/tags/request-id/</link>
+      <pubDate>Wed, 05 Aug 2026 22:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/request-id/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>구조화로그</title>
+      <link>https://junhkang.com/tags/%EA%B5%AC%EC%A1%B0%ED%99%94%EB%A1%9C%EA%B7%B8/</link>
+      <pubDate>Wed, 05 Aug 2026 22:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B5%AC%EC%A1%B0%ED%99%94%EB%A1%9C%EA%B7%B8/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>로깅</title>
+      <link>https://junhkang.com/tags/%EB%A1%9C%EA%B9%85/</link>
+      <pubDate>Wed, 05 Aug 2026 22:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%A1%9C%EA%B9%85/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postgresql</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vacuum</title>
+      <link>https://junhkang.com/tags/vacuum/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/vacuum/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wraparound</title>
+      <link>https://junhkang.com/tags/wraparound/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/wraparound/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>XID</title>
+      <link>https://junhkang.com/tags/xid/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/xid/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>데이터베이스</title>
+      <link>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>트랜잭션</title>
+      <link>https://junhkang.com/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CTO</title>
+      <link>https://junhkang.com/tags/cto/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/cto/</guid>
       <description></description>
     </item>
     <item>
@@ -51,13 +212,6 @@
       <description></description>
     </item>
     <item>
-      <title>PostgreSQL</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Query</title>
       <link>https://junhkang.com/tags/query/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
@@ -65,7 +219,7 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
+      <title>Sql</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>
@@ -202,13 +356,6 @@
       <link>https://junhkang.com/tags/%EB%B9%8C%EB%8D%94%ED%8C%A8%ED%84%B4/</link>
       <pubDate>Mon, 29 Jul 2024 14:45:35 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EB%B9%8C%EB%8D%94%ED%8C%A8%ED%84%B4/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>데이터베이스</title>
-      <link>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</link>
-      <pubDate>Thu, 25 Jul 2024 13:29:54 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/</guid>
       <description></description>
     </item>
     <item>
@@ -370,13 +517,6 @@
       <link>https://junhkang.com/tags/disk/</link>
       <pubDate>Tue, 19 Mar 2024 16:31:20 +0000</pubDate>
       <guid>https://junhkang.com/tags/disk/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>모니터링</title>
-      <link>https://junhkang.com/tags/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/</link>
-      <pubDate>Tue, 19 Mar 2024 16:31:20 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/</guid>
       <description></description>
     </item>
     <item>
@@ -877,13 +1017,6 @@
       <description></description>
     </item>
     <item>
-      <title>트랜잭션</title>
-      <link>https://junhkang.com/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</link>
-      <pubDate>Tue, 17 Oct 2023 18:37:56 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>OS</title>
       <link>https://junhkang.com/tags/os/</link>
       <pubDate>Tue, 17 Oct 2023 14:01:18 +0000</pubDate>
@@ -1031,13 +1164,6 @@
       <description></description>
     </item>
     <item>
-      <title>Vacuum</title>
-      <link>https://junhkang.com/tags/vacuum/</link>
-      <pubDate>Mon, 09 Oct 2023 13:33:14 +0000</pubDate>
-      <guid>https://junhkang.com/tags/vacuum/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ln</title>
       <link>https://junhkang.com/tags/ln/</link>
       <pubDate>Mon, 09 Oct 2023 11:46:58 +0000</pubDate>
@@ -1154,6 +1280,20 @@
       <link>https://junhkang.com/tags/full/</link>
       <pubDate>Thu, 07 Sep 2023 17:25:06 +0000</pubDate>
       <guid>https://junhkang.com/tags/full/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>개발자</title>
+      <link>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</link>
+      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>커리어</title>
+      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
+      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
       <description></description>
     </item>
   </channel>

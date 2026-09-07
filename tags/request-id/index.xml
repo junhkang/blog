@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Request ID on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/request-id/</link>
+    <description>Recent content in Request ID on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 05 Aug 2026 22:10:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/request-id/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>console.log는 로깅이 아니다 — 운영에서 살아남는 로그 설계</title>
+      <link>https://junhkang.com/posts/structured-logging-design/</link>
+      <pubDate>Wed, 05 Aug 2026 22:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/structured-logging-design/</guid>
+      <description>배포 전에 지우는 console.log는 디버깅이지 로깅이 아닙니다. 로그 레벨을 나누는 실전 기준, 구조화 로그(JSON)가 검색·집계·알림으로 이어지는 이유, Request ID 전파, 그리고 로그에 절대 남기면 안 되는 것까지 정리합니다.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,22 @@
     <description>Recent content in 산군 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/sankun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 도구를 전사에 깔고 한 달 — 토큰 사용량은 생산성이 아니다</title>
+      <link>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</guid>
+      <description>AI 코딩 도구를 전사에 도입하고 한 달간의 사용량을 집계했습니다. 숫자를 재기 시작하는 순간 그 숫자가 평가로 읽힌다는 문제를 어떻게 다뤘는지, 그리고 1:1에서 무엇을 물었는지 적었습니다.</description>
+    </item>
+    <item>
+      <title>티켓 1건은 1건이 아니다 — 개발팀 지표에 무게를 붙인 이야기</title>
+      <link>https://junhkang.com/sankun/ticket-weight-kpi/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ticket-weight-kpi/</guid>
+      <description>11줄짜리 수정과 430줄짜리 수정이 똑같이 &amp;#39;1건&amp;#39;으로 세어지고 있었습니다. 티켓마다 무게를 매겨 팀의 역량이 실제로 어디에 쓰였는지 보이게 만든 과정과, 그 지표를 평가에 쓰지 않기로 한 이유를 적었습니다.</description>
+    </item>
     <item>
       <title>2025년 회고 - CTO로서의 성장과 변화</title>
       <link>https://junhkang.com/sankun/2/</link>

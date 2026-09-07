@@ -6,8 +6,43 @@
     <description>Recent content on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 21:40:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>로그가 0줄인 것은 아무 일도 없었다는 뜻이 아니다</title>
+      <link>https://junhkang.com/posts/observability-failure-modes/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/observability-failure-modes/</guid>
+      <description>관찰 결과가 관찰 대상보다 먼저 사라지면 측정은 실패합니다. 로그 로테이션이 관찰 주기보다 짧을 때, 삭제된 파일에 계속 쓰고 있을 때, 0건이 &amp;#39;없음&amp;#39;인지 &amp;#39;동작 안 함&amp;#39;인지 구분할 수 없을 때 — 운영에서 반복해서 밟았던 관측 실패 유형을 정리합니다.</description>
+    </item>
+    <item>
+      <title>AI 도구를 전사에 깔고 한 달 — 토큰 사용량은 생산성이 아니다</title>
+      <link>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</link>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</guid>
+      <description>AI 코딩 도구를 전사에 도입하고 한 달간의 사용량을 집계했습니다. 숫자를 재기 시작하는 순간 그 숫자가 평가로 읽힌다는 문제를 어떻게 다뤘는지, 그리고 1:1에서 무엇을 물었는지 적었습니다.</description>
+    </item>
+    <item>
+      <title>티켓 1건은 1건이 아니다 — 개발팀 지표에 무게를 붙인 이야기</title>
+      <link>https://junhkang.com/sankun/ticket-weight-kpi/</link>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ticket-weight-kpi/</guid>
+      <description>11줄짜리 수정과 430줄짜리 수정이 똑같이 &amp;#39;1건&amp;#39;으로 세어지고 있었습니다. 티켓마다 무게를 매겨 팀의 역량이 실제로 어디에 쓰였는지 보이게 만든 과정과, 그 지표를 평가에 쓰지 않기로 한 이유를 적었습니다.</description>
+    </item>
+    <item>
+      <title>console.log는 로깅이 아니다 — 운영에서 살아남는 로그 설계</title>
+      <link>https://junhkang.com/posts/structured-logging-design/</link>
+      <pubDate>Wed, 05 Aug 2026 22:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/structured-logging-design/</guid>
+      <description>배포 전에 지우는 console.log는 디버깅이지 로깅이 아닙니다. 로그 레벨을 나누는 실전 기준, 구조화 로그(JSON)가 검색·집계·알림으로 이어지는 이유, Request ID 전파, 그리고 로그에 절대 남기면 안 되는 것까지 정리합니다.</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 트랜잭션 ID는 42억 개인데 왜 20억마다 freeze가 도는가</title>
+      <link>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</link>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</guid>
+      <description>PostgreSQL의 트랜잭션 ID는 32비트라 약 42억 개인데, 실제 freeze 기준은 그 절반인 20억입니다. 순환 카운터에서 두 트랜잭션의 전후 관계를 부호 있는 정수 비교로 판정하기 때문인데, 그 원리와 age() 모니터링 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>2025년 회고 - CTO로서의 성장과 변화</title>
       <link>https://junhkang.com/sankun/2/</link>
@@ -2189,6 +2224,13 @@ LANGUAGE &amp;#39;plpgsql&amp;#39;;
 &lt;/ol&gt;
 &lt;h2 id=&#34;full-text-search전문검색란&#34; ke-size=&#34;size26&#34;&gt;2. Full Text Search(전문검색)란?&lt;/h2&gt;
 &lt;p&gt;게시물의 내용/제목 등 문장, 문서 전체에서 키워드를 검색하는 기능이다. 단순한 like, 비교연산자와 달리 각 단어의 Token화 및 정규화를 통해 긴 문장내에서의 유사 검색을 가능하게 한다. Postgresql 기본 인덱스인 b-tree인덱스로는 Like 와 같은 패턴 매칭 검색시 양쪽에 %%를 거는 경우는 인덱스를 타지 않지만, gin 인덱스를 사용하여 빠른 검색이 가능하다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>개발자인가 CTO인가</title>
+      <link>https://junhkang.com/personal/developer-or-cto/</link>
+      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/developer-or-cto/</guid>
+      <description>명함에는 CTO라고 적혀 있는데 하는 일의 대부분은 혼자 코드를 쓰는 것이었습니다. 타이틀과 실제 사이에서 헷갈리던 2021년 중반의 기록입니다.</description>
     </item>
     <item>
       <title>방명록</title>

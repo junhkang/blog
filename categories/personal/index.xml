@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Personal on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/categories/personal/</link>
+    <description>Recent content in Personal on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Sun, 20 Jun 2021 23:30:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개발자인가 CTO인가</title>
+      <link>https://junhkang.com/personal/developer-or-cto/</link>
+      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/developer-or-cto/</guid>
+      <description>명함에는 CTO라고 적혀 있는데 하는 일의 대부분은 혼자 코드를 쓰는 것이었습니다. 타이틀과 실제 사이에서 헷갈리던 2021년 중반의 기록입니다.</description>
+    </item>
+  </channel>
+</rss>

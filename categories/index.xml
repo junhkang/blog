@@ -6,19 +6,26 @@
     <description>Recent content in Categories on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 21:40:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backend</title>
+      <link>https://junhkang.com/categories/backend/</link>
+      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/categories/backend/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Sankun</title>
       <link>https://junhkang.com/categories/sankun/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
       <guid>https://junhkang.com/categories/sankun/</guid>
       <description></description>
     </item>
     <item>
       <title>Postgresql</title>
       <link>https://junhkang.com/categories/postgresql/</link>
-      <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
+      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
       <guid>https://junhkang.com/categories/postgresql/</guid>
       <description></description>
     </item>
@@ -104,6 +111,13 @@
       <link>https://junhkang.com/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</link>
       <pubDate>Tue, 17 Oct 2023 14:01:18 +0000</pubDate>
       <guid>https://junhkang.com/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal</title>
+      <link>https://junhkang.com/categories/personal/</link>
+      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
+      <guid>https://junhkang.com/categories/personal/</guid>
       <description></description>
     </item>
   </channel>

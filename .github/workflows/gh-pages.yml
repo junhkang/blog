@@ -3,8 +3,12 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - main  # 또는 master
-  pull_request:
+      - main
+  # 예약 발행: 미래 날짜(date) 글이 시각 도달 후 자동 공개되도록 매일 재빌드한다.
+  # 09:05 KST (00:05 UTC). GitHub Actions cron은 UTC 기준이며 수 분 지연될 수 있다.
+  schedule:
+    - cron: '5 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -17,8 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: false  # submodule 비활성화
-          fetch-depth: 0    # 전체 git history 가져오기
+          ref: main         # schedule 실행 시에도 항상 소스 브랜치를 빌드한다
+          submodules: false  # 테마는 벤더링되어 있어 submodule 불필요
+          fetch-depth: 0    # .GitInfo / lastmod 용 전체 히스토리
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -32,7 +37,6 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'  # 또는 master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public

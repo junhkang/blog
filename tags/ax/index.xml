@@ -6,8 +6,15 @@
     <description>Recent content in AX on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 25 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/ax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI가 먹힌 업무와 안 먹힌 업무 — 직군별로 갈린 결과</title>
+      <link>https://junhkang.com/sankun/ai-adoption-2-where-it-worked/</link>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ai-adoption-2-where-it-worked/</guid>
+      <description>같은 도구를 같은 기간 쓰게 했는데 직군별 결과가 크게 갈렸습니다. 재료를 주고 시키는 일에서는 시간이 절반 아래로 줄었고, 무엇을 할지 정하는 일에서는 끝내 쓸 만한 방법을 못 찾았습니다. 그 경계에 대한 정리입니다.</description>
+    </item>
     <item>
       <title>AI 도구를 전사에 깔고 한 달 — 토큰 사용량은 생산성이 아니다</title>
       <link>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</link>

@@ -2,22 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://junhkang.com/categories/backend/</loc>
-    <lastmod>2026-09-02T21:40:00+00:00</lastmod>
-  </url><url>
     <loc>https://junhkang.com/categories/</loc>
-    <lastmod>2026-09-02T21:40:00+00:00</lastmod>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/categories/personal/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/personal/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/seo/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/series/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/personal/google-deindex-1-what-happened/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EA%B5%AC%EA%B8%80/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/series/%EA%B5%AC%EA%B8%80-%EC%83%89%EC%9D%B8%EC%9D%B4-%EC%82%AC%EB%9D%BC%EC%A7%84-%EC%82%AC%EC%9D%B4%ED%8A%B8/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%83%89%EC%9D%B8/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A7%A4%ED%8B%B1seo/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%ED%9A%8C%EA%B3%A0/</loc>
+    <lastmod>2026-09-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/ai/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/series/ai-%EB%8F%84%EA%B5%AC-%EC%A0%84%EC%82%AC-%EB%8F%84%EC%9E%85%EA%B8%B0/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/sankun/ai-adoption-2-where-it-worked/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/ax/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/categories/sankun/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/sankun/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</loc>
+    <lastmod>2026-09-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/categories/backend/</loc>
     <lastmod>2026-09-02T21:40:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/observability/</loc>
     <lastmod>2026-09-02T21:40:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/</loc>
-    <lastmod>2026-09-02T21:40:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/</loc>
     <lastmod>2026-09-02T21:40:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EB%A1%9C%EA%B7%B8/</loc>
@@ -38,34 +95,7 @@
     <loc>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</loc>
     <lastmod>2026-09-02T21:40:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/tags/ai/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/series/ai-%EB%8F%84%EA%B5%AC-%EC%A0%84%EC%82%AC-%EB%8F%84%EC%9E%85%EA%B8%B0/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/ax/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/categories/sankun/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/series/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/sankun/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
-    <lastmod>2026-08-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</loc>
     <lastmod>2026-08-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/kpi/</loc>
@@ -101,10 +131,10 @@
     <loc>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/categories/postgresql/</loc>
+    <loc>https://junhkang.com/tags/postgresql/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/tags/postgresql/</loc>
+    <loc>https://junhkang.com/categories/postgresql/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/vacuum/</loc>
@@ -126,9 +156,6 @@
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/cto/</loc>
-    <lastmod>2026-01-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%ED%9A%8C%EA%B3%A0/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/database/</loc>
@@ -946,12 +973,6 @@
   </url><url>
     <loc>https://junhkang.com/posts/2/</loc>
     <lastmod>2023-09-07T17:25:06+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/categories/personal/</loc>
-    <lastmod>2021-06-20T23:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/personal/</loc>
-    <lastmod>2021-06-20T23:30:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</loc>
     <lastmod>2021-06-20T23:30:00+00:00</lastmod>

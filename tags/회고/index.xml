@@ -6,8 +6,15 @@
     <description>Recent content in 회고 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%ED%9A%8C%EA%B3%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개인 사이트가 구글에서 사라졌다 — 대량 생성 페이지의 대가</title>
+      <link>https://junhkang.com/personal/google-deindex-1-what-happened/</link>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/google-deindex-1-what-happened/</guid>
+      <description>개인적으로 굴려보던 디렉터리형 사이트가 구글 색인에서 사실상 통째로 빠졌습니다. 페이지 단위로는 문제가 없어 보였는데 왜 걸렸는지, 진단 과정에서 확인한 것들을 정리합니다.</description>
+    </item>
     <item>
       <title>2025년 회고 - CTO로서의 성장과 변화</title>
       <link>https://junhkang.com/sankun/2/</link>

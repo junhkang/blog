@@ -1,6 +1,6 @@
 ---
 title: "AI가 먹힌 업무와 안 먹힌 업무 — 직군별로 갈린 결과"
-date: 2026-09-16
+date: 2026-09-04
 categories: ['Sankun']
 tags: ['AI', '개발문화', '조직', '생산성', 'AX']
 series: ['AI 도구 전사 도입기']

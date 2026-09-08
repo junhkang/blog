@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>협업 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%ED%98%91%EC%97%85/</link>
+    <description>Recent content in 협업 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Sun, 22 Nov 2020 22:40:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%ED%98%91%EC%97%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>일을 맡긴다는 것</title>
+      <link>https://junhkang.com/personal/delegating-work/</link>
+      <pubDate>Sun, 22 Nov 2020 22:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/delegating-work/</guid>
+      <description>혼자 만들던 것을 처음으로 다른 사람과 나눠 만들기 시작했습니다. 코드를 나누는 것보다 머릿속 전제를 나누는 게 훨씬 어렵다는 걸 알게 된 시기의 기록.</description>
+    </item>
+  </channel>
+</rss>

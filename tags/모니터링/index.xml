@@ -31,5 +31,12 @@
 &lt;h2 id=&#34;disk-영역&#34; ke-size=&#34;size26&#34;&gt;1. Disk 영역&lt;/h2&gt;
 &lt;p&gt;PostgreSQL의 저장 영역은 크게 Heap, Index, Toast 3개로 나뉜다. 각 테이블의 대부분의 데이터를 메인 heap 영역에 저장한고, 테이블 칼럼 중 매우 큰 데이터를 받을 수 있는 칼럼은 TOAST 영역에 별도 저장한다. TOAST 테이블에는 실제 데이터를 저장하고, 본래 테이블에는 해당 데이터를 가리키는 포인터만 남게 된다. TOAST 테이블의 유효한 인덱스는 1개뿐이고, 기준 테이블에는 더 많은 인덱스가 존재할 수 있다. 테이블과 인덱스는 각각의 디스크파일에 저장 되며 각 파일이 1G가 넘으면 별도 파일로 분리된다.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>기능보다 보는 것을 먼저 만들기로 했다</title>
+      <link>https://junhkang.com/personal/observability-before-features/</link>
+      <pubDate>Sun, 11 Apr 2021 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/observability-before-features/</guid>
+      <description>파일럿을 열고 나서 알게 된 건, 서비스가 잘 돌고 있는지 확인할 방법이 우리에게 없다는 것이었습니다. 다음 버전 개발을 시작하기 전에 관측과 배포부터 다시 깔기로 한 기록.</description>
+    </item>
   </channel>
 </rss>

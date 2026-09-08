@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>기술적 의사결정 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%EA%B8%B0%EC%88%A0%EC%A0%81-%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95/</link>
+    <description>Recent content in 기술적 의사결정 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Sun, 19 Nov 2023 23:05:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%EA%B8%B0%EC%88%A0%EC%A0%81-%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>성장하고 있다는 감각이 없다</title>
+      <link>https://junhkang.com/personal/no-sense-of-growing/</link>
+      <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/no-sense-of-growing/</guid>
+      <description>회사와 서비스는 계속 커지는데 정작 내가 하는 기술적 판단의 폭은 좁아지는 것 같습니다. 되는지 안 되는지만 답하고 있는 상태를 어떻게 볼 것인가에 대한 기록.</description>
+    </item>
+  </channel>
+</rss>

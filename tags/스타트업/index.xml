@@ -15,5 +15,12 @@
       <guid>https://junhkang.com/sankun/ticket-weight-kpi/</guid>
       <description>11줄짜리 수정과 430줄짜리 수정이 똑같이 &amp;#39;1건&amp;#39;으로 세어지고 있었습니다. 티켓마다 무게를 매겨 팀의 역량이 실제로 어디에 쓰였는지 보이게 만든 과정과, 그 지표를 평가에 쓰지 않기로 한 이유를 적었습니다.</description>
     </item>
+    <item>
+      <title>기능보다 보는 것을 먼저 만들기로 했다</title>
+      <link>https://junhkang.com/personal/observability-before-features/</link>
+      <pubDate>Sun, 11 Apr 2021 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/observability-before-features/</guid>
+      <description>파일럿을 열고 나서 알게 된 건, 서비스가 잘 돌고 있는지 확인할 방법이 우리에게 없다는 것이었습니다. 다음 버전 개발을 시작하기 전에 관측과 배포부터 다시 깔기로 한 기록.</description>
+    </item>
   </channel>
 </rss>

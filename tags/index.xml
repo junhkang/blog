@@ -177,7 +177,7 @@
       <description></description>
     </item>
     <item>
-      <title>Postgresql</title>
+      <title>PostgreSQL</title>
       <link>https://junhkang.com/tags/postgresql/</link>
       <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/postgresql/</guid>
@@ -247,7 +247,7 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
+      <title>Sql</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>
@@ -800,6 +800,27 @@
       <description></description>
     </item>
     <item>
+      <title>기술적 의사결정</title>
+      <link>https://junhkang.com/tags/%EA%B8%B0%EC%88%A0%EC%A0%81-%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95/</link>
+      <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B8%B0%EC%88%A0%EC%A0%81-%EC%9D%98%EC%82%AC%EA%B2%B0%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>성장</title>
+      <link>https://junhkang.com/tags/%EC%84%B1%EC%9E%A5/</link>
+      <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%84%B1%EC%9E%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>커리어</title>
+      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
+      <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>순환참조</title>
       <link>https://junhkang.com/tags/%EC%88%9C%ED%99%98%EC%B0%B8%EC%A1%B0/</link>
       <pubDate>Fri, 17 Nov 2023 14:36:15 +0000</pubDate>
@@ -1318,10 +1339,45 @@
       <description></description>
     </item>
     <item>
-      <title>커리어</title>
-      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
-      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
+      <title>CI/CD</title>
+      <link>https://junhkang.com/tags/ci/cd/</link>
+      <pubDate>Sun, 11 Apr 2021 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevOps</title>
+      <link>https://junhkang.com/tags/devops/</link>
+      <pubDate>Sun, 11 Apr 2021 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>인프라</title>
+      <link>https://junhkang.com/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</link>
+      <pubDate>Sun, 11 Apr 2021 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9D%B8%ED%94%84%EB%9D%BC/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>커뮤니케이션</title>
+      <link>https://junhkang.com/tags/%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98/</link>
+      <pubDate>Sun, 22 Nov 2020 22:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%AE%A4%EB%8B%88%EC%BC%80%EC%9D%B4%EC%85%98/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>팀</title>
+      <link>https://junhkang.com/tags/%ED%8C%80/</link>
+      <pubDate>Sun, 22 Nov 2020 22:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%8C%80/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>협업</title>
+      <link>https://junhkang.com/tags/%ED%98%91%EC%97%85/</link>
+      <pubDate>Sun, 22 Nov 2020 22:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%98%91%EC%97%85/</guid>
       <description></description>
     </item>
   </channel>

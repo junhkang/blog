@@ -6,14 +6,28 @@
     <description>Recent content in 커리어 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 20 Jun 2021 23:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Nov 2023 23:05:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>성장하고 있다는 감각이 없다</title>
+      <link>https://junhkang.com/personal/no-sense-of-growing/</link>
+      <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/no-sense-of-growing/</guid>
+      <description>회사와 서비스는 계속 커지는데 정작 내가 하는 기술적 판단의 폭은 좁아지는 것 같습니다. 되는지 안 되는지만 답하고 있는 상태를 어떻게 볼 것인가에 대한 기록.</description>
+    </item>
     <item>
       <title>개발자인가 CTO인가</title>
       <link>https://junhkang.com/personal/developer-or-cto/</link>
       <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
       <guid>https://junhkang.com/personal/developer-or-cto/</guid>
       <description>명함에는 CTO라고 적혀 있는데 하는 일의 대부분은 혼자 코드를 쓰는 것입니다. 타이틀과 실제 사이의 간극, 그리고 그 간극을 어떻게 다룰지에 대한 기록.</description>
+    </item>
+    <item>
+      <title>일을 맡긴다는 것</title>
+      <link>https://junhkang.com/personal/delegating-work/</link>
+      <pubDate>Sun, 22 Nov 2020 22:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/delegating-work/</guid>
+      <description>혼자 만들던 것을 처음으로 다른 사람과 나눠 만들기 시작했습니다. 코드를 나누는 것보다 머릿속 전제를 나누는 게 훨씬 어렵다는 걸 알게 된 시기의 기록.</description>
     </item>
   </channel>
 </rss>

@@ -131,10 +131,10 @@
     <loc>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/categories/postgresql/</loc>
+    <loc>https://junhkang.com/tags/postgresql/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/tags/postgresql/</loc>
+    <loc>https://junhkang.com/categories/postgresql/</loc>
     <lastmod>2026-07-14T21:30:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/vacuum/</loc>
@@ -215,6 +215,21 @@
     <loc>https://junhkang.com/tags/bastion/</loc>
     <lastmod>2024-12-31T12:30:05+00:00</lastmod>
   </url><url>
+    <loc>https://junhkang.com/personal/when-ai-finally-landed/</loc>
+    <lastmod>2024-12-18T22:50:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/llm/</loc>
+    <lastmod>2024-12-18T22:50:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0/</loc>
+    <lastmod>2024-12-18T22:50:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</loc>
+    <lastmod>2024-12-18T22:50:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%ED%95%99%EC%8A%B5/</loc>
+    <lastmod>2024-12-18T22:50:00+00:00</lastmod>
+  </url><url>
     <loc>https://junhkang.com/posts/122/</loc>
     <lastmod>2024-12-17T23:02:31+00:00</lastmod>
   </url><url>
@@ -225,9 +240,6 @@
     <lastmod>2024-12-17T23:02:31+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/categories/llm/</loc>
-    <lastmod>2024-12-17T23:02:31+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/llm/</loc>
     <lastmod>2024-12-17T23:02:31+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/quota/</loc>
@@ -621,9 +633,6 @@
     <lastmod>2023-11-19T23:05:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/personal/no-sense-of-growing/</loc>
-    <lastmod>2023-11-19T23:05:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</loc>
     <lastmod>2023-11-19T23:05:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/47/</loc>

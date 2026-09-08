@@ -177,7 +177,7 @@
       <description></description>
     </item>
     <item>
-      <title>PostgreSQL</title>
+      <title>Postgresql</title>
       <link>https://junhkang.com/tags/postgresql/</link>
       <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/postgresql/</guid>
@@ -310,6 +310,34 @@
       <description></description>
     </item>
     <item>
+      <title>LLM</title>
+      <link>https://junhkang.com/tags/llm/</link>
+      <pubDate>Wed, 18 Dec 2024 22:50:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>데이터</title>
+      <link>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0/</link>
+      <pubDate>Wed, 18 Dec 2024 22:50:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>커리어</title>
+      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
+      <pubDate>Wed, 18 Dec 2024 22:50:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>학습</title>
+      <link>https://junhkang.com/tags/%ED%95%99%EC%8A%B5/</link>
+      <pubDate>Wed, 18 Dec 2024 22:50:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%95%99%EC%8A%B5/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Dataflow</title>
       <link>https://junhkang.com/tags/dataflow/</link>
       <pubDate>Tue, 17 Dec 2024 23:02:31 +0000</pubDate>
@@ -321,13 +349,6 @@
       <link>https://junhkang.com/tags/gcp/</link>
       <pubDate>Tue, 17 Dec 2024 23:02:31 +0000</pubDate>
       <guid>https://junhkang.com/tags/gcp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LLM</title>
-      <link>https://junhkang.com/tags/llm/</link>
-      <pubDate>Tue, 17 Dec 2024 23:02:31 +0000</pubDate>
-      <guid>https://junhkang.com/tags/llm/</guid>
       <description></description>
     </item>
     <item>
@@ -811,13 +832,6 @@
       <link>https://junhkang.com/tags/%EC%84%B1%EC%9E%A5/</link>
       <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%84%B1%EC%9E%A5/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>커리어</title>
-      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
-      <pubDate>Sun, 19 Nov 2023 23:05:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
       <description></description>
     </item>
     <item>

@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 21:20:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bloat</title>
+      <link>https://junhkang.com/tags/bloat/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/bloat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dead Tuple</title>
+      <link>https://junhkang.com/tags/dead-tuple/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/dead-tuple/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vacuum</title>
+      <link>https://junhkang.com/tags/vacuum/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/vacuum/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>성능</title>
+      <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>운영</title>
+      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
+      <description></description>
+    </item>
     <item>
       <title>SEO</title>
       <link>https://junhkang.com/tags/seo/</link>
@@ -107,13 +149,6 @@
       <description></description>
     </item>
     <item>
-      <title>운영</title>
-      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
-      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>트러블슈팅</title>
       <link>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</link>
       <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
@@ -177,20 +212,6 @@
       <description></description>
     </item>
     <item>
-      <title>Postgresql</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vacuum</title>
-      <link>https://junhkang.com/tags/vacuum/</link>
-      <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/vacuum/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Wraparound</title>
       <link>https://junhkang.com/tags/wraparound/</link>
       <pubDate>Tue, 14 Jul 2026 21:30:00 +0000</pubDate>
@@ -247,7 +268,7 @@
       <description></description>
     </item>
     <item>
-      <title>Sql</title>
+      <title>SQL</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>

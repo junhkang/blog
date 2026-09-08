@@ -6,8 +6,15 @@
     <description>Recent content in Series on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 06 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 21:20:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PostgreSQL VACUUM 깊이 보기</title>
+      <link>https://junhkang.com/series/postgresql-vacuum-%EA%B9%8A%EC%9D%B4-%EB%B3%B4%EA%B8%B0/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/series/postgresql-vacuum-%EA%B9%8A%EC%9D%B4-%EB%B3%B4%EA%B8%B0/</guid>
+      <description></description>
+    </item>
     <item>
       <title>구글 색인이 사라진 사이트</title>
       <link>https://junhkang.com/series/%EA%B5%AC%EA%B8%80-%EC%83%89%EC%9D%B8%EC%9D%B4-%EC%82%AC%EB%9D%BC%EC%A7%84-%EC%82%AC%EC%9D%B4%ED%8A%B8/</link>

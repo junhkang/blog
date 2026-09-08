@@ -15,6 +15,7 @@
 
 Blog posts
 
+- [[PostgreSQL] VACUUM을 돌렸는데 디스크가 안 줄어드는 이유](https://junhkang.com/posts/postgresql-vacuum-1-disk-not-returned/): VACUUM은 죽은 튜플이 쓰던 공간을 재사용 가능한 상태로 만들 뿐, 운영체제에 디스크를 돌려주지 않습니다. VACUUM과 VACUUM FULL이 실제로 하는 일의 차이, 그리고 bloat를 실측하는 방법을 정리합니다. (2026-09-07)
 - [로그가 0줄인 것은 아무 일도 없었다는 뜻이 아니다](https://junhkang.com/posts/observability-failure-modes/): 관찰 결과가 관찰 대상보다 먼저 사라지면 측정은 실패합니다. 로그 로테이션이 관찰 주기보다 짧을 때, 삭제된 파일에 계속 쓰고 있을 때, 0건이 '없음'인지 '동작 안 함'인지 구분할 수 없을 때 — 운영에서 반복해서 밟았던 관측 실패 유형을 정리합니다. (2026-09-02)
 - [console.log는 로깅이 아니다 — 운영에서 살아남는 로그 설계](https://junhkang.com/posts/structured-logging-design/): 배포 전에 지우는 console.log는 디버깅이지 로깅이 아닙니다. 로그 레벨을 나누는 실전 기준, 구조화 로그(JSON)가 검색·집계·알림으로 이어지는 이유, Request ID 전파, 그리고 로그에 절대 남기면 안 되는 것까지 정리합니다. (2026-08-05)
 - [[PostgreSQL] 트랜잭션 ID는 42억 개인데 왜 20억마다 freeze가 도는가](https://junhkang.com/posts/postgresql-transaction-id-wraparound/): PostgreSQL의 트랜잭션 ID는 32비트라 약 42억 개인데, 실제 freeze 기준은 그 절반인 20억입니다. 순환 카운터에서 두 트랜잭션의 전후 관계를 부호 있는 정수 비교로 판정하기 때문인데, 그 원리와 age() 모니터링 방법을 정리합니다. (2026-07-14)

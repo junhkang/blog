@@ -6,8 +6,15 @@
     <description>Recent content in Vacuum on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 14 Jul 2026 21:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 21:20:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/vacuum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] VACUUM을 돌렸는데 디스크가 안 줄어드는 이유</title>
+      <link>https://junhkang.com/posts/postgresql-vacuum-1-disk-not-returned/</link>
+      <pubDate>Mon, 07 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-vacuum-1-disk-not-returned/</guid>
+      <description>VACUUM은 죽은 튜플이 쓰던 공간을 재사용 가능한 상태로 만들 뿐, 운영체제에 디스크를 돌려주지 않습니다. VACUUM과 VACUUM FULL이 실제로 하는 일의 차이, 그리고 bloat를 실측하는 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 트랜잭션 ID는 42억 개인데 왜 20억마다 freeze가 도는가</title>
       <link>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</link>

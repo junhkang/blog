@@ -3,6 +3,7 @@ title: "[PostgreSQL] 트랜잭션 ID는 42억 개인데 왜 20억마다 freeze�
 date: '2026-07-14 21:30:00'
 categories: ['PostgreSQL']
 tags: ['PostgreSQL', '트랜잭션', 'Vacuum', 'XID', 'wraparound', '데이터베이스']
+series: ['PostgreSQL VACUUM 깊이 보기']
 description: "PostgreSQL의 트랜잭션 ID는 32비트라 약 42억 개인데, 실제 freeze 기준은 그 절반인 20억입니다. 순환 카운터에서 두 트랜잭션의 전후 관계를 부호 있는 정수 비교로 판정하기 때문인데, 그 원리와 age() 모니터링 방법을 정리합니다."
 faq:
   - q: "PostgreSQL 트랜잭션 ID는 왜 42억이 아니라 20억이 한계인가요?"

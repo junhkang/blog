@@ -1,6 +1,6 @@
 ---
 title: "[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽"
-date: '2026-09-25 21:00:00'
+date: '2026-09-12 21:25:00'
 categories: ['PostgreSQL']
 tags: ['PostgreSQL', 'Vacuum', 'HOT update', 'fillfactor', '인덱스', '성능']
 series: ['PostgreSQL VACUUM 깊이 보기']

@@ -1,6 +1,6 @@
 ---
 title: "[PostgreSQL] VACUUM은 도는데 죽은 튜플이 안 줄어들 때"
-date: '2026-09-20 21:10:00'
+date: '2026-09-11 21:15:00'
 categories: ['PostgreSQL']
 tags: ['PostgreSQL', 'Vacuum', 'MVCC', '복제', '트러블슈팅', '운영']
 series: ['PostgreSQL VACUUM 깊이 보기']

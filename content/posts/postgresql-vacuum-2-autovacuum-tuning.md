@@ -1,6 +1,6 @@
 ---
 title: "[PostgreSQL] autovacuum이 큰 테이블에서 안 도는 이유"
-date: '2026-09-15 21:30:00'
+date: '2026-09-10 21:20:00'
 categories: ['PostgreSQL']
 tags: ['PostgreSQL', 'Vacuum', 'autovacuum', '튜닝', '운영', '성능']
 series: ['PostgreSQL VACUUM 깊이 보기']

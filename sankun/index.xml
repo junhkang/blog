@@ -6,8 +6,15 @@
     <description>Recent content in 산군 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 21:10:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/sankun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>전환이 희소한 서비스에서 A/B 테스트하기</title>
+      <link>https://junhkang.com/sankun/ab-test-without-conversions/</link>
+      <pubDate>Wed, 09 Sep 2026 21:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ab-test-without-conversions/</guid>
+      <description>결제 같은 최종 전환이 주 단위로 두 자릿수도 안 되는 서비스에서는 그 지표로 실험을 판정할 수 없습니다. 판정 지표를 바꾸는 방법과, 그 과정에서 밟았던 측정 함정들을 정리합니다.</description>
+    </item>
     <item>
       <title>AI가 먹힌 업무와 안 먹힌 업무 — 직군별로 갈린 결과</title>
       <link>https://junhkang.com/sankun/ai-adoption-2-where-it-worked/</link>

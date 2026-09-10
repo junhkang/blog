@@ -6,8 +6,15 @@
     <description>Recent content in 데이터 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 18 Dec 2024 22:50:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 21:10:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>전환이 희소한 서비스에서 A/B 테스트하기</title>
+      <link>https://junhkang.com/sankun/ab-test-without-conversions/</link>
+      <pubDate>Wed, 09 Sep 2026 21:10:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ab-test-without-conversions/</guid>
+      <description>결제 같은 최종 전환이 주 단위로 두 자릿수도 안 되는 서비스에서는 그 지표로 실험을 판정할 수 없습니다. 판정 지표를 바꾸는 방법과, 그 과정에서 밟았던 측정 함정들을 정리합니다.</description>
+    </item>
     <item>
       <title>AI가 진짜로 와닿은 순간</title>
       <link>https://junhkang.com/personal/when-ai-finally-landed/</link>

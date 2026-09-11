@@ -6,8 +6,22 @@
     <description>Recent content on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 09 Sep 2026 22:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 22:40:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>비개발 직군에게 AI 도구를 열어줄 때 — 사고는 왜 나는가</title>
+      <link>https://junhkang.com/sankun/ai-security-1-why-accidents-happen/</link>
+      <pubDate>Thu, 10 Sep 2026 22:40:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ai-security-1-why-accidents-happen/</guid>
+      <description>AI 코딩 도구는 비개발 직군에게도 코드를 작성하고 실행할 권한을 줍니다. 그 권한이 사고로 이어진 공개 사례들을 정리하고, 우리가 어떤 패턴을 경계 대상으로 봤는지 적었습니다.</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] autovacuum이 큰 테이블에서 안 도는 이유</title>
+      <link>https://junhkang.com/posts/postgresql-vacuum-2-autovacuum-tuning/</link>
+      <pubDate>Thu, 10 Sep 2026 21:20:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-vacuum-2-autovacuum-tuning/</guid>
+      <description>autovacuum의 기본 발동 조건은 테이블 크기에 비례합니다. 그래서 큰 테이블일수록 늦게 돌고, 한 번 돌 때 오래 걸립니다. 발동 공식과 비용 기반 지연, 그리고 테이블별로 설정을 따로 주는 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>8주 동안 아무것도 하지 않기로 했다 — 회복을 기다리는 법</title>
       <link>https://junhkang.com/personal/google-deindex-2-eight-week-freeze/</link>

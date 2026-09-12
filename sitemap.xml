@@ -3,42 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://junhkang.com/tags/ai/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/ax/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/categories/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/categories/sankun/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/series/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/sankun/ai-security-2-what-we-decided/</loc>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EB%B3%B4%EC%95%88/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/series/%EB%B9%84%EA%B0%9C%EB%B0%9C-%EC%A7%81%EA%B5%B0%EA%B3%BC-ai-%EB%B3%B4%EC%95%88/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/sankun/ai-security-1-why-accidents-happen/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/sankun/</loc>
-    <lastmod>2026-09-10T22:40:00+00:00</lastmod>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</loc>
+    <lastmod>2026-09-11T22:35:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/mvcc/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/categories/postgresql/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/postgresql/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/series/postgresql-vacuum-%EA%B9%8A%EC%9D%B4-%EB%B3%B4%EA%B8%B0/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/posts/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/vacuum/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</loc>
+    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/sankun/ai-security-1-why-accidents-happen/</loc>
     <lastmod>2026-09-10T22:40:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/postgresql-vacuum-2-autovacuum-tuning/</loc>
@@ -47,25 +80,7 @@
     <loc>https://junhkang.com/tags/autovacuum/</loc>
     <lastmod>2026-09-10T21:20:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/categories/postgresql/</loc>
-    <lastmod>2026-09-10T21:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/postgresql/</loc>
-    <lastmod>2026-09-10T21:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/series/postgresql-vacuum-%EA%B9%8A%EC%9D%B4-%EB%B3%B4%EA%B8%B0/</loc>
-    <lastmod>2026-09-10T21:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/posts/</loc>
-    <lastmod>2026-09-10T21:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/vacuum/</loc>
-    <lastmod>2026-09-10T21:20:00+00:00</lastmod>
-  </url><url>
     <loc>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</loc>
-    <lastmod>2026-09-10T21:20:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</loc>
     <lastmod>2026-09-10T21:20:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%ED%8A%9C%EB%8B%9D/</loc>
@@ -153,9 +168,6 @@
     <lastmod>2026-09-02T21:40:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/</loc>
-    <lastmod>2026-09-02T21:40:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</loc>
     <lastmod>2026-09-02T21:40:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/sankun/ai-adoption-1-token-is-not-productivity/</loc>
@@ -963,9 +975,6 @@
     <lastmod>2023-10-09T11:46:58+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/15/</loc>
-    <lastmod>2023-10-06T18:53:47+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/mvcc/</loc>
     <lastmod>2023-10-06T18:53:47+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/posts/14/</loc>

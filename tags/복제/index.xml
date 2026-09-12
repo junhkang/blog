@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>복제 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</link>
+    <description>Recent content in 복제 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Fri, 11 Sep 2026 21:15:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] VACUUM은 도는데 죽은 튜플이 안 줄어들 때</title>
+      <link>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</guid>
+      <description>VACUUM은 아직 누군가 볼 수 있는 튜플을 지우지 못합니다. 오래 열려 있는 트랜잭션, 방치된 복제 슬롯, 준비된 트랜잭션이 정리 기준선을 붙잡는 구조와 진단 순서를 정리합니다.</description>
+    </item>
+  </channel>
+</rss>

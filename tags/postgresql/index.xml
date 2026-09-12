@@ -6,8 +6,15 @@
     <description>Recent content in PostgreSQL on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 10 Sep 2026 21:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 21:15:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] VACUUM은 도는데 죽은 튜플이 안 줄어들 때</title>
+      <link>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</guid>
+      <description>VACUUM은 아직 누군가 볼 수 있는 튜플을 지우지 못합니다. 오래 열려 있는 트랜잭션, 방치된 복제 슬롯, 준비된 트랜잭션이 정리 기준선을 붙잡는 구조와 진단 순서를 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] autovacuum이 큰 테이블에서 안 도는 이유</title>
       <link>https://junhkang.com/posts/postgresql-vacuum-2-autovacuum-tuning/</link>

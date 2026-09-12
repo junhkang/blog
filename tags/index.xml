@@ -6,41 +6,83 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 10 Sep 2026 22:40:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 22:35:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
       <link>https://junhkang.com/tags/ai/</link>
-      <pubDate>Thu, 10 Sep 2026 22:40:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>AX</title>
       <link>https://junhkang.com/tags/ax/</link>
-      <pubDate>Thu, 10 Sep 2026 22:40:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/ax/</guid>
       <description></description>
     </item>
     <item>
       <title>개발문화</title>
       <link>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</link>
-      <pubDate>Thu, 10 Sep 2026 22:40:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</guid>
       <description></description>
     </item>
     <item>
       <title>보안</title>
       <link>https://junhkang.com/tags/%EB%B3%B4%EC%95%88/</link>
-      <pubDate>Thu, 10 Sep 2026 22:40:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EB%B3%B4%EC%95%88/</guid>
       <description></description>
     </item>
     <item>
       <title>조직</title>
       <link>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</link>
-      <pubDate>Thu, 10 Sep 2026 22:40:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MVCC</title>
+      <link>https://junhkang.com/tags/mvcc/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/mvcc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vacuum</title>
+      <link>https://junhkang.com/tags/vacuum/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/vacuum/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>복제</title>
+      <link>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>운영</title>
+      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>트러블슈팅</title>
+      <link>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</link>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</guid>
       <description></description>
     </item>
     <item>
@@ -51,31 +93,10 @@
       <description></description>
     </item>
     <item>
-      <title>PostgreSQL</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Thu, 10 Sep 2026 21:20:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vacuum</title>
-      <link>https://junhkang.com/tags/vacuum/</link>
-      <pubDate>Thu, 10 Sep 2026 21:20:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/vacuum/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>성능</title>
       <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</link>
       <pubDate>Thu, 10 Sep 2026 21:20:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>운영</title>
-      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
-      <pubDate>Thu, 10 Sep 2026 21:20:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
       <description></description>
     </item>
     <item>
@@ -205,13 +226,6 @@
       <description></description>
     </item>
     <item>
-      <title>트러블슈팅</title>
-      <link>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</link>
-      <pubDate>Wed, 02 Sep 2026 21:40:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>KPI</title>
       <link>https://junhkang.com/tags/kpi/</link>
       <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
@@ -324,7 +338,7 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
+      <title>Sql</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>
@@ -1315,13 +1329,6 @@
       <link>https://junhkang.com/tags/%EC%8B%AC%EB%B3%BC%EB%A6%AD/</link>
       <pubDate>Mon, 09 Oct 2023 11:46:58 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%8B%AC%EB%B3%BC%EB%A6%AD/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MVCC</title>
-      <link>https://junhkang.com/tags/mvcc/</link>
-      <pubDate>Fri, 06 Oct 2023 18:53:47 +0000</pubDate>
-      <guid>https://junhkang.com/tags/mvcc/</guid>
       <description></description>
     </item>
     <item>

@@ -6,8 +6,15 @@
     <description>Recent content in Sankun on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 10 Sep 2026 22:40:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 22:35:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/sankun/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>금지 목록 대신 판단 기준 — 비개발 직군 AI 보안 가이드를 이렇게 썼다</title>
+      <link>https://junhkang.com/sankun/ai-security-2-what-we-decided/</link>
+      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
+      <guid>https://junhkang.com/sankun/ai-security-2-what-we-decided/</guid>
+      <description>금지 목록은 목록에 없는 상황에서 무력합니다. 비개발 직군이 스스로 판단할 수 있도록 세 가지 질문으로 기준을 만들고, 묻는 비용을 낮추는 데 집중한 가이드 작성기입니다.</description>
+    </item>
     <item>
       <title>비개발 직군에게 AI 도구를 열어줄 때 — 사고는 왜 나는가</title>
       <link>https://junhkang.com/sankun/ai-security-1-why-accidents-happen/</link>

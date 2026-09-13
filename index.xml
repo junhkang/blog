@@ -6,8 +6,15 @@
     <description>Recent content on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 11 Sep 2026 22:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 21:25:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽</title>
+      <link>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</link>
+      <pubDate>Sat, 12 Sep 2026 21:25:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</guid>
+      <description>인덱스가 걸린 컬럼을 건드리지 않고 같은 페이지에 자리가 있으면, UPDATE는 인덱스를 갱신하지 않고 끝납니다. HOT update가 성립하는 조건과 fillfactor로 그 비율을 높이는 방법, 그리고 인덱스 하나의 숨은 쓰기 비용을 정리합니다.</description>
+    </item>
     <item>
       <title>금지 목록 대신 판단 기준 — 비개발 직군 AI 보안 가이드를 이렇게 썼다</title>
       <link>https://junhkang.com/sankun/ai-security-2-what-we-decided/</link>

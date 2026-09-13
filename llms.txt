@@ -15,6 +15,7 @@
 
 Blog posts
 
+- [[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽](https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/): 인덱스가 걸린 컬럼을 건드리지 않고 같은 페이지에 자리가 있으면, UPDATE는 인덱스를 갱신하지 않고 끝납니다. HOT update가 성립하는 조건과 fillfactor로 그 비율을 높이는 방법, 그리고 인덱스 하나의 숨은 쓰기 비용을 정리합니다. (2026-09-12)
 - [[PostgreSQL] VACUUM은 도는데 죽은 튜플이 안 줄어들 때](https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/): VACUUM은 아직 누군가 볼 수 있는 튜플을 지우지 못합니다. 오래 열려 있는 트랜잭션, 방치된 복제 슬롯, 준비된 트랜잭션이 정리 기준선을 붙잡는 구조와 진단 순서를 정리합니다. (2026-09-11)
 - [[PostgreSQL] autovacuum이 큰 테이블에서 안 도는 이유](https://junhkang.com/posts/postgresql-vacuum-2-autovacuum-tuning/): autovacuum의 기본 발동 조건은 테이블 크기에 비례합니다. 그래서 큰 테이블일수록 늦게 돌고, 한 번 돌 때 오래 걸립니다. 발동 공식과 비용 기반 지연, 그리고 테이블별로 설정을 따로 주는 방법을 정리합니다. (2026-09-10)
 - [[PostgreSQL] VACUUM을 돌렸는데 디스크가 안 줄어드는 이유](https://junhkang.com/posts/postgresql-vacuum-1-disk-not-returned/): VACUUM은 죽은 튜플이 쓰던 공간을 재사용 가능한 상태로 만들 뿐, 운영체제에 디스크를 돌려주지 않습니다. VACUUM과 VACUUM FULL이 실제로 하는 일의 차이, 그리고 bloat를 실측하는 방법을 정리합니다. (2026-09-07)

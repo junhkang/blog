@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Fillfactor on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/fillfactor/</link>
+    <description>Recent content in Fillfactor on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Sat, 12 Sep 2026 21:25:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/fillfactor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽</title>
+      <link>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</link>
+      <pubDate>Sat, 12 Sep 2026 21:25:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</guid>
+      <description>인덱스가 걸린 컬럼을 건드리지 않고 같은 페이지에 자리가 있으면, UPDATE는 인덱스를 갱신하지 않고 끝납니다. HOT update가 성립하는 조건과 fillfactor로 그 비율을 높이는 방법, 그리고 인덱스 하나의 숨은 쓰기 비용을 정리합니다.</description>
+    </item>
+  </channel>
+</rss>

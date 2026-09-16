@@ -6,8 +6,15 @@
     <description>Recent content on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 12 Sep 2026 21:25:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] ALTER TABLE 하나가 서비스를 멈추는 구조</title>
+      <link>https://junhkang.com/posts/postgresql-lock-1-ddl-queue/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-lock-1-ddl-queue/</guid>
+      <description>ALTER TABLE은 대부분 ACCESS EXCLUSIVE 잠금을 요구하고, 그 잠금을 기다리는 동안 뒤에 오는 SELECT까지 줄을 서게 됩니다. 긴 조회 하나와 DDL 하나가 만나면 테이블 전체가 멈추는 이유와, lock_timeout으로 피하는 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽</title>
       <link>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</link>
@@ -2308,6 +2315,13 @@ LANGUAGE &amp;#39;plpgsql&amp;#39;;
 &lt;/ol&gt;
 &lt;h2 id=&#34;full-text-search전문검색란&#34; ke-size=&#34;size26&#34;&gt;2. Full Text Search(전문검색)란?&lt;/h2&gt;
 &lt;p&gt;게시물의 내용/제목 등 문장, 문서 전체에서 키워드를 검색하는 기능이다. 단순한 like, 비교연산자와 달리 각 단어의 Token화 및 정규화를 통해 긴 문장내에서의 유사 검색을 가능하게 한다. Postgresql 기본 인덱스인 b-tree인덱스로는 Like 와 같은 패턴 매칭 검색시 양쪽에 %%를 거는 경우는 인덱스를 타지 않지만, gin 인덱스를 사용하여 빠른 검색이 가능하다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>첫 강연 전날</title>
+      <link>https://junhkang.com/personal/first-talk-eve/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/first-talk-eve/</guid>
+      <description>처음으로 밖에서 이야기를 하게 됐습니다. 내가 해도 되는 건가, 하는 생각이 계속 들어서 준비하면서 있었던 일과 같이 전날 밤에 적어둡니다.</description>
     </item>
     <item>
       <title>개발자인가 CTO인가</title>

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Postgresql on Jun Kang&#39;s Blog</title>
+    <title>PostgreSQL on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/categories/postgresql/</link>
-    <description>Recent content in Postgresql on Jun Kang&#39;s Blog</description>
+    <description>Recent content in PostgreSQL on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 12 Sep 2026 21:25:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] ALTER TABLE 하나가 서비스를 멈추는 구조</title>
+      <link>https://junhkang.com/posts/postgresql-lock-1-ddl-queue/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-lock-1-ddl-queue/</guid>
+      <description>ALTER TABLE은 대부분 ACCESS EXCLUSIVE 잠금을 요구하고, 그 잠금을 기다리는 동안 뒤에 오는 SELECT까지 줄을 서게 됩니다. 긴 조회 하나와 DDL 하나가 만나면 테이블 전체가 멈추는 이유와, lock_timeout으로 피하는 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽</title>
       <link>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</link>

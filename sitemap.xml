@@ -2,10 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
+    <loc>https://junhkang.com/posts/postgresql-lock-1-ddl-queue/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/categories/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/ddl/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/lock/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/lock_timeout/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/postgresql/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/categories/postgresql/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/series/postgresql-%EC%9E%A0%EA%B8%88%EA%B3%BC-%EB%8C%80%EA%B8%B0/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/posts/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/series/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EC%9E%A0%EA%B8%88/</loc>
+    <lastmod>2026-09-16T03:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/</loc>
     <lastmod>2026-09-12T21:25:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/fillfactor/</loc>
@@ -14,25 +53,7 @@
     <loc>https://junhkang.com/tags/hot-update/</loc>
     <lastmod>2026-09-12T21:25:00+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/categories/postgresql/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/postgresql/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
-  </url><url>
     <loc>https://junhkang.com/series/postgresql-vacuum-%EA%B9%8A%EC%9D%B4-%EB%B3%B4%EA%B8%B0/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/posts/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/series/</loc>
-    <lastmod>2026-09-12T21:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/</loc>
     <lastmod>2026-09-12T21:25:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/vacuum/</loc>
@@ -78,9 +99,6 @@
     <lastmod>2026-09-11T21:15:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</loc>
-    <lastmod>2026-09-11T21:15:00+00:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</loc>
     <lastmod>2026-09-11T21:15:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85/</loc>
@@ -956,9 +974,6 @@
     <loc>https://junhkang.com/posts/20/</loc>
     <lastmod>2023-10-10T14:42:53+00:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/tags/lock/</loc>
-    <lastmod>2023-10-10T14:42:53+00:00</lastmod>
-  </url><url>
     <loc>https://junhkang.com/posts/19/</loc>
     <lastmod>2023-10-09T15:21:27+00:00</lastmod>
   </url><url>
@@ -1063,6 +1078,15 @@
   </url><url>
     <loc>https://junhkang.com/posts/2/</loc>
     <lastmod>2023-09-07T17:25:06+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EA%B0%95%EC%97%B0/</loc>
+    <lastmod>2023-03-11T23:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/tags/%EA%B8%B0%EB%A1%9D/</loc>
+    <lastmod>2023-03-11T23:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://junhkang.com/personal/first-talk-eve/</loc>
+    <lastmod>2023-03-11T23:20:00+00:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</loc>
     <lastmod>2021-06-20T23:30:00+00:00</lastmod>

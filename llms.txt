@@ -15,6 +15,7 @@
 
 Blog posts
 
+- [[PostgreSQL] ALTER TABLE 하나가 서비스를 멈추는 구조](https://junhkang.com/posts/postgresql-lock-1-ddl-queue/): ALTER TABLE은 대부분 ACCESS EXCLUSIVE 잠금을 요구하고, 그 잠금을 기다리는 동안 뒤에 오는 SELECT까지 줄을 서게 됩니다. 긴 조회 하나와 DDL 하나가 만나면 테이블 전체가 멈추는 이유와, lock_timeout으로 피하는 방법을 정리합니다. (2026-09-16)
 - [[PostgreSQL] HOT update와 fillfactor — 죽은 튜플을 덜 만드는 쪽](https://junhkang.com/posts/postgresql-vacuum-4-hot-update-fillfactor/): 인덱스가 걸린 컬럼을 건드리지 않고 같은 페이지에 자리가 있으면, UPDATE는 인덱스를 갱신하지 않고 끝납니다. HOT update가 성립하는 조건과 fillfactor로 그 비율을 높이는 방법, 그리고 인덱스 하나의 숨은 쓰기 비용을 정리합니다. (2026-09-12)
 - [[PostgreSQL] VACUUM은 도는데 죽은 튜플이 안 줄어들 때](https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/): VACUUM은 아직 누군가 볼 수 있는 튜플을 지우지 못합니다. 오래 열려 있는 트랜잭션, 방치된 복제 슬롯, 준비된 트랜잭션이 정리 기준선을 붙잡는 구조와 진단 순서를 정리합니다. (2026-09-11)
 - [[PostgreSQL] autovacuum이 큰 테이블에서 안 도는 이유](https://junhkang.com/posts/postgresql-vacuum-2-autovacuum-tuning/): autovacuum의 기본 발동 조건은 테이블 크기에 비례합니다. 그래서 큰 테이블일수록 늦게 돌고, 한 번 돌 때 오래 걸립니다. 발동 공식과 비용 기반 지연, 그리고 테이블별로 설정을 따로 주는 방법을 정리합니다. (2026-09-10)
@@ -147,6 +148,7 @@ Blog posts
 - [개인 사이트가 구글에서 사라졌다 — 대량 생성 페이지의 대가](https://junhkang.com/personal/google-deindex-1-what-happened/): 개인적으로 굴려보던 디렉터리형 사이트가 구글 색인에서 사실상 통째로 빠졌습니다. 페이지 단위로는 문제가 없어 보였는데 왜 걸렸는지, 진단 과정에서 확인한 것들을 정리합니다. (2026-09-06)
 - [AI가 진짜로 와닿은 순간](https://junhkang.com/personal/when-ai-finally-landed/): 빅데이터를 다룬다면서 AI는 하지 않는다는 게 더는 설명이 안 되는 시점이 왔습니다. 미뤄두던 영역에 실제로 발을 들이면서 든 생각들을 적었습니다. (2024-12-18)
 - [성장하고 있다는 감각이 없다](https://junhkang.com/personal/no-sense-of-growing/): 회사와 서비스는 계속 커지는데 정작 내가 하는 기술적 판단의 폭은 좁아지는 것 같습니다. 되는지 안 되는지만 답하고 있는 상태를 어떻게 볼 것인가에 대한 기록. (2023-11-19)
+- [첫 강연 전날](https://junhkang.com/personal/first-talk-eve/): 처음으로 밖에서 이야기를 하게 됐습니다. 내가 해도 되는 건가, 하는 생각이 계속 들어서 준비하면서 있었던 일과 같이 전날 밤에 적어둡니다. (2023-03-11)
 - [개발자인가 CTO인가](https://junhkang.com/personal/developer-or-cto/): 명함에는 CTO라고 적혀 있는데 하는 일의 대부분은 혼자 코드를 쓰는 것입니다. 타이틀과 실제 사이의 간극, 그리고 그 간극을 어떻게 다룰지에 대한 기록. (2021-06-20)
 - [기능보다 보는 것을 먼저 만들기로 했다](https://junhkang.com/personal/observability-before-features/): 파일럿을 열고 나서 알게 된 건, 서비스가 잘 돌고 있는지 확인할 방법이 우리에게 없다는 것이었습니다. 다음 버전 개발을 시작하기 전에 관측과 배포부터 다시 깔기로 한 기록. (2021-04-11)
 - [일을 맡긴다는 것](https://junhkang.com/personal/delegating-work/): 혼자 만들던 것을 처음으로 다른 사람과 나눠 만들기 시작했습니다. 코드를 나누는 것보다 머릿속 전제를 나누는 게 훨씬 어렵다는 걸 알게 된 시기의 기록. (2020-11-22)

@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 12 Sep 2026 21:25:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDL</title>
+      <link>https://junhkang.com/tags/ddl/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/ddl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lock</title>
+      <link>https://junhkang.com/tags/lock/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/lock/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lock_timeout</title>
+      <link>https://junhkang.com/tags/lock_timeout/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/lock_timeout/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postgresql</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>운영</title>
+      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>잠금</title>
+      <link>https://junhkang.com/tags/%EC%9E%A0%EA%B8%88/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9E%A0%EA%B8%88/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Fillfactor</title>
       <link>https://junhkang.com/tags/fillfactor/</link>
@@ -20,13 +62,6 @@
       <link>https://junhkang.com/tags/hot-update/</link>
       <pubDate>Sat, 12 Sep 2026 21:25:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/hot-update/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PostgreSQL</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Sat, 12 Sep 2026 21:25:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
       <description></description>
     </item>
     <item>
@@ -97,13 +132,6 @@
       <link>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</link>
       <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EB%B3%B5%EC%A0%9C/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>운영</title>
-      <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
-      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
       <description></description>
     </item>
     <item>
@@ -431,7 +459,7 @@
     <item>
       <title>커리어</title>
       <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
-      <pubDate>Wed, 18 Dec 2024 22:50:00 +0000</pubDate>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
       <description></description>
     </item>
@@ -1311,13 +1339,6 @@
       <description></description>
     </item>
     <item>
-      <title>Lock</title>
-      <link>https://junhkang.com/tags/lock/</link>
-      <pubDate>Tue, 10 Oct 2023 14:42:53 +0000</pubDate>
-      <guid>https://junhkang.com/tags/lock/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ami</title>
       <link>https://junhkang.com/tags/ami/</link>
       <pubDate>Mon, 09 Oct 2023 15:21:27 +0000</pubDate>
@@ -1434,6 +1455,20 @@
       <link>https://junhkang.com/tags/full/</link>
       <pubDate>Thu, 07 Sep 2023 17:25:06 +0000</pubDate>
       <guid>https://junhkang.com/tags/full/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>강연</title>
+      <link>https://junhkang.com/tags/%EA%B0%95%EC%97%B0/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B0%95%EC%97%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>기록</title>
+      <link>https://junhkang.com/tags/%EA%B8%B0%EB%A1%9D/</link>
+      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B8%B0%EB%A1%9D/</guid>
       <description></description>
     </item>
     <item>

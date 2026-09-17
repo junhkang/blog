@@ -6,12 +6,12 @@
     <description>Recent content in Series on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 16 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/series/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PostgreSQL 잠금과 대기</title>
       <link>https://junhkang.com/series/postgresql-%EC%9E%A0%EA%B8%88%EA%B3%BC-%EB%8C%80%EA%B8%B0/</link>
-      <pubDate>Wed, 16 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/series/postgresql-%EC%9E%A0%EA%B8%88%EA%B3%BC-%EB%8C%80%EA%B8%B0/</guid>
       <description></description>
     </item>

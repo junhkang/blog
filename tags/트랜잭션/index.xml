@@ -6,8 +6,15 @@
     <description>Recent content in 트랜잭션 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 14 Jul 2026 21:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 데드락은 어떻게 생기고 어떻게 읽나</title>
+      <link>https://junhkang.com/posts/postgresql-lock-2-deadlock/</link>
+      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-lock-2-deadlock/</guid>
+      <description>데드락은 두 트랜잭션이 서로가 가진 것을 기다리는 상태입니다. PostgreSQL이 이를 감지해 한쪽을 끊는 방식, 로그에서 원인을 읽는 법, 그리고 외래키 때문에 생기는 예상 밖의 데드락까지 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 트랜잭션 ID는 42억 개인데 왜 20억마다 freeze가 도는가</title>
       <link>https://junhkang.com/posts/postgresql-transaction-id-wraparound/</link>

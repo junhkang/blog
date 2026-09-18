@@ -6,27 +6,48 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 17 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Deadlock</title>
-      <link>https://junhkang.com/tags/deadlock/</link>
-      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/deadlock/</guid>
-      <description></description>
-    </item>
     <item>
       <title>PostgreSQL</title>
       <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SKIP LOCKED</title>
+      <link>https://junhkang.com/tags/skip-locked/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/skip-locked/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>동시성</title>
+      <link>https://junhkang.com/tags/%EB%8F%99%EC%8B%9C%EC%84%B1/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%8F%99%EC%8B%9C%EC%84%B1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>작업 큐</title>
+      <link>https://junhkang.com/tags/%EC%9E%91%EC%97%85-%ED%81%90/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9E%91%EC%97%85-%ED%81%90/</guid>
       <description></description>
     </item>
     <item>
       <title>잠금</title>
       <link>https://junhkang.com/tags/%EC%9E%A0%EA%B8%88/</link>
-      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%9E%A0%EA%B8%88/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deadlock</title>
+      <link>https://junhkang.com/tags/deadlock/</link>
+      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/deadlock/</guid>
       <description></description>
     </item>
     <item>
@@ -137,7 +158,7 @@
     <item>
       <title>조직</title>
       <link>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</link>
-      <pubDate>Fri, 11 Sep 2026 22:35:00 +0000</pubDate>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%A1%B0%EC%A7%81/</guid>
       <description></description>
     </item>
@@ -368,7 +389,7 @@
     <item>
       <title>CTO</title>
       <link>https://junhkang.com/tags/cto/</link>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/cto/</guid>
       <description></description>
     </item>
@@ -394,7 +415,7 @@
       <description></description>
     </item>
     <item>
-      <title>SQL</title>
+      <title>Sql</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>
@@ -405,6 +426,20 @@
       <link>https://junhkang.com/tags/string/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/string/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>기술 리더십</title>
+      <link>https://junhkang.com/tags/%EA%B8%B0%EC%88%A0-%EB%A6%AC%EB%8D%94%EC%8B%AD/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EA%B8%B0%EC%88%A0-%EB%A6%AC%EB%8D%94%EC%8B%AD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>커리어</title>
+      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
       <description></description>
     </item>
     <item>
@@ -461,13 +496,6 @@
       <link>https://junhkang.com/tags/llm/</link>
       <pubDate>Wed, 18 Dec 2024 22:50:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>커리어</title>
-      <link>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</link>
-      <pubDate>Thu, 17 Sep 2026 03:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%BB%A4%EB%A6%AC%EC%96%B4/</guid>
       <description></description>
     </item>
     <item>

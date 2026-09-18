@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Postgresql on Jun Kang&#39;s Blog</title>
+    <title>PostgreSQL on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/categories/postgresql/</link>
-    <description>Recent content in Postgresql on Jun Kang&#39;s Blog</description>
+    <description>Recent content in PostgreSQL on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 17 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] SKIP LOCKED로 작업 큐 만들기</title>
+      <link>https://junhkang.com/posts/postgresql-lock-3-skip-locked-queue/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-lock-3-skip-locked-queue/</guid>
+      <description>여러 워커가 같은 테이블에서 작업을 집어갈 때, 잠긴 행을 기다리지 않고 건너뛰는 SELECT ... FOR UPDATE SKIP LOCKED로 별도 큐 시스템 없이 작업 큐를 만드는 방법과, 그때 밟게 되는 함정들을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 데드락은 어떻게 생기고 어떻게 읽나</title>
       <link>https://junhkang.com/posts/postgresql-lock-2-deadlock/</link>

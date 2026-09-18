@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>기술 리더십 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%EA%B8%B0%EC%88%A0-%EB%A6%AC%EB%8D%94%EC%8B%AD/</link>
+    <description>Recent content in 기술 리더십 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Sun, 13 Apr 2025 21:50:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%EA%B8%B0%EC%88%A0-%EB%A6%AC%EB%8D%94%EC%8B%AD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>개발을 언제 놓아야 하나</title>
+      <link>https://junhkang.com/personal/when-to-stop-coding/</link>
+      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/personal/when-to-stop-coding/</guid>
+      <description>회의를 다 끝내면 오후 다섯 시고, 그때부터 내 개발이 시작됩니다. 이 구조가 언제까지 맞는 건지, 서로 다른 자리에서 들은 두 조언을 놓고 생각해봤습니다.</description>
+    </item>
+  </channel>
+</rss>

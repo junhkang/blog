@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 18 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 플래너는 통계를 보고 결정한다 — 그 통계는 언제 틀리나</title>
+      <link>https://junhkang.com/posts/postgresql-planner-1-statistics/</link>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-planner-1-statistics/</guid>
+      <description>실행 계획은 실제 데이터가 아니라 ANALYZE가 표본으로 만든 통계를 보고 세워집니다. 통계가 무엇을 담고 있는지, 언제 오래되거나 빗나가는지, 그리고 추정 행 수가 실제와 어긋날 때 무엇을 손봐야 하는지 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] SKIP LOCKED로 작업 큐 만들기</title>
       <link>https://junhkang.com/posts/postgresql-lock-3-skip-locked-queue/</link>

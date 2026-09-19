@@ -6,13 +6,48 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 18 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ANALYZE</title>
+      <link>https://junhkang.com/tags/analyze/</link>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/analyze/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pg_stats</title>
+      <link>https://junhkang.com/tags/pg_stats/</link>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/pg_stats/</guid>
+      <description></description>
+    </item>
     <item>
       <title>PostgreSQL</title>
       <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Fri, 18 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>성능</title>
+      <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</link>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>통계</title>
+      <link>https://junhkang.com/tags/%ED%86%B5%EA%B3%84/</link>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%86%B5%EA%B3%84/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>플래너</title>
+      <link>https://junhkang.com/tags/%ED%94%8C%EB%9E%98%EB%84%88/</link>
+      <pubDate>Sat, 19 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%94%8C%EB%9E%98%EB%84%88/</guid>
       <description></description>
     </item>
     <item>
@@ -111,13 +146,6 @@
       <link>https://junhkang.com/tags/vacuum/</link>
       <pubDate>Sat, 12 Sep 2026 21:25:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/vacuum/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>성능</title>
-      <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</link>
-      <pubDate>Sat, 12 Sep 2026 21:25:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</guid>
       <description></description>
     </item>
     <item>
@@ -251,13 +279,6 @@
       <link>https://junhkang.com/tags/%EC%A0%9C%ED%92%88/</link>
       <pubDate>Wed, 09 Sep 2026 21:10:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%A0%9C%ED%92%88/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>통계</title>
-      <link>https://junhkang.com/tags/%ED%86%B5%EA%B3%84/</link>
-      <pubDate>Wed, 09 Sep 2026 21:10:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%ED%86%B5%EA%B3%84/</guid>
       <description></description>
     </item>
     <item>
@@ -415,7 +436,7 @@
       <description></description>
     </item>
     <item>
-      <title>Sql</title>
+      <title>SQL</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>

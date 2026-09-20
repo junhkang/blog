@@ -6,8 +6,15 @@
     <description>Recent content in 성능 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sat, 19 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 두 컬럼이 서로 얽혀 있으면 플래너는 수백 배 틀린다</title>
+      <link>https://junhkang.com/posts/postgresql-planner-2-correlated-columns/</link>
+      <pubDate>Sun, 20 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-planner-2-correlated-columns/</guid>
+      <description>플래너는 WHERE 조건의 컬럼들이 서로 독립이라고 가정하고 선택도를 곱합니다. 시도와 시군구처럼 한쪽이 다른 쪽을 결정하는 컬럼에서는 이 곱셈이 크게 빗나가고, 그 결과 잘못된 조인 방식이 선택됩니다. 확장 통계로 이를 바로잡는 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 플래너는 통계를 보고 결정한다 — 그 통계는 언제 틀리나</title>
       <link>https://junhkang.com/posts/postgresql-planner-1-statistics/</link>

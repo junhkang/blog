@@ -6,8 +6,15 @@
     <description>Recent content in PostgreSQL 플래너가 틀리는 이유 on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 20 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/series/postgresql-%ED%94%8C%EB%9E%98%EB%84%88%EA%B0%80-%ED%8B%80%EB%A6%AC%EB%8A%94-%EC%9D%B4%EC%9C%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 인덱스가 있는데 안 쓰는 진짜 이유</title>
+      <link>https://junhkang.com/posts/postgresql-planner-3-why-not-index/</link>
+      <pubDate>Mon, 21 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-planner-3-why-not-index/</guid>
+      <description>인덱스를 만들었는데 실행 계획이 여전히 순차 스캔이라면, 플래너가 인덱스를 못 쓰는 것과 안 쓰는 것을 먼저 구분해야 합니다. 못 쓰는 경우의 원인들, 그리고 쓸 수 있는데 비용 계산상 안 쓰기로 한 경우에 손봐야 할 파라미터를 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 두 컬럼이 서로 얽혀 있으면 플래너는 수백 배 틀린다</title>
       <link>https://junhkang.com/posts/postgresql-planner-2-correlated-columns/</link>

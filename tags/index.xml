@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Mon, 21 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Partition Pruning</title>
+      <link>https://junhkang.com/tags/partition-pruning/</link>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/partition-pruning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>대용량</title>
+      <link>https://junhkang.com/tags/%EB%8C%80%EC%9A%A9%EB%9F%89/</link>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EB%8C%80%EC%9A%A9%EB%9F%89/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>성능</title>
+      <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</link>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>파티셔닝</title>
+      <link>https://junhkang.com/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</link>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Effective_cache_size</title>
       <link>https://junhkang.com/tags/effective_cache_size/</link>
@@ -16,24 +51,10 @@
       <description></description>
     </item>
     <item>
-      <title>Postgresql</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Mon, 21 Sep 2026 03:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Random_page_cost</title>
       <link>https://junhkang.com/tags/random_page_cost/</link>
       <pubDate>Mon, 21 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/random_page_cost/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>성능</title>
-      <link>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</link>
-      <pubDate>Mon, 21 Sep 2026 03:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%EC%84%B1%EB%8A%A5/</guid>
       <description></description>
     </item>
     <item>

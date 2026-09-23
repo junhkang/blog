@@ -15,6 +15,7 @@
 
 Blog posts
 
+- [[PostgreSQL] 시간 기반 파티션 운영 — DELETE 없이 데이터 버리기](https://junhkang.com/posts/postgresql-partition-2-time-based-ops/): 시간으로 나눈 파티션은 미리 만들어두고, 오래된 것은 떼어내서 버립니다. 파티션 생성을 놓쳤을 때 벌어지는 일, DEFAULT 파티션의 함정, DETACH CONCURRENTLY, 그리고 인덱스를 서비스 중단 없이 추가하는 순서를 정리합니다. (2026-09-23)
 - [[PostgreSQL] 파티셔닝이 성능을 올리지 않는 경우](https://junhkang.com/posts/postgresql-partition-1-pruning/): 파티셔닝은 쿼리를 빠르게 만드는 기능이 아니라, 조건에 맞는 파티션만 읽게 해주는 기능입니다. 그 조건이 갖춰지지 않으면 파티션 수만큼 느려집니다. 파티션 프루닝이 되는 쿼리와 안 되는 쿼리의 모양, 그리고 파티션 수의 비용을 정리합니다. (2026-09-22)
 - [[PostgreSQL] 인덱스가 있는데 안 쓰는 진짜 이유](https://junhkang.com/posts/postgresql-planner-3-why-not-index/): 인덱스를 만들었는데 실행 계획이 여전히 순차 스캔이라면, 플래너가 인덱스를 못 쓰는 것과 안 쓰는 것을 먼저 구분해야 합니다. 못 쓰는 경우의 원인들, 그리고 쓸 수 있는데 비용 계산상 안 쓰기로 한 경우에 손봐야 할 파라미터를 정리합니다. (2026-09-21)
 - [[PostgreSQL] 두 컬럼이 서로 얽혀 있으면 플래너는 수백 배 틀린다](https://junhkang.com/posts/postgresql-planner-2-correlated-columns/): 플래너는 WHERE 조건의 컬럼들이 서로 독립이라고 가정하고 선택도를 곱합니다. 시도와 시군구처럼 한쪽이 다른 쪽을 결정하는 컬럼에서는 이 곱셈이 크게 빗나가고, 그 결과 잘못된 조인 방식이 선택됩니다. 확장 통계로 이를 바로잡는 방법을 정리합니다. (2026-09-20)

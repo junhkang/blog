@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pg_partman on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/pg_partman/</link>
+    <description>Recent content in Pg_partman on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Wed, 23 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/pg_partman/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 시간 기반 파티션 운영 — DELETE 없이 데이터 버리기</title>
+      <link>https://junhkang.com/posts/postgresql-partition-2-time-based-ops/</link>
+      <pubDate>Wed, 23 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-partition-2-time-based-ops/</guid>
+      <description>시간으로 나눈 파티션은 미리 만들어두고, 오래된 것은 떼어내서 버립니다. 파티션 생성을 놓쳤을 때 벌어지는 일, DEFAULT 파티션의 함정, DETACH CONCURRENTLY, 그리고 인덱스를 서비스 중단 없이 추가하는 순서를 정리합니다.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 23 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 파티셔닝하면 못 하게 되는 것들 — 유니크, 외래키, 행 이동</title>
+      <link>https://junhkang.com/posts/postgresql-partition-3-constraints/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-partition-3-constraints/</guid>
+      <description>파티션 테이블의 PK와 유니크 제약은 반드시 파티션 키를 포함해야 합니다. 그래서 파티션을 가로지르는 유일성은 보장할 수 없고, ON CONFLICT와 외래키 설계도 달라집니다. 파티셔닝을 결정하기 전에 알아야 할 제약들을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 시간 기반 파티션 운영 — DELETE 없이 데이터 버리기</title>
       <link>https://junhkang.com/posts/postgresql-partition-2-time-based-ops/</link>

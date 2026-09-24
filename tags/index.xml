@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Jun Kang&#39;s Blog</description>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 23 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 03:00:00 +0000</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ON CONFLICT</title>
+      <link>https://junhkang.com/tags/on-conflict/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/on-conflict/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Postgresql</title>
+      <link>https://junhkang.com/tags/postgresql/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>설계</title>
+      <link>https://junhkang.com/tags/%EC%84%A4%EA%B3%84/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%84%A4%EA%B3%84/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>외래키</title>
+      <link>https://junhkang.com/tags/%EC%99%B8%EB%9E%98%ED%82%A4/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%99%B8%EB%9E%98%ED%82%A4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>유니크 제약</title>
+      <link>https://junhkang.com/tags/%EC%9C%A0%EB%8B%88%ED%81%AC-%EC%A0%9C%EC%95%BD/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%EC%9C%A0%EB%8B%88%ED%81%AC-%EC%A0%9C%EC%95%BD/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>파티셔닝</title>
+      <link>https://junhkang.com/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</guid>
+      <description></description>
+    </item>
     <item>
       <title>DETACH</title>
       <link>https://junhkang.com/tags/detach/</link>
@@ -23,13 +65,6 @@
       <description></description>
     </item>
     <item>
-      <title>Postgresql</title>
-      <link>https://junhkang.com/tags/postgresql/</link>
-      <pubDate>Wed, 23 Sep 2026 03:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/postgresql/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>데이터 보존</title>
       <link>https://junhkang.com/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B3%B4%EC%A1%B4/</link>
       <pubDate>Wed, 23 Sep 2026 03:00:00 +0000</pubDate>
@@ -41,13 +76,6 @@
       <link>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</link>
       <pubDate>Wed, 23 Sep 2026 03:00:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/%EC%9A%B4%EC%98%81/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>파티셔닝</title>
-      <link>https://junhkang.com/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</link>
-      <pubDate>Wed, 23 Sep 2026 03:00:00 +0000</pubDate>
-      <guid>https://junhkang.com/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</guid>
       <description></description>
     </item>
     <item>
@@ -506,7 +534,7 @@
       <description></description>
     </item>
     <item>
-      <title>Sql</title>
+      <title>SQL</title>
       <link>https://junhkang.com/tags/sql/</link>
       <pubDate>Wed, 13 Aug 2025 14:46:00 +0000</pubDate>
       <guid>https://junhkang.com/tags/sql/</guid>

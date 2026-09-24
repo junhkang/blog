@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>외래키 on Jun Kang&#39;s Blog</title>
+    <link>https://junhkang.com/tags/%EC%99%B8%EB%9E%98%ED%82%A4/</link>
+    <description>Recent content in 외래키 on Jun Kang&#39;s Blog</description>
+    <generator>Hugo -- 0.165.0</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 24 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <atom:link href="https://junhkang.com/tags/%EC%99%B8%EB%9E%98%ED%82%A4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] 파티셔닝하면 못 하게 되는 것들 — 유니크, 외래키, 행 이동</title>
+      <link>https://junhkang.com/posts/postgresql-partition-3-constraints/</link>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-partition-3-constraints/</guid>
+      <description>파티션 테이블의 PK와 유니크 제약은 반드시 파티션 키를 포함해야 합니다. 그래서 파티션을 가로지르는 유일성은 보장할 수 없고, ON CONFLICT와 외래키 설계도 달라집니다. 파티셔닝을 결정하기 전에 알아야 할 제약들을 정리합니다.</description>
+    </item>
+  </channel>
+</rss>

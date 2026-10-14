@@ -90,31 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 {{ end }}
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-<meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
-
-<!-- OG Image -->
-{{ $ogImage := .Site.Params.defaultImage }}
-{{ with .Params.cover }}
-    {{ if .image }}
-        {{ $ogImage = .image }}
-    {{ end }}
-{{ end }}
-{{ with .Params.image }}
-    {{ $ogImage = . }}
-{{ end }}
-<meta property="og:image" content="{{ $ogImage | absURL }}">
-
-<!-- Twitter Card -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="{{ .Permalink }}">
-<meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
-<meta property="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
-<meta property="twitter:image" content="{{ $ogImage | absURL }}">
-
+<!-- OG/Twitter 메타는 PaperMod 기본 템플릿(opengraph.html, twitter_cards.html)이 출력한다. 기본 이미지는 params.images. -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9413249746505723"
      crossorigin="anonymous"></script> 
 <!-- ─────────────────────────────────────────────────────────────

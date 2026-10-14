@@ -1,5 +1,7 @@
 baseURL = "https://junhkang.com/"
 languageCode = "ko"
+defaultContentLanguage = "ko"
+timeZone = "Asia/Seoul"
 title = "Jun Kang's Blog"
 theme = "hugo-PaperMod"
 googleAnalytics = "G-PV53RL6R3L"
@@ -27,7 +29,7 @@ minifyOutput = true
   favicon = "favicon.ico"
   hideFooter = true       # 전체 푸터를 숨기거나
   hideMadeWithHugo = true  # Hugo 워터마크만 숨기기
-  defaultImage = "/images/og_img.jpg"  # 기본 OG 이미지 경로
+  images = ["/images/og_img.jpg"]  # 기본 OG/Twitter 이미지 (PaperMod 폴백)
   keywords = ["개발", "백엔드", "클라우드", "DevOps", "데이터베이스", "산군"]  # 배열 형태로 변경
 
   [params.comments]
@@ -177,6 +179,16 @@ ShowLastMod = true
 [params.categoryPage]
 enableRecentPosts = true
 recentPostCount = 3
+
+# 태그 페이지는 대부분 글 1편짜리라 얇은 페이지가 된다 — 색인·사이트맵에서 뺀다.
+# 카테고리는 실제 허브라서 그대로 둔다.
+[[cascade]]
+  [cascade.params]
+    robotsNoIndex = true
+  [cascade.sitemap]
+    disable = true
+  [cascade.target]
+    path = "{/tags,/tags/**}"
 
 [taxonomies]
   category = "categories"

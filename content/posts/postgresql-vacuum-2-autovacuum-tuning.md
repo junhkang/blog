@@ -44,9 +44,9 @@ autovacuum은 테이블마다 임계값을 계산해서, 죽은 튜플 수가 �
 
 1억 행 테이블은 죽은 튜플이 2천만 개 쌓일 때까지 autovacuum이 손을 안 댄다. 그 시점에는 이미 상당히 부풀어 있고, 막상 돌기 시작하면 처리할 양이 많아 오래 걸린다. **늦게 시작해서 오래 하는 최악의 조합**이 기본값에서 자연스럽게 나온다.
 
-ANALYZE도 같은 구조인데 계수만 다르다. `autovacuum_analyze_threshold`가 50, `autovacuum_analyze_scale_factor`가 0.1이다.
+ANALYZE도 같은 구조인데 계수만 다르다. `autovacuum_analyze_threshold`가 50, `autovacuum_analyze_scale_factor`가 0.1이다. 이 조건 때문에 큰 테이블의 통계가 늦게 갱신되는 문제는 [플래너 시리즈 1편](/posts/postgresql-planner-1-statistics/)에서 다뤘다.
 
-그리고 PostgreSQL 13부터는 **삽입만 일어나는 테이블**을 위한 조건이 따로 생겼다. `autovacuum_vacuum_insert_threshold`(기본 1000)와 `autovacuum_vacuum_insert_scale_factor`(기본 0.2)다. 그전에는 INSERT만 하는 테이블은 죽은 튜플이 안 생기니 autovacuum이 거의 안 돌았고, 그러다 freeze 한계에 걸려서야 한 번에 크게 도는 문제가 있었다.
+그리고 PostgreSQL 13부터는 **삽입만 일어나는 테이블**을 위한 조건이 따로 생겼다. `autovacuum_vacuum_insert_threshold`(기본 1000)와 `autovacuum_vacuum_insert_scale_factor`(기본 0.2)다. 그전에는 INSERT만 하는 테이블은 죽은 튜플이 안 생기니 autovacuum이 거의 안 돌았고, 그러다 [freeze 한계](/posts/postgresql-transaction-id-wraparound/)에 걸려서야 한 번에 크게 도는 문제가 있었다.
 
 ## 비용 기반 지연 — 도는데 느린 경우
 
@@ -134,7 +134,7 @@ ALTER TABLE big_busy_table RESET (autovacuum_vacuum_scale_factor);
 
 설정과 무관하게 안 도는 경우도 있다.
 
-**충돌하는 잠금에 밀린다.** 일반 autovacuum은 다른 작업을 막게 되면 스스로 물러난다. DDL이 잦은 테이블은 시작했다가 취소되기를 반복하며 계속 밀릴 수 있다. 로그에서 취소 기록이 반복되는지 확인해볼 만하다.
+**충돌하는 잠금에 밀린다.** 일반 autovacuum은 다른 작업을 막게 되면 스스로 물러난다. DDL이 잦은 테이블은 시작했다가 취소되기를 반복하며 계속 밀릴 수 있다. DDL이 잡는 잠금은 [잠금 시리즈 1편](/posts/postgresql-lock-1-ddl-queue/)에 정리해뒀다. 로그에서 취소 기록이 반복되는지 확인해볼 만하다.
 
 **테이블별로 꺼져 있다.** 과거에 누가 `autovacuum_enabled = false`를 걸어놓고 잊은 경우다.
 

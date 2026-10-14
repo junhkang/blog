@@ -56,9 +56,9 @@ WHERE cardinality(pg_blocking_pids(pid)) > 0
 ORDER BY xact_age DESC;
 ```
 
-`blocked_by`가 비어 있으면서 다른 행들의 `blocked_by`에 등장하는 pid가 맨 앞에 있는 놈이다. 대개 오래된 트랜잭션이고, `idle in transaction` 상태인 경우도 많다.
+`blocked_by`가 비어 있으면서 다른 행들의 `blocked_by`에 등장하는 pid가 맨 앞에 있는 놈이다. 대개 오래된 트랜잭션이고, `idle in transaction` 상태인 경우도 많다. 이런 세션은 [VACUUM도 막는다](/posts/postgresql-vacuum-3-what-blocks-cleanup/).
 
-풀려면 그 pid를 끊는다.
+풀려면 그 pid를 끊는다. `pg_cancel_backend`와 `pg_terminate_backend`의 차이는 [잠금 조회와 kill 글](/posts/4/)에 있다.
 
 ```sql
 SELECT pg_cancel_backend(<pid>);     -- 쿼리만 취소

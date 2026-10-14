@@ -26,7 +26,7 @@ PostgreSQL의 트랜잭션 ID(XID)는 32비트다. 그러면 2^32, 약 **42억 9
 
 핵심은 XID가 단조 증가하는 값이 아니라 **순환 카운터(circular counter)** 라는 데 있다. 42억까지 올라가면 다시 0부터 시작한다.
 
-여기서 문제가 생긴다. MVCC는 "이 튜플을 만든 트랜잭션이 내 트랜잭션보다 과거인가"를 끊임없이 판정해야 하는데, 순환하는 공간에서는 두 수의 크기 비교가 전후 관계를 의미하지 않는다.
+여기서 문제가 생긴다. [MVCC](/posts/15/)는 "이 튜플을 만든 트랜잭션이 내 트랜잭션보다 과거인가"를 끊임없이 판정해야 하는데, 순환하는 공간에서는 두 수의 크기 비교가 전후 관계를 의미하지 않는다.
 
 XID가 10억인 트랜잭션 A와 30억인 트랜잭션 B가 있다고 하자.
 
@@ -111,10 +111,10 @@ ORDER BY age(datfrozenxid) DESC;
 읽는 기준은 단순하다.
 
 - **2억 근처**: 정상. 강제 freeze가 도는 지점이라 여기서 오르내리는 건 설계대로 동작하는 것이다.
-- **10억 이상**: 무언가 freeze를 막고 있다. 오래된 prepared transaction, 방치된 replication slot, 장시간 유휴 트랜잭션(`idle in transaction`)이 흔한 원인이다.
+- **10억 이상**: 무언가 freeze를 막고 있다. 오래된 [prepared transaction](/posts/68/), 방치된 replication slot, 장시간 유휴 트랜잭션(`idle in transaction`)이 흔한 원인이다.
 - **16억 이상**: failsafe 구간. 여기까지 왔으면 원인부터 찾아야 한다.
 
-값이 안 내려간다면 vacuum이 안 도는 게 아니라 못 도는 경우가 대부분이다. 아래 셋을 먼저 본다.
+값이 안 내려간다면 vacuum이 안 도는 게 아니라 못 도는 경우가 대부분이다. 아래 셋을 먼저 본다. 각각이 왜 정리를 막는지는 [VACUUM 시리즈 3편](/posts/postgresql-vacuum-3-what-blocks-cleanup/)에 정리해뒀다.
 
 ```sql
 -- 1. 오래된 prepared transaction

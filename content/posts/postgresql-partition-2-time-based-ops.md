@@ -72,7 +72,7 @@ ALTER TABLE orders DETACH PARTITION orders_2023_01;
 DROP TABLE orders_2023_01;
 ```
 
-`DETACH`는 파티션을 부모에서 분리해 독립 테이블로 만든다. 그 다음 `DROP`은 파일을 지운다. 억 행이든 순간이다. 죽은 튜플이 안 생기고, VACUUM할 것도 없고, WAL도 거의 안 쓴다.
+`DETACH`는 파티션을 부모에서 분리해 독립 테이블로 만든다. 그 다음 `DROP`은 파일을 지운다. 억 행이든 순간이다. 죽은 튜플이 안 생기고, VACUUM할 것도 없고, [WAL](/posts/66/)도 거의 안 쓴다.
 
 같은 양을 `DELETE`했다면 몇 시간, 죽은 튜플 억 개, 그 뒤 VACUUM 몇 시간이다. [VACUUM 시리즈](/posts/postgresql-vacuum-1-disk-not-returned/)에서 다룬 이야기가 통째로 안 생긴다.
 
@@ -103,7 +103,7 @@ ALTER TABLE orders ATTACH PARTITION orders_2024_06
 
 이때 PostgreSQL은 붙이려는 테이블의 모든 행이 그 범위 안에 있는지 확인한다. 테이블 전체를 스캔한다. 큰 테이블이면 오래 걸린다.
 
-미리 같은 조건의 CHECK 제약을 걸어두면 스캔을 건너뛴다.
+미리 같은 조건의 [CHECK 제약](/posts/21/)을 걸어두면 스캔을 건너뛴다.
 
 ```sql
 ALTER TABLE orders_2024_06 ADD CONSTRAINT chk_range

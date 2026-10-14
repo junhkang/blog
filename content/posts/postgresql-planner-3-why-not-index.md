@@ -38,7 +38,7 @@ WHERE created_at >= '2026-09-01' AND created_at < '2026-09-02'
 
 **타입이 다르다.** `varchar` 컬럼에 정수를 비교하면 컬럼이 캐스팅되고, 그러면 위와 같은 상황이 된다. `bigint` 컬럼에 `int` 파라미터는 괜찮다. 파라미터가 승격되니까. 반대로 `int` 컬럼에 `bigint` 파라미터도 대개 괜찮다. 문제는 숫자와 문자열 사이다.
 
-**LIKE 앞에 와일드카드.** `LIKE '%abc'`는 B-tree로 못 찾는다. `LIKE 'abc%'`는 될 수 있는데, 조건이 있다. 데이터베이스 로케일이 `C`가 아니면 일반 인덱스로는 안 되고 `text_pattern_ops` 인덱스가 필요하다.
+**LIKE 앞에 와일드카드.** `LIKE '%abc'`는 [B-tree](/posts/6/)로 못 찾는다. `LIKE 'abc%'`는 될 수 있는데, 조건이 있다. 데이터베이스 로케일이 `C`가 아니면 일반 인덱스로는 안 되고 `text_pattern_ops` 인덱스가 필요하다.
 
 ```sql
 CREATE INDEX idx_name_pattern ON items (name text_pattern_ops);
@@ -115,7 +115,7 @@ EXPLAIN ANALYZE SELECT ...;
 
 `enable_seqscan`은 진단용이다. 운영에 켜두면 안 된다. 세션이 끝나면 돌아온다.
 
-한 가지 더. 인덱스 전용 스캔(Index Only Scan)이 안 나오는 건 또 다른 이유다. 가시성 맵이 갱신돼 있어야 하는데, 그건 VACUUM이 한다. [VACUUM 시리즈](/posts/postgresql-vacuum-1-disk-not-returned/)에서 다룬 이야기다. 갱신이 잦은 테이블은 `Index Only Scan`이 나와도 `Heap Fetches`가 많아서 이득이 적다.
+한 가지 더. [인덱스 전용 스캔(Index Only Scan)](/posts/70/)이 안 나오는 건 또 다른 이유다. [가시성 맵](/posts/79/)이 갱신돼 있어야 하는데, 그건 VACUUM이 한다. [VACUUM 시리즈](/posts/postgresql-vacuum-1-disk-not-returned/)에서 다룬 이야기다. 갱신이 잦은 테이블은 `Index Only Scan`이 나와도 `Heap Fetches`가 많아서 이득이 적다.
 
 ## 시리즈를 마치며
 

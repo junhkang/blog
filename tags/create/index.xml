@@ -4,29 +4,21 @@
     <title>CREATE on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/create/</link>
     <description>Recent content in CREATE on Jun Kang&#39;s Blog</description>
+    <image>
+      <title>Jun Kang&#39;s Blog</title>
+      <url>https://junhkang.com/images/og_img.jpg</url>
+      <link>https://junhkang.com/images/og_img.jpg</link>
+    </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 11 Oct 2023 18:44:51 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Oct 2023 18:44:51 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/create/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] CREATE TABLE AS (결과물을 테이블로)</title>
       <link>https://junhkang.com/posts/24/</link>
-      <pubDate>Wed, 11 Oct 2023 18:44:51 +0000</pubDate>
+      <pubDate>Wed, 11 Oct 2023 18:44:51 +0900</pubDate>
       <guid>https://junhkang.com/posts/24/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/24/img.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;create-table-as-사용&#34; ke-size=&#34;size26&#34;&gt;1. CREATE TABLE AS 사용&lt;/h2&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-- 기본
-CREATE TABLE films_recent AS
-  SELECT * FROM films WHERE date_prod &amp;gt;= &amp;#39;2002-01-01&amp;#39;;
-
---Synopsis
-CREATE [ [ GLOBAL | LOCAL ] { TEMPORARY | TEMP } ] TABLE table_name [ (column_name [, ...] ) ] [ [ WITH | WITHOUT ] OIDS ]
-    AS query
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;create-table-as-옵션&#34; ke-size=&#34;size26&#34;&gt;2. CREATE TABLE AS 옵션&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;- TEMPORARY / TEMP&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;        임시 테이블로 생성되며 세션이 종료될 시 삭제된다.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;- WITH OIDS / WITHOUT OIDS&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>PostgreSQL CREATE TABLE AS는 SELECT 결과로 테이블을 만들면서 컬럼명과 데이터 타입을 자동으로 정합니다. TEMP, WITH OIDS 옵션과, 매번 다시 조회하는 VIEW 및 SELECT INTO와의 차이를 정리합니다.</description>
     </item>
   </channel>
 </rss>

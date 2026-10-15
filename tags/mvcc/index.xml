@@ -4,28 +4,28 @@
     <title>MVCC on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/mvcc/</link>
     <description>Recent content in MVCC on Jun Kang&#39;s Blog</description>
+    <image>
+      <title>Jun Kang&#39;s Blog</title>
+      <url>https://junhkang.com/images/og_img.jpg</url>
+      <link>https://junhkang.com/images/og_img.jpg</link>
+    </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 11 Sep 2026 21:15:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 21:15:00 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/mvcc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] VACUUM은 도는데 죽은 튜플이 안 줄어들 때</title>
       <link>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</link>
-      <pubDate>Fri, 11 Sep 2026 21:15:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2026 21:15:00 +0900</pubDate>
       <guid>https://junhkang.com/posts/postgresql-vacuum-3-what-blocks-cleanup/</guid>
       <description>VACUUM은 아직 누군가 볼 수 있는 튜플을 지우지 못합니다. 오래 열려 있는 트랜잭션, 방치된 복제 슬롯, 준비된 트랜잭션이 정리 기준선을 붙잡는 구조와 진단 순서를 정리합니다.</description>
     </item>
     <item>
       <title>[PostgreSQL] MVCC (Multi-Version Concurrency Control)</title>
       <link>https://junhkang.com/posts/15/</link>
-      <pubDate>Fri, 06 Oct 2023 18:53:47 +0000</pubDate>
+      <pubDate>Fri, 06 Oct 2023 18:53:47 +0900</pubDate>
       <guid>https://junhkang.com/posts/15/</guid>
-      <description>&lt;hr&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://junhkang.com/images/posts/15/img.png&#34;&gt;
- &lt;/p&gt;
-&lt;h2 id=&#34;1-mvcc란&#34;&gt;1.  MVCC란?&lt;/h2&gt;
-&lt;p&gt;동시성 제어를 위해 lock을 사용하는 대부분의 다른 데이터베이스 시스템과 달리 Postgres는 다중 버전 모델(multiversion model)을 사용하여 데이터 일관성을 유지한다. 각 트랜잭션이 데이터베이스를 쿼리 하는 동안 데이터의 현재 상태에 관계없이 얼마 전의 데이터 스냅샷을 볼 수 있음을 의미한다. 데이터를 쿼리 하기 위해 트랜잭션을 만들었다면 해당 Transaction은 데이터의 스냅샷을 보고 있는 것이다.&lt;/p&gt;
-&lt;p&gt;동일한 행에 서로 다른 트랜잭션이 동시에 업데이트를 시도할 때, 일관성 없는 데이터가 조회되지 않도록 트랜잭션을 보호하여 각 데이터베이스 세션에 대한 트랜잭션 격리를 제공한다. Multiversion과 Lock model의 주요 차이점은 MVCC에서 데이터 read를 위해 획득한 lock과 데이터 쓰기를 위해 획득한 lock이 충돌하지 않는다는 것이다. (따라서 read와 write는 서로 block 하지 않는다.) 이러한 방식을 통해서 Reading 하는 작업에 대해서 Lock을 걸지 않기에 높은 성능을 얻을 수 있게 된다.&lt;/p&gt;</description>
+      <description>PostgreSQL MVCC는 읽기와 쓰기가 서로 막지 않도록 트랜잭션마다 데이터 스냅샷을 보여주는 방식입니다. xmin, xmax 시스템 컬럼으로 트랜잭션별 조회 가능한 튜플을 판단하는 원리와 VACUUM이 필요한 이유를 설명합니다.</description>
     </item>
   </channel>
 </rss>

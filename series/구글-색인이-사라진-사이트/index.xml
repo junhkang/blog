@@ -4,21 +4,26 @@
     <title>구글 색인이 사라진 사이트 on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/series/%EA%B5%AC%EA%B8%80-%EC%83%89%EC%9D%B8%EC%9D%B4-%EC%82%AC%EB%9D%BC%EC%A7%84-%EC%82%AC%EC%9D%B4%ED%8A%B8/</link>
     <description>Recent content in 구글 색인이 사라진 사이트 on Jun Kang&#39;s Blog</description>
+    <image>
+      <title>Jun Kang&#39;s Blog</title>
+      <url>https://junhkang.com/images/og_img.jpg</url>
+      <link>https://junhkang.com/images/og_img.jpg</link>
+    </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Wed, 09 Sep 2026 22:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 22:30:00 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/series/%EA%B5%AC%EA%B8%80-%EC%83%89%EC%9D%B8%EC%9D%B4-%EC%82%AC%EB%9D%BC%EC%A7%84-%EC%82%AC%EC%9D%B4%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>8주 동안 아무것도 하지 않기로 했다 — 회복을 기다리는 법</title>
       <link>https://junhkang.com/personal/google-deindex-2-eight-week-freeze/</link>
-      <pubDate>Wed, 09 Sep 2026 22:30:00 +0000</pubDate>
+      <pubDate>Wed, 09 Sep 2026 22:30:00 +0900</pubDate>
       <guid>https://junhkang.com/personal/google-deindex-2-eight-week-freeze/</guid>
       <description>색인이 사라진 원인을 고친 뒤에 가장 어려웠던 건 아무것도 하지 않는 일이었습니다. 회복을 측정하려면 측정 구간을 오염시키지 않아야 하는데, 그 사이 스스로 그 구간을 망쳐놓은 이야기입니다.</description>
     </item>
     <item>
       <title>개인 사이트가 구글에서 사라졌다 — 대량 생성 페이지의 대가</title>
       <link>https://junhkang.com/personal/google-deindex-1-what-happened/</link>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0900</pubDate>
       <guid>https://junhkang.com/personal/google-deindex-1-what-happened/</guid>
       <description>개인적으로 굴려보던 디렉터리형 사이트가 구글 색인에서 사실상 통째로 빠졌습니다. 페이지 단위로는 문제가 없어 보였는데 왜 걸렸는지, 진단 과정에서 확인한 것들을 정리합니다.</description>
     </item>

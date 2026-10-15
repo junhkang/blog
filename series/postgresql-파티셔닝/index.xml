@@ -4,28 +4,33 @@
     <title>PostgreSQL 파티셔닝 on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/series/postgresql-%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/</link>
     <description>Recent content in PostgreSQL 파티셔닝 on Jun Kang&#39;s Blog</description>
+    <image>
+      <title>Jun Kang&#39;s Blog</title>
+      <url>https://junhkang.com/images/og_img.jpg</url>
+      <link>https://junhkang.com/images/og_img.jpg</link>
+    </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 24 Sep 2026 03:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 03:00:00 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/series/postgresql-%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[PostgreSQL] 파티셔닝하면 못 하게 되는 것들 — 유니크, 외래키, 행 이동</title>
       <link>https://junhkang.com/posts/postgresql-partition-3-constraints/</link>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 +0900</pubDate>
       <guid>https://junhkang.com/posts/postgresql-partition-3-constraints/</guid>
       <description>파티션 테이블의 PK와 유니크 제약은 반드시 파티션 키를 포함해야 합니다. 그래서 파티션을 가로지르는 유일성은 보장할 수 없고, ON CONFLICT와 외래키 설계도 달라집니다. 파티셔닝을 결정하기 전에 알아야 할 제약들을 정리합니다.</description>
     </item>
     <item>
       <title>[PostgreSQL] 시간 기반 파티션 운영 — DELETE 없이 데이터 버리기</title>
       <link>https://junhkang.com/posts/postgresql-partition-2-time-based-ops/</link>
-      <pubDate>Wed, 23 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Wed, 23 Sep 2026 03:00:00 +0900</pubDate>
       <guid>https://junhkang.com/posts/postgresql-partition-2-time-based-ops/</guid>
       <description>시간으로 나눈 파티션은 미리 만들어두고, 오래된 것은 떼어내서 버립니다. 파티션 생성을 놓쳤을 때 벌어지는 일, DEFAULT 파티션의 함정, DETACH CONCURRENTLY, 그리고 인덱스를 서비스 중단 없이 추가하는 순서를 정리합니다.</description>
     </item>
     <item>
       <title>[PostgreSQL] 파티셔닝이 성능을 올리지 않는 경우</title>
       <link>https://junhkang.com/posts/postgresql-partition-1-pruning/</link>
-      <pubDate>Tue, 22 Sep 2026 03:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Sep 2026 03:00:00 +0900</pubDate>
       <guid>https://junhkang.com/posts/postgresql-partition-1-pruning/</guid>
       <description>파티셔닝은 쿼리를 빠르게 만드는 기능이 아니라, 조건에 맞는 파티션만 읽게 해주는 기능입니다. 그 조건이 갖춰지지 않으면 파티션 수만큼 느려집니다. 파티션 프루닝이 되는 쿼리와 안 되는 쿼리의 모양, 그리고 파티션 수의 비용을 정리합니다.</description>
     </item>

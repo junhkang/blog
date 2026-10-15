@@ -4,14 +4,19 @@
     <title>개발자 on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</link>
     <description>Recent content in 개발자 on Jun Kang&#39;s Blog</description>
+    <image>
+      <title>Jun Kang&#39;s Blog</title>
+      <url>https://junhkang.com/images/og_img.jpg</url>
+      <link>https://junhkang.com/images/og_img.jpg</link>
+    </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Sun, 20 Jun 2021 23:30:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jun 2021 23:30:00 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>개발자인가 CTO인가</title>
       <link>https://junhkang.com/personal/developer-or-cto/</link>
-      <pubDate>Sun, 20 Jun 2021 23:30:00 +0000</pubDate>
+      <pubDate>Sun, 20 Jun 2021 23:30:00 +0900</pubDate>
       <guid>https://junhkang.com/personal/developer-or-cto/</guid>
       <description>명함에는 CTO라고 적혀 있는데 하는 일의 대부분은 혼자 코드를 쓰는 것입니다. 타이틀과 실제 사이의 간극, 그리고 그 간극을 어떻게 다룰지에 대한 기록.</description>
     </item>

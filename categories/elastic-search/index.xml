@@ -4,20 +4,21 @@
     <title>Elastic Search on Jun Kang&#39;s Blog</title>
     <link>https://junhkang.com/categories/elastic-search/</link>
     <description>Recent content in Elastic Search on Jun Kang&#39;s Blog</description>
+    <image>
+      <title>Jun Kang&#39;s Blog</title>
+      <url>https://junhkang.com/images/og_img.jpg</url>
+      <link>https://junhkang.com/images/og_img.jpg</link>
+    </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Fri, 08 Dec 2023 14:57:54 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Dec 2023 14:57:54 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/categories/elastic-search/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Elastic Search] Elastic Search란? Elastic Search의 개념 및 장단점</title>
       <link>https://junhkang.com/posts/50/</link>
-      <pubDate>Fri, 08 Dec 2023 14:57:54 +0000</pubDate>
+      <pubDate>Fri, 08 Dec 2023 14:57:54 +0900</pubDate>
       <guid>https://junhkang.com/posts/50/</guid>
-      <description>&lt;hr&gt;
-&lt;h2 id=&#34;elastic-search란&#34; ke-size=&#34;size26&#34;&gt;1. Elastic Search란?&lt;/h2&gt;
-&lt;p&gt;Apache Lucene에 구축되어 배포된 검색 및 분석 엔진이다. 현재 검색엔진을 넘어 보안, 로그분석, Full-text 분석 등 다양한 영역에서 사용되며, Kibana, Logstash, Beats들과 함께 사용된다. 오픈 소스 프로젝트로 활발히 개발되고 있으며, 유닉스, 자바의 기초지식 필요하다. Apache Lucene의 한계를 보완하기 위한 새로운 검색엔진 프로젝트로 시작되었고 Logstash, Kibana와 함께 사용되어 ELK Stack (ES, Logstash, Kibana)라고 불렸으나 2013년 Logstash, Kibana 프로젝트 정식 흡수되었다.&lt;/p&gt;
-&lt;h2 id=&#34;elastic-stack이란&#34; ke-size=&#34;size26&#34;&gt;2. Elastic Stack이란?&lt;/h2&gt;
-&lt;p&gt;ES, Logstash, Kibana를 묶은 ELK 서비스이다. 5.0.0 버전부터 Beats를 포함하며 Elastic Stack 이란 이름으로 서비스가 제공되고 있다. 서버로부터 모든 유형의 데이터를 가져와 실시간 검색, 분석, 시각화를 도와주는 Elastic 오픈 소스 서비스 제품이다.&lt;/p&gt;</description>
+      <description>Elasticsearch는 Apache Lucene 기반의 검색 및 분석 엔진으로, 역색인 구조로 대량 데이터를 거의 실시간으로 검색합니다. Logstash, Kibana, Beats로 이루어진 Elastic Stack 구성과 장단점, 기본 개념을 정리합니다.</description>
     </item>
   </channel>
 </rss>

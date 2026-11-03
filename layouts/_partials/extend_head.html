@@ -7,77 +7,13 @@
     margin-top: 15px;
 }
 
-.profile-visitor-count {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    padding: 6px 10px;
-    background-color: var(--entry);
-    border-radius: 6px;
-    font-size: 0.9em;
-    color: var(--secondary);
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    gap: 6px;
-    text-decoration: none;
-}
-
-.profile-visitor-count:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-}
-
-.visitor-label {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
 @media screen and (max-width: 768px) {
     .social-icons {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
-    .profile-visitor-count {
-        margin-left: 0;
-        margin-top: 10px;
-    }
 }
 </style>
-
-<!-- 방문자 카운터 스크립트 -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const currentPath = window.location.pathname;
-    
-    // 모든 페이지에서 전체 방문자 수만 카운트
-    if (currentPath === '/') {
-        // 홈페이지인 경우 방문자 카운터 UI 표시
-        const socialIcons = document.querySelector('.social-icons');
-        if (socialIcons) {
-            const counterDiv = document.createElement('a');
-            counterDiv.href = "https://hits.sh/junhkang.com/";
-            counterDiv.target = "_blank";
-            counterDiv.className = 'profile-visitor-count';
-            counterDiv.innerHTML = `
-                <span class="visitor-label">👥 총 방문자</span>
-                <img alt="방문자" src="https://hits.sh/junhkang.com.svg?view=today-total&style=flat-square&label=&color=000000&labelColor=ffffff&background=ffffff"/>
-            `;
-            socialIcons.appendChild(counterDiv);
-        }
-    } else {
-        // 홈페이지가 아닌 경우 숨겨진 전체 카운터만 추가
-        const totalCounterImg = document.createElement('img');
-        totalCounterImg.style.opacity = '0';
-        totalCounterImg.style.position = 'absolute';
-        totalCounterImg.style.pointerEvents = 'none';
-        totalCounterImg.src = 'https://hits.sh/junhkang.com.svg?view=today-total&style=flat-square';
-        document.body.appendChild(totalCounterImg);
-    }
-});
-</script>
 
 <!-- Google Analytics 는 최상위 googleAnalytics 키로 PaperMod 가 출력한다. -->
 

@@ -1,7 +1,7 @@
 ---
 title: "[LLM] Vertex AI를 쓰기 전에 걸어 둘 비용 가드레일 — 예산 알림과 토큰 할당량"
-date: '2026-11-12 03:00:00'
-draft: true
+date: '2026-11-03 12:10:00'
+draft: false
 categories: ['LLM']
 tags: ['LLM', 'GCP', 'quota', '비용', '운영']
 description: "LLM API 비용은 출력보다 입력 토큰에서 먼저 불어나는 경우가 많고, GCP 예산은 알림일 뿐 과금을 멈추지 않습니다. Vertex AI를 쓰기 시작할 때 예산 알림, 토큰 할당량, 프로젝트 분리, 인증 점검을 어떤 순서로 걸어 두면 되는지 정리합니다."

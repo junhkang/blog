@@ -1,7 +1,7 @@
 ---
 title: "[PostgreSQL] 배치마다 반복되는 집계는 Materialized View로 빼라"
-date: '2026-11-10 03:00:00'
-draft: true
+date: '2026-11-03 12:00:00'
+draft: false
 categories: ['PostgreSQL']
 tags: ['PostgreSQL', 'view', '성능', '쿼리성능', '운영']
 description: "배치로 조금씩 읽어 가는 쿼리에 집계 서브쿼리가 붙어 있으면, LIMIT과 상관없이 배치마다 원천 테이블 전체를 다시 집계합니다. 집계를 Materialized View로 빼고, 결과가 원본과 같은지 EXCEPT ALL로 검증하고, 갱신을 운영하는 방법을 정리합니다."

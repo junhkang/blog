@@ -1,0 +1,26 @@
+{{- /* 시리즈 목차와 관련 글. 새 심화 글이 레거시 글에서 링크되지 않아 '발견됨-색인 안 됨'에 머물던 문제를 내부 링크로 푼다. */ -}}
+{{- with .GetTerms "series" }}
+{{- range . }}
+{{- $pages := .Pages.ByDate }}
+<nav class="series-nav" aria-label="시리즈 목차">
+  <p class="series-nav-title">시리즈 · <a href="{{ .Permalink }}">{{ .LinkTitle }}</a> ({{ len $pages }}편)</p>
+  <ol>
+    {{- range $pages }}
+    <li>{{ if eq .Permalink $.Permalink }}<strong>{{ .LinkTitle }}</strong>{{ else }}<a href="{{ .Permalink }}">{{ .LinkTitle }}</a>{{ end }}</li>
+    {{- end }}
+  </ol>
+</nav>
+{{- end }}
+{{- end }}
+{{- $related := site.RegularPages.Related . | first 4 }}
+{{- with $related }}
+<nav class="related-posts" aria-label="관련 글">
+  <p class="related-posts-title">관련 글</p>
+  <ul>
+    {{- range . }}
+    <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}
+{{- partial "post_nav_links_theme.html" . }}

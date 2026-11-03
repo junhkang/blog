@@ -1,3 +1,5 @@
+# {{ site.Title }}
+
 > {{ site.Params.description }}
 
 이 파일은 생성형 검색엔진과 LLM 크롤러가 사이트 구조를 빠르게 파악하도록 제공하는 색인입니다.
@@ -5,7 +7,7 @@
 
 ## 저자
 
-- 이름: {{ site.Params.author }}
+- 이름: 강준혁 ({{ site.Params.author }})
 - 소개: (주)산군 CTO. PostgreSQL 대규모 운영, 데이터 파이프라인, LLM/RAG 적용, 개발 조직 운영.
 - GitHub: {{ site.Params.github }}
 - LinkedIn: {{ site.Params.linkedin }}

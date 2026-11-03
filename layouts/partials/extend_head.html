@@ -125,7 +125,9 @@ document.addEventListener('DOMContentLoaded', function() {
 {{ dict
   "@context" "https://schema.org"
   "@type" "Person"
+  "@id" (absURL "about/#person")
   "name" site.Params.author
+  "alternateName" (slice "강준혁" "Junhyuk Kang")
   "url" (absURL "about/")
   "image" (absURL site.Params.favicon)
   "jobTitle" "CTO"
@@ -136,3 +138,10 @@ document.addEventListener('DOMContentLoaded', function() {
   | jsonify | safeJS }}
 </script>
 {{ end }}
+
+<style>
+.series-nav, .related-posts { margin: 24px 0; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--entry); font-size: 0.95em; }
+.series-nav-title, .related-posts-title { margin: 0 0 8px; font-weight: 600; }
+.series-nav ol, .related-posts ul { margin: 0; padding-left: 1.2em; }
+.series-nav li, .related-posts li { margin: 4px 0; }
+</style>

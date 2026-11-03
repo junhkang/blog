@@ -32,6 +32,20 @@ minifyOutput = true
   images = ["/images/og_img.jpg"]  # 기본 OG/Twitter 이미지 (PaperMod 폴백)
   keywords = ["개발", "백엔드", "클라우드", "DevOps", "데이터베이스", "산군"]  # 배열 형태로 변경
 
+  # 페이지 표시 설정 — 예전엔 [markup.goldmark.renderer]·[[params.socialIcons]] 아래에 있어서 전부 무시되고 있었다.
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowToc = true
+  ShowPageNums = true
+  ShowLastMod = true
+  ShowAllPagesInArchive = true
+  ShowTags = true
+
   [params.comments]
     enabled = true
     provider = "giscus"
@@ -49,8 +63,6 @@ minifyOutput = true
     theme = "preferred_color_scheme"
     lang = "ko"
 
-[params.analytics.google]
-  SiteVerificationTag = "G-PV53RL6R3L"
 
 # 검색 기능 활성화
 [params.search]
@@ -77,11 +89,6 @@ ShowSearchButton = true
 [[params.socialIcons]]
   name = "linkedin"
   url = "https://www.linkedin.com/in/junh-kang"
-
-# 태그 및 아카이브 관련 설정
-ShowAllPagesInArchive = true
-ShowPageNums = true
-ShowTags = true
 
 # 메인 메뉴 설정
 [[menu.main]]
@@ -148,17 +155,6 @@ ShowTags = true
     [markup.goldmark.renderer]
       unsafe = true
 
-# 페이지 표시 설정
-ShowBreadCrumbs = true
-ShowPostNavLinks = true
-ShowCodeCopyButtons = true
-ShowWordCount = true
-ShowReadingTime = true
-ShowShareButtons = true
-ShowRssButtonInSectionTermList = true
-ShowToc = true
-ShowPageNums = true
-ShowLastMod = true
 
 # 리스트 페이지 레이아웃 설정
 [params.list]
@@ -166,6 +162,9 @@ ShowLastMod = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON", "LLMS"]
+  # 태그·카테고리별 RSS(/tags/*/index.xml)는 구글이 크롤 예산만 쓰고 색인하지 않는다 — 내보내지 않는다.
+  taxonomy = ["HTML"]
+  term = ["HTML"]
 
 # GEO: llms.txt — 생성형 검색엔진이 사이트 구조와 대표 문서를 평문으로 파악하게 한다.
 [outputFormats.LLMS]
@@ -207,3 +206,14 @@ recentPostCount = 3
     inputPosition = "bottom"
     theme = "preferred_color_scheme"
     lang = "en"
+# 관련 글: 기본값은 날짜 가중치가 있어 같은 해 글끼리만 묶인다. 레거시 개념 글에서 새 심화 글로 링크가 가도록 태그·시리즈만 본다.
+[related]
+  includeNewer = true
+  threshold = 50
+  toLower = true
+  [[related.indices]]
+    name = "series"
+    weight = 100
+  [[related.indices]]
+    name = "tags"
+    weight = 80

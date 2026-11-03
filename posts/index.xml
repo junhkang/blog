@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.165.0</generator>
     <language>ko</language>
-    <lastBuildDate>Thu, 24 Sep 2026 03:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 12:10:00 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[LLM] Vertex AI를 쓰기 전에 걸어 둘 비용 가드레일 — 예산 알림과 토큰 할당량</title>
+      <link>https://junhkang.com/posts/llm-api-cost-guardrails/</link>
+      <pubDate>Tue, 03 Nov 2026 12:10:00 +0900</pubDate>
+      <guid>https://junhkang.com/posts/llm-api-cost-guardrails/</guid>
+      <description>LLM API 비용은 출력보다 입력 토큰에서 먼저 불어나는 경우가 많고, GCP 예산은 알림일 뿐 과금을 멈추지 않습니다. Vertex AI를 쓰기 시작할 때 예산 알림, 토큰 할당량, 프로젝트 분리, 인증 점검을 어떤 순서로 걸어 두면 되는지 정리합니다.</description>
+    </item>
+    <item>
+      <title>[PostgreSQL] 배치마다 반복되는 집계는 Materialized View로 빼라</title>
+      <link>https://junhkang.com/posts/postgresql-materialized-view-batch-aggregate/</link>
+      <pubDate>Tue, 03 Nov 2026 12:00:00 +0900</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-materialized-view-batch-aggregate/</guid>
+      <description>배치로 조금씩 읽어 가는 쿼리에 집계 서브쿼리가 붙어 있으면, LIMIT과 상관없이 배치마다 원천 테이블 전체를 다시 집계합니다. 집계를 Materialized View로 빼고, 결과가 원본과 같은지 EXCEPT ALL로 검증하고, 갱신을 운영하는 방법을 정리합니다.</description>
+    </item>
     <item>
       <title>[PostgreSQL] 파티셔닝하면 못 하게 되는 것들 — 유니크, 외래키, 행 이동</title>
       <link>https://junhkang.com/posts/postgresql-partition-3-constraints/</link>

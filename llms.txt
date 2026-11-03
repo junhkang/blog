@@ -17,6 +17,8 @@
 
 Blog posts
 
+- [[LLM] Vertex AI를 쓰기 전에 걸어 둘 비용 가드레일 — 예산 알림과 토큰 할당량](https://junhkang.com/posts/llm-api-cost-guardrails/): LLM API 비용은 출력보다 입력 토큰에서 먼저 불어나는 경우가 많고, GCP 예산은 알림일 뿐 과금을 멈추지 않습니다. Vertex AI를 쓰기 시작할 때 예산 알림, 토큰 할당량, 프로젝트 분리, 인증 점검을 어떤 순서로 걸어 두면 되는지 정리합니다. (2026-11-03)
+- [[PostgreSQL] 배치마다 반복되는 집계는 Materialized View로 빼라](https://junhkang.com/posts/postgresql-materialized-view-batch-aggregate/): 배치로 조금씩 읽어 가는 쿼리에 집계 서브쿼리가 붙어 있으면, LIMIT과 상관없이 배치마다 원천 테이블 전체를 다시 집계합니다. 집계를 Materialized View로 빼고, 결과가 원본과 같은지 EXCEPT ALL로 검증하고, 갱신을 운영하는 방법을 정리합니다. (2026-11-03)
 - [[PostgreSQL] 파티셔닝하면 못 하게 되는 것들 — 유니크, 외래키, 행 이동](https://junhkang.com/posts/postgresql-partition-3-constraints/): 파티션 테이블의 PK와 유니크 제약은 반드시 파티션 키를 포함해야 합니다. 그래서 파티션을 가로지르는 유일성은 보장할 수 없고, ON CONFLICT와 외래키 설계도 달라집니다. 파티셔닝을 결정하기 전에 알아야 할 제약들을 정리합니다. (2026-09-24)
 - [[PostgreSQL] 시간 기반 파티션 운영 — DELETE 없이 데이터 버리기](https://junhkang.com/posts/postgresql-partition-2-time-based-ops/): 시간으로 나눈 파티션은 미리 만들어두고, 오래된 것은 떼어내서 버립니다. 파티션 생성을 놓쳤을 때 벌어지는 일, DEFAULT 파티션의 함정, DETACH CONCURRENTLY, 그리고 인덱스를 서비스 중단 없이 추가하는 순서를 정리합니다. (2026-09-23)
 - [[PostgreSQL] 파티셔닝이 성능을 올리지 않는 경우](https://junhkang.com/posts/postgresql-partition-1-pruning/): 파티셔닝은 쿼리를 빠르게 만드는 기능이 아니라, 조건에 맞는 파티션만 읽게 해주는 기능입니다. 그 조건이 갖춰지지 않으면 파티션 수만큼 느려집니다. 파티션 프루닝이 되는 쿼리와 안 되는 쿼리의 모양, 그리고 파티션 수의 비용을 정리합니다. (2026-09-22)
@@ -154,6 +156,7 @@ Blog posts
 
 회사 밖에서 개발자로 살면서 남긴 기록입니다. 정체성에 대한 고민, 개인적으로 굴려본 사이트에서 얻은 교훈처럼 조직의 일과는 조금 떨어진 이야기를 담담하게 적어둡니다.
 
+- [LLM으로 LLM 출력을 평가해 보니 — 내 경우엔 이랬다](https://junhkang.com/personal/llm-as-judge-bias-notes/): 프롬프트 결과를 LLM 판정자로 비교해 보니, 판정자는 자기와 같은 계열 모델이 쓴 글을 더 높게 보는 경향이 있었습니다. 판정단을 섞어 낸 결론도 한 번 더 뒤집혔고, 같은 조건을 반복해도 승률이 꽤 흔들렸습니다. 일반론이라기보다 제 실험에서 겪은 것들을 적었습니다. (2026-11-03)
 - [8주 동안 아무것도 하지 않기로 했다 — 회복을 기다리는 법](https://junhkang.com/personal/google-deindex-2-eight-week-freeze/): 색인이 사라진 원인을 고친 뒤에 가장 어려웠던 건 아무것도 하지 않는 일이었습니다. 회복을 측정하려면 측정 구간을 오염시키지 않아야 하는데, 그 사이 스스로 그 구간을 망쳐놓은 이야기입니다. (2026-09-09)
 - [개인 사이트가 구글에서 사라졌다 — 대량 생성 페이지의 대가](https://junhkang.com/personal/google-deindex-1-what-happened/): 개인적으로 굴려보던 디렉터리형 사이트가 구글 색인에서 사실상 통째로 빠졌습니다. 페이지 단위로는 문제가 없어 보였는데 왜 걸렸는지, 진단 과정에서 확인한 것들을 정리합니다. (2026-09-06)
 - [개발을 언제 놓아야 하나](https://junhkang.com/personal/when-to-stop-coding/): 회의를 다 끝내면 오후 다섯 시고, 그때부터 내 개발이 시작됩니다. 이 구조가 언제까지 맞는 건지, 서로 다른 자리에서 들은 두 조언을 놓고 생각해봤습니다. (2025-04-13)

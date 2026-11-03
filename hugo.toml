@@ -1,20 +1,14 @@
 baseURL = "https://junhkang.com/"
-languageCode = "ko"
+locale = "ko"
 defaultContentLanguage = "ko"
 timeZone = "Asia/Seoul"
 title = "Jun Kang's Blog"
 theme = "hugo-PaperMod"
 googleAnalytics = "G-PV53RL6R3L"
 
-# 페이지당 포스트 수 설정
+# 페이지당 포스트 수 설정 — 바꾸면 /page/N/ URL이 달라진다.
 [pagination]
   pagerSize = 5
-
-# 기존의 다른 설정들...
-enableRobotsTXT = true
-buildDrafts = false
-buildFuture = false
-buildExpired = false
 
 [minify]
 disableXML = true
@@ -28,7 +22,6 @@ minifyOutput = true
   env = "production"  # GA 작동을 위한 환경 설정
   favicon = "favicon.ico"
   hideFooter = true       # 전체 푸터를 숨기거나
-  hideMadeWithHugo = true  # Hugo 워터마크만 숨기기
   images = ["/images/og_img.jpg"]  # 기본 OG/Twitter 이미지 (PaperMod 폴백)
   keywords = ["개발", "백엔드", "클라우드", "DevOps", "데이터베이스", "산군"]  # 배열 형태로 변경
 
@@ -36,7 +29,7 @@ minifyOutput = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
-  ShowWordCount = true
+  ShowWordCount = false
   ShowReadingTime = true
   ShowShareButtons = true
   ShowRssButtonInSectionTermList = true
@@ -45,6 +38,8 @@ minifyOutput = true
   ShowLastMod = true
   ShowAllPagesInArchive = true
   ShowTags = true
+  DateFormat = "2006-01-02"
+  ShareButtons = ["x", "linkedin", "facebook"]
 
   [params.comments]
     enabled = true
@@ -68,7 +63,6 @@ minifyOutput = true
 [params.search]
   enable = true
   placeholder = "검색어를 입력하세요..."
-ShowSearchButton = true
 
 # 프로필 모드 비활성화하고 regular 모드 사용
 [params.profileMode]
@@ -156,10 +150,6 @@ ShowSearchButton = true
       unsafe = true
 
 
-# 리스트 페이지 레이아웃 설정
-[params.list]
-  showPagination = true
-
 [outputs]
   home = ["HTML", "RSS", "JSON", "LLMS"]
   # 태그·카테고리별 RSS(/tags/*/index.xml)는 구글이 크롤 예산만 쓰고 색인하지 않는다 — 내보내지 않는다.
@@ -173,11 +163,6 @@ ShowSearchButton = true
   isPlainText = true
   rel = "alternate"
   protocol = "https://"
-
-# 카테고리 페이지 설정
-[params.categoryPage]
-enableRecentPosts = true
-recentPostCount = 3
 
 # 태그 페이지는 대부분 글 1편짜리라 얇은 페이지가 된다 — 색인·사이트맵에서 뺀다.
 # 카테고리는 실제 허브라서 그대로 둔다.

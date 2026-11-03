@@ -27,9 +27,26 @@
         data-theme="{{ .Site.Params.giscus.theme }}"
         data-lang="{{ .Site.Params.giscus.lang }}"
         {{ end }}
+        data-loading="lazy"
         crossorigin="anonymous"
         async>
     </script>
   </div>
+  {{- /* PaperMod 테마 토글(localStorage pref-theme)에 giscus 테마를 맞춘다. preferred_color_scheme 은 OS 설정만 따른다. */}}
+  <script>
+  (function () {
+    function giscusTheme() {
+      return document.body.classList.contains('dark') ? 'dark' : 'light';
+    }
+    var s = document.querySelector('.giscus script[src*="giscus.app"]');
+    if (s) s.setAttribute('data-theme', giscusTheme());
+    function sync() {
+      var f = document.querySelector('iframe.giscus-frame');
+      if (f) f.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme() } } }, 'https://giscus.app');
+    }
+    var t = document.getElementById('theme-toggle');
+    if (t) t.addEventListener('click', function () { setTimeout(sync, 0); });
+  })();
+  </script>
   {{ end }}
 {{ end }} 

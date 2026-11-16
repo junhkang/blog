@@ -1,0 +1,34 @@
+{{- /* PaperMod render-image 확장: 빈 alt 를 글 제목으로 채우고, static/ 이미지는 width·height 를 박아 CLS 를 막는다. */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- $width := "" -}}
+{{- $height := "" -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := strings.TrimPrefix "./" $u.Path }}
+  {{- with or (.PageInner.Resources.Get $path) (resources.Get $path) -}}
+    {{- $src = .RelPermalink -}}
+    {{- with $u.RawQuery -}}
+      {{- $src = printf "%s?%s" $src . -}}
+    {{- end -}}
+    {{- with $u.Fragment -}}
+      {{- $src = printf "%s#%s" $src . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $file := path.Join "static" $path -}}
+    {{- if and (hasPrefix $path "/") (in (slice ".png" ".jpg" ".jpeg" ".gif" ".webp") (lower (path.Ext $path))) (fileExists $file) -}}
+      {{- with images.Config $file -}}
+        {{- $width = string .Width -}}
+        {{- $height = string .Height -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $alt := .Text | default (printf "%s — 그림 %d" (.Page.Title | plainify) (add .Ordinal 1)) -}}
+{{- $attributes := merge (dict "alt" $alt "src" $src "title" .Title "width" $width "height" $height "loading" "lazy" "decoding" "async") .Attributes -}}
+<img
+  {{- range $k, $v := $attributes -}}
+    {{- if $v -}}
+      {{- printf ` %s="%s"` $k (htmlEscape $v) | safeHTMLAttr -}}
+    {{- end -}}
+  {{- end -}}>
+{{- /**/ -}}

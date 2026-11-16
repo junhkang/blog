@@ -85,9 +85,14 @@
     {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
     {{- end}}
   {{- else }}
+    {{- $bodyImages := findRE `!\[[^\]]*\]\(([^)\s]+)` .RawContent 1 }}
+    {{- if $bodyImages }}
+  "image": {{ index $bodyImages 0 | replaceRE `!\[[^\]]*\]\(([^)\s]+)` "$1" | absURL }},
+    {{- else }}
     {{- $images := partial "templates/_funcs/get-page-images" . -}}
     {{- with index $images 0 -}}
   "image": {{ .Permalink }},
+    {{- end }}
     {{- end }}
   {{- end -}}
   "datePublished": {{ .PublishDate }},

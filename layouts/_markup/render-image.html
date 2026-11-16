@@ -24,11 +24,11 @@
   {{- end -}}
 {{- end -}}
 {{- $alt := .Text | default (printf "%s — 그림 %d" (.Page.Title | plainify) (add .Ordinal 1)) -}}
-{{- $attributes := merge (dict "alt" $alt "src" $src "title" (.Title | transform.HTMLEscape) "width" $width "height" $height "loading" "lazy" "decoding" "async") .Attributes -}}
+{{- $attributes := merge (dict "alt" $alt "src" $src "title" .Title "width" $width "height" $height "loading" "lazy" "decoding" "async") .Attributes -}}
 <img
   {{- range $k, $v := $attributes -}}
     {{- if $v -}}
-      {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+      {{- printf ` %s="%s"` $k (htmlEscape $v) | safeHTMLAttr -}}
     {{- end -}}
   {{- end -}}>
 {{- /**/ -}}

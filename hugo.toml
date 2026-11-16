@@ -1,5 +1,5 @@
 baseURL = "https://junhkang.com/"
-locale = "ko"
+locale = "ko-KR"
 defaultContentLanguage = "ko"
 timeZone = "Asia/Seoul"
 title = "Jun Kang's Blog"

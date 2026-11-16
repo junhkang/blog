@@ -11,9 +11,6 @@
     <loc>https://junhkang.com/personal/llm-as-judge-bias-notes/</loc>
     <lastmod>2026-11-03T12:20:00+09:00</lastmod>
   </url><url>
-    <loc>https://junhkang.com/categories/personal/</loc>
-    <lastmod>2026-11-03T12:20:00+09:00</lastmod>
-  </url><url>
     <loc>https://junhkang.com/personal/</loc>
     <lastmod>2026-11-03T12:20:00+09:00</lastmod>
   </url><url>
@@ -76,9 +73,6 @@
   </url><url>
     <loc>https://junhkang.com/series/postgresql-vacuum-%EA%B9%8A%EC%9D%B4-%EB%B3%B4%EA%B8%B0/</loc>
     <lastmod>2026-09-12T21:25:00+09:00</lastmod>
-  </url><url>
-    <loc>https://junhkang.com/categories/sankun/</loc>
-    <lastmod>2026-09-11T22:35:00+09:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/sankun/ai-security-2-what-we-decided/</loc>
     <lastmod>2026-09-11T22:35:00+09:00</lastmod>
@@ -513,5 +507,7 @@
     <lastmod>2020-11-22T22:40:00+09:00</lastmod>
   </url><url>
     <loc>https://junhkang.com/archives/</loc>
+  </url><url>
+    <loc>https://junhkang.com/categories/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9Cos/</loc>
   </url>
 </urlset>

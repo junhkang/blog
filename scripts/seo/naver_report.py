@@ -49,6 +49,8 @@ def live_meta(url):
 def recheck(did, urls):
     """아직 유효한 URL만 남긴다."""
     live = {u: live_meta(u) for u in urls}
+    if did == 3003:
+        return [u for u in urls if "error" in live[u] or live[u]["noindex"]], live
     keep = [u for u in urls if "error" in live[u] or not live[u]["noindex"]]
     if did in (4006, 4001):
         descs = collections.Counter(live[u].get("description") for u in keep)
@@ -168,8 +170,10 @@ def analyse(raw):
                   for c in info_.get("contents", [])]
         all_urls = urls + [u for g in groups for u in g["urls"]]
         ok = EXPECTED.get(did_i)
-        if ok and all(ok(u) for u in all_urls):
-            continue
+        if ok:
+            all_urls = [u for u in all_urls if not ok(u)]
+            if not all_urls:
+                continue
         if did_i in (3003, 4001, 4003, 4006):
             all_urls, _ = recheck(did_i, all_urls)
             if not all_urls:

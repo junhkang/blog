@@ -13,13 +13,18 @@ const walk = (d) => {
     else if (e.name.endsWith('.html')) {
       const html = fs.readFileSync(p, 'utf8');
       const rel = '/' + path.relative(dir, p).replace(/index\.html$/, '');
-      const pick = (re) => (html.match(re) || [])[1] || null;
+      // minify 는 공백 없는 속성값의 따옴표를 지우고, 따옴표 안에는 '>' 가 올 수 있다. 태그·속성을 따옴표를 고려해 파싱한다.
+      const tags = (name) => [...html.matchAll(new RegExp(`<${name}((?:\\s+[^\\s=>/]+(?:=(?:"[^"]*"|'[^']*'|[^\\s"'>]+))?)*)\\s*/?>`, 'g'))]
+        .map((m) => Object.fromEntries([...m[1].matchAll(/([^\s=>/]+)(?:=(?:"([^"]*)"|'([^']*)'|([^\s"'>]+)))?/g)]
+          .map((x) => [x[1].toLowerCase(), x[2] ?? x[3] ?? x[4] ?? ''])));
+      const metas = tags('meta');
+      const meta = (n) => metas.find((t) => t.name === n)?.content ?? null;
       const ld = [...html.matchAll(/<script type="?application\/ld\+json"?>([\s\S]*?)<\/script>/g)].map((m) => m[1].trim());
       pages[rel] = {
-        canonical: pick(/<link rel="?canonical"? href="?([^" >]+)/),
-        robots: pick(/<meta name="?robots"? content="?([^">]+)/),
-        title: pick(/<title>([^<]*)<\/title>/),
-        description: pick(/<meta name="?description"? content="([^"]*)"/),
+        canonical: tags('link').find((t) => t.rel === 'canonical')?.href ?? null,
+        robots: meta('robots'),
+        title: (html.match(/<title>([^<]*)<\/title>/) || [])[1] || null,
+        description: meta('description'),
         ldJsonHash: ld.length ? crypto.createHash('sha1').update(ld.join('\n')).digest('hex').slice(0, 12) : null,
       };
     }

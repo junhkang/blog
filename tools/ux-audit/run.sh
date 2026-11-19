@@ -13,7 +13,7 @@ if [ "$REF" != "WORKTREE" ]; then
   trap 'git -C "$ROOT" worktree remove --force "$SRC"' EXIT
 fi
 SITE="$HERE/out/site-$NAME"
-rm -rf "$SITE"
+rm -rf "$SITE" "$SITE-prod"
 # 운영과 같은 옵션으로 빌드(baseURL 만 로컬). SEO 비교용으로 운영 baseURL 빌드도 따로 만든다.
 hugo --source "$SRC" --minify --quiet --baseURL "http://localhost:$PORT/" -d "$SITE"
 hugo --source "$SRC" --minify --quiet --baseURL "https://junhkang.com/" -d "$SITE-prod"

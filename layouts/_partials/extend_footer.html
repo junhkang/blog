@@ -1,6 +1,20 @@
 <script>
-  // 가로 스크롤되는 코드 블록을 키보드로도 스크롤할 수 있게 한다 (axe: scrollable-region-focusable).
-  document.querySelectorAll('.post-content pre > code').forEach(function (el) {
-    if (el.scrollWidth > el.clientWidth) el.tabIndex = 0;
-  });
+  // 가로 스크롤되는 코드 블록·표를 키보드로도 스크롤할 수 있게 한다 (axe: scrollable-region-focusable). 창 크기가 바뀌면 다시 계산한다.
+  (function () {
+    var els = document.querySelectorAll('.post-content pre > code, .post-content table');
+    if (!els.length) return;
+    var update = function () {
+      els.forEach(function (el) {
+        if (el.scrollWidth > el.clientWidth) el.tabIndex = 0;
+        else el.removeAttribute('tabindex');
+      });
+    };
+    var queued = false;
+    window.addEventListener('resize', function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    });
+    update();
+  })();
 </script>

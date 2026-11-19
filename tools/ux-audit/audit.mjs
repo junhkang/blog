@@ -18,7 +18,7 @@ fs.mkdirSync(path.join(outDir, 'shots'), { recursive: true });
 
 // 페이지 안에서 측정하는 레이아웃·가독성 지표
 const measure = () => {
-  const vw = window.innerWidth;
+  const vw = document.documentElement.clientWidth; // 모바일 에뮬레이션에선 innerWidth 가 넘친 폭만큼 커진다
   const doc = document.documentElement;
   const menuItems = [...document.querySelectorAll('#menu > li')];
   const hiddenMenu = menuItems.filter((li) => {

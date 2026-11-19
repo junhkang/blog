@@ -87,9 +87,12 @@ async def api(page, path, **params):
     if res["s"] in (401, 403):
         raise AuthExpired(path)
     try:
-        return json.loads(res["t"])
+        body = json.loads(res["t"])
     except ValueError:
+        body = None
+    if res["s"] != 200 or body is None or (isinstance(body, dict) and body.get("code", 0) != 0):
         raise RuntimeError(f"{path}: HTTP {res['s']} {res['t'][:200]}")
+    return body
 
 
 def items(resp):

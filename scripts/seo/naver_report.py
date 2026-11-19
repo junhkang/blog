@@ -34,7 +34,7 @@ CRAWL_ERRORS = ["dnsError", "connectTimeout", "robotDenied", "serverError", "mal
 
 
 def live_meta(url):
-    """라이브 페이지의 robots·description. 네이버 진단은 며칠 늦으므로 현재 상태로 다시 확인한다."""
+    """라이브 페이지의 robots·description·title. 네이버 진단은 며칠 늦으므로 현재 상태로 다시 확인한다."""
     import re
     import urllib.request
     try:
@@ -43,7 +43,9 @@ def live_meta(url):
     except Exception as e:  # noqa: BLE001
         return {"error": repr(e)}
     get = lambda name: (re.search(rf'<meta name="?{name}"? content="([^"]*)"', html) or [None, None])[1]
-    return {"noindex": "noindex" in (get("robots") or ""), "description": get("description")}
+    title = re.search(r"<title>(.*?)</title>", html, re.S)
+    return {"noindex": "noindex" in (get("robots") or ""), "description": get("description"),
+            "title": title[1].strip() if title else None}
 
 
 def recheck(did, urls):
@@ -52,10 +54,11 @@ def recheck(did, urls):
     if did == 3003:
         return [u for u in urls if "error" in live[u] or live[u]["noindex"]], live
     keep = [u for u in urls if "error" in live[u] or not live[u]["noindex"]]
-    if did in (4006, 4001):
-        descs = collections.Counter(live[u].get("description") for u in keep)
-        keep = [u for u in keep if "error" in live[u] or not live[u].get("description")
-                or (did == 4006 and descs[live[u]["description"]] > 1)]
+    field = "title" if did == 4003 else "description"
+    if did in (4001, 4003, 4006):
+        seen = collections.Counter(live[u].get(field) for u in keep)
+        keep = [u for u in keep if "error" in live[u] or not live[u].get(field)
+                or (did != 4001 and seen[live[u][field]] > 1)]
     return keep, live
 
 

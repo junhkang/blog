@@ -76,3 +76,11 @@
 [theme="dark"] .category-card:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 } 
+.category-title a:hover {
+    text-decoration: underline;
+}
+
+.recent-posts li a {
+    display: inline-block;
+    padding: 4px 0;
+}

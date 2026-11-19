@@ -1,0 +1,19 @@
+{
+  "pages": [
+    { "name": "home", "path": "/" },
+    { "name": "posts-list", "path": "/posts/" },
+    { "name": "post-code-image", "path": "/posts/126/" },
+    { "name": "post-table", "path": "/posts/28/" },
+    { "name": "post-longform", "path": "/posts/postgresql-partition-1-pruning/" },
+    { "name": "categories", "path": "/categories/" },
+    { "name": "about", "path": "/about/" }
+  ],
+  "viewports": [
+    { "name": "mobile", "width": 390, "height": 844 },
+    { "name": "tablet", "width": 768, "height": 1024 },
+    { "name": "desktop", "width": 1366, "height": 900 }
+  ],
+  "themes": ["light", "dark"],
+  "lighthousePages": ["home", "post-code-image", "post-longform"],
+  "blockHosts": ["pagead2.googlesyndication.com", "googleads.g.doubleclick.net", "www.googletagmanager.com", "giscus.app"]
+}

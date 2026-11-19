@@ -1,0 +1,6 @@
+<script>
+  // 가로 스크롤되는 코드 블록을 키보드로도 스크롤할 수 있게 한다 (axe: scrollable-region-focusable).
+  document.querySelectorAll('.post-content pre > code').forEach(function (el) {
+    if (el.scrollWidth > el.clientWidth) el.tabIndex = 0;
+  });
+</script>

@@ -1,0 +1,19 @@
+name: PR build
+
+# Builds the site on PRs so a broken template or dependency bump is caught before main deploys.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.167.0'
+          extended: true
+      - run: hugo --minify --baseURL "https://junhkang.com/"

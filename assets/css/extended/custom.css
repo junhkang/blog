@@ -115,4 +115,35 @@
 .profile-intro a {
     text-decoration: underline;
     text-underline-offset: 3px;
+    padding: 1px 0;
+}
+
+/* ── 글 위치 표시의 '홈' 링크: 글자 폭(15px)만큼만 눌려 24px 터치 영역 미달 ── */
+.breadcrumbs a {
+    padding: 2px 5px;
+    margin: -2px -5px;
+}
+
+/* ── 시리즈·관련 글 링크: 본문 글자와 구분되지 않고 한 줄 높이(19px)만 눌리던 문제 ── */
+.series-nav a,
+.related-posts a {
+    padding: 3px 0;
+    text-decoration: underline;
+    text-decoration-color: var(--tertiary);
+    text-underline-offset: 3px;
+}
+
+.series-nav a:hover,
+.related-posts a:hover {
+    text-decoration-color: currentColor;
+}
+
+/* ── 모바일 글 목록 카드: 카드 여백과 머리말 여백이 겹쳐 제목 폭이 좁아지던 문제 ── */
+@media screen and (max-width: 768px) {
+    .post-entry:not(.with-thumbnail) .entry-header,
+    .post-entry:not(.with-thumbnail) .entry-content,
+    .post-entry:not(.with-thumbnail) .entry-footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

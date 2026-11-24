@@ -17,6 +17,7 @@
 
 PostgreSQL 성능 최적화와 운영, Spring·Java 백엔드, AWS·Linux 인프라, LLM 적용까지 실무에서 부딪히며 정리한 기술 글 모음입니다.
 
+- [[PostgreSQL] UPSERT — INSERT ON CONFLICT DO UPDATE 사용법과 주의점](https://junhkang.com/posts/postgresql-upsert-on-conflict/): PostgreSQL에서 UPSERT는 INSERT ... ON CONFLICT (키) DO UPDATE SET ... = EXCLUDED....로 합니다. 충돌 대상 지정, EXCLUDED, DO NOTHING, 조건부 갱신, MERGE와의 차이, 시퀀스 소모 같은 실무 주의점을 예제로 정리합니다. (2026-11-24)
 - [[LLM] Vertex AI를 쓰기 전에 걸어 둘 비용 가드레일 — 예산 알림과 토큰 할당량](https://junhkang.com/posts/llm-api-cost-guardrails/): LLM API 비용은 출력보다 입력 토큰에서 먼저 불어나는 경우가 많고, GCP 예산은 알림일 뿐 과금을 멈추지 않습니다. Vertex AI를 쓰기 시작할 때 예산 알림, 토큰 할당량, 프로젝트 분리, 인증 점검을 어떤 순서로 걸어 두면 되는지 정리합니다. (2026-11-03)
 - [[PostgreSQL] 배치마다 반복되는 집계는 Materialized View로 빼라](https://junhkang.com/posts/postgresql-materialized-view-batch-aggregate/): 배치로 조금씩 읽어 가는 쿼리에 집계 서브쿼리가 붙어 있으면, LIMIT과 상관없이 배치마다 원천 테이블 전체를 다시 집계합니다. 집계를 Materialized View로 빼고, 결과가 원본과 같은지 EXCEPT ALL로 검증하고, 갱신을 운영하는 방법을 정리합니다. (2026-11-03)
 - [[PostgreSQL] 파티셔닝하면 못 하게 되는 것들 — 유니크, 외래키, 행 이동](https://junhkang.com/posts/postgresql-partition-3-constraints/): 파티션 테이블의 PK와 유니크 제약은 반드시 파티션 키를 포함해야 합니다. 그래서 파티션을 가로지르는 유일성은 보장할 수 없고, ON CONFLICT와 외래키 설계도 달라집니다. 파티셔닝을 결정하기 전에 알아야 할 제약들을 정리합니다. (2026-09-24)

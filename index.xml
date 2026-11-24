@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 03 Nov 2026 12:20:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 12:00:00 +0900</lastBuildDate>
     <atom:link href="https://junhkang.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[PostgreSQL] UPSERT — INSERT ON CONFLICT DO UPDATE 사용법과 주의점</title>
+      <link>https://junhkang.com/posts/postgresql-upsert-on-conflict/</link>
+      <pubDate>Tue, 24 Nov 2026 12:00:00 +0900</pubDate>
+      <guid>https://junhkang.com/posts/postgresql-upsert-on-conflict/</guid>
+      <description>PostgreSQL에서 UPSERT는 INSERT ... ON CONFLICT (키) DO UPDATE SET ... = EXCLUDED....로 합니다. 충돌 대상 지정, EXCLUDED, DO NOTHING, 조건부 갱신, MERGE와의 차이, 시퀀스 소모 같은 실무 주의점을 예제로 정리합니다.</description>
+    </item>
     <item>
       <title>LLM으로 LLM 출력을 평가해 보니 — 내 경우엔 이랬다</title>
       <link>https://junhkang.com/personal/llm-as-judge-bias-notes/</link>

@@ -238,7 +238,7 @@
       <description>RDS SSL/TLS 인증서 업데이트 후 스프링부트에서 CannotGetJdbcConnectionException, &amp;#39;no pg_hba.conf entry&amp;#39; 에러가 나는 건 SSL 요구 때문입니다. JDBC URL에 sslmode=require를 붙이면 해결됩니다.</description>
     </item>
     <item>
-      <title>[PostgreSQL] SUBSTRING, SUBSTR, 문자열 자르기</title>
+      <title>[PostgreSQL] SUBSTRING, SUBSTR 문자열 자르기 — 뒤에서 자르기, 정규식 추출</title>
       <link>https://junhkang.com/posts/91/</link>
       <pubDate>Wed, 24 Jul 2024 13:19:56 +0900</pubDate>
       <guid>https://junhkang.com/posts/91/</guid>
@@ -266,21 +266,21 @@
       <description>PostgreSQL은 &amp;#39;20240502&amp;#39; 같은 문자열을 토큰으로 나눠 날짜, 시간, 시간대로 해석합니다. 콜론, 하이픈, 숫자 자릿수, 시간대 약어에 따른 디코딩 규칙과 두 자리 연도를 70 기준으로 해석하는 방식을 정리합니다.</description>
     </item>
     <item>
-      <title>[디자인패턴] 전략(Strategy) 패턴의 개념, 예제, 장단점, 활용</title>
+      <title>[디자인패턴] 전략(Strategy) 패턴 뜻과 예제 — 알고리즘을 실행 중에 갈아 끼우기</title>
       <link>https://junhkang.com/posts/87/</link>
       <pubDate>Fri, 12 Apr 2024 15:42:02 +0900</pubDate>
       <guid>https://junhkang.com/posts/87/</guid>
-      <description>전략(Strategy) 패턴은 알고리즘을 인터페이스 뒤로 분리해 실행 중에도 쉽게 교체할 수 있게 하는 디자인 패턴입니다. Strategy, ConcreteStrategy, Context 역할을 가위바위보 예제의 Java 코드로 살펴보고 장점을 정리합니다.</description>
+      <description>Strategy는 &amp;#39;전략&amp;#39;이라는 뜻이고, 전략 패턴은 알고리즘을 인터페이스 뒤로 분리해 실행 중에도 갈아 끼울 수 있게 하는 디자인 패턴입니다. Strategy, ConcreteStrategy, Context 역할을 가위바위보 Java 예제로 살펴보고 장단점을 정리합니다.</description>
     </item>
     <item>
-      <title>[PostgreSQL] ROWNUM 사용과 순번 부여하기 - ROW_NUMBER(), RANK(), DENSE_RANK()</title>
+      <title>[PostgreSQL] ROWNUM 대신 ROW_NUMBER() — 순번 부여와 RANK, DENSE_RANK 차이</title>
       <link>https://junhkang.com/posts/86/</link>
       <pubDate>Thu, 11 Apr 2024 14:12:42 +0900</pubDate>
       <guid>https://junhkang.com/posts/86/</guid>
-      <description>PostgreSQL에는 ROWNUM이 없어 ROW_NUMBER() OVER()로 순번을 매깁니다. PARTITION BY로 그룹별 순번을 주는 방법과, 동점 다음 순위를 건너뛰는 RANK()와 연속으로 매기는 DENSE_RANK()의 차이를 정리합니다.</description>
+      <description>PostgreSQL에는 Oracle의 ROWNUM이 없어 ROW_NUMBER() OVER()로 순번을 매깁니다. PARTITION BY로 그룹별 순번을 주는 방법, 동점 처리가 다른 RANK()와 DENSE_RANK()의 차이를 정리합니다.</description>
     </item>
     <item>
-      <title>[PostgreSQL] 버전 확인: 필요성과 4가지 방법</title>
+      <title>[PostgreSQL] 버전 확인 방법 4가지 — SELECT version(), SHOW server_version, psql --version</title>
       <link>https://junhkang.com/posts/85/</link>
       <pubDate>Thu, 11 Apr 2024 13:31:50 +0900</pubDate>
       <guid>https://junhkang.com/posts/85/</guid>
@@ -434,11 +434,11 @@
       <description>PostgreSQL 외래키(Foreign Key)는 참조 무결성을 보장하는 제약입니다. 복합·자기 참조 외래키, ON DELETE의 RESTRICT, NO ACTION, CASCADE, SET NULL 차이와 대용량 실시간 DB에 FK를 적용할지 검토한 결과를 다룹니다.</description>
     </item>
     <item>
-      <title>[디자인패턴] 컴포지트(Composite) 패턴의 개념, 예제, 장단점, 활용</title>
+      <title>[디자인패턴] 컴포지트(Composite) 패턴 뜻과 예제 — 파일·디렉터리 같은 트리 구조 다루기</title>
       <link>https://junhkang.com/posts/63/</link>
       <pubDate>Tue, 20 Feb 2024 18:08:18 +0900</pubDate>
       <guid>https://junhkang.com/posts/63/</guid>
-      <description>컴포지트(Composite) 패턴은 그릇과 내용물을 같은 타입으로 다뤄 디렉터리와 파일 같은 재귀 구조를 만드는 패턴입니다. Entry, File, Directory 자바 예제로 Leaf와 Composite 역할, getSize의 재귀 호출을 정리합니다.</description>
+      <description>Composite는 &amp;#39;합성물, 복합체&amp;#39;라는 뜻이고, 컴포지트 패턴은 그릇(Composite)과 내용물(Leaf)을 같은 타입으로 다뤄 파일·디렉터리 같은 트리 구조를 만드는 디자인 패턴입니다. Entry, File, Directory 자바 예제로 재귀 구조와 장단점을 정리합니다.</description>
     </item>
     <item>
       <title>[이펙티브 자바] 4. 인스턴스화를 막으려거든 private 생성자를 사용하라</title>
@@ -476,7 +476,7 @@
       <description>스프링부트 3에서 &amp;#39;http://java.sun.com/jsp/jstl/core을(를) 찾을 수 없습니다&amp;#39; 에러는 JSTL이 jakarta 기반으로 바뀌어 생깁니다. maven에 jakarta.servlet.jsp.jstl 의존성을 추가해 해결합니다.</description>
     </item>
     <item>
-      <title>[Spring] Java 21 롬복(lombok) 버전 설정 (java: java.lang.NoSuchFieldError: Class com.sun.tools.javac.tree.JCTree$JCImport does not have member field &#39;com.sun.tools.javac.tree.JCTree qualid&#39;)</title>
+      <title>[Spring] Java 21 롬복 빌드 에러 NoSuchFieldError(JCTree$JCImport) 해결 — lombok 1.18.30</title>
       <link>https://junhkang.com/posts/57/</link>
       <pubDate>Wed, 31 Jan 2024 10:35:34 +0900</pubDate>
       <guid>https://junhkang.com/posts/57/</guid>
@@ -749,7 +749,7 @@
       <description>AWS AMI(Amazon Machine Image)는 OS와 애플리케이션 설정을 담은 인스턴스 템플릿입니다. EC2에서 AMI를 생성하고 AMI로 새 인스턴스를 띄우는 순서와, No reboot 옵션 사용 시 무결성 주의사항을 정리합니다.</description>
     </item>
     <item>
-      <title>[AWS] Elastic IP (탄력적 IP)의 개념 및 적용</title>
+      <title>[AWS] Elastic IP(EIP, 탄력적 IP) 개념, 요금, EC2 연결 방법</title>
       <link>https://junhkang.com/posts/18/</link>
       <pubDate>Mon, 09 Oct 2023 14:41:55 +0900</pubDate>
       <guid>https://junhkang.com/posts/18/</guid>
@@ -763,7 +763,7 @@
       <description>PostgreSQL에서 UPDATE, DELETE된 dead tuple은 VACUUM 전까지 공간을 차지합니다. VACUUM 명령어와 옵션, 통계를 갱신하는 VACUUM ANALYZE, 공간을 OS에 돌려주지만 테이블을 잠그는 VACUUM FULL의 차이를 정리합니다.</description>
     </item>
     <item>
-      <title>[Linux] 심볼릭 링크 (Symbolic link) 설정하기</title>
+      <title>[Linux] 심볼릭 링크 생성·삭제 — ln -s 사용법과 옵션</title>
       <link>https://junhkang.com/posts/16/</link>
       <pubDate>Mon, 09 Oct 2023 11:46:58 +0900</pubDate>
       <guid>https://junhkang.com/posts/16/</guid>

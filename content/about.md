@@ -1,5 +1,6 @@
 ---
 title: "Jun Kang"
+description: "산업의 역군 공동창업자이자 CTO인 강준혁을 소개합니다. 건설 데이터 플랫폼 개발, 대규모 데이터 처리와 DB 최적화, 개발팀 운영 경험을 담았습니다."
 date: 2024-03-21
 layout: "about"
 intro: "안녕하세요. [산업의 역군](https://www.sankun.com)의 **강준혁(Jun Kang)**입니다. 

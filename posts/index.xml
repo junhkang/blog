@@ -259,7 +259,7 @@
       <description>equals는 논리적 동치성 비교가 필요할 때만 재정의하고, 그때는 반사성, 대칭성, 추이성, 일관성, null-아님 규약을 지켜야 합니다. 재정의하지 말아야 할 경우와 ==, instanceof, 형변환, 핵심 필드 비교로 이어지는 구현 순서를 정리합니다.</description>
     </item>
     <item>
-      <title>[GitHub] 민감한 정보 완전 삭제와 PR 히스토리 정리</title>
+      <title>[GitHub] 민감 정보 커밋 완전 삭제와 머지된 PR 삭제 방법 — BFG, force push</title>
       <link>https://junhkang.com/posts/89/</link>
       <pubDate>Wed, 19 Jun 2024 10:48:11 +0900</pubDate>
       <guid>https://junhkang.com/posts/89/</guid>
@@ -308,7 +308,7 @@
       <description>PostgreSQL의 UNION, INTERSECT, EXCEPT는 컬럼 개수와 타입이 같은 두 쿼리 결과를 합치고, 교차하고, 뺍니다. ALL 여부에 따른 중복 처리 차이, INTERSECT가 먼저 적용되는 우선순위, 괄호 사용법을 예제로 정리합니다.</description>
     </item>
     <item>
-      <title>[PostgreSQL] 페이징 : OFFSET과 LIMIT의 올바른 사용과 주의점</title>
+      <title>[PostgreSQL] LIMIT, OFFSET 페이징 사용법과 주의점 — 결과 중복·성능 문제</title>
       <link>https://junhkang.com/posts/82/</link>
       <pubDate>Mon, 08 Apr 2024 15:08:24 +0900</pubDate>
       <guid>https://junhkang.com/posts/82/</guid>
@@ -805,7 +805,7 @@
       <description>PostgreSQL에서 regexp_replace(name, &amp;#39; &#43;&amp;#39;, &amp;#39; &amp;#39;, &amp;#39;g&amp;#39;)로 문자열 안의 중복 공백을 제거하고, string_to_array, unnest, array_agg(distinct)로 중복 단어를 제거하는 방법을 예제로 정리합니다.</description>
     </item>
     <item>
-      <title>[PostgreSQL] BRIN 인덱스의 원리 및 특징</title>
+      <title>[PostgreSQL] BRIN 인덱스(BRIN index)란 — 원리, B-tree와 크기·성능 비교</title>
       <link>https://junhkang.com/posts/11/</link>
       <pubDate>Mon, 18 Sep 2023 19:03:08 +0900</pubDate>
       <guid>https://junhkang.com/posts/11/</guid>

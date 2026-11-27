@@ -553,7 +553,7 @@
       <description>추상 팩토리(Abstract Factory) 패턴은 구체 구현 대신 인터페이스만으로 부품을 조립해 제품을 만드는 패턴입니다. HTML 링크 페이지 자바 예제로 구조를 보고, 공장 추가는 쉽지만 부품 추가는 어려운 장단점을 정리합니다.</description>
     </item>
     <item>
-      <title>[Linux] JDK 여러 버전 적용하기, 여러개의 패키지 관리하기 (update-alternatives)</title>
+      <title>[Linux] 자바(JDK) 버전 여러 개 설치하고 전환하기 — update-alternatives --config java</title>
       <link>https://junhkang.com/posts/60/</link>
       <pubDate>Mon, 05 Feb 2024 18:08:28 +0900</pubDate>
       <guid>https://junhkang.com/posts/60/</guid>
